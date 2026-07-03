@@ -1,0 +1,62 @@
+{
+  "task_id": "background",
+  "level": "level2",
+  "dimension": "Scene Reasoning",
+  "task_name": "Dialogue Background Reasoning",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Robin Hood (2018)",
+      "audio": {},
+      "spk_a_transcript": "",
+      "spk_b_transcript": "",
+      "qa": [
+        {
+          "question": "In which of the following scenarios is this conversation most likely taking place?",
+          "question_type": "type_text",
+          "options": [
+            "A. A local official (Speaker 3) discusses a tax bill with a small group of aides in his private office.",
+            "B. A judge and jury are trying a suspect in a courtroom.",
+            "C. A local magistrate (Speaker 3) delivers a speech in the town's public assembly hall and deliberates on a tax bill.",
+            "D. Cannot determine (Insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "A local magistrate (Speaker 3) is delivering a speech in the town's public assembly hall, deliberating on a tax bill.",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Detective Dee (神探狄仁杰, 2004)",
+      "audio": {},
+      "spk_a_transcript": "",
+      "spk_b_transcript": "",
+      "qa": [
+        {
+          "question": "In which of the following scenarios does this conversation most likely take place?",
+          "question_type": "type_text",
+          "options": [
+            "A. Merchants are at a bank discussing a large silver loan.",
+            "B. Officials are reporting on a case and inspecting the treasury in a government office (yamen).",
+            "C. Officials are at the private residences of individuals involved in a case, conducting searches and questioning.",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "B",
+          "answer_text": "The officials are reporting on a case and inspecting the treasury within a government office (yamen).",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  }
+}

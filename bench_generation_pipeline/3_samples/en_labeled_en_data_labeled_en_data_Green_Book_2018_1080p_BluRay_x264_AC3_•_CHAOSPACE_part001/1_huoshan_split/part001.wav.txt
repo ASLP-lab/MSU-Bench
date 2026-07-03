@@ -1,0 +1,79 @@
+start_time:82050, end_time:83170, text: Hello, New York.
+start_time:83170, end_time:85690, text: I'm Bobby Rydell, and I'm glad to be here.
+start_time:88090, end_time:90930, text: Thank you all for coming to see us tonight.
+start_time:91170, end_time:93170, text: It's Saturday night at the Copa.
+start_time:94330, end_time:96410, text: We think you're gonna have a great time tonight.
+start_time:96530, end_time:98410, text: We're gonna do our best to make sure of that.
+start_time:99270, end_time:102950, text: As always, a very special thanks to mister Jules Podewell for having us out.
+start_time:103750, end_time:104510, text: Let's get started.
+start_time:106830, end_time:109510, text: That old black magic has me.
+start_time:110240, end_time:120360, text: In a spell that old black magic that to you a weave so well though as I see fingers up and down my spine.
+start_time:120600, end_time:122320, text: The same old witchcraft.
+start_time:122660, end_time:124780, text: When your eyes meet mine, I love them so.
+start_time:124980, end_time:137310, text: It's that same old tingle that I a feel inside, and then that elevator starts its ride and darling Hello, sweet heart.
+start_time:137390, end_time:140790, text: Here's my coat, and you see this here hat?
+start_time:140950, end_time:142990, text: I want you to guard it with your life.
+start_time:143830, end_time:144990, text: It was a gift from my mother.
+start_time:145230, end_time:146790, text: Yes, mister Scudo.
+start_time:147870, end_time:148710, text: Yeah, that's for you.
+start_time:148910, end_time:150510, text: Thank you, sir.
+start_time:151590, end_time:152310, text: Geo.
+start_time:152590, end_time:153670, text: Hey, come on.
+start_time:153870, end_time:154550, text: How are you, Pally?
+start_time:154550, end_time:155310, text: Good to see you.
+start_time:155870, end_time:157030, text: Oh, thank you.
+start_time:157070, end_time:157710, text: That's unnecessary.
+start_time:158430, end_time:159110, text: Come on, let's go.
+start_time:159230, end_time:163630, text: On the album, I saw this kid Bobby ride that two and a half years ago, South Philly.
+start_time:163830, end_time:166070, text: Nobody knew who he was, they know him now.
+start_time:166910, end_time:167270, text: Hey.
+start_time:168270, end_time:169110, text: Give me the school's hat.
+start_time:169230, end_time:170350, text: But he said to go.
+start_time:170430, end_time:171470, text: I know I heard it.
+start_time:172400, end_time:173280, text: Give me that, right?
+start_time:174870, end_time:178470, text: Yeah, I should stay away, but what can I do?
+start_time:178550, end_time:180870, text: Why hear your name?
+start_time:181670, end_time:183470, text: Hey, we respect you watching.
+start_time:183790, end_time:184950, text: Shut up, she wants to.
+start_time:184950, end_time:185910, text: All right, tough guy, yeah.
+start_time:186030, end_time:186510, text: What you gonna do?
+start_time:189920, end_time:206360, text: It's Tony Leap.
+start_time:215250, end_time:216650, text: You put your hands on me, you punk.
+start_time:216810, end_time:218770, text: Do yourself a favor, go home with your friends.
+start_time:219210, end_time:220410, text: You don't tell me where to go.
+start_time:220570, end_time:221410, text: You know who I am?
+start_time:221610, end_time:222730, text: I'm going back in there.
+start_time:224530, end_time:225770, text: Oh!
+start_time:226610, end_time:229850, text: Oh!
+start_time:250420, end_time:254060, text: You tell Julie pull down, if I don't get my hand, I'm gonna burn his joint down.
+start_time:254060, end_time:254740, text: You hear me?
+start_time:254740, end_time:256380, text: Turn up, I swear to god it's gonna turn up.
+start_time:256420, end_time:256820, text: Really?
+start_time:257220, end_time:261220, text: You tell that f that you bastard, I don't get my hand, I'll burn the copper down.
+start_time:266510, end_time:268710, text: You might have to go back to driving garbage trucks.
+start_time:269430, end_time:273670, text: Jesus Christ, Scuto's out of his mind.
+start_time:276140, end_time:277700, text: hmm, You earned that money tonight.
+start_time:278340, end_time:278700, text: What?
+start_time:278740, end_time:280140, text: I thought you were gonna kill that guy.
+start_time:280140, end_time:281940, text: Yeah, but him than me.
+start_time:284300, end_time:296640, text: So what are you gonna do while we're closed I don't know Maybe go work on my uncle's pizza joint You I'm gonna drink for two months 哈哈哈哈哈哈。
+start_time:300600, end_time:301560, text: Take me home, Lip.
+start_time:301680, end_time:302320, text: Thank you.
+start_time:302440, end_time:302840, text: Good luck.
+start_time:302840, end_time:303080, text: Good luck.
+start_time:303240, end_time:304520, text: See you online.
+start_time:304800, end_time:306600, text: No, you shouldn't, that should not happen.
+start_time:306640, end_time:307400, text: No, I don't wanna be in.
+start_time:309770, end_time:310290, text: My hat.
+start_time:312040, end_time:315120, text: Her was missing, so I looked into it.
+start_time:316120, end_time:317200, text: I wanted to kill that broad.
+start_time:317240, end_time:319160, text: No, no, wasn't her fault.
+start_time:319360, end_time:321520, text: Who had the balls to clip GEO's hat?
+start_time:322220, end_time:323020, text: Don't worry about that.
+start_time:323100, end_time:323540, text: Good care.
+start_time:323780, end_time:325380, text: Yeah, I hope you give him some meat.
+start_time:327010, end_time:329610, text: Yeah, take this, put it in your cake.
+start_time:329890, end_time:331170, text: No, no thanks.
+start_time:331690, end_time:333050, text: It was a pleasure, mister Luscado.
+start_time:333730, end_time:335330, text: Bullshit, take it.
+start_time:335490, end_time:341220, text: And from now on, you don't call me mister Luscado. You hear me? I'm your pal, chief.

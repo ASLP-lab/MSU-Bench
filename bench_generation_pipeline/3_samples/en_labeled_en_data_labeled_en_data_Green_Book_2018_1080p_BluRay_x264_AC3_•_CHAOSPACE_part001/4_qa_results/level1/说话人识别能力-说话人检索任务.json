@@ -1,0 +1,95 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人检索任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人检索任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_016",
+            "start_time": 140.95,
+            "end_time": 142.99,
+            "transcript": "I want you to guard it with your life.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_018",
+            "start_time": 145.23,
+            "end_time": 146.79,
+            "transcript": "Yes, Mr. Scudo.",
+            "spk_id": "spk_02",
+            "spk_index": "spk_3",
+            "age": "青年",
+            "gender": "女声",
+            "emotion": "中性",
+            "accent": "通用美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "音频中在第 140.95 秒到第 142.99 秒的说话人，是整段对话中第几个出现的说话人？",
+      "question_type": "time_index",
+      "options": [
+        "A. spk_10",
+        "B. spk_2",
+        "C. spk_3",
+        "D. 无法判断（信息不足以确定说话人）"
+      ],
+      "answer": "B",
+      "answer_text": "spk_2",
+      "rationale": [
+        "hallucination",
+        "ground truth",
+        "wrong speaker",
+        "unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘I want you to guard it with your life.’的说话人，是整段对话中第几个出现的说话人？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. spk_3",
+        "B. 无法判断（信息不足以确定说话人）",
+        "C. spk_10",
+        "D. spk_2"
+      ],
+      "answer": "D",
+      "answer_text": "spk_2",
+      "rationale": [
+        "wrong speaker",
+        "unknown",
+        "hallucination",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "音频中在第 140.95 秒到第 142.99 秒说过‘I want you to guard it with your life.’的男性说话人，是整段对话中第几个出现的说话人？",
+      "question_type": "complex_index",
+      "options": [
+        "A. 无法判断（信息不足以确定说话人）",
+        "B. spk_2",
+        "C. spk_3",
+        "D. spk_10"
+      ],
+      "answer": "B",
+      "answer_text": "spk_2",
+      "rationale": [
+        "unknown",
+        "ground truth",
+        "wrong speaker",
+        "hallucination"
+      ]
+    }
+  ]
+}

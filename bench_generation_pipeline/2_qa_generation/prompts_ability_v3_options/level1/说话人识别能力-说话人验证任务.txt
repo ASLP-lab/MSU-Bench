@@ -1,0 +1,139 @@
+# 多说话人说话人识别能力：说话人验证（Speaker Verification｜选择题｜统一输出格式｜每题型同时出“是/否”两题）
+你是 QA 构造专家。输入为多说话人转录与对应音频（含 spk_id、transcript，可能含 start_time/end_time/seg_id，且你可以听音频；可能含 gender/age/emotion/accent 等 meta）。
+目标：构造客观单选题评估模型的【说话人验证能力】——判断两段语音/转录是否来自同一位说话人（same / different）。
+
+================================================
+【重要总原则】
+- ground truth 只能由输入标注决定：比较两段片段的 spk_id 是否相同（相同=同一人；不同=不同人）。不得凭主观听感“猜”正确答案。
+- 不使用 turn/轮次/turn_index 定位。
+- 文本定位用到的 content 必须逐字来自输入 transcript（允许截取连续子串，但不得改写/同义替换/补全）。
+- 片段选择要尽量减少投机线索：两段音频时长尽量接近、内容都为完整有意义表达、避免纯语气词（“嗯/啊/哦/好/对”等）。
+- 若你无法保证唯一正确（例如 spk_id 缺失、片段过短、定位不唯一），输出 []。
+
+================================================
+【spk_index 定义（用于 meta 记录，不得在题干/选项中泄露）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  - 第一个首次出现的 spk_id => spk_1
+  - 第二个首次出现的 spk_id => spk_2
+  - 以此类推
+- 注意：本任务题干/选项/答案/解析中严禁出现 spk_id 与 spk_index；它们只允许出现在 speaker_meta 字段里。
+
+================================================
+【固定片段选择与输出（先选一次，全题复用｜强制执行）】
+你必须从输入转录中挑选两位不同说话人的片段，并且“每位说话人各挑 2 条 seg”，用于构造同一题型下的“否题/是题”：
+- spk_a：说话人 A（同一 spk_id），至少 2 个 seg：spk_a[0], spk_a[1]
+- spk_b：说话人 B（同一 spk_id，且与 A 不同），至少 2 个 seg：spk_b[0], spk_b[1]
+
+强制要求：
+1) spk_a 列表内所有 seg 的 spk_id 必须相同；spk_b 列表内所有 seg 的 spk_id 必须相同；且 spk_a 的 spk_id ≠ spk_b 的 spk_id。
+2) spk_a[0] 与 spk_a[1] 必须是同一说话人的不同 seg，并且尽量相隔一段时间，避免上下文过近：
+   - 若有时间字段：要求 |spk_a[1].start_time - spk_a[0].start_time| ≥ 10 秒（建议≥15秒更好）。
+   - 若无法满足，则继续向后找更远的 seg，直到满足；找不到则输出 []。
+3) 同样要求 spk_b[0] 与 spk_b[1] 也尽量有时间间隔（同上阈值）；找不到则输出 []。
+4) 四个 seg 都必须可唯一定位（seg_id 或 start/end 或 transcript 组合能定位），且都不能过短/纯语气词。
+5) 四个 seg 的时长尽量接近，避免模型靠长度投机。
+
+================================================
+【输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组：
+- 第 1 个元素：只包含 speaker_meta（spk_a / spk_b 各自是 seg 列表，至少 2 条）
+- 后续元素：每个元素是一道选择题对象
+注意：本任务要求“每个 question_type 都尽量生成两题”：
+- different 题：spk_a[0] vs spk_b[0] => 答案应为“否”
+- same 题：spk_a[0] vs spk_a[1] => 答案应为“是”
+若某个题型无法生成两题（例如缺时间字段无法做 time_index），允许跳过该题型；但只要生成了该题型，就必须同时包含 same/different 两题，否则该题型不生成。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [
+        {"seg_id":"...", "start_time": xxx, "end_time": xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_1",
+         "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"},
+        {"seg_id":"...", "start_time": xxx, "end_time": xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_1",
+         "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}
+      ],
+      "spk_b": [
+        {"seg_id":"...", "start_time": xxx, "end_time": xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_2",
+         "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"},
+        {"seg_id":"...", "start_time": xxx, "end_time": xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_2",
+         "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}
+      ]
+    }
+  },
+  {
+    "question": "...",
+    "question_type": "no_index|time_index|transcript_index|complex_index",
+    "pair": {"left":"spk_a[0]", "right":"spk_b[0]"}  # different 题固定用 a0 vs b0
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  },
+  {
+    "question": "...",
+    "question_type": "no_index|time_index|transcript_index|complex_index",
+    "pair": {"left":"spk_a[0]", "right":"spk_a[1]"}  # same 题固定用 a0 vs a1
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+字段硬约束：
+- pair 字段用于明确该题使用哪两段 seg（尤其 no_index 不含时间/文本时必须靠 pair 才能裁剪对应音频）。
+- question/options/answer_text 中不得出现 spk_id/spk_index/seg_id；pair 允许引用 spk_a/spk_b 的索引表示。
+- options 必须为 4 个且顺序打乱；answer 必须指向 ground truth；answer_text 不含字母前缀。
+- rationale 必须与 A-D 一一对应：
+  - ground truth：正确的“同一人/不同人”判断
+  - wrong speaker：与 ground truth 相反的判断（same ↔ different）
+  - hallucination：不得等价于“是/否”的无效回答（例如“部分相同/刻意变声/无法二分类”等）
+  - unknown：固定 “无法判断（信息不足）”
+
+================================================
+【通用选项构造规则（所有模板适用｜4选1）】
+对每道题，先由标注确定关系 R：
+- 若 pair.left 对应 seg 的 spk_id == pair.right 对应 seg 的 spk_id => R = “是，同一个人”
+- 否则 => R = “否，不是同一个人”
+
+四个选项必须同时包含（顺序打乱）：
+1) ground truth：与 R 完全一致
+2) wrong speaker：与 R 相反
+3) hallucination：不等价于“是/否”的无效回答（不得暗含是/否）
+4) unknown：固定 “无法判断（信息不足）”
+
+================================================
+【模板生成规则（每个 question_type 必须成对生成）】
+你需要尝试生成 4 类 question_type，每类最多 2 题（different + same）：
+
+- no_index：
+  - different：pair=spk_a[0] vs spk_b[0]
+  - same：pair=spk_a[0] vs spk_a[1]
+  题干固定： “下面两条音频中的说话人是同一个说话人吗？”
+  条件：题干不得出现时间、transcript、seg_id 等标识信息。
+
+- time_index：
+  - 必须使用 pair 指向的两段 seg 的 start_time/end_time 来写题干
+  - different 与 same 都各写一题
+  题干格式： “音频中第 start1 秒到第 end1 秒的说话人与第 start2 秒到第 end2 秒的说话人，是同一个说话人吗？”
+  条件：两段都必须有 start/end，否则跳过 time_index（整类不生成）。
+
+- transcript_index：
+  - content_a/content_b 必须分别取自 pair.left/pair.right 的 transcript（逐字，可截取连续子串）
+  - different 与 same 都各写一题
+  题干格式： “音频中说过‘content_a’的说话人与说过‘content_b’的说话人，是同一个说话人吗？”
+  条件：两段 content 都需在全对话中唯一定位到对应 seg，否则跳过 transcript_index（整类不生成）。
+
+- complex_index：
+  - 同时提供时间+文本（来自 pair.left/pair.right 各自同一 seg）
+  - different 与 same 都各写一题
+  题干格式： “音频中第 start1 秒到第 end1 秒说过‘content_a’的说话人与第 start2 秒到第 end2 秒说过‘content_b’的说话人，是同一个说话人吗？”
+  条件：两段都需具备 start/end/transcript 且可唯一定位，否则跳过 complex_index（整类不生成）。
+
+================================================
+【全局失败条件（任一触发直接输出 []）】
+- 无法找到两位不同说话人（spk_a 与 spk_b）且各自至少 2 个可唯一定位的 seg
+- 无法让同一说话人两段 seg 之间满足“时间间隔阈值”（建议≥10秒）
+- 所有 question_type 都无法成对生成（same+different）
+
+开始生成：请仅输出符合格式的 JSON；若无法保证唯一正确则输出 []。

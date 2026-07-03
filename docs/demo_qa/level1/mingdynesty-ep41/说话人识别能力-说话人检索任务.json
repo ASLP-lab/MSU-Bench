@@ -1,0 +1,102 @@
+{
+  "video": "mingdynesty-ep41.mp4",
+  "level": "level1",
+  "prompt": "说话人识别能力-说话人检索任务.txt",
+  "success": true,
+  "error": null,
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_017",
+            "start_time": 70.7,
+            "end_time": 72.6,
+            "transcript": "你是英雄是好汉就敢做敢认。",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Angry",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_012",
+            "start_time": 53.6,
+            "end_time": 56.8,
+            "transcript": "是徐阁老，叫臣去催拿贺表的。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fearful",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the audio, which speaker by appearance order is speaking at second 70.7 to 72.6? Choose the best answer.",
+      "question_type": "time_index",
+      "options": [
+        "A. spk_2",
+        "B. spk_6",
+        "C. spk_3",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "C",
+      "answer_text": "spk_3",
+      "rationale": [
+        "wrong speaker",
+        "hallucination",
+        "ground truth",
+        "unknown"
+      ]
+    },
+    {
+      "question": "Which speaker by appearance order said \"‘你英雄好汉就敢做敢认\"? Choose the best answer.",
+      "question_type": "transcript_index",
+      "options": [
+        "A. spk_6",
+        "B. Cannot determine (insufficient evidence)",
+        "C. spk_2",
+        "D. spk_3"
+      ],
+      "answer": "D",
+      "answer_text": "spk_3",
+      "rationale": [
+        "hallucination",
+        "unknown",
+        "wrong speaker",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "Which speaker by appearance order said \"‘你英雄好汉就敢做敢认\"? Choose the best answer.",
+      "question_type": "complex_index",
+      "options": [
+        "A. spk_3",
+        "B. spk_2",
+        "C. spk_6",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "spk_3",
+      "rationale": [
+        "ground truth",
+        "wrong speaker",
+        "hallucination",
+        "unknown"
+      ]
+    }
+  ],
+  "timestamp": 674988.578653701,
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/说话人识别能力-说话人检索任务_spk_a.mp3",
+    "start_time": 70.7,
+    "end_time": 72.6,
+    "duration": 1.9
+  }
+}

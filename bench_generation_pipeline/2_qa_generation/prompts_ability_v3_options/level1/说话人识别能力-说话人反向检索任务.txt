@@ -1,0 +1,111 @@
+# 多说话人说话人识别能力：说话人反向检索（选择题｜统一输出格式｜仅 1 题）
+你是 QA 构造专家。输入为多说话人转录与对应音频（含 spk_id、transcript，可能含 start_time/end_time/seg_id；可能含 gender 等 meta，且你可以听音频）。
+目标：构造 1 道客观单选题，评估模型的【说话人反向检索能力（who said what: retrieval from candidate utterances）】：
+题目给出“对话中第 x 个出现的说话人（spk_index）”，并在题干列出 5-6 句候选语句（编号 1..N），要求模型选择“哪些语句是该说话人说过的”。
+
+================================================
+【核心定义：spk_index（必须严格遵守）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  - 第一个首次出现的 spk_id => spk_1
+  - 第二个首次出现的 spk_id => spk_2
+  - 以此类推
+- 题干、选项、答案中只允许出现 spk_index（spk_1/spk_2/...），严禁出现原始 spk_id。
+
+================================================
+【重要总原则】
+- 候选语句必须逐字来自输入 transcript（除了“编造句”）；不得改写、概括、合并、补全。
+- 候选语句尽量来自同一段对话/同一话题窗口，长度相近，避免靠长度或风格投机。
+- 目标说话人的真语句数量必须为 3-4 句；其余包含：
+  - 1 句：其他说话人真实说过的话（用于 wrong speaker）
+  - 1 句：编造一句“看起来与当前说话人讨论内容相似，但对话中从未出现过”的话（用于 hallucination）
+- 若无法满足上述数量与唯一性约束（例如目标说话人不足 3 句有效发言），输出 []。
+
+================================================
+【固定片段选择与输出（先选一次，全题复用｜强制执行）】
+在生成题目之前，必须先从输入转录中挑选两个不同说话人的“代表性单句片段（segment）”，并只输出一次 speaker_meta：
+- 片段 A：来自目标说话人（后续题干的 spk_x），记为 spk_a
+- 片段 B：来自另一个说话人（用于提供“其他说话人真实语句”），记为 spk_b
+要求：
+- spk_a 与 spk_b 必须 spk_id 不同，且都可唯一定位（seg_id 或 start/end 或 transcript 组合能定位）
+- spk_a 片段必须属于目标说话人（其 spk_index 将用于题干 “spk_x”）
+- 若无法唯一定位任一片段 => 输出 []
+
+注意：本任务题干不使用 <spk_a>/<spk_b> 代号；代号只用于 speaker_meta 输出结构对齐。
+
+================================================
+【最终输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组，结构固定为：
+- 第 1 个元素：只包含 speaker_meta（spk_a 与 spk_b 的单句片段信息）
+- 第 2 个元素：唯一的一道题（question_type 固定为 reverse_retrival）
+若无法生成该题 => 输出 []（不要只输出 speaker_meta）。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [{"seg_id": "...", "start_time": xxx, "end_time": xxx, "transcript": "...", "spk_id": "...", "spk_index": "spk_1", "age": "...|unknown|null", "gender": "...|unknown|null", "emotion": "...|unknown|null", "accent": "...|unknown|null"}],
+      "spk_b": [{"seg_id": "...", "start_time": xxx, "end_time": xxx, "transcript": "...", "spk_id": "...", "spk_index": "spk_2", "age": "...|unknown|null", "gender": "...|unknown|null", "emotion": "...|unknown|null", "accent": "...|unknown|null"}]
+    }
+  },
+  {
+    "question": "...",
+    "question_type": "reverse_retrival",
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+字段硬约束：
+- speaker_meta 中 spk_a/spk_b 的 seg_id/start_time/end_time/transcript 必须来自真实输入，且可唯一定位。
+- options 必须 4 个且顺序打乱；answer 指向唯一正确；answer_text 不含字母前缀。
+- rationale 必须与 A-D 对齐，标签含义固定：
+  - ground truth：正确的“语句编号集合”
+  - wrong speaker：集合中至少包含 1 条“其他说话人真实语句编号”，或漏掉 1 条目标说话人真语句编号
+  - hallucination：集合中包含“编造句”的编号（且该编造句不在对话中出现）
+  - unknown：固定 “无法判断（信息不足以确定）”
+
+================================================
+【题目生成：reverse_retrival（仅 1 题）】
+question_type = "reverse_retrival"
+
+【题干格式（固定）】
+“在下面的语句中，{TARGET} 说过哪些话？请选择最符合的一项。
+（其中 {TARGET} = 对话中第 x 个出现的说话人）
+候选语句：
+1) s1
+2) s2
+...
+N) sN”
+
+其中：
+- TARGET 必须取自 speaker_meta.spk_a.spk_index（例如 spk_3）
+- N 必须为 5 或 6
+- 候选语句构成规则（严格执行）：
+  - 目标说话人真语句：从全对话中抽取 3-4 句由 TARGET 说过的 transcript（逐字拷贝；避免“嗯/啊/哦”等无意义）
+  - 其他说话人真语句：抽取 1 句由非 TARGET 说过的 transcript（优先取 speaker_meta.spk_b 的同话题窗口语句）
+  - 编造句：编写 1 句“语气/内容与 TARGET 当前话题很像”的句子，但必须确保该句在全对话 transcript 中完全不存在（不得与任何真实句完全相同）
+- 候选语句推荐来自同一话题窗口（例如同一时间段附近），让干扰更自然。
+
+【选项格式（语句集合｜用编号）】
+- 选项是“编号集合”，格式示例： “1,3,4” 或 “2,3,5,6”
+- 四个选项必须对应四种 rationale 标签：
+  A. ground truth：恰好等于 {所有 TARGET 真语句编号集合}
+  B. wrong speaker：在 ground truth 基础上（任选一种方式）：
+     - 把 1 个 TARGET 真语句编号替换为“其他说话人真语句编号”，或
+     - 漏掉 1 个 TARGET 真语句编号
+  C. hallucination：必须包含“编造句编号”（可同时包含若干真语句编号，但只要含编造句编号即为 hallucination）
+  D. unknown：固定写法：无法判断（信息不足以确定）
+
+【答案字段】
+- answer 指向 ground truth 所在字母
+- answer_text 为该 ground truth 的编号集合字符串（不带字母前缀）
+
+================================================
+【唯一性与质量约束（不满足则输出 []）】
+- TARGET 至少能抽到 3 句有效真语句（完整可理解表达，且逐字存在于 transcript）
+- 候选语句中“编造句”必须能确认不在全对话 transcript 中出现（完全匹配不存在）
+- 四个选项互不相同，且只有一个选项严格等于 ground truth 集合
+- 候选语句尽量长度相近、同主题，避免一眼可判的风格差异
+
+开始生成：请仅输出符合格式的 JSON；若无法满足约束则输出 []。

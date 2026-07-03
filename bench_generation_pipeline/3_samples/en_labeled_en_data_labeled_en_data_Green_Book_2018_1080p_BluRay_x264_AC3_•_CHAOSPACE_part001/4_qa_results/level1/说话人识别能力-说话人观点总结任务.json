@@ -1,0 +1,267 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人观点总结任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人观点总结任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_035",
+            "start_time": 172.4,
+            "end_time": 173.28,
+            "transcript": "Give me the hat, all right?",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "带有纽约地区特征的美式英语"
+          },
+          {
+            "seg_id": "seg_063",
+            "start_time": 286.2,
+            "end_time": 290.88,
+            "transcript": "I don't know. Maybe go work at my uncle's pizza joint. You?",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          },
+          {
+            "seg_id": "seg_082",
+            "start_time": 331.69,
+            "end_time": 333.05,
+            "transcript": "It was a pleasure, Mr. Scudo, really.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_040",
+            "start_time": 184.95,
+            "end_time": 185.91,
+            "transcript": "All right, tough guy.",
+            "spk_id": "spk_06",
+            "spk_index": "spk_6",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "厌恶",
+            "accent": "通用美式英语"
+          },
+          {
+            "seg_id": "seg_047",
+            "start_time": 220.57,
+            "end_time": 221.41,
+            "transcript": "You know who I am?",
+            "spk_id": "spk_06",
+            "spk_index": "spk_6",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "通用美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面单人讲话音频中的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "no_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 一位循规蹈矩、为保住工作而极力避免任何冲突的员工。",
+        "B. 一位傲慢自大、试图用身份压人但外强中干的挑衅者。",
+        "C. 无法判断（证据不足以唯一推出观点/变化）。",
+        "D. 一位务实强硬、必要时会使用暴力但懂等级规矩的人。"
+      ],
+      "answer": "D",
+      "answer_text": "一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "音频中第 172.4 秒到第 173.28 秒的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "time_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+        "B. 一位循规蹈矩、为保住工作而极力避免任何冲突的员工。",
+        "C. 一位傲慢自大、试图用身份压人但外强中干的挑衅者。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）。"
+      ],
+      "answer": "A",
+      "answer_text": "一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘Give me the hat, all right?’的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "transcript_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 一位傲慢自大、试图用身份压人但外强中干的挑衅者。",
+        "B. 一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+        "C. 无法判断（证据不足以唯一推出观点/变化）。",
+        "D. 一位循规蹈矩、为保住工作而极力避免任何冲突的员工。"
+      ],
+      "answer": "B",
+      "answer_text": "一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "音频中第 172.4 秒到第 173.28 秒说过‘Give me the hat, all right?’的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "complex_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 无法判断（证据不足以唯一推出观点/变化）。",
+        "B. 一位循规蹈矩、为保住工作而极力避免任何冲突的员工。",
+        "C. 一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+        "D. 一位傲慢自大、试图用身份压人但外强中干的挑衅者。"
+      ],
+      "answer": "C",
+      "answer_text": "一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+      "rationale": [
+        "A. unknown",
+        "B. hallucination",
+        "C. ground truth",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "在整段对话中，第 2 个出现的说话人（spk_2），在整段对话中的整体立场是什么？",
+      "question_type": "speaker_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+        "B. 一位傲慢自大、试图用身份压人但外强中干的挑衅者。",
+        "C. 一位循规蹈矩、为保住工作而极力避免任何冲突的员工。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）。"
+      ],
+      "answer": "A",
+      "answer_text": "一位务实强硬、必要时会使用暴力但懂等级规矩的人。",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "下面单人讲话音频中的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "no_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+        "B. 无法判断（证据不足以唯一推出观点/变化）。",
+        "C. 从对上司充满信心 → 到因打架事件被训斥后感到害怕。",
+        "D. 从言语上傲慢挑衅 → 到在肢体冲突中被彻底击败。"
+      ],
+      "answer": "A",
+      "answer_text": "从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+      "rationale": [
+        "A. ground truth",
+        "B. unknown",
+        "C. hallucination",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "音频中第 172.4 秒到第 173.28 秒的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "time_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从言语上傲慢挑衅 → 到在肢体冲突中被彻底击败。",
+        "B. 从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+        "C. 无法判断（证据不足以唯一推出观点/变化）。",
+        "D. 从对上司充满信心 → 到因打架事件被训斥后感到害怕。"
+      ],
+      "answer": "B",
+      "answer_text": "从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "音频中说过‘Give me the hat, all right?’的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "transcript_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从对上司充满信心 → 到因打架事件被训斥后感到害怕。",
+        "B. 从言语上傲慢挑衅 → 到在肢体冲突中被彻底击败。",
+        "C. 从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）。"
+      ],
+      "answer": "C",
+      "answer_text": "从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 172.4 秒到第 173.28 秒说过‘Give me the hat, all right?’的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "complex_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 无法判断（证据不足以唯一推出观点/变化）。",
+        "B. 从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+        "C. 从言语上傲慢挑衅 → 到在肢体冲突中被彻底击败。",
+        "D. 从对上司充满信心 → 到因打架事件被训斥后感到害怕。"
+      ],
+      "answer": "B",
+      "answer_text": "从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "在整段对话中，第 2 个出现的说话人（spk_2），在整段对话中立场如何变化？",
+      "question_type": "speaker_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从言语上傲慢挑衅 → 到在肢体冲突中被彻底击败。",
+        "B. 从对上司充满信心 → 到因打架事件被训斥后感到害怕。",
+        "C. 无法判断（证据不足以唯一推出观点/变化）。",
+        "D. 从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。"
+      ],
+      "answer": "D",
+      "answer_text": "从对自己工作前景感到不确定 → 到获得上司肯定后感到安心。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    }
+  ]
+}

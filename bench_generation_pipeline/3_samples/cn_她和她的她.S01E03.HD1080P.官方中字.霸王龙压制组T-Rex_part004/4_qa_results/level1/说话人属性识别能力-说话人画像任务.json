@@ -1,0 +1,167 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人属性识别能力-说话人画像任务.txt",
+  "prompt_relpath": "level1/说话人属性识别能力-说话人画像任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_031",
+            "start_time": 159.31,
+            "end_time": 163.83,
+            "transcript": "如果当初你有好好处理这件事情，我们家会变成这个样子吗？",
+            "spk_id": "spk_07",
+            "spk_index": "spk_7",
+            "age": "中年",
+            "gender": "女声",
+            "emotion": "悲伤",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_007",
+            "start_time": 49.54,
+            "end_time": 54.22,
+            "transcript": "验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_3",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面单人讲话音频中，说话人的说话人画像最接近以下哪一项？",
+      "question_type": "no_index",
+      "options": [
+        "A. 性别：男声；年龄：青年；情感：悲伤；口音：标准普通话",
+        "B. 性别：女声；年龄：中年；情感：悲伤；口音：标准普通话",
+        "C. 性别：男声；年龄：中年；情感：中性；口音：标准普通话",
+        "D. 无法判断（信息不足以确定）"
+      ],
+      "answer": "B",
+      "answer_text": "性别：女声；年龄：中年；情感：悲伤；口音：标准普通话",
+      "rationale": [
+        "hallucination",
+        "ground truth",
+        "wrong speaker",
+        "unknown"
+      ]
+    },
+    {
+      "question": "音频中在第 159.31 秒到第 163.83 秒的说话人的说话人画像最接近以下哪一项？",
+      "question_type": "time_index",
+      "options": [
+        "A. 无法判断（信息不足以确定）",
+        "B. 性别：男声；年龄：青年；情感：悲伤；口音：标准普通话",
+        "C. 性别：男声；年龄：中年；情感：中性；口音：标准普通话",
+        "D. 性别：女声；年龄：中年；情感：悲伤；口音：标准普通话"
+      ],
+      "answer": "D",
+      "answer_text": "性别：女声；年龄：中年；情感：悲伤；口音：标准普通话",
+      "rationale": [
+        "unknown",
+        "hallucination",
+        "wrong speaker",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过‘如果当初你有好好处理这件事情’的说话人的说话人画像最接近以下哪一项？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 性别：女声；年龄：中年；情感：悲伤；口音：标准普通话",
+        "B. 性别：男声；年龄：中年；情感：中性；口音：标准普通话",
+        "C. 性别：男声；年龄：青年；情感：悲伤；口音：标准普通话",
+        "D. 无法判断（信息不足以确定）"
+      ],
+      "answer": "A",
+      "answer_text": "性别：女声；年龄：中年；情感：悲伤；口音：标准普通话",
+      "rationale": [
+        "ground truth",
+        "wrong speaker",
+        "hallucination",
+        "unknown"
+      ]
+    },
+    {
+      "question": "在整段对话中，第 7 个出现的说话人的性别是什么？",
+      "question_type": "speaker_index",
+      "options": [
+        "A. 男声",
+        "B. 童声",
+        "C. 无法判断（信息不足以确定）",
+        "D. 女声"
+      ],
+      "answer": "D",
+      "answer_text": "女声",
+      "rationale": [
+        "wrong speaker",
+        "hallucination",
+        "unknown",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "在第 159.31 秒到第 163.83 秒说过‘我们家会变成这个样子吗？’的说话人，其说话人画像最接近以下哪一项？",
+      "question_type": "complex_index",
+      "options": [
+        "A. 性别：男声；年龄：中年；情感：中性；口音：标准普通话",
+        "B. 性别：女声；年龄：中年；情感：悲伤；口音：标准普通话",
+        "C. 无法判断（信息不足以确定）",
+        "D. 性别：男声；年龄：青年；情感：悲伤；口音：标准普通话"
+      ],
+      "answer": "B",
+      "answer_text": "性别：女声；年龄：中年；情感：悲伤；口音：标准普通话",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "unknown",
+        "hallucination"
+      ]
+    },
+    {
+      "question": "在整段音频中，说话人画像为“性别：女声；年龄：中年；情感：悲伤；口音：标准普通话”的说话人有哪些？（用 spk_index 作答）请选择最符合的一项。",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. spk_2、spk_7",
+        "B. spk_7、spk_99",
+        "C. spk_7",
+        "D. 无法判断（信息不足以确定）"
+      ],
+      "answer": "C",
+      "answer_text": "spk_7",
+      "rationale": [
+        "wrong speaker",
+        "hallucination",
+        "ground truth",
+        "unknown"
+      ]
+    },
+    {
+      "question": "在整段音频中，说话人画像为“性别：女声；年龄：中年；情感：悲伤；口音：标准普通话”的说话人一共有几个？请选择最符合的一项。",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 8 个",
+        "B. 1 个",
+        "C. 2 个",
+        "D. 无法判断（信息不足以确定）"
+      ],
+      "answer": "B",
+      "answer_text": "1 个",
+      "rationale": [
+        "hallucination",
+        "ground truth",
+        "wrong speaker",
+        "unknown"
+      ]
+    }
+  ]
+}

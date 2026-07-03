@@ -1,0 +1,77 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人计数任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人计数任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_001",
+            "start_time": 11.46,
+            "end_time": 15.06,
+            "transcript": "谢志东在老人院被人杀了，严胜华是老人院的护理长。",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_002",
+            "start_time": 17.3,
+            "end_time": 18.22,
+            "transcript": "谢志忠是谁？",
+            "spk_id": "spk_02",
+            "spk_index": "spk_2",
+            "age": "青年",
+            "gender": "女声",
+            "emotion": "惊讶",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "这段音频中一共出现了多少个不同的说话人？",
+      "question_type": "speech_index",
+      "options": [
+        "A. 3位",
+        "B. 7位",
+        "C. 8位",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "C",
+      "answer_text": "8位",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中在第 15 秒到第 44 秒这段时间内，一共出现了多少个不同的说话人？",
+      "question_type": "time_index",
+      "options": [
+        "A. 6位",
+        "B. 3位",
+        "C. 2位",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "B",
+      "answer_text": "3位",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人验证任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人验证任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_015",
+            "start_time": 137.39,
+            "end_time": 140.79,
+            "transcript": "Here's my coat, and you see this here hat?",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          },
+          {
+            "seg_id": "seg_045",
+            "start_time": 216.81,
+            "end_time": 218.77,
+            "transcript": "Do yourself a favor, go home with your friends.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_028",
+            "start_time": 159.23,
+            "end_time": 163.63,
+            "transcript": "On the album, I saw this kid Bobby Rydell two and a half years ago, South Philly.",
+            "spk_id": "spk_04",
+            "spk_index": "spk_4",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          },
+          {
+            "seg_id": "seg_074",
+            "start_time": 312.04,
+            "end_time": 315.12,
+            "transcript": "Your hat was missing, so I looked into it.",
+            "spk_id": "spk_04",
+            "spk_index": "spk_4",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面两条音频中的说话人是同一个说话人吗？",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 是，是同一个人",
+        "B. 两段音频中说话人的音色不同，但可能是同一人故意变声",
+        "C. 无法判断（信息不足）",
+        "D. 否，不是同一个人"
+      ],
+      "answer": "D",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "下面两条音频中的说话人是同一个说话人吗？",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 是，是同一个人",
+        "B. 否，不是同一个人",
+        "C. 两段音频中说话人的音色不同，但可能是同一人故意变声",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "A",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 137.39 秒到第 140.79 秒的说话人与第 159.23 秒到第 163.63 秒的说话人，是同一个说话人吗？",
+      "question_type": "time_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 否，不是同一个人",
+        "B. 两段音频中说话人的音色不同，但可能是同一人故意变声",
+        "C. 是，是同一个人",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "A",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 137.39 秒到第 140.79 秒的说话人与第 216.81 秒到第 218.77 秒的说话人，是同一个说话人吗？",
+      "question_type": "time_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 无法判断（信息不足）",
+        "B. 两段音频中说话人的音色不同，但可能是同一人故意变声",
+        "C. 否，不是同一个人",
+        "D. 是，是同一个人"
+      ],
+      "answer": "D",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "A. unknown",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过“Here's my coat, and you see this here hat?”的说话人与说过“On the album, I saw this kid Bobby Rydell two and a half years ago, South Philly.”的说话人，是同一个说话人吗？",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 无法判断（信息不足）",
+        "B. 否，不是同一个人",
+        "C. 是，是同一个人",
+        "D. 两段音频中说话人的音色不同，但可能是同一人故意变声"
+      ],
+      "answer": "B",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "音频中说过“Here's my coat, and you see this here hat?”的说话人与说过“Do yourself a favor, go home with your friends.”的说话人，是同一个说话人吗？",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 两段音频中说话人的音色不同，但可能是同一人故意变声",
+        "B. 否，不是同一个人",
+        "C. 是，是同一个人",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "C",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 137.39 秒到第 140.79 秒说过“Here's my coat, and you see this here hat?”的说话人与第 159.23 秒到第 163.63 秒说过“I saw this kid Bobby Rydell”的说话人，是同一个说话人吗？",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 是，是同一个人",
+        "B. 否，不是同一个人",
+        "C. 无法判断（信息不足）",
+        "D. 两段音频中说话人的音色不同，但可能是同一人故意变声"
+      ],
+      "answer": "B",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "音频中第 137.39 秒到第 140.79 秒说过“Here's my coat, and you see this here hat?”的说话人与第 216.81 秒到第 218.77 秒说过“go home with your friends”的说话人，是同一个说话人吗？",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 两段音频中说话人的音色不同，但可能是同一人故意变声",
+        "B. 否，不是同一个人",
+        "C. 无法判断（信息不足）",
+        "D. 是，是同一个人"
+      ],
+      "answer": "D",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    }
+  ]
+}

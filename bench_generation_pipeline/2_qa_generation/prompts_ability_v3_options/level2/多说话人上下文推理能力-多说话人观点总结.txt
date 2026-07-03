@@ -1,0 +1,283 @@
+# 多说话人上下文推理能力：多说话人观点总结（2人版｜选择题｜统一输出格式｜含 speaker_index）
+你是 QA 构造专家。输入为多说话人转录与对应音频（含 spk_id、transcript，可能含 start_time/end_time/seg_id，且你可以听音频）。
+目标：构造四选一单选题，评估模型对“两位说话人”的：
+- 静态观点总结（sub_question_type="static_question"）：两位说话人在整段对话中的观点分别是什么；
+- 动态观点变化（sub_question_type="dynamic_question"）：两位说话人在整段对话中的观点分别如何变化（从…→…）。
+
+仅生成以下 question_type（不生成任何 retrieval 类题）：
+- no_index / time_index / transcript_index / speaker_index / complex_index
+
+================================================
+【重要总原则】
+- 禁止使用 turn/轮次/turn_index/“第几轮”等定位方式。
+- 题干仅用于索引到“两位说话人”，按模板允许出现：时间范围与/或转录片段与/或全局顺序（speaker_index），不得出现额外证据说明。
+- 选项(options)与 answer_text：
+  - 只写观点/观点变化的概括；
+  - 不写原因、不写证据引文；
+  - 不出现任何时间信息（秒数/区间），也不出现相对时序词（起初/后来/最后/前面/后面等）。
+- 为避免歧义：题干中先出现的那个说话人定义为“说话人A”，后出现的定义为“说话人B”；选项中用“说话人A/说话人B”指代两人（不得用 spk_id）。
+- 若无法保证唯一正确（尤其 dynamic_question 的变化不明确/可多解）=> 对应题不生成；若 dynamic_question 一题都无法生成 => 输出 []。
+
+================================================
+【立场（stance）定义与出题边界（必须严格遵守）】
+本任务中的“立场”指：说话人围绕对话中某个【明确的对象/议题】所表达的【观点/判断/态度取向】。
+- “对象/议题”可以是：某件事（方案/决定/行动/事实真假）、某个人/群体（信任/支持/指责/维护）、某个主张（赞成/反对/观望）、某个目标（应不应该做/怎么做）。
+- 立场必须能用“对该对象/议题的取向”描述，而不是对话方式本身。
+
+【立场 vs. 情绪/行为（必须区分）】
+- 立场（允许）：支持/反对/犹豫；认为A是对/错；主张采取X/不采取X；信任/不信任某人；愿意/不愿意合作；认为某事应当被处罚/应当被原谅；认为某人无辜/有罪等。
+- 非立场（禁止作为答案核心）：语气强硬/严肃/缓和、玩世不恭/挑衅、安抚/控场、策略性缓和气氛、沉默施压、反讽挖苦、情绪升级/缓和等。
+  这些属于“情绪/风格/互动策略/行为”，只能作为立场的表达方式背景，不能替代立场本身。
+
+【静态立场（static_question）要求】
+- 你要总结的是：说话人对某个明确对象/议题在整段对话中的【总体/最终取向】是什么。
+- 输出必须明确包含“对象/议题 + 取向”，例如：
+  - “对是否继续推进项目：总体支持推进，但要求降低风险”
+  - “对某人是否可信：总体不信任，倾向认为其在隐瞒事实”
+- 若对话中对象/议题不明确或无法唯一确定总体取向 => 不出题。
+
+【动态立场变化（dynamic_question）要求】
+- 你要总结的是：说话人对同一个明确对象/议题的取向【从A到B】发生变化。
+- 变化必须是“立场取向变化”，例如：
+  - 反对 → 支持；支持 → 保留/反对；不信任 → 逐渐信任；认为无辜 → 认为有嫌疑；坚持X → 改为接受Y等。
+- 动态答案必须写成“从【对象/议题：取向A】→【对象/议题：取向B】”。
+- 仅有“语气/策略/情绪”变化但对对象/议题取向不变，视为【无立场变化】（可写为 从X→X 或直接不出 dynamic 题，按你整体规则）。
+- 若变化对象/议题不唯一（前后谈的是不同事/不同人）=> 不出题。
+
+【禁止示例（会被判为无效立场变化）】
+以下属于“情绪/行为/策略变化”，不是立场变化，禁止作为 dynamic 的核心：
+- “从强硬严肃的审讯态度 → 变为策略性地缓和气氛”
+- “从玩世不恭的挑衅态度 → 变为对友人安危的真正关切”
+除非你能明确补全“对象/议题 + 取向”的变化，例如：
+- 合格写法示例（允许）：
+  - “对是否继续追究某人责任：从‘坚持追责’ → ‘改为暂缓追责、优先确认事实’”
+  - “对某人是否值得信任：从‘强烈不信任’ → ‘在新证据下转为谨慎信任’”
+  - “对某行动是否可行：从‘认为不可行/拒绝’ → ‘接受折中方案并愿意推进’”
+
+【选项写作约束（避免混淆）】
+- 每个选项必须先给出对象/议题，再给出取向（static）或取向变化（dynamic）。
+- 允许用极短的补充词描述理由方向（如“因证据变化/因风险考虑”），但不得用情绪/语气词充当立场。
+- 若你发现某选项主要由“语气/情绪/互动策略”组成，而没有明确对象/议题取向 => 该选项无效，整题应重新构造或不出题。
+================================================
+【dynamic_question 的“无变化”写法（强制｜替代 从X→X）】
+在 dynamic_question 中，你必须先判断每位说话人对“同一对象/议题”的立场是否发生了取向变化：
+
+- 若该说话人立场确实发生变化：
+  用变化路径写法：
+  “对<对象/议题>：从【取向A】→【取向B】”
+
+- 若该说话人对该对象/议题“无明显立场变化”（始终同一取向）：
+  禁止写“从【X】→【X】”这种形式；
+  必须改写为“无变化”的静态表述，推荐格式二选一：
+  1) “对<对象/议题>：态度一直为【X】”
+  2) “对<对象/议题>：始终【X】”
+  其中【X】仍需是“取向”而非情绪/语气/策略（例如：始终认为对方在隐瞒、始终主张推进方案、始终不信任某人）。
+
+统一约束：
+- dynamic_question 的每个选项中，说话人A与说话人B都必须给出对应表达：
+  - 有变化：用“从…→…”
+  - 无变化：用“态度一直为…”或“始终…”
+- 选项中仍然不得出现时间与相对时序词（起初/后来/最后等）。
+- 若你无法唯一判断“是否变化”（可能变化也可能只是语气变化）=> 该 dynamic 题不生成。
+
+【示例（正确写法示意）】
+- 说话人A：对嫌疑人是否隐瞒真相：态度一直为【坚信对方在隐瞒】
+- 说话人B：对高阳案件是否需要深挖：从【回避/不愿展开】→【转为支持追查真相】
+================================================
+【spk_index 定义（必须严格遵守）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  - 第一个首次出现的 spk_id => spk_1
+  - 第二个首次出现的 spk_id => spk_2
+  - 以此类推
+- spk_index 仅用于 speaker_meta 字段记录，以及 question_type="speaker_index" 的题干中；
+  除 speaker_index 题干外，题干/选项/答案/解析不得出现 spk_id/spk_index。
+
+================================================
+【speaker_meta 选段与聚合规则（先选一次，全题复用｜强制执行）】
+你必须先挑选“两位不同说话人”的代表性 seg，并按下面结构输出 speaker_meta（同一 spk_id 的多个 seg 可放在同一个 list）：
+- spk_a：说话人A（同一 spk_id）
+- spk_b：说话人B（同一 spk_id）
+
+强制要求：
+1) speaker_meta.spk_a 内所有 seg 的 spk_id 必须相同；
+2) speaker_meta.spk_b 内所有 seg 的 spk_id 必须相同；
+3) spk_a 的 spk_id 与 spk_b 的 spk_id 必须不同；
+4) spk_a[0] 与 spk_b[0] 都必须是“观点性内容明显”的片段，并能支撑你对其整段对话观点/变化的唯一总结；
+5) spk_a[0] 与 spk_b[0] 都必须能唯一定位到输入（优先 seg_id；其次 start/end；再其次 transcript 唯一片段）；
+6) spk_a[0] 与 spk_b[0] 都不能是整段音频的第一句话。
+
+“额外约束（用于 speaker_index 模板）：
+- speaker_index 模板中出现的 x 与 y 必须分别来自 speaker_meta 中两位说话人的全局顺序：
+  - x = spk_a[0].spk_index 对应的编号（例如 spk_3 => x=3）
+  - y = spk_b[0].spk_index 对应的编号（例如 spk_7 => y=7）
+- x 与 y 必须不同；若相同则跳过 speaker_index 模板。
+- speaker_index 题干不出现时间与 transcript。”
+
+================================================
+【最终输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组：
+- 第 1 个元素：只包含 speaker_meta
+- 后续元素：每个元素是一道选择题对象
+若 dynamic_question 一题都无法保证唯一正确 => 输出 []（不要只输出 speaker_meta 或只出 static）。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_1",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}],
+      "spk_b": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_2",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}]
+    }
+  },
+  {
+    "question": "...",
+    "question_type": "no_index|time_index|transcript_index|speaker_index|complex_index",
+    "sub_question_type": "static_question|dynamic_question",
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+字段硬约束：
+- no_index：评测侧会提供两段切分音频：音频1=spk_a[0]，音频2=spk_b[0]；题干不得出现时间与 transcript。
+- time_index/complex_index：
+  - 第一段时间范围必须取自 spk_a[0].start_time/end_time；
+  - 第二段时间范围必须取自 spk_b[0].start_time/end_time；
+  不得自行编造时间。
+- transcript_index/complex_index：
+  - content_a 必须来自 spk_a[0].transcript（逐字，可截取连续子串且需唯一定位）；
+  - content_b 必须来自 spk_b[0].transcript（同上）。
+- options 必须为 4 个且顺序打乱；answer 指向唯一正确；answer_text 不含字母前缀。
+- rationale 必须与 A-D 一一对应，且四类标签必须齐全：ground truth / wrong speaker / hallucination / unknown。
+- 选项与 answer_text 中不得出现时间信息与相对时序词。
+
+================================================
+【通用选项构造规则（所有模板适用｜4选1）】
+每题 4 个选项必须包含（顺序打乱）：
+A) ground truth：
+- static_question：说话人A：…；说话人B：…
+- dynamic_question：说话人A：从…→…；说话人B：从…→…
+B) wrong speaker：把两人的观点（或变化）对调，或把其中一人的观点误归给另一人
+C) hallucination：给出“看起来贴近话题”的观点/变化，但对话中并未表达过（可混入一个细节性错误）
+D) unknown：模糊笼统、不可验证、无法唯一推出的总结（例如“他们态度复杂/各有想法/都在讨论某事”）
+注意：四个选项长度尽量接近，避免正确项明显更具体。
+
+================================================
+【模板集合：每个模板若满足，最多生成 1 题】
+你需要尝试生成：
+- static_question × {no_index, time_index, transcript_index, speaker_index, complex_index}
+- dynamic_question × {no_index, time_index, transcript_index, speaker_index, complex_index}
+满足则生成；不满足跳过；最终可输出 2~10 题。
+但若 dynamic_question 一题都无法生成 => 输出 []。
+
+========================
+模板 S0｜static_question + no_index
+question_type = "no_index"
+sub_question_type = "static_question"
+题干：
+“下面音频中的两个说话人在整段对话中的观立场什么？请选择最符合的一项。”
+说明：音频1对应说话人A；音频2对应说话人B；题干不得出现时间与 transcript。
+
+========================
+模板 S1｜static_question + time_index
+question_type = "time_index"
+sub_question_type = "static_question"
+题干：
+“音频中第 S1 秒到第 E1 秒讲话的说话人以及在第 S2 秒到第 E2 秒讲话的说话人在整段对话中的立场是什么？请选择最符合的一项。”
+约束：
+- [S1,E1]=spk_a[0].start_time/end_time（说话人A）
+- [S2,E2]=spk_b[0].start_time/end_time（说话人B）
+题干不出现 transcript。
+
+========================
+模板 S2｜static_question + transcript_index
+question_type = "transcript_index"
+sub_question_type = "static_question"
+题干：
+“音频中说过‘content_a’的说话人以及说过‘content_b’的说话人在整段对话中的立场是什么？请选择最符合的一项。”
+约束：
+- content_a 来自 spk_a[0].transcript（逐字且唯一定位；说话人A）
+- content_b 来自 spk_b[0].transcript（逐字且唯一定位；说话人B）
+题干不出现时间。
+
+========================
+模板 S3｜static_question + speaker_index
+question_type = "speaker_index"
+sub_question_type = "static_question"
+
+题干（按你要求）：
+“整段对话中第 x 个发言的说话人和第 y 个发言的说话人，在对话中的立场分别是什么？请选择最符合的一项。”
+
+其中：
+- x 取自 spk_a[0].spk_index 的编号
+- y 取自 spk_b[0].spk_index 的编号
+- 题干中先出现的“第 x 个发言的说话人”定义为“说话人A”，后出现的“第 y 个发言的说话人”定义为“说话人B”
+- 题干不得出现时间与 transcript
+
+========================
+模板 S4｜static_question + complex_index
+question_type = "complex_index"
+sub_question_type = "static_question"
+题干：
+“音频中第 S1 秒到第 E1 秒说过‘content_a’的说话人与第 S2 秒到第 E2 秒说过‘content_b’的说话人在整段对话中的立场是什么？请选择最符合的一项。”
+约束：
+- S1/E1/content_a 同时来自 spk_a[0] 的同一 seg（说话人A）
+- S2/E2/content_b 同时来自 spk_b[0] 的同一 seg（说话人B）
+
+========================
+模板 D0｜dynamic_question + no_index
+question_type = "no_index"
+sub_question_type = "dynamic_question"
+题干（与 static 同结构，仅把“观点”改成“观点变化”）：
+“下面音频中的两个说话人在整段对话中的立场变化是什么？请选择最符合的一项。”
+
+========================
+模板 D1｜dynamic_question + time_index
+question_type = "time_index"
+sub_question_type = "dynamic_question"
+题干：
+“音频中第 S1 秒到第 E1 秒讲话的说话人以及在第 S2 秒到第 E2 秒讲话的说话人在立场对话中的观点变化是什么？请选择最符合的一项。”
+
+========================
+模板 D2｜dynamic_question + transcript_index
+question_type = "transcript_index"
+sub_question_type = "dynamic_question"
+题干：
+“音频中说过‘content_a’的说话人以及说过‘content_b’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。”
+
+========================
+模板 D3｜dynamic_question + speaker_index
+question_type = "speaker_index"
+sub_question_type = "dynamic_question"
+
+题干（按你要求）：
+“整段对话中第 x 个发言的说话人和第 y 个发言的说话人，在对话中的立场变化分别是什么？请选择最符合的一项。”
+
+其中：
+- x 取自 spk_a[0].spk_index 的编号
+- y 取自 spk_b[0].spk_index 的编号
+- 题干中先出现的“第 x 个发言的说话人”定义为“说话人A”，后出现的“第 y 个发言的说话人”定义为“说话人B”
+- 题干不得出现时间与 transcript
+
+生成条件（必须全部满足）：
+- 两位说话人的立场变化均可唯一概括；每人写成“从…→…”
+- 不得使用“起初/后来/最后”等相对时序词（只用箭头表达）
+- 若任一人的变化不明确或可多解 => 不生成该题
+- 若 dynamic_question 一题都无法生成 => 输出 []
+
+========================
+模板 D4｜dynamic_question + complex_index
+question_type = "complex_index"
+sub_question_type = "dynamic_question"
+题干：
+“音频中第 S1 秒到第 E1 秒说过‘content_a’的说话人与第 S2 秒到第 E2 秒说过‘content_b’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。”
+
+================================================
+【dynamic_question 额外约束（必须）】
+- 每个选项必须写成变化路径“从…→…”，但不得使用“起初/后来/最后”等相对时序词（只用箭头表达）。
+- 若任一说话人的变化不明确或可以多种解释 => 该 dynamic 题不生成。
+- 若 dynamic_question 一题都无法生成 => 输出 []。
+
+开始生成：请仅输出符合格式的 JSON；若无法保证 dynamic_question 唯一正确则输出 []。

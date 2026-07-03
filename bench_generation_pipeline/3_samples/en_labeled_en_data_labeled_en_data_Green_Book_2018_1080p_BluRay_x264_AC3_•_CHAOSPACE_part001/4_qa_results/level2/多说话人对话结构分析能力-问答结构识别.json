@@ -1,0 +1,117 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人对话结构分析能力-问答结构识别.txt",
+  "prompt_relpath": "level2/多说话人对话结构分析能力-问答结构识别.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_077",
+            "start_time": 319.36,
+            "end_time": 321.52,
+            "transcript": "Who had the balls to clip Gio's hat?",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "惊讶",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_078",
+            "start_time": 322.22,
+            "end_time": 323.54,
+            "transcript": "Don't worry about it. I took care of it.",
+            "spk_id": "spk_04",
+            "spk_index": "spk_4",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面是某个说话人的单讲片段，在完整对话中最可能对该语音回应的一项是：",
+      "type": "single_choice",
+      "question_type": "no_index",
+      "options": [
+        "A. 说话人B：You might have to go back to driving garbage trucks.",
+        "B. 说话人B：Some punk from the other side of town.",
+        "C. 说话人B：Don't worry about it. I took care of it.",
+        "D. 无法判断（信息不足以定位回复）"
+      ],
+      "answer": "C",
+      "answer_text": "Don't worry about it. I took care of it.",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "根据对话内容，其他人对某个说话人在第 319.36 秒到第 321.52 秒的讲话内容回复的语句是：",
+      "type": "single_choice",
+      "question_type": "time_index",
+      "options": [
+        "A. 说话人B：You might have to go back to driving garbage trucks.",
+        "B. 说话人B：Don't worry about it. I took care of it.",
+        "C. 说话人B：Some punk from the other side of town.",
+        "D. 无法判断（信息不足以定位回复）"
+      ],
+      "answer": "B",
+      "answer_text": "Don't worry about it. I took care of it.",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "根据对话内容，其他人对某个说话人关于‘clip Gio's hat’的表述的回复语句是：",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 无法判断（信息不足以定位回复）",
+        "B. 说话人B：Some punk from the other side of town.",
+        "C. 说话人B：You might have to go back to driving garbage trucks.",
+        "D. 说话人B：Don't worry about it. I took care of it."
+      ],
+      "answer": "D",
+      "answer_text": "Don't worry about it. I took care of it.",
+      "rationale": [
+        "A. unknown",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "根据对话内容，其他人对某个说话人在第 319.36 秒到第 321.52 秒说话人关于‘clip Gio's hat’的表述的回复是：",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. 说话人B：Don't worry about it. I took care of it.",
+        "B. 无法判断（信息不足以定位回复）",
+        "C. 说话人B：Some punk from the other side of town.",
+        "D. 说话人B：You might have to go back to driving garbage trucks."
+      ],
+      "answer": "A",
+      "answer_text": "Don't worry about it. I took care of it.",
+      "rationale": [
+        "A. ground truth",
+        "B. unknown",
+        "C. hallucination",
+        "D. wrong speaker"
+      ]
+    }
+  ]
+}

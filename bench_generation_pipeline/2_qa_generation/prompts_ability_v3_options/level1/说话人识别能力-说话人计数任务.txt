@@ -1,0 +1,126 @@
+# 多说话人说话人识别评测：说话人计数（选择题｜统一输出格式｜全局人数 + 时间窗人数）
+你是 QA 构造专家。输入为多说话人转录与对应音频（含 spk_id、transcript，可能含 start_time/end_time/seg_id，且你可以听音频）。
+目标：构造客观单选题评估模型的【说话人计数能力】：
+(1) 全局说话人数量（整段对话去重后的说话人数）
+(2) 时间窗内说话人数量（在给定时间范围内出现过的不同说话人数）
+
+================================================
+【统一规范】
+1) seg_id/idx 只是片段标识，不是说话人 ID；所有统计必须基于 spk_id 去重。
+2) 禁止使用 turn/轮次/turn_index 定位。
+3) 选项中不要出现时间；时间只能出现在 time_index 的题干中。
+4) 若无法保证唯一正确（标注缺失、时间缺失导致时间窗统计不确定、时间窗内混入未标注片段等），输出 []。
+
+================================================
+【spk_index 定义（仅用于 speaker_meta 记录）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  - 第一个首次出现的 spk_id => spk_1
+  - 第二个首次出现的 spk_id => spk_2
+  - 以此类推
+- 注意：本任务的题干/选项/答案不需要出现 spk_index（只在 speaker_meta 里记录即可）。
+
+================================================
+【speaker_meta 选择与输出（先选一次｜全题复用｜用于对齐你的统一流水线）】
+在生成题目之前，必须先从输入转录中挑选两个不同说话人的代表性 seg（用于 speaker_meta）：
+- spk_a：某个说话人 spk_id_A 的一个 seg（尽量清晰、单人、可定位）
+- spk_b：另一个说话人 spk_id_B 的一个 seg（spk_id_B ≠ spk_id_A）
+要求：
+- 两个 seg 都能唯一定位（优先 seg_id；其次 start/end；再其次 transcript 唯一片段）
+- 若整段对话只有 1 个说话人（spk_id 去重后为 1）=> 输出 []（因为计数题会退化且不符合多人对话评测）
+
+================================================
+【统计口径（必须严格一致）】
+1) 全局人数 N_total：
+- N_total = 全对话 spk_id 去重后的数量
+
+2) 时间窗人数 N_window（仅用于 time_index）：
+- 先选择一个时间窗 [t_start, t_end]（秒），要求 t_start < t_end
+- 统计集合：
+  S_window = { spk_id | 存在任一该 spk_id 的片段 seg 与时间窗有交集 }
+  交集定义：seg.start_time < t_end 且 seg.end_time > t_start
+- N_window = |S_window|
+- 生成条件：该时间窗内至少出现 2 位说话人（N_window >= 2），且可唯一确定（该窗覆盖的所有片段都具备可用 start/end 与 spk_id）
+
+================================================
+【最终输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组：
+- 第 1 个元素：只包含 speaker_meta
+- 后续元素：每个元素是一道选择题对象
+若两种模板都无法出题 => 输出 []（不要只输出 speaker_meta）。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [
+        {"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_1",
+         "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}
+      ],
+      "spk_b": [
+        {"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_2",
+         "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}
+      ]
+    }
+  },
+  {
+    "question": "...",
+    "question_type": "speech_index|time_index",
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+硬约束：
+- options 必须 4 个且顺序打乱；answer 指向唯一正确；answer_text 不含字母前缀。
+- rationale 必须与 A-D 对齐：
+  - ground truth：人数等于真实人数
+  - wrong speaker：人数为邻近错误（与真实人数相差 1 或 2），且不与题干信息明显矛盾
+  - hallucination：明显不合理（例如小于 1、或远大于真实人数很多、或与题干至少包含的说话人数矛盾）
+  - unknown：固定 “无法判断（信息不足）”
+- 选项只写人数（如“2位/3位/4位/5位”），不得出现任何 spk_id/spk_index 或说话人描述。
+
+================================================
+【通用选项构造规则（两种模板一致）】
+对任一道题：
+- A-D 需包含 1 真 + 1 邻近错 + 1 明显不合理 + 1 unknown（顺序打乱）
+- unknown 固定写法：无法判断（信息不足）
+- 邻近错：N±1 或 N±2（保持 ≥1 且 ≠N）
+- 明显不合理：选一个远离 N 的值（例如 N+3 及以上，或 1 但题干语境至少 2 人）
+
+================================================
+模板1｜speech_index（全局说话人数量｜单选）
+question_type = "speech_index"
+题干（固定风格）：
+“这段音频中一共出现了多少个不同的说话人？”
+生成条件：
+- N_total ≥ 2 且可唯一确定（spk_id 标注不缺失）
+选项：
+- ground truth：N_total 位
+- wrong speaker：N_total±1 或 ±2
+- hallucination：明显不合理值（远大于 N_total 很多，或 1 位但对话明显多人）
+- unknown：无法判断（信息不足）
+答案：
+- answer 指向 ground truth；answer_text="N_total位"
+
+================================================
+模板2｜time_index（时间窗内说话人数量｜单选）
+question_type = "time_index"
+题干格式：
+“音频中在第 t_start 秒到第 t_end 秒这段时间内，一共出现了多少个不同的说话人？”
+时间窗选择规则（必须执行）：
+1) 必须使用输入提供的 start_time/end_time（不得臆造时间）；
+2) 选择一个连续时间窗，使 N_window ≥ 2（建议 2~4，更稳），且可唯一确定；
+3) 避免选择跨越过长时间导致“几乎等于全局人数”，也避免过短导致只有 1 人；
+4) 若任一涉及片段缺失时间或 spk_id，导致 S_window 不可唯一确定，则跳过该题。
+选项与答案规则同 speech_index（把 N_total 替换为 N_window）：
+- answer_text="N_window位"
+
+================================================
+【全局失败条件（任一触发直接输出 []）】
+- 全局说话人数 N_total < 2
+- speech_index 无法唯一确定 N_total
+- time_index 所需时间字段缺失/窗口统计不唯一
+- 任一题无法构造 4 个互不相同的选项并保证唯一正确
+
+开始生成：请仅输出符合格式的 JSON；若无法保证唯一正确则输出 []。

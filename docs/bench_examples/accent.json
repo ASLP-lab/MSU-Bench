@@ -1,0 +1,292 @@
+{
+  "task_id": "accent",
+  "level": "level1",
+  "dimension": "Speaker Attributes",
+  "task_name": "Accent Recognition",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Bumblebee (2018)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/accent/en_spk_a.mp3",
+          "start": 320.41,
+          "end": 322.45,
+          "dur": 2.04
+        }
+      },
+      "spk_a_transcript": "Yeah, you're unsuccessful at everything.",
+      "spk_b_transcript": "You sound like a little bumblebee. I'm gonna call you that from now on. Bumblebee.",
+      "qa": [
+        {
+          "question": "What is the speaker's accent in the audio?",
+          "question_type": "no_index",
+          "options": [
+            "A. General American English",
+            "B. British English accent",
+            "C. Southern American accent",
+            "D. The accent is not obvious and cannot be determined."
+          ],
+          "answer": "C",
+          "answer_text": "Southern American accent",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "Which of the following is closest to the speaker's accent in the audio from 320.41 to 322.45 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. British accent",
+            "B. Southern American accent",
+            "C. General American English",
+            "D. The accent is not obvious and cannot be determined."
+          ],
+          "answer": "B",
+          "answer_text": "Southern American accent",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "Which of the following best describes the accent of the speaker who says, “you're unsuccessful at everything”?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. General American English",
+            "B. The accent is not obvious and cannot be determined.",
+            "C. Southern American accent",
+            "D. British English accent"
+          ],
+          "answer": "C",
+          "answer_text": "Southern American accent",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What is the accent of the third speaker in the conversation?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. General American English",
+            "B. Australian English accent",
+            "C. The accent is not obvious and cannot be determined.",
+            "D. Southern American accent"
+          ],
+          "answer": "D",
+          "answer_text": "Southern American accent",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the accent of the female speaker who says “you're unsuccessful at everything” between 320.41 and 322.45 seconds?",
+          "question_type": "complex_index",
+          "options": [
+            "A. The accent is not obvious and cannot be determined.",
+            "B. General American English",
+            "C. Southern American accent",
+            "D. British accent"
+          ],
+          "answer": "C",
+          "answer_text": "Southern American accent",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "Which speakers in the audio have a Southern American accent? (Please answer in order of appearance)",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. The third speaker",
+            "B. The second speaker, the third speaker",
+            "C. The third speaker, the fourth speaker",
+            "D. The accent is not obvious and cannot be determined."
+          ],
+          "answer": "C",
+          "answer_text": "The third speaker, the fourth speaker",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "How many speakers in the audio have a Southern American accent?",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 1",
+            "B. 4",
+            "C. 2",
+            "D. The accent is not obvious and cannot be determined."
+          ],
+          "answer": "C",
+          "answer_text": "2",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "He Bi (何必)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/accent/zh_spk_a.mp3",
+          "start": 29.72,
+          "end": 31.52,
+          "dur": 1.8
+        }
+      },
+      "spk_a_transcript": "I've been massaged a lot, so I know a little bit too.",
+      "spk_b_transcript": "I never rely on those things.",
+      "qa": [
+        {
+          "question": "In this audio of a single speaker, what is the speaker's accent?",
+          "question_type": "no_index",
+          "options": [
+            "A. Mandarin with a Minnan accent",
+            "B. Mandarin with a Cantonese accent",
+            "C. Mandarin with a Northeastern accent",
+            "D. The accent is not obvious and cannot be determined."
+          ],
+          "answer": "B",
+          "answer_text": "Cantonese-accented Mandarin",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "The speaker's accent between 29.72 and 31.52 seconds is closest to which of the following?",
+          "question_type": "time_index",
+          "options": [
+            "A. Mandarin with a Sichuan accent",
+            "B. Mandarin with a Taiwanese accent",
+            "C. Mandarin with a Cantonese accent",
+            "D. The accent is not distinct and cannot be determined."
+          ],
+          "answer": "C",
+          "answer_text": "Cantonese-accented Mandarin",
+          "rationale": [
+            "hallucination",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "The accent of the speaker who said 'I've been massaged a lot' is closest to which of the following?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Mandarin with a Wu accent",
+            "B. Mandarin with a Shandong accent",
+            "C. The accent is not distinct enough to tell.",
+            "D. Mandarin with a Cantonese accent"
+          ],
+          "answer": "D",
+          "answer_text": "Cantonese-accented Mandarin",
+          "rationale": [
+            "hallucination",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the accent of Speaker 2 in the audio?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Mandarin with a Hunan accent",
+            "B. Mandarin with a Cantonese accent",
+            "C. Mandarin with a Beijing accent",
+            "D. The accent is not obvious and cannot be determined."
+          ],
+          "answer": "B",
+          "answer_text": "Cantonese-accented Mandarin",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "The accent of the male speaker who said 'I know a little bit too' between 29.72 and 31.52 seconds is closest to which of the following?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Singaporean-accented Mandarin",
+            "B. The accent is not distinct and cannot be determined.",
+            "C. Mandarin with a Henan accent",
+            "D. Mandarin with a Cantonese accent"
+          ],
+          "answer": "D",
+          "answer_text": "Cantonese-accented Mandarin",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "hallucination",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "Which speakers in the audio speak Mandarin with a Cantonese accent? (Please select the option that lists them in order of appearance.)",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. Speaker 1, Speaker 2, Speaker 3",
+            "B. There is no obvious accent; it is impossible to determine.",
+            "C. Speaker 1, Speaker 2, Speaker 3, Speaker 4",
+            "D. Speaker 1, Speaker 5"
+          ],
+          "answer": "C",
+          "answer_text": "Speaker 1, Speaker 2, Speaker 3, Speaker 4",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "How many speakers in the audio speak Mandarin with a Cantonese accent?",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 1",
+            "B. 3",
+            "C. 4",
+            "D. The accent is not obvious; cannot be determined."
+          ],
+          "answer": "C",
+          "answer_text": "4",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  }
+}

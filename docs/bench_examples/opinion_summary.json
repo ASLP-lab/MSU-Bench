@@ -1,0 +1,400 @@
+{
+  "task_id": "opinion_summary",
+  "level": "level2",
+  "dimension": "Context Reasoning",
+  "task_name": "Multi-Speaker Opinion Summary",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Mission: Impossible – Rogue Nation (2015)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/opinion_summary/en_spk_a.mp3",
+          "start": 89.32,
+          "end": 94.36,
+          "dur": 5.04
+        }
+      },
+      "spk_a_transcript": "Killing to keep things as they were, and now I'm killing to bring about change.",
+      "spk_b_transcript": "We only think we're fighting for the right side, because that's what we choose to believe.",
+      "qa": [
+        {
+          "question": "What are the stances of the two speakers throughout the conversation? Please choose the best-fitting option.",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker A: On their violent actions: Admits their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
+            "B. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Views them as a necessary and precise means to achieve change and justifies them on this basis.",
+            "C. Speaker A: On their violent actions: Defends them as a necessary and precise means to achieve change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
+            "D. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is indecisive."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "Throughout the conversation, what are the stances of the speaker from 89.32s-94.36s (Speaker A) and the speaker from 282.84s-285.92s (Speaker B)? Please select the most appropriate option.",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multiple considerations and is indecisive.",
+            "B. Speaker A: On their violent actions: Views them as a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
+            "C. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they are a necessary and precise means to achieve change and defends them on that basis.",
+            "D. Speaker A: On their violent actions: Acknowledges their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender."
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+          "rationale": [
+            "unknown",
+            "ground_truth",
+            "wrong_speaker",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "Throughout the conversation, what are the stances of the speaker who says, “now I'm killing to bring about change” (Speaker A) and the speaker who says, “that's what we choose to believe” (Speaker B)? Please choose the most suitable option.",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker A: On their violent actions: Justifies them as a necessary and precise means for bringing about change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
+            "B. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering.",
+            "C. Speaker A: On their violent actions: Acknowledges their wrongdoing and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
+            "D. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from it.",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "hallucination",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "Throughout the conversation, what are the respective stances of the first speaker (Speaker A) and the second speaker (Speaker B)? Please select the best-fitting option.",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they were a necessary and precise means to bring about change and justifies them on this basis.",
+            "B. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering.",
+            "C. Speaker A: On their violent actions: Admits their mistake and hopes to reconcile. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
+            "D. Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them as such. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the conflict."
+          ],
+          "answer": "D",
+          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "hallucination",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "Throughout the conversation, what is the stance of the speaker who says, “now I'm killing to bring about change” (from 89.32s to 94.36s, Speaker A) and the speaker who says, “that's what we choose to believe” (from 282.84s to 285.92s, Speaker B)? Please select the best-fitting option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A: On their violent actions: Justifies them as a necessary and precise means to achieve change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
+            "B. Speaker A: On their violent actions: Admits their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
+            "C. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Considers them a necessary and precise means for achieving change and defends them on this basis.",
+            "D. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What change, if any, occurs in the speakers' stances during the conversation? Please select the best-fitting option.",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+            "B. Speaker A (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
+            "C. Speaker A (View on actions): Attitude remains largely consistent. Speaker B (View on the struggle): Shows an evolution of thought during the dialogue.",
+            "D. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A's defense of their actions remains consistent: they insist their violent behavior is a necessary means for achieving change. Speaker B's view of the struggle evolves from clearly defining the opponent as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What change in stance occurs for the speaker from 89.32s-94.36s (Speaker A) and the speaker from 282.84s-285.92s (Speaker B)? Please select the most appropriate option.",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought during the dialogue.",
+            "B. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (On the struggle): Shifts from hesitation to firmly supporting their organization.",
+            "C. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+            "D. Speaker A (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "rationale": [
+            "unknown",
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "What change in stance occurs for the speaker who says, “now I'm killing to bring about change” (Speaker A) and the one who says, “that's what we choose to believe” (Speaker B)? Please choose the most fitting option.",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
+            "B. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+            "C. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization.",
+            "D. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought during the dialogue."
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What are the changes in the stances of the first speaker (Speaker A) and the second speaker (Speaker B) during the conversation? Please select the best-fitting option.",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought throughout the dialogue.",
+            "B. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
+            "C. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+            "D. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from indecision to firmly supporting their organization."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What change in stance occurs for the speaker who says, “now I'm killing to bring about change” (89.32s-94.36s, Speaker A) and the one who says, “that's what we choose to believe” (282.84s-285.92s, Speaker B)? Please choose the most fitting option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization.",
+            "B. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought in the dialogue.",
+            "C. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
+            "D. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly defining the opposition as an enemy to becoming disillusioned with the entire system and advocating for disengagement."
+          ],
+          "answer": "D",
+          "answer_text": "Speaker A's defense of their actions remains consistent: they insist their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "TV Series (S03E07)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/opinion_summary/zh_spk_a.mp3",
+          "start": 47.16,
+          "end": 49.72,
+          "dur": 2.56
+        }
+      },
+      "spk_a_transcript": "She's already been through enough with what happened. Do you really have to fire her?",
+      "spk_b_transcript": "How can we let one dead branch ruin a perfectly good pot of flowers?",
+      "qa": [
+        {
+          "question": "What are the respective stances of the two speakers throughout the entire conversation? Please select the best option.",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
+            "B. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's in the store's best interest.",
+            "C. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
+            "D. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements."
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's in the store's best interest.",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What are the respective stances of the speaker who talks from 47.16s to 49.72s and the speaker who talks from 56.18s to 60.82s? Please choose the most suitable option.",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
+            "B. Speaker A: Has their own views on store management; Speaker B: Has a different opinion on staffing arrangements.",
+            "C. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
+            "D. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit."
+          ],
+          "answer": "D",
+          "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "hallucination",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What are the respective stances of the speaker who said, 'It's sad enough that something like that happened to her,' and the speaker who said, 'How can we let it be ruined by a dead branch?' Please choose the most fitting option.",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker A: On firing Hana: firmly against it, believing the employee should be protected; Speaker B: On firing Hana: strongly in favor, believing it's in the store's best interest.",
+            "B. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
+            "C. Speaker A: On firing Hana: in strong support, believing it's for the store's benefit; Speaker B: On firing Hana: in strong opposition, believing the employee should be protected.",
+            "D. Speaker A: Has a personal opinion on store management; Speaker B: Has a different opinion on personnel arrangements."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A: On firing Hana: firmly against it, believing the employee should be protected; Speaker B: On firing Hana: strongly in favor, believing it's in the store's best interest.",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What are the respective stances of the 1st speaker and the 2nd speaker in the entire dialogue? Please choose the most suitable option.",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
+            "B. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements.",
+            "C. Speaker A: Strongly opposes firing Hana, believing the employee should be protected; Speaker B: Strongly supports firing Hana, believing it's for the store's benefit.",
+            "D. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A: Strongly opposes firing Hana, believing the employee should be protected; Speaker B: Strongly supports firing Hana, believing it's for the store's benefit.",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What are the respective stances of the speaker who said, 'It's already sad enough for her that something like that happened,' between 47.16s and 49.72s, and the speaker who said, 'How can we let a dead branch ruin it?' between 56.18s and 60.82s? Please choose the most fitting option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A: On firing Hana: expresses understanding, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
+            "B. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
+            "C. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements.",
+            "D. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing employees should be protected."
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "How do the stances of the two speakers evolve throughout the conversation? Please select the most fitting option.",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
+            "B. Speaker A: Regarding firing Hana: shifts from 【hesitant】 to 【strongly opposed】; Speaker B: Regarding firing Hana: shifts from 【strongly supportive】 to 【wavering】.",
+            "C. Speaker A: Regarding firing Hana: wavers between emotion and reason; Speaker B: Regarding firing Hana: the two sides had an in-depth discussion on the matter.",
+            "D. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests."
+          ],
+          "answer": "D",
+          "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "How do the stances of the speaker from 47.16s to 49.72s and the speaker from 56.18s to 60.82s evolve throughout the conversation? Please select the best-fitting option.",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker A: On firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: On firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+            "B. Speaker A: On firing Hana: shifts from 【Hesitation】 to 【Firm opposition】; Speaker B: On firing Hana: shifts from 【Firm support】 to 【Wavering】.",
+            "C. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
+            "D. Speaker A: On firing Hana: wavers between emotion and reason; Speaker B: On firing Hana: the two sides had an in-depth discussion on the matter."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A: On firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: On firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "How do the stances of the speaker who said, 'She’s already sad enough about what happened to her,' and the speaker who said, 'How can we let it be ruined by a dead branch?' evolve throughout the conversation? Please choose the most fitting option.",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker A: Regarding firing Hana: their stance wavers between emotion and reason; Speaker B: Regarding firing Hana: the two sides had an in-depth discussion on the matter.",
+            "B. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
+            "C. Speaker A: Consistently 【Opposed】 to firing Hana, advocating for the employee's protection; Speaker B: Consistently 【Supportive】 of firing Hana, prioritizing the store's interests.",
+            "D. Speaker A: Regarding firing Hana: shifts from 【hesitation】 to 【firm opposition】; Speaker B: Regarding firing Hana: shifts from 【firm support】 to 【wavering】."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A: Consistently 【Opposed】 to firing Hana, advocating for the employee's protection; Speaker B: Consistently 【Supportive】 of firing Hana, prioritizing the store's interests.",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "How do the respective stances of the first speaker and the second speaker evolve throughout the conversation? Please select the option that fits best.",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Speaker A: Regarding firing Hana: shifts from 【hesitant】 to 【firmly opposed】; Speaker B: Regarding firing Hana: shifts from 【firmly supportive】 to 【wavering】.",
+            "B. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+            "C. Speaker A: On firing Hana: their stance wavers between emotion and reason; Speaker B: On firing Hana: the two parties had an in-depth discussion on the matter.",
+            "D. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection."
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "How do the stances of the speaker who said, 'It's already sad enough for her that something like that happened,' between 47.16s and 49.72s, and the speaker who said, 'How can we let a dead branch ruin it?' between 56.18s and 60.82s, evolve throughout the conversation? Please choose the most fitting option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+            "B. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
+            "C. Speaker A: On firing Hana: their stance wavers between emotion and reason; Speaker B: On firing Hana: the two parties held an in-depth discussion on this matter.",
+            "D. Speaker A: Regarding firing Hana: shifts from 【Hesitant】 to 【firmly opposed】; Speaker B: Regarding firing Hana: shifts from 【Firmly supportive】 to 【wavering】."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "unknown",
+            "hallucination"
+          ]
+        }
+      ]
+    }
+  }
+}

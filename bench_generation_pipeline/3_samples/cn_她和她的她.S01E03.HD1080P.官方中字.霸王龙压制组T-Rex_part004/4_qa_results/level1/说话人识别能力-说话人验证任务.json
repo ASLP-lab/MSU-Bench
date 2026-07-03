@@ -1,0 +1,241 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人验证任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人验证任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_001",
+            "start_time": 11.46,
+            "end_time": 15.06,
+            "transcript": "谢志东在老人院被人杀了，严胜华是老人院的护理长。",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          },
+          {
+            "seg_id": "seg_027",
+            "start_time": 138.19,
+            "end_time": 140.79,
+            "transcript": "反正目前，先找到严胜华再说。",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_033",
+            "start_time": 167.01,
+            "end_time": 170.65,
+            "transcript": "你还要提起这件事情，就是这件事情毁了这个家。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "标准普通话"
+          },
+          {
+            "seg_id": "seg_062",
+            "start_time": 322.08,
+            "end_time": 325.36,
+            "transcript": "办案呢就交给警察，反正又不关我们的事情。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面两条音频中的说话人是同一个说话人吗？",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 两位说话人情绪不同，无法确定是否为同一人",
+        "B. 否，不是同一个人",
+        "C. 是，是同一个人",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "B",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "hallucination",
+        "ground truth",
+        "wrong speaker",
+        "unknown"
+      ]
+    },
+    {
+      "question": "下面两条音频中的说话人是同一个说话人吗？",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 是，是同一个人",
+        "B. 两位说话人情绪不同，无法确定是否为同一人",
+        "C. 无法判断（信息不足）",
+        "D. 否，不是同一个人"
+      ],
+      "answer": "A",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "ground truth",
+        "hallucination",
+        "unknown",
+        "wrong speaker"
+      ]
+    },
+    {
+      "question": "音频中第 11.46 秒到第 15.06 秒的说话人与第 167.01 秒到第 170.65 秒的说话人，是同一个说话人吗？",
+      "question_type": "time_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 是，是同一个人",
+        "B. 否，不是同一个人",
+        "C. 无法判断（信息不足）",
+        "D. 其中一位说话人可能在模仿另一位"
+      ],
+      "answer": "B",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "unknown",
+        "hallucination"
+      ]
+    },
+    {
+      "question": "音频中第 11.46 秒到第 15.06 秒的说话人与第 138.19 秒到第 140.79 秒的说话人，是同一个说话人吗？",
+      "question_type": "time_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 无法判断（信息不足）",
+        "B. 其中一位说话人可能在模仿另一位",
+        "C. 否，不是同一个人",
+        "D. 是，是同一个人"
+      ],
+      "answer": "D",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "unknown",
+        "hallucination",
+        "wrong speaker",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过‘谢志东在老人院被人杀了’的说话人与说过‘就是这件事情毁了这个家’的说话人，是同一个说话人吗？",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 无法判断（信息不足）",
+        "B. 是，是同一个人",
+        "C. 两位说话人音色相似，但语调不同",
+        "D. 否，不是同一个人"
+      ],
+      "answer": "D",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "unknown",
+        "wrong speaker",
+        "hallucination",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过‘严胜华是老人院的护理长’的说话人与说过‘先找到严胜华再说’的说话人，是同一个说话人吗？",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 两位说话人音色相似，但语调不同",
+        "B. 是，是同一个人",
+        "C. 否，不是同一个人",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "B",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "hallucination",
+        "ground truth",
+        "wrong speaker",
+        "unknown"
+      ]
+    },
+    {
+      "question": "音频中第 11.46 秒到第 15.06 秒说过‘谢志东在老人院被人杀了’的说话人与第 167.01 秒到第 170.65 秒说过‘就是这件事情毁了这个家’的说话人，是同一个说话人吗？",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. 是，是同一个人",
+        "B. 否，不是同一个人",
+        "C. 音频片段1的音质与片段2有差异，无法比较",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "B",
+      "answer_text": "否，不是同一个人",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "hallucination",
+        "unknown"
+      ]
+    },
+    {
+      "question": "音频中第 11.46 秒到第 15.06 秒说过‘严胜华是老人院的护理长’的说话人与第 138.19 秒到第 140.79 秒说过‘先找到严胜华再说’的说话人，是同一个说话人吗？",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. 无法判断（信息不足）",
+        "B. 音频片段1的音质与片段2有差异，无法比较",
+        "C. 是，是同一个人",
+        "D. 否，不是同一个人"
+      ],
+      "answer": "C",
+      "answer_text": "是，是同一个人",
+      "rationale": [
+        "unknown",
+        "hallucination",
+        "ground truth",
+        "wrong speaker"
+      ]
+    }
+  ]
+}

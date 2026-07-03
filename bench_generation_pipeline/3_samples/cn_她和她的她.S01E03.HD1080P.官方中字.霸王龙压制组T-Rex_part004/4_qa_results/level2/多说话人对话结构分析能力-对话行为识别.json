@@ -1,0 +1,117 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人对话结构分析能力-对话行为识别.txt",
+  "prompt_relpath": "level2/多说话人对话结构分析能力-对话行为识别.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_031",
+            "start_time": 159.31,
+            "end_time": 163.83,
+            "transcript": "如果当初你有好好处理这件事情，我们家会变成这个样子吗？",
+            "spk_id": "spk_07",
+            "spk_index": "spk_7",
+            "age": "中年",
+            "gender": "女声",
+            "emotion": "悲伤",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_032",
+            "start_time": 164.59,
+            "end_time": 166.03,
+            "transcript": "都已经过了二十年。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "悲伤",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面音频中的两个说话人，在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "no_index",
+      "options": [
+        "A. 说话人A急切追问案件线索，说话人B给出否定回答并做出专业推断。",
+        "B. 说话人A与说话人B互相激烈指责，升级矛盾。",
+        "C. 说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "C",
+      "answer_text": "说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 159.31 秒到第 163.83 秒讲话的说话人以及在第 164.59 秒到第 166.03 秒讲话的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "time_index",
+      "options": [
+        "A. 无法判断（证据不足）",
+        "B. 说话人A与说话人B互相激烈指责，升级矛盾。",
+        "C. 说话人A急切追问案件线索，说话人B给出否定回答并做出专业推断。",
+        "D. 说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。"
+      ],
+      "answer": "D",
+      "answer_text": "说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。",
+      "rationale": [
+        "A. unknown",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过“我们家会变成这个样子吗”的说话人以及说过“都已经过了二十年”的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 说话人A与说话人B互相激烈指责，升级矛盾。",
+        "B. 说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。",
+        "C. 无法判断（证据不足）",
+        "D. 说话人A急切追问案件线索，说话人B给出否定回答并做出专业推断。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "音频中第 159.31 秒到第 163.83 秒说过“我们家会变成这个样子吗”的说话人与第 164.59 秒到第 166.03 秒说过“都已经过了二十年”的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. 说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。",
+        "B. 无法判断（证据不足）",
+        "C. 说话人A急切追问案件线索，说话人B给出否定回答并做出专业推断。",
+        "D. 说话人A与说话人B互相激烈指责，升级矛盾。"
+      ],
+      "answer": "A",
+      "answer_text": "说话人A进行情绪化指责，说话人B则以疲惫无奈的语气进行回避。",
+      "rationale": [
+        "A. ground truth",
+        "B. unknown",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    }
+  ]
+}

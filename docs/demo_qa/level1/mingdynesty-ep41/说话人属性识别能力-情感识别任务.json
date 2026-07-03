@@ -1,0 +1,156 @@
+{
+  "video": "mingdynesty-ep41.mp4",
+  "level": "level1",
+  "prompt": "说话人属性识别能力-情感识别任务.txt",
+  "success": true,
+  "error": null,
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_006",
+            "start_time": 19.9,
+            "end_time": 22.1,
+            "transcript": "海瑞的这个东西是谁拿来的？",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Angry",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_012",
+            "start_time": 53.6,
+            "end_time": 56.8,
+            "transcript": "是徐阁老，叫臣去催拿贺表的。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fearful",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, which emotion best matches the speaker?",
+      "question_type": "no_index",
+      "options": [
+        "A. Fear",
+        "B. Anger",
+        "C. Cannot determine (insufficient evidence)",
+        "D. Surprise"
+      ],
+      "answer": "B",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the following single-speaker audio clip, which emotion best matches the speaker?",
+      "question_type": "time_index",
+      "options": [
+        "A. Surprise",
+        "B. Fear",
+        "C. Anger",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "C",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the following single-speaker audio clip, which emotion best matches the speaker?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Anger",
+        "B. Cannot determine (insufficient evidence)",
+        "C. Fear",
+        "D. Surprise"
+      ],
+      "answer": "A",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. unknown",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the following single-speaker audio clip, which emotion best matches the speaker?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Fear",
+        "B. Surprise",
+        "C. Cannot determine (insufficient evidence)",
+        "D. Anger"
+      ],
+      "answer": "D",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "In the following single-speaker audio clip, which emotion best matches the speaker?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. spk_2, spk_4",
+        "B. spk_1, spk_3",
+        "C. Cannot determine (insufficient evidence)",
+        "D. spk_1, spk_2"
+      ],
+      "answer": "B",
+      "answer_text": "spk_1, spk_3",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "In the following single-speaker audio clip, which emotion best matches the speaker?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. 1 个",
+        "B. 4 个",
+        "C. 2 个",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "C",
+      "answer_text": "2 speakers",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    }
+  ],
+  "timestamp": 675005.586688848,
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/说话人属性识别能力-情感识别任务_spk_a.mp3",
+    "start_time": 19.9,
+    "end_time": 22.1,
+    "duration": 2.2
+  }
+}

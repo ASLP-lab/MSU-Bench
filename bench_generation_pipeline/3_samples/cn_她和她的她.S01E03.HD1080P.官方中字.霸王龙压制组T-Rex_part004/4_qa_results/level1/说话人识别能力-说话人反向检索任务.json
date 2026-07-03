@@ -1,0 +1,59 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人反向检索任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人反向检索任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_006",
+            "start_time": 47.01,
+            "end_time": 48.25,
+            "transcript": "化验那边有消息吗？",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_007",
+            "start_time": 49.54,
+            "end_time": 54.22,
+            "transcript": "验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_3",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "在下面的语句中，对话中第 1 个出现的说话人说过哪些话？请选择最符合的一项。\n候选语句：\n1) 谢志东在老人院被人杀了，严胜华是老人院的护理长。\n2) 化验那边有消息吗？\n3) 还有没有指纹？\n4) 所以不排除是模仿案咯。\n5) 没有，凶手应该有戴手套。\n6) 我们查过他的通话记录了吗？",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. 2,3,4,6",
+        "B. 1,2,3,4",
+        "C. 1,2,3,5",
+        "D. 无法判断（信息不足以确定）"
+      ],
+      "answer": "B",
+      "answer_text": "1,2,3,4",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    }
+  ]
+}

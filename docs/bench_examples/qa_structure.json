@@ -1,0 +1,184 @@
+{
+  "task_id": "qa_structure",
+  "level": "level2",
+  "dimension": "Structure Analysis",
+  "task_name": "QA Structure Recognition",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Pacific Rim: Uprising (2018)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/qa_structure/en_spk_a.mp3",
+          "start": 257.54,
+          "end": 258.86,
+          "dur": 1.32
+        }
+      },
+      "spk_a_transcript": "Yeah, what's her problem?",
+      "spk_b_transcript": "Took her three shots to pass the entrance test.",
+      "qa": [
+        {
+          "question": "The following is a line of dialogue from one speaker. In the full conversation, what is the most likely response to this line?",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
+            "B. Speaker B: Moyulan is for pilots.",
+            "C. Speaker B: Took her three shots to pass the entrance test.",
+            "D. Cannot be determined (Insufficient information to pinpoint the response)"
+          ],
+          "answer": "C",
+          "answer_text": "Took her three shots to pass the entrance test.",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "According to the conversation, what is the response to the line spoken between 257.54 and 258.86 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
+            "B. Speaker B: Moyulan is for pilots.",
+            "C. Speaker B: Took her three shots to pass the entrance test.",
+            "D. Cannot determine (Insufficient information to identify the response)"
+          ],
+          "answer": "C",
+          "answer_text": "Took her three shots to pass the entrance test.",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "According to the dialogue, what is the other speaker's reply to the statement, 'what's her problem?'",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker B: Moyulan is for pilots.",
+            "B. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
+            "C. Cannot be determined (insufficient information to locate the response)",
+            "D. Speaker B: Took her three shots to pass the entrance test."
+          ],
+          "answer": "D",
+          "answer_text": "Took her three shots to pass the entrance test.",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "Based on the conversation, what is the response to the statement 'what's her problem?', spoken between 257.54 and 258.86 seconds?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker B: Moyulan is for pilots.",
+            "B. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
+            "C. Cannot determine (insufficient information to locate the response)",
+            "D. Speaker B: Took her three shots to pass the entrance test."
+          ],
+          "answer": "D",
+          "answer_text": "Took her three shots to pass the entrance test.",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Dwelling Narrowness (蜗居, 2009)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/qa_structure/zh_spk_a.mp3",
+          "start": 255.94,
+          "end": 262.86,
+          "dur": 6.92
+        }
+      },
+      "spk_a_transcript": "But the old rule still applies: no matter how late you work or what methods you use, it must be finished by tomorrow morning.",
+      "spk_b_transcript": "Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+      "qa": [
+        {
+          "question": "The following is a monologue from a speaker. What is the most likely response to this utterance in a complete dialogue?",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker B: Okay, Manager. We guarantee we'll complete the task and won't fall behind schedule.",
+            "B. Speaker B: Manager, please don't ask me to work overtime on Mondays, Wednesdays, and Fridays anymore. I've signed up for a professional development course, because if I don't keep learning, I'll soon be left behind by society, right?",
+            "C. Speaker B: Exactly, Manager. Why does it seem like our generation is always the one being left behind by society?",
+            "D. Cannot determine (Insufficient information to locate the response)"
+          ],
+          "answer": "B",
+          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "Based on the conversation, what is the response to the speaker's utterance from 255.94s to 262.86s?",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker B: Okay, Manager. We promise to complete the task and won't fall behind schedule.",
+            "B. Cannot determine (Insufficient information to locate the response)",
+            "C. Speaker B: Exactly, Manager. Why is it that our generation is always the one being left behind by society?",
+            "D. Speaker B: Manager, please don't ask me to work overtime on Mondays, Wednesdays, and Fridays anymore. I've enrolled in a professional development course because if I don't keep improving, I'll soon be left behind by society, right?"
+          ],
+          "answer": "D",
+          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "According to the dialogue, what is the response to the statement, '...it must be finished by tomorrow morning'?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker B: Exactly, Manager. It's like our generation is always the one being left behind by society.",
+            "B. Speaker B: Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a training course, because if I don't keep learning, I'll be left behind by society soon, right?",
+            "C. Speaker B: Okay, Manager. We guarantee we'll complete the task and won't delay our progress.",
+            "D. Cannot be determined (Insufficient information to locate the response)"
+          ],
+          "answer": "B",
+          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "According to the dialogue, what is the response to the speaker's statement between 255.94s and 262.86s, which includes the phrase '...must be finished by tomorrow morning'?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Cannot determine (Insufficient information to locate the response)",
+            "B. Speaker B: Exactly, Manager. It seems our generation is always the one that gets left behind by society.",
+            "C. Speaker B: Okay, Manager. We promise to complete the task and won't delay the schedule.",
+            "D. Speaker B: Manager, please don't call me in for overtime on Mondays, Wednesdays, and Fridays anymore. I've signed up for a professional development course, because if I don't keep upgrading my skills, I'll be left behind by society soon, right?"
+          ],
+          "answer": "D",
+          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth"
+          ]
+        }
+      ]
+    }
+  }
+}

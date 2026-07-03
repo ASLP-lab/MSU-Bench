@@ -1,0 +1,149 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人属性识别能力-情感识别任务.txt",
+  "prompt_relpath": "level1/说话人属性识别能力-情感识别任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_033",
+            "start_time": 167.01,
+            "end_time": 170.65,
+            "transcript": "你还要提起这件事情，就是这件事情毁了这个家。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_047",
+            "start_time": 243.62,
+            "end_time": 244.66,
+            "transcript": "你家有果园啊？",
+            "spk_id": "spk_02",
+            "spk_index": "spk_2",
+            "age": "青年",
+            "gender": "女声",
+            "emotion": "惊讶",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面单人讲话音频中，说话人的情感最接近以下哪一项？",
+      "question_type": "no_index",
+      "options": [
+        "A. 惊讶",
+        "B. 生气",
+        "C. 开心",
+        "D. 无法判断（证据不足以确定情感）"
+      ],
+      "answer": "B",
+      "answer_text": "生气",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中在第 167.01 秒到第 170.65 秒讲话的说话人情感最接近以下哪一项？",
+      "question_type": "time_index",
+      "options": [
+        "A. 无法判断（证据不足以确定情感）",
+        "B. 惊讶",
+        "C. 开心",
+        "D. 生气"
+      ],
+      "answer": "D",
+      "answer_text": "生气",
+      "rationale": [
+        "A. unknown",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过‘就是这件事情毁了这个家’的说话人在该句话的情感最接近以下哪一项？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 生气",
+        "B. 开心",
+        "C. 无法判断（证据不足以确定情感）",
+        "D. 惊讶"
+      ],
+      "answer": "A",
+      "answer_text": "生气",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "在第 167.01 秒到第 170.65 秒说过‘你还要提起这件事情，就是这件事情毁了这个家。’的说话人，其情感最接近以下哪一项？",
+      "question_type": "complex_index",
+      "options": [
+        "A. 无法判断（证据不足以确定情感）",
+        "B. 生气",
+        "C. 惊讶",
+        "D. 开心"
+      ],
+      "answer": "B",
+      "answer_text": "生气",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "在整段音频中，出现过情感 悲伤 的说话人有哪些？（用 全局说话人顺序 作答）请选择最符合的一项。",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. spk_2、spk_7",
+        "B. spk_2、spk_7、spk_8",
+        "C. spk_1、spk_4、spk_7",
+        "D. 无法判断（证据不足以确定情感）"
+      ],
+      "answer": "B",
+      "answer_text": "spk_2、spk_7、spk_8",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "在整段音频中，出现过情感 悲伤 的说话人一共有几个？请选择最符合的一项。",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 2 个",
+        "B. 3 个",
+        "C. 5 个",
+        "D. 无法判断（证据不足以确定情感）"
+      ],
+      "answer": "B",
+      "answer_text": "3 个",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ]
+}

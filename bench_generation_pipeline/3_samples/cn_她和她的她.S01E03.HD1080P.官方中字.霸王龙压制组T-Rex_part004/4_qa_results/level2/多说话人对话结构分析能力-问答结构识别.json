@@ -1,0 +1,117 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人对话结构分析能力-问答结构识别.txt",
+  "prompt_relpath": "level2/多说话人对话结构分析能力-问答结构识别.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_006",
+            "start_time": 47.01,
+            "end_time": 48.25,
+            "transcript": "化验那边有消息吗？",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_007",
+            "start_time": 49.54,
+            "end_time": 54.22,
+            "transcript": "验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_3",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面是某个说话人的单讲片段，在完整对话中最可能对该语音回应的一项是：",
+      "type": "single_choice",
+      "question_type": "no_index",
+      "options": [
+        "A. 说话人B：相关证据还在搜证，不排除有其他人涉案。",
+        "B. 说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+        "C. 无法判断（信息不足以定位回复）",
+        "D. 说话人B：结果出来了，但是没有发现有用的线索。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "unknown",
+        "hallucination"
+      ]
+    },
+    {
+      "question": "根据对话内容，其他人对某个说话人在第 47.01 秒到第 48.25 秒的讲话内容回复的语句是：",
+      "type": "single_choice",
+      "question_type": "time_index",
+      "options": [
+        "A. 说话人B：相关证据还在搜证，不排除有其他人涉案。",
+        "B. 说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+        "C. 无法判断（信息不足以定位回复）",
+        "D. 说话人B：结果出来了，但是没有发现有用的线索。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "unknown",
+        "hallucination"
+      ]
+    },
+    {
+      "question": "根据对话内容，其他人对某个说话人关于‘化验那边有消息吗？’的表述的回复语句是：",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 说话人B：相关证据还在搜证，不排除有其他人涉案。",
+        "B. 说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+        "C. 无法判断（信息不足以定位回复）",
+        "D. 说话人B：结果出来了，但是没有发现有用的线索。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "unknown",
+        "hallucination"
+      ]
+    },
+    {
+      "question": "根据对话内容，其他人对某个说话人在第 47.01 秒到第 48.25 秒说话人关于‘化验那边’的表述的回复是：",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. 说话人B：相关证据还在搜证，不排除有其他人涉案。",
+        "B. 说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+        "C. 无法判断（信息不足以定位回复）",
+        "D. 说话人B：结果出来了，但是没有发现有用的线索。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人B：验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "unknown",
+        "hallucination"
+      ]
+    }
+  ]
+}

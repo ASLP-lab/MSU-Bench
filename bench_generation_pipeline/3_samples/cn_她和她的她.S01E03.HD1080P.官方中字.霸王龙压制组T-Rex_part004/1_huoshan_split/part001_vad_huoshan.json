@@ -1,0 +1,317 @@
+[
+  {
+    "segment_id": "seg_001",
+    "start_time": "00:11:460",
+    "end_time": "00:15:060"
+  },
+  {
+    "segment_id": "seg_002",
+    "start_time": "00:17:300",
+    "end_time": "00:18:219"
+  },
+  {
+    "segment_id": "seg_003",
+    "start_time": "00:18:820",
+    "end_time": "00:21:260"
+  },
+  {
+    "segment_id": "seg_004",
+    "start_time": "00:42:479",
+    "end_time": "00:43:079"
+  },
+  {
+    "segment_id": "seg_005",
+    "start_time": "00:43:280",
+    "end_time": "00:43:520"
+  },
+  {
+    "segment_id": "seg_006",
+    "start_time": "00:47:009",
+    "end_time": "00:48:250"
+  },
+  {
+    "segment_id": "seg_007",
+    "start_time": "00:49:539",
+    "end_time": "00:54:219"
+  },
+  {
+    "segment_id": "seg_008",
+    "start_time": "00:54:659",
+    "end_time": "00:55:380"
+  },
+  {
+    "segment_id": "seg_009",
+    "start_time": "00:55:619",
+    "end_time": "00:58:299"
+  },
+  {
+    "segment_id": "seg_010",
+    "start_time": "01:00:049",
+    "end_time": "01:02:570"
+  },
+  {
+    "segment_id": "seg_011",
+    "start_time": "01:03:250",
+    "end_time": "01:03:329"
+  },
+  {
+    "segment_id": "seg_012",
+    "start_time": "01:04:450",
+    "end_time": "01:07:730"
+  },
+  {
+    "segment_id": "seg_013",
+    "start_time": "01:08:129",
+    "end_time": "01:08:450"
+  },
+  {
+    "segment_id": "seg_014",
+    "start_time": "01:09:629",
+    "end_time": "01:10:349"
+  },
+  {
+    "segment_id": "seg_015",
+    "start_time": "01:31:719",
+    "end_time": "01:39:040"
+  },
+  {
+    "segment_id": "seg_016",
+    "start_time": "01:42:969",
+    "end_time": "01:44:049"
+  },
+  {
+    "segment_id": "seg_017",
+    "start_time": "01:45:700",
+    "end_time": "01:46:459"
+  },
+  {
+    "segment_id": "seg_018",
+    "start_time": "01:47:780",
+    "end_time": "01:48:939"
+  },
+  {
+    "segment_id": "seg_019",
+    "start_time": "01:51:090",
+    "end_time": "01:55:170"
+  },
+  {
+    "segment_id": "seg_020",
+    "start_time": "01:55:609",
+    "end_time": "01:56:530"
+  },
+  {
+    "segment_id": "seg_021",
+    "start_time": "01:56:849",
+    "end_time": "02:00:930"
+  },
+  {
+    "segment_id": "seg_022",
+    "start_time": "02:01:620",
+    "end_time": "02:06:299"
+  },
+  {
+    "segment_id": "seg_023",
+    "start_time": "02:06:939",
+    "end_time": "02:08:139"
+  },
+  {
+    "segment_id": "seg_024",
+    "start_time": "02:08:780",
+    "end_time": "02:11:860"
+  },
+  {
+    "segment_id": "seg_025",
+    "start_time": "02:11:979",
+    "end_time": "02:13:620"
+  },
+  {
+    "segment_id": "seg_026",
+    "start_time": "02:14:469",
+    "end_time": "02:17:349"
+  },
+  {
+    "segment_id": "seg_027",
+    "start_time": "02:18:189",
+    "end_time": "02:20:789"
+  },
+  {
+    "segment_id": "seg_028",
+    "start_time": "02:21:270",
+    "end_time": "02:24:110"
+  },
+  {
+    "segment_id": "seg_029",
+    "start_time": "02:24:560",
+    "end_time": "02:37:860"
+  },
+  {
+    "segment_id": "seg_030",
+    "start_time": "02:39:310",
+    "end_time": "02:43:830"
+  },
+  {
+    "segment_id": "seg_031",
+    "start_time": "02:44:590",
+    "end_time": "02:46:030"
+  },
+  {
+    "segment_id": "seg_032",
+    "start_time": "02:47:009",
+    "end_time": "02:50:650"
+  },
+  {
+    "segment_id": "seg_033",
+    "start_time": "03:06:340",
+    "end_time": "03:07:219"
+  },
+  {
+    "segment_id": "seg_034",
+    "start_time": "03:15:569",
+    "end_time": "03:16:650"
+  },
+  {
+    "segment_id": "seg_035",
+    "start_time": "03:16:889",
+    "end_time": "03:17:849"
+  },
+  {
+    "segment_id": "seg_036",
+    "start_time": "03:18:330",
+    "end_time": "03:19:930"
+  },
+  {
+    "segment_id": "seg_037",
+    "start_time": "03:20:610",
+    "end_time": "03:20:729"
+  },
+  {
+    "segment_id": "seg_038",
+    "start_time": "03:23:259",
+    "end_time": "03:24:900"
+  },
+  {
+    "segment_id": "seg_039",
+    "start_time": "03:28:949",
+    "end_time": "03:30:830"
+  },
+  {
+    "segment_id": "seg_040",
+    "start_time": "03:30:949",
+    "end_time": "03:31:830"
+  },
+  {
+    "segment_id": "seg_041",
+    "start_time": "03:37:590",
+    "end_time": "03:38:310"
+  },
+  {
+    "segment_id": "seg_042",
+    "start_time": "03:40:219",
+    "end_time": "03:43:219"
+  },
+  {
+    "segment_id": "seg_043",
+    "start_time": "03:44:340",
+    "end_time": "03:45:419"
+  },
+  {
+    "segment_id": "seg_044",
+    "start_time": "03:48:069",
+    "end_time": "03:51:389"
+  },
+  {
+    "segment_id": "seg_045",
+    "start_time": "03:58:539",
+    "end_time": "04:02:539"
+  },
+  {
+    "segment_id": "seg_046",
+    "start_time": "04:03:620",
+    "end_time": "04:04:659"
+  },
+  {
+    "segment_id": "seg_047",
+    "start_time": "04:07:659",
+    "end_time": "04:17:420"
+  },
+  {
+    "segment_id": "seg_048",
+    "start_time": "04:24:180",
+    "end_time": "04:25:660"
+  },
+  {
+    "segment_id": "seg_049",
+    "start_time": "04:26:019",
+    "end_time": "04:28:300"
+  },
+  {
+    "segment_id": "seg_050",
+    "start_time": "04:32:550",
+    "end_time": "04:35:470"
+  },
+  {
+    "segment_id": "seg_051",
+    "start_time": "04:36:870",
+    "end_time": "04:39:430"
+  },
+  {
+    "segment_id": "seg_052",
+    "start_time": "04:40:649",
+    "end_time": "04:45:290"
+  },
+  {
+    "segment_id": "seg_053",
+    "start_time": "04:48:410",
+    "end_time": "04:50:209"
+  },
+  {
+    "segment_id": "seg_054",
+    "start_time": "04:51:680",
+    "end_time": "04:54:439"
+  },
+  {
+    "segment_id": "seg_055",
+    "start_time": "04:55:720",
+    "end_time": "05:01:000"
+  },
+  {
+    "segment_id": "seg_056",
+    "start_time": "05:01:649",
+    "end_time": "05:03:009"
+  },
+  {
+    "segment_id": "seg_057",
+    "start_time": "05:04:610",
+    "end_time": "05:06:810"
+  },
+  {
+    "segment_id": "seg_058",
+    "start_time": "05:08:399",
+    "end_time": "05:09:639"
+  },
+  {
+    "segment_id": "seg_059",
+    "start_time": "05:10:949",
+    "end_time": "05:14:990"
+  },
+  {
+    "segment_id": "seg_060",
+    "start_time": "05:17:839",
+    "end_time": "05:20:000"
+  },
+  {
+    "segment_id": "seg_061",
+    "start_time": "05:22:079",
+    "end_time": "05:25:360"
+  },
+  {
+    "segment_id": "seg_062",
+    "start_time": "05:26:829",
+    "end_time": "05:29:589"
+  },
+  {
+    "segment_id": "seg_063",
+    "start_time": "05:30:509",
+    "end_time": "05:34:990"
+  }
+]

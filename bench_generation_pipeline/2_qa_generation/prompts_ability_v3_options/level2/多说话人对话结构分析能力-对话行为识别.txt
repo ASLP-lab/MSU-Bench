@@ -1,0 +1,169 @@
+################################################################
+# 多说话人对话结构分析能力：对话行为识别（两人互动）｜统一输出格式｜含 speaker_index｜不生成 retrieval
+################################################################
+
+你是 QA 构造专家。输入为多说话人转录与对应音频（至少包含 spk_id、transcript；可能包含 start_time/end_time/seg_id；你可以听音频并结合语气、重音、停顿等信息）。
+
+任务：在同一段对话中选择两位说话人（A 与 B），围绕它们在“对应片段”内体现的互动行为/对话行为，构造四选一单选题。
+
+仅生成以下 question_type（禁止生成任何 retrieval/反向检索类题）：
+- no_index / time_index / transcript_index / speaker_index / complex_index
+
+================================================
+【关键要求：行为/关系由你动态总结，不提供固定备选集合】
+- 你不得依赖预设的行为标签列表来直接套模板；必须根据该片段的具体话语内容、互动方式与音频语气，自行总结行为/关系。
+- 行为/关系可以是“单一行为”或“复合行为（最多两项）”，但必须简短、可区分、且能被片段证据唯一支持。
+- 允许的行为/关系示例（仅作示例，不是固定集合）：
+  - “反讽挖苦”：表面夸赞/认可，实际嘲讽对方
+  - “领导控场推进”：要求汇报/分配任务/推进议题
+  - “反派挑衅争吵”：言语攻击、升级冲突、带挑衅
+  - “合作同盟”：互相支持、共同针对外部对象
+  - “安抚后反击”：先缓和再挑衅/反击
+  你可以总结出其他更贴合片段的行为，只要能唯一判定。
+
+================================================
+【关键目标与限制】
+1) 本任务考察“互动行为/对话行为”，而不是身份关系/观点/情绪属性。
+2) 题干/选项中禁止使用 segid / turn / 轮次 / turn_index / “第几轮”等定位方式。
+3) 题干可以用时间范围与/或转录片段定位（按题型要求）；选项中不得出现任何时间信息。
+4) 如果无法唯一确定互动行为（只能选 unknown），必须输出 []。
+
+================================================
+【spk_index 定义（用于 speaker_index 题干）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  - 第一个首次出现的 spk_id => spk_1
+  - 第二个首次出现的 spk_id => spk_2
+  - 以此类推
+- spk_index 仅允许出现在：
+  - speaker_meta 字段记录
+  - question_type="speaker_index" 的题干
+除 speaker_index 题干外，题干/选项/答案/解析不得出现 spk_id/spk_index。
+
+================================================
+【speaker_meta 选段与聚合规则（先选一次，全题复用｜强制执行）】
+你必须先挑选两位不同说话人的“互动证据 seg”，并按下面结构输出 speaker_meta（同一 spk_id 的多个 seg 可放在同一个 list）：
+
+- spk_a：说话人A（同一 spk_id）
+- spk_b：说话人B（同一 spk_id）
+
+强制要求（非常重要）：
+1) speaker_meta.spk_a 内所有 seg 的 spk_id 必须相同；speaker_meta.spk_b 内所有 seg 的 spk_id 必须相同；且二者 spk_id 必须不同。
+2) spk_a[0] 与 spk_b[0] 必须来自同一个“互动窗口”，能共同体现同一类互动行为：
+   - 两个 seg 在时间上应相近（建议 B 的 seg 紧跟 A 或发生直接回应），避免跨很久导致行为不一致。
+3) 你挑选的 spk_a[0] 与 spk_b[0] 必须“都能反映该互动行为”：
+   - 两句都要是互动链条的一部分（发起-回应、质疑-解释、攻击-反击、安抚-接受等）。
+4) spk_a[0] 与 spk_b[0] 都必须能唯一定位到输入（优先 seg_id；其次 start/end；再其次 transcript 唯一片段）。
+5) 两个 seg 的 transcript 不能过短、不能只是“嗯/啊/好/对”等无信息词。
+6) 为避免热身：spk_a[0] 与 spk_b[0] 都不能是本段语音的第一句话。
+
+建议（不强制）：
+- 你可以在 spk_a / spk_b 的 list 中额外放入同一说话人的其他相关 seg（用于你内部确认“该互动行为在该窗口内一致”），但题干索引只使用 [0] 号 seg。
+
+================================================
+【最终输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组：
+- 第 1 个元素：只包含 speaker_meta
+- 后续元素：每个元素是一道选择题对象
+若五种模板都无法保证唯一正确 => 输出 []（不要只输出 speaker_meta）。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_1",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}],
+      "spk_b": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_2",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}]
+    }
+  },
+  {
+    "question": "...",
+    "type": "single_choice",
+    "question_type": "no_index|time_index|transcript_index|speaker_index|complex_index",
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+字段硬约束：
+- options 必须为 4 个且顺序打乱；answer 必须指向 ground truth；answer_text 不含字母前缀。
+- rationale 必须与 A-D 一一对应，且固定四类标签：ground truth / wrong speaker / hallucination / unknown。
+- 选项中不得出现时间与 seg_id/spk_id/spk_index；题干中允许出现时间/文本（按模板）。
+
+================================================
+【通用选项构造规则（所有模板适用｜必须 1真+1错对象+1相似但不一样+1不确定）】
+你必须生成 4 个选项（顺序打乱）：
+
+A) ground truth（唯一正确）：
+- “说话人A与说话人B在该片段体现的互动行为/对话行为”总结（可带极短解释，不得引用原句，不得出现时间）。
+
+B) wrong speaker（同段对话中真实出现过，但对象不是 A 与 B）：
+- 该选项描述的互动行为必须在同一对话里真实出现过，但发生在“另一对说话人”之间（例如 C 与 D），不是 A 与 B。
+- 选项文本将 C/D，说话人替换为 A-B 上，让模型来看是否能分辨。
+- 若对话里找不到“另一对说话人之间的明确互动行为” => 本题不生成（输出 []）。
+
+C) hallucination（相似但关键不同，且不应成立）：
+- 构造与 ground truth 看起来相近、容易混淆，但关键点不同（相似但错误）。
+- 它可以在该对话中“看起来可能发生”，并且与真实行为很相似的交互。
+
+D) unknown：
+- 固定选项文本："无法判断（证据不足）"
+- unknown 只能作为错误选项；若你认为确实无法唯一判定，直接输出 []。
+
+================================================
+【题干模板（按题型）】
+说明：题干中先出现的说话人定义为“说话人A”，后出现的定义为“说话人B”；选项用“说话人A/说话人B”指代。
+
+模板1｜no_index（两段切分音频索引，不给时间与文本）
+question_type = "no_index"
+题干：
+“下面音频中的两个说话人，在对应片段中体现的互动行为是什么？请选择最符合的一项。”
+说明：
+- 评测侧提供两段切分音频：音频1=spk_a[0]（说话人A），音频2=spk_b[0]（说话人B）
+- 题干不得出现时间与 transcript。
+
+模板2｜time_index（双时间范围索引，不给文本）
+question_type = "time_index"
+题干：
+“音频中第 S1 秒到第 E1 秒讲话的说话人以及在第 S2 秒到第 E2 秒讲话的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。”
+约束：
+- [S1,E1] 必须取自 spk_a[0].start_time/end_time
+- [S2,E2] 必须取自 spk_b[0].start_time/end_time
+- 题干不出现 transcript。
+
+模板3｜transcript_index（双文本索引，不给时间）
+question_type = "transcript_index"
+题干：
+“音频中说过‘content_a’的说话人以及说过‘content_b’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。”
+约束：
+- content_a 必须逐字来自 spk_a[0].transcript（可截取连续子串，但需能唯一定位该 seg）
+- content_b 必须逐字来自 spk_b[0].transcript（同上）
+- 题干不出现时间。
+
+模板4｜speaker_index（全局顺序索引：第1与第2）
+question_type = "speaker_index"
+题干：
+“整段对话第一个发言的说话人以及第二个发言的说话人在对话中体现的互动行为是什么？请选择最符合的一项。”
+生成条件（必须全部满足）：
+- 本模板要求两人分别为 spk_1 与 spk_2；
+- 即 spk_a[0].spk_index=spk_1 且 spk_b[0].spk_index=spk_2（若不满足则跳过该模板，不要强行换人）。
+- 题干不出现时间与 transcript。
+
+模板5｜complex_index（双时间+双文本联合索引）
+question_type = "complex_index"
+题干：
+“音频中第 S1 秒到第 E1 秒说过‘content_a’的说话人与第 S2 秒到第 E2 秒说过‘content_b’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。”
+约束：
+- S1/E1/content_a 同时来自 spk_a[0] 的同一 seg
+- S2/E2/content_b 同时来自 spk_b[0] 的同一 seg
+
+================================================
+【唯一正确性自检（失败=>[]）】
+生成后你必须自检：
+- ground truth 对 A-B 是唯一最合理解释
+- wrong speaker 确实存在于同一对话，但对象不是 A 与 B
+- hallucination 与 ground truth 相似但关键不同，且不应成立
+- 若存在多解或证据不足，则输出 []
+
+开始生成：请仅输出符合格式的 JSON；若无法保证唯一正确则输出 []。

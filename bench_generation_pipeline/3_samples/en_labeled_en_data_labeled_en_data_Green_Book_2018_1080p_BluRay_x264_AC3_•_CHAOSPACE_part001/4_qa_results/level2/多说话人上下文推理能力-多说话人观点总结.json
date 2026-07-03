@@ -1,0 +1,231 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人上下文推理能力-多说话人观点总结.txt",
+  "prompt_relpath": "level2/多说话人上下文推理能力-多说话人观点总结.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_051",
+            "start_time": 250.42,
+            "end_time": 254.06,
+            "transcript": "You tell Jules Podell, if I don't get my hat, I'm gonna burn his joint down.",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_053",
+            "start_time": 254.74,
+            "end_time": 256.38,
+            "transcript": "It's gonna turn up. I swear to God it's gonna turn up.",
+            "spk_id": "spk_09",
+            "spk_index": "spk_9",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "恐惧",
+            "accent": "通用美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面音频中的两个说话人在整段对话中的观立场什么？请选择最符合的一项。",
+      "question_type": "no_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子持安抚立场，并保证问题会得到解决；说话人B：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段。",
+        "B. 说话人A：对寻回丢失的帽子主张报警处理；说话人B：对寻回丢失的帽子表示无能为力，建议对方放弃。",
+        "C. 说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+        "D. 说话人A：对帽子的丢失表达了强烈的情绪；说话人B：试图与对方就帽子丢失一事进行沟通。"
+      ],
+      "answer": "C",
+      "answer_text": "说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 250.42 秒到第 254.06 秒讲话的说话人以及在第 254.74 秒到第 256.38 秒讲话的说话人在整段对话中的立场是什么？请选择最符合的一项。",
+      "question_type": "time_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子持安抚立场，并保证问题会得到解决；说话人B：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段。",
+        "B. 说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+        "C. 说话人A：对帽子的丢失表达了强烈的情绪；说话人B：试图与对方就帽子丢失一事进行沟通。",
+        "D. 说话人A：对寻回丢失的帽子主张报警处理；说话人B：对寻回丢失的帽子表示无能为力，建议对方放弃。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "音频中说过‘if I don't get my hat, I'm gonna burn his joint down’的说话人以及说过‘I swear to God it's gonna turn up’的说话人在整段对话中的立场是什么？请选择最符合的一项。",
+      "question_type": "transcript_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+        "B. 说话人A：对帽子的丢失表达了强烈的情绪；说话人B：试图与对方就帽子丢失一事进行沟通。",
+        "C. 说话人A：对寻回丢失的帽子持安抚立场，并保证问题会得到解决；说话人B：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段。",
+        "D. 说话人A：对寻回丢失的帽子主张报警处理；说话人B：对寻回丢失的帽子表示无能为力，建议对方放弃。"
+      ],
+      "answer": "A",
+      "answer_text": "说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+      "rationale": [
+        "A. ground truth",
+        "B. unknown",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "整段对话中第 8 个发言的说话人和第 9 个发言的说话人，在对话中的立场分别是什么？请选择最符合的一项。",
+      "question_type": "speaker_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子主张报警处理；说话人B：对寻回丢失的帽子表示无能为力，建议对方放弃。",
+        "B. 说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+        "C. 说话人A：对帽子的丢失表达了强烈的情绪；说话人B：试图与对方就帽子丢失一事进行沟通。",
+        "D. 说话人A：对寻回丢失的帽子持安抚立场，并保证问题会得到解决；说话人B：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "音频中第 250.42 秒到第 254.06 秒说过‘burn his joint down’的说话人与第 254.74 秒到第 256.38 秒说过‘It's gonna turn up’的说话人在整段对话中的立场是什么？请选择最符合的一项。",
+      "question_type": "complex_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子持安抚立场，并保证问题会得到解决；说话人B：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段。",
+        "B. 说话人A：对帽子的丢失表达了强烈的情绪；说话人B：试图与对方就帽子丢失一事进行沟通。",
+        "C. 说话人A：对寻回丢失的帽子主张报警处理；说话人B：对寻回丢失的帽子表示无能为力，建议对方放弃。",
+        "D. 说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。"
+      ],
+      "answer": "D",
+      "answer_text": "说话人A：对寻回丢失的帽子持不信任态度，并主张采取极端威胁手段；说话人B：对寻回丢失的帽子持安抚立场，并保证问题会得到解决。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. unknown",
+        "C. hallucination",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "下面音频中的两个说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
+      "question_type": "no_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子，从最初的威胁转变为寻求赔偿；说话人B：对寻回丢失的帽子，从承诺解决转变为拒绝承担责任。",
+        "B. 说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+        "C. 说话人A：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场；说话人B：对寻回丢失的帽子，态度一直为通过极端威胁来解决。",
+        "D. 说话人A：对帽子丢失一事的态度逐渐升级；说话人B：对帽子丢失一事的立场较为模糊，难以判断。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 250.42 秒到第 254.06 秒讲话的说话人以及在第 254.74 秒到第 256.38 秒讲话的说话人在立场对话中的观点变化是什么？请选择最符合的一项。",
+      "question_type": "time_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 说话人A：对帽子丢失一事的态度逐渐升级；说话人B：对帽子丢失一事的立场较为模糊，难以判断。",
+        "B. 说话人A：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场；说话人B：对寻回丢失的帽子，态度一直为通过极端威胁来解决。",
+        "C. 说话人A：对寻回丢失的帽子，从最初的威胁转变为寻求赔偿；说话人B：对寻回丢失的帽子，从承诺解决转变为拒绝承担责任。",
+        "D. 说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。"
+      ],
+      "answer": "D",
+      "answer_text": "说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+      "rationale": [
+        "A. unknown",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过‘if I don't get my hat, I'm gonna burn his joint down’的说话人以及说过‘I swear to God it's gonna turn up’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
+      "question_type": "transcript_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+        "B. 说话人A：对帽子丢失一事的态度逐渐升级；说话人B：对帽子丢失一事的立场较为模糊，难以判断。",
+        "C. 说话人A：对寻回丢失的帽子，从最初的威胁转变为寻求赔偿；说话人B：对寻回丢失的帽子，从承诺解决转变为拒绝承担责任。",
+        "D. 说话人A：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场；说话人B：对寻回丢失的帽子，态度一直为通过极端威胁来解决。"
+      ],
+      "answer": "A",
+      "answer_text": "说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+      "rationale": [
+        "A. ground truth",
+        "B. unknown",
+        "C. hallucination",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "整段对话中第 8 个发言的说话人和第 9 个发言的说话人，在对话中的立场变化分别是什么？请选择最符合的一项。",
+      "question_type": "speaker_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 说话人A：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场；说话人B：对寻回丢失的帽子，态度一直为通过极端威胁来解决。",
+        "B. 说话人A：对寻回丢失的帽子，从最初的威胁转变为寻求赔偿；说话人B：对寻回丢失的帽子，从承诺解决转变为拒绝承担责任。",
+        "C. 说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+        "D. 说话人A：对帽子丢失一事的态度逐渐升级；说话人B：对帽子丢失一事的立场较为模糊，难以判断。"
+      ],
+      "answer": "C",
+      "answer_text": "说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 250.42 秒到第 254.06 秒说过‘burn his joint down’的说话人与第 254.74 秒到第 256.38 秒说过‘It's gonna turn up’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
+      "question_type": "complex_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 说话人A：对帽子丢失一事的态度逐渐升级；说话人B：对帽子丢失一事的立场较为模糊，难以判断。",
+        "B. 说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+        "C. 说话人A：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场；说话人B：对寻回丢失的帽子，态度一直为通过极端威胁来解决。",
+        "D. 说话人A：对寻回丢失的帽子，从最初的威胁转变为寻求赔偿；说话人B：对寻回丢失的帽子，从承诺解决转变为拒绝承担责任。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人A：对寻回丢失的帽子，态度一直为通过极端威胁来解决；说话人B：对寻回丢失的帽子，始终采取安抚对方并保证解决的立场。",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    }
+  ]
+}

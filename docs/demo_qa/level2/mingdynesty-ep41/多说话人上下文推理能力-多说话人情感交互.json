@@ -1,0 +1,138 @@
+{
+  "video": "mingdynesty-ep41.mp4",
+  "level": "level2",
+  "prompt": "多说话人上下文推理能力-多说话人情感交互.txt",
+  "success": true,
+  "error": null,
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_050",
+            "start_time": 266.1,
+            "end_time": 274.0,
+            "transcript": "Including your so-called mentor, backers, and accomplices—if they are heroes and real men, let them all step forward.",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Angry",
+            "accent": null
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_054",
+            "start_time": 279.1,
+            "end_time": 282.5,
+            "transcript": "I am no hero or real man, and I have no accomplices.",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sad",
+            "accent": null
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following audio clip, what is the speaker's (<spk_1>) emotion, and how does it affect others in the conversation?",
+      "question_type": "no_index",
+      "options": [
+        "A. Emotion: Anger; impact: It causes <spk_3> to become fearful and try to interject.",
+        "B. Emotion: Joy; impact: It encourages <spk_2> to proudly name his allies.",
+        "C. Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+        "D. Cannot determine (insufficient evidence)."
+      ],
+      "answer": "C",
+      "answer_text": "Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+      "rationale": [
+        "wrong speaker",
+        "hallucination",
+        "ground truth",
+        "unknown"
+      ]
+    },
+    {
+      "question": "In the audio from second 266.1 to second 274.0, what is <spk_1>'s emotion and how does it impact others in the conversation?",
+      "question_type": "time_index",
+      "options": [
+        "A. Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+        "B. Emotion: Anger; impact: It causes <spk_3> to become fearful and try to interject.",
+        "C. Cannot determine (insufficient evidence).",
+        "D. Emotion: Joy; impact: It encourages <spk_2> to proudly name his allies."
+      ],
+      "answer": "A",
+      "answer_text": "Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+      "rationale": [
+        "ground truth",
+        "wrong speaker",
+        "unknown",
+        "hallucination"
+      ]
+    },
+    {
+      "question": "In the audio, the speaker (<spk_1>) who says 'if they are heroes and real men, let them all step forward.' — what is their emotion and how does it affect others in the conversation?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Cannot determine (insufficient evidence).",
+        "B. Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+        "C. Emotion: Joy; impact: It encourages <spk_2> to proudly name his allies.",
+        "D. Emotion: Anger; impact: It causes <spk_3> to become fearful and try to interject."
+      ],
+      "answer": "B",
+      "answer_text": "Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+      "rationale": [
+        "unknown",
+        "ground truth",
+        "hallucination",
+        "wrong speaker"
+      ]
+    },
+    {
+      "question": "In the audio, what is the emotion of the 1st speaker to appear (<spk_1>) in the provided clip, and how does it affect others in the conversation?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Emotion: Joy; impact: It encourages <spk_2> to proudly name his allies.",
+        "B. Cannot determine (insufficient evidence).",
+        "C. Emotion: Anger; impact: It causes <spk_3> to become fearful and try to interject.",
+        "D. Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations."
+      ],
+      "answer": "D",
+      "answer_text": "Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+      "rationale": [
+        "hallucination",
+        "unknown",
+        "wrong speaker",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "In the audio from second 266.1 to second 274.0, the speaker (<spk_1>) who says 'if they are heroes and real men, let them all step forward.' — what is their emotion and how does it affect others?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Emotion: Anger; impact: It causes <spk_3> to become fearful and try to interject.",
+        "B. Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+        "C. Emotion: Joy; impact: It encourages <spk_2> to proudly name his allies.",
+        "D. Cannot determine (insufficient evidence)."
+      ],
+      "answer": "B",
+      "answer_text": "Emotion: Anger; impact: It causes <spk_2> to become sad and issue a resigned denial of the accusations.",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "hallucination",
+        "unknown"
+      ]
+    }
+  ],
+  "timestamp": 1783040646.0502386,
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/mingdynesty-ep41/多说话人上下文推理能力-多说话人情感交互_spk_a.mp3",
+    "start_time": 266.1,
+    "end_time": 274.0,
+    "duration": 7.9
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "task_id": "identity",
+  "level": "level2",
+  "dimension": "Scene Reasoning",
+  "task_name": "Dialogue Role Identification",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "The Constant Gardener (2005)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/identity/en_spk_a.mp3",
+          "start": 236.96,
+          "end": 238.8,
+          "dur": 1.84
+        }
+      },
+      "spk_a_transcript": "Well, I... I wouldn't be alone for long.",
+      "spk_b_transcript": "Let me take you back to Loki.",
+      "qa": [
+        {
+          "question": "Based on the entire conversation, what is the relationship between the two speakers?",
+          "question_type": "no_index",
+          "options": [
+            "A. Aid worker—government official",
+            "B. Guide—tourist",
+            "C. Passenger—pilot",
+            "D. Cannot determine (insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "Passenger—pilot",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the relationship between the speaker who speaks from 236.96s to 238.8s and the one who speaks from 235.6s to 236.8s?",
+          "question_type": "time_index",
+          "options": [
+            "A. Guide—tourist",
+            "B. Passenger—pilot",
+            "C. Cannot determine (insufficient evidence)",
+            "D. Aid worker—government official"
+          ],
+          "answer": "B",
+          "answer_text": "Passenger—pilot",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "What is the relationship between the speaker who says, \"I wouldn't be alone for long,\" and the one who says, \"Let me take you back to Loki\"?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Aid worker—government official",
+            "B. Guide—tourist",
+            "C. Passenger—pilot",
+            "D. Cannot determine (insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "Passenger—pilot",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the relationship between the speaker who says, \"I wouldn't be alone for long\" (236.96s-238.8s), and the one who says, \"Let me take you back to Loki\" (235.6s-236.8s)?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Passenger—pilot",
+            "B. Cannot determine (insufficient evidence)",
+            "C. Aid worker—government official",
+            "D. Guide—tourist"
+          ],
+          "answer": "A",
+          "answer_text": "Passenger—pilot",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "wrong_speaker",
+            "hallucination"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Light the Night (华灯初上, 2021)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/identity/zh_spk_a.mp3",
+          "start": 153.35,
+          "end": 154.67,
+          "dur": 1.32
+        }
+      },
+      "spk_a_transcript": "How long has it been since you've been in contact?",
+      "spk_b_transcript": "Ever since she left home,",
+      "qa": [
+        {
+          "question": "What is the relationship between the two speakers, based on the entire conversation? Please choose the most suitable option.",
+          "question_type": "no_index",
+          "options": [
+            "A. Colleagues",
+            "B. Police officer—Suspect",
+            "C. Police officer—Person related to the case",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "Police officer—Person related to the case",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the relationship between the speaker who talks from 153.35 to 154.67 seconds and the speaker who talks from 155.19 to 156.83 seconds, based on the entire conversation? Please choose the most suitable option.",
+          "question_type": "time_index",
+          "options": [
+            "A. Police officer—Suspect",
+            "B. Police officer—Person related to the case",
+            "C. Colleagues",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "B",
+          "answer_text": "Police officer—Person related to the case",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the relationship between the speaker who said, 'How long has it been since you've been in contact?' and the speaker who said, 'Ever since she left home,' based on the entire conversation? Please choose the most suitable option.",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Colleagues",
+            "B. Police officer—Person related to the case",
+            "C. Cannot be determined (insufficient evidence)",
+            "D. Police officer—Suspect"
+          ],
+          "answer": "B",
+          "answer_text": "Police officer—Person related to the case",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "In the audio, what is the relationship between the speaker who said, 'How long has it been since you've been in contact?' from 153.35 to 154.67 seconds, and the speaker who said, 'Ever since she left home,' from 155.19 to 156.83 seconds? Please choose the most suitable option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Police officer—Suspect",
+            "B. Cannot be determined (insufficient evidence)",
+            "C. Colleagues",
+            "D. Police officer—Person related to the case"
+          ],
+          "answer": "D",
+          "answer_text": "Police officer—Person related to the case",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "video": "mingdynesty-ep41.mp4",
+  "level": "level2",
+  "prompt": "Multi-Speaker Dialogue Structure Analysis Ability - Dialogue Act Recognition.txt",
+  "success": true,
+  "error": null,
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_017",
+            "start_time": 70.7,
+            "end_time": 72.6,
+            "transcript": "If you are a hero and a real man, then dare to admit what you have done.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Angry",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_024",
+            "start_time": 97.4,
+            "end_time": 101.1,
+            "transcript": "Rather, I disdain answering such treasonous words from Eunuch Chen.",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Angry",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What type of interaction behavior is shown in this two-speaker audio clip? Choose the best answer.",
+      "type": "single_choice",
+      "question_type": "no_index",
+      "options": [
+        "A. speakerA coercively questions speakerB, forcing speakerB to respond.",
+        "B. speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA.",
+        "C. speakerA and speakerB argue intensely and accuse each other.",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "B",
+      "answer_text": "speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA.",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "hallucination",
+        "unknown"
+      ]
+    },
+    {
+      "question": "In the audio, which speaker by appearance order is speaking at second 72.6 to 101.1? Choose the best answer.",
+      "type": "single_choice",
+      "question_type": "time_index",
+      "options": [
+        "A. speakerA and speakerB argue intensely and accuse each other.",
+        "B. speakerA coercively questions speakerB, forcing speakerB to respond.",
+        "C. Cannot determine (insufficient evidence)",
+        "D. speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA."
+      ],
+      "answer": "D",
+      "answer_text": "speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA.",
+      "rationale": [
+        "hallucination",
+        "wrong speaker",
+        "unknown",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "Which interaction behavior is reflected by the clip involving the speaker who said \"If you are a hero and a real man, then dare to admit what you have done\" and the speaker who said \"Rather, I disdain answering such treasonous words from Eunuch Chen\"? Choose the best answer.",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA.",
+        "B. speakerA and speakerB argue intensely and accuse each other.",
+        "C. speakerA coercively questions speakerB, forcing speakerB to respond.",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA.",
+      "rationale": [
+        "ground truth",
+        "hallucination",
+        "wrong speaker",
+        "unknown"
+      ]
+    },
+    {
+      "question": "Which interaction behavior is reflected by the clip involving the speaker who said \"If you are a hero and a real man, then dare to admit what you have done\" and the segment from 97.4 to 101.1 seconds? Choose the best answer.",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. speakerA coercively questions speakerB, forcing speakerB to respond.",
+        "B. speakerA and speakerB argue intensely and accuse each other.",
+        "C. speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA.",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "C",
+      "answer_text": "speakerA verbally provokes speakerB, while speakerB shows disdain and refuses to argue with speakerA.",
+      "rationale": [
+        "wrong speaker",
+        "hallucination",
+        "ground truth",
+        "unknown"
+      ]
+    }
+  ],
+  "timestamp": 675128.199916519,
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/mingdynesty-ep41/多说话人对话结构分析能力-对话行为识别_spk_a.mp3",
+    "start_time": 70.7,
+    "end_time": 72.6,
+    "duration": 1.9
+  }
+}

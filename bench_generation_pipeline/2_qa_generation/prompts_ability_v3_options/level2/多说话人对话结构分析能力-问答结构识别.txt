@@ -1,0 +1,152 @@
+################################################################
+# 多说话人对话结构分析能力：问答结构识别（回复归属识别｜四选一｜统一输出格式｜不生成 retrieval）
+################################################################
+
+你是 QA 构造专家。输入为多说话人转录与对应音频（至少包含 spk_id、transcript；可能包含 start_time/end_time/seg_id；你可以听音频）。
+
+任务：从对话中挑选一个“被回复的提问/陈述”片段（src）以及一个“最直接、唯一可确定的回复”片段（reply），构造四选一单选题，评估模型能否识别：
+- 在完整对话语境下，其他人对该片段最可能的回复是哪一句（并且是谁说的）。
+
+仅生成以下 question_type：
+- no_index / time_index / transcript_index / complex_index
+（本任务不需要 speaker_index；若你后续也要加 speaker_index 我可以再补一个模板。）
+
+================================================
+【关键要求：所选 seg 必须能反映问答/回复关系（强制）】
+- 你挑选出来的 seg 必须满足：
+  1) src_seg（被回复片段）是“可被他人直接回应”的话语（问题/请求/质疑/陈述均可，但不能是“嗯啊好对”等短促语气词）。
+  2) reply_seg（回复片段）必须是对 src_seg 的直接反应，且在全对话中唯一可确定。
+  3) src 与 reply 的说话人必须不同。
+- 若无法保证“唯一正确回复”（存在多个同等合理回复或 reply 不是直接回应）=> 输出 []。
+
+================================================
+【spk_index 定义（仅用于 speaker_meta 记录；题干与选项不得出现 spk_id/spk_index）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  spk_1, spk_2, ...
+- 本任务题干/选项/答案/解析中不得出现 spk_id 或 spk_index（只允许在 speaker_meta 中记录）。
+
+================================================
+【speaker_meta 选段与聚合规则（先选一次，全题复用｜强制执行）】
+你必须先挑选两位不同说话人的“问答证据 seg”，并按下面结构输出 speaker_meta（同一 spk_id 的多个 seg 可放在同一个 list）：
+
+- spk_a：src 的说话人（被回复者）
+- spk_b：reply 的说话人（回复者）
+
+强制要求：
+1) speaker_meta.spk_a 内所有 seg 的 spk_id 必须相同；speaker_meta.spk_b 内所有 seg 的 spk_id 必须相同；且二者 spk_id 必须不同。
+2) spk_a[0] 必须是 src_seg（要考察的被回复片段），且能唯一定位到输入。
+3) spk_b[0] 必须是 reply_seg（真实回复片段），且能唯一定位到输入。
+4) src_seg 与 reply_seg 在对话中距离应近（通常 reply 出现在 src 之后 1~2 个“他人发言”内），并存在明显承接关系（问答对应、指代回应、解释反驳、同意否定、澄清追问等）。
+5) spk_a[0] 与 spk_b[0] 都不能是整段音频的第一句话；且 transcript 不能过短（不能是“嗯/啊/好/对/行”等）。
+
+================================================
+【最终输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组：
+- 第 1 个元素：只包含 speaker_meta
+- 后续元素：每个元素是一道选择题对象
+若无法保证唯一正确 => 输出 []（不要只输出 speaker_meta）。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_1",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}],
+      "spk_b": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_2",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}]
+    }
+  },
+  {
+    "question": "...",
+    "type": "single_choice",
+    "question_type": "no_index|time_index|transcript_index|complex_index",
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+字段硬约束：
+- options 必须为 4 个且顺序打乱；answer 必须指向 ground truth；answer_text 不含字母前缀。
+- rationale 必须与 A-D 一一对应，只能使用：ground truth / wrong speaker / hallucination / unknown。
+- 选项中不得出现时间与 seg_id/spk_id/spk_index；题干中允许出现时间/文本（按模板）。
+
+================================================
+【题干统一写法（关键：回复选项必须包含“说话人 + 回复内容”】【强制】】
+所有选项（A/B/C）统一写成：
+“说话人B：reply_text”
+其中“说话人B”是题干里“其他人/回复者”的占位称呼，不泄露真实身份编号；用来考察模型是否能结合上下文判断“这句话到底是不是回复、以及是否由该回复者说出”。
+
+注意：
+- reply_text 必须是完整一句（或转录里的一个完整发言单元），不要只截取几个字导致多解。
+- unknown 选项固定：
+“无法判断（信息不足以定位回复）”
+
+================================================
+【四个选项构造（1 真 + 1 错说话人 + 1 虚构 + 1 不确定；顺序打乱）】
+A) ground truth
+- reply_text 必须逐字出现在转录中
+- reply_text 的真实说话人必须就是 spk_b（即 speaker_meta.spk_b[0].spk_id）
+- 且 reply_text 在语义上直接回复 src_seg
+
+B) wrong speaker（回复内容真实，但说话人归属错）
+- reply_text 必须逐字出现在转录中
+- reply_text 的真实说话人必须不是 spk_b（是另一位说话人）
+- 且该句也属于对 src_seg 的直接回复或紧承接回应
+- 但选项中仍写成“说话人B：reply_text”，形成“说话人错误”的干扰项
+
+C) hallucination（看似合理的回复，但对话中没出现过）
+- reply_text 由你编写，要求看起来能合理承接 src_seg（语气、内容都像回复）
+- 但必须确保该句逐字不在对话转录中出现过
+
+D) unknown
+- 固定文本：“无法判断（信息不足以定位回复）”
+
+若 B 无法构造（找不到“真实回复句但由其他说话人说出”的强干扰），或无法保证 C 不在转录中出现，则该题不生成（输出 []）。
+
+================================================
+【题目模板（按 question_type）】
+注意：src 的定位锚点必须来自 spk_a[0]（被回复片段）；reply 的正确内容来自 spk_b[0]（真实回复片段）。
+并且：spk_a[0] 与 spk_b[0] 都必须是“能体现问答/回复关系”的 seg。
+
+模板1｜no_index（单讲音频索引：只给 src 音频）
+question_type = "no_index"
+题干（按你要求）：
+“下面是某个说话人的单讲片段，在完整对话中最可能对该语音回应的一项是：”
+说明：
+- 评测侧只提供 src_seg 的切分音频（spk_a[0]）
+- 题干不得出现时间与 transcript
+
+模板2｜time_index（时间索引：定位 src）
+question_type = "time_index"
+题干（按你要求）：
+“根据对话内容，其他人对某个说话人在第 start 秒到第 end 秒的讲话内容回复的语句是：”
+约束：
+- start/end 必须来自 spk_a[0].start_time/end_time
+- 题干不出现 transcript
+
+模板3｜transcript_index（文本索引：定位 src）
+question_type = "transcript_index"
+题干（按你要求）：
+“根据对话内容，其他人对某个说话人关于‘content’的表述的回复语句是：”
+约束：
+- content 必须逐字来自 spk_a[0].transcript（可截取连续子串，但需唯一定位该 seg）
+- 题干不出现时间
+
+模板4｜complex_index（时间+文本联合索引：定位 src）
+question_type = "complex_index"
+题干（按你要求）：
+“根据对话内容，其他人对某个说话人在第 start 秒到第 end 秒说话人关于‘content’的表述的回复是：”
+约束：
+- start/end/content 必须同时来自 spk_a[0] 的同一 seg
+- content 逐字来自 transcript（可截取连续子串但不得改写）
+
+================================================
+【唯一正确性自检（失败=>[]）】
+生成后你必须复核：
+- 只有一个选项同时满足：reply_text 真实存在 + 真实说话人是 spk_b + 确实直接回复 src_seg
+- wrong speaker 选项满足：句子真实存在且承接 src，但真实说话人不是 spk_b
+- hallucination 句子确实不在转录中出现（逐字不存在）
+- 若存在多个同等合理回复、或 reply 与 src 无直接关系、或任何选项不满足定义 => 输出 []
+
+开始生成：请仅输出符合格式的 JSON；若无法保证唯一正确则输出 []。

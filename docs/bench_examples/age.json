@@ -1,0 +1,292 @@
+{
+  "task_id": "age",
+  "level": "level1",
+  "dimension": "Speaker Attributes",
+  "task_name": "Age Recognition",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Sicario (2015)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/age/en_spk_a.mp3",
+          "start": 31.8,
+          "end": 34.68,
+          "dur": 2.88
+        }
+      },
+      "spk_a_transcript": "Yeah, love how we're gonna pretend like I planned this.",
+      "spk_b_transcript": "Now you use yourself as bait.",
+      "qa": [
+        {
+          "question": "Which of the following age ranges is the speaker in the audio closest to?",
+          "question_type": "no_index",
+          "options": [
+            "A. Middle-aged (30-59 years old)",
+            "B. Senior (60 years or older)",
+            "C. Young adults (18-29 years old)",
+            "D. Cannot be determined (Insufficient information to determine the age group)"
+          ],
+          "answer": "C",
+          "answer_text": "Young adults (18-29 years old)",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the approximate age group of the speaker in the audio between 31.8 and 34.68 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. Middle-aged (30-59 years old)",
+            "B. Young adults (18-29 years old)",
+            "C. Cannot be determined (Insufficient information to determine the age group)",
+            "D. Senior (60 years or older)"
+          ],
+          "answer": "B",
+          "answer_text": "Young adults (18-29 years old)",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What is the approximate age range of the speaker who said, “love how we're gonna pretend”?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Cannot be determined (Insufficient information to determine the age group)",
+            "B. Middle-aged (30-59 years old)",
+            "C. Young adults (18-29 years old)",
+            "D. Child (under 12 years old)"
+          ],
+          "answer": "C",
+          "answer_text": "Young adults (18-29 years old)",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "In the entire audio, what is the approximate age group of Speaker 11?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Child (under 12 years old)",
+            "B. Young adults (18-29 years old)",
+            "C. Middle-aged (30-59 years old)",
+            "D. Cannot be determined (Insufficient information to determine the age group)"
+          ],
+          "answer": "A",
+          "answer_text": "Child (under 12 years old)",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the approximate age range of the female speaker who said, “love how we're gonna pretend like I planned this,” between 31.8 and 34.68 seconds?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Senior (60 years or older)",
+            "B. Young adults (18-29 years old)",
+            "C. Middle-aged (30-59 years old)",
+            "D. Cannot be determined (Insufficient information to determine the age group)"
+          ],
+          "answer": "B",
+          "answer_text": "Young adults (18-29 years old)",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "In the entire audio, which speaker belongs to the Child (under 12 years old) age group? Please select the most appropriate option.",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. Cannot be determined (Insufficient information to determine the age group)",
+            "B. Speaker 1",
+            "C. Speaker 1, Speaker 11",
+            "D. Speaker 11"
+          ],
+          "answer": "D",
+          "answer_text": "Speaker 11",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "In the entire audio, how many speakers are in the Child (under 12 years old) age group? Please select the most suitable option.",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 1",
+            "B. 3",
+            "C. Cannot be determined (Insufficient information to determine the age group)",
+            "D. 2"
+          ],
+          "answer": "A",
+          "answer_text": "1",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "unknown",
+            "wrong_speaker"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Mr. Canton and Lady Rose (奇迹, 1989)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/age/zh_spk_a.mp3",
+          "start": 46.45,
+          "end": 49.01,
+          "dur": 2.56
+        }
+      },
+      "spk_a_transcript": "It's rare for you to like Belle this much. How could I not agree?",
+      "spk_b_transcript": "There's no use in sighing. You should be happier.",
+      "qa": [
+        {
+          "question": "Which of the following best describes the speaker's age group?",
+          "question_type": "no_index",
+          "options": [
+            "A. Middle-aged (30-59)",
+            "B. Elderly (60+)",
+            "C. Young adult (18-29)",
+            "D. Cannot be determined"
+          ],
+          "answer": "B",
+          "answer_text": "Elderly (60+)",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the approximate age group of the speaker in the segment from 46.45s to 49.01s?",
+          "question_type": "time_index",
+          "options": [
+            "A. Cannot be determined",
+            "B. Middle-aged (30-59)",
+            "C. Young adult (18-29)",
+            "D. Elderly (60+)"
+          ],
+          "answer": "D",
+          "answer_text": "Elderly (60+)",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the approximate age group of the speaker who said, 'How could I not agree?'",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Young adult (18-29)",
+            "B. Elderly (60+)",
+            "C. Middle-aged (30-59)",
+            "D. Cannot be determined"
+          ],
+          "answer": "B",
+          "answer_text": "Elderly (60+)",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the approximate age group of Speaker 3?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Elderly (60+)",
+            "B. Middle-aged (30-59)",
+            "C. Cannot be determined",
+            "D. Young adult (18-29)"
+          ],
+          "answer": "A",
+          "answer_text": "Elderly (60+)",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What is the approximate age group of the female speaker who said, 'It's rare for you to like Belle this much' in the segment from 46.45s to 49.01s?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Cannot be determined",
+            "B. Middle-aged (30-59)",
+            "C. Elderly (60+)",
+            "D. Young adult (18-29)"
+          ],
+          "answer": "C",
+          "answer_text": "Elderly (60+)",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "Which of the following speakers are in the elderly (60+) age group?",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. Speaker 3, Speaker 8",
+            "B. Speaker 3, Speaker 4, Speaker 11",
+            "C. Speaker 3, Speaker 8, Speaker 11",
+            "D. Cannot be determined"
+          ],
+          "answer": "C",
+          "answer_text": "Speaker 3, Speaker 8, Speaker 11",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "How many speakers in the audio are in the elderly (60+) age group?",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 2",
+            "B. 3",
+            "C. 5",
+            "D. Cannot be determined"
+          ],
+          "answer": "B",
+          "answer_text": "3",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  }
+}

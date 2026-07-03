@@ -1,0 +1,77 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人计数任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人计数任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_001",
+            "start_time": 82.05,
+            "end_time": 83.17,
+            "transcript": "Hello, New York.",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "男声",
+            "emotion": "快乐",
+            "accent": "通用美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_014",
+            "start_time": 136.61,
+            "end_time": 137.31,
+            "transcript": "Hello, sweetheart.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "这段音频中一共出现了多少个不同的说话人？",
+      "question_type": "speech_index",
+      "options": [
+        "A. 15位",
+        "B. 8位",
+        "C. 9位",
+        "D. 无法判断（信息不足）"
+      ],
+      "answer": "C",
+      "answer_text": "9位",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中在第 136 秒到第 151 秒这段时间内，一共出现了多少个不同的说话人？",
+      "question_type": "time_index",
+      "options": [
+        "A. 4位",
+        "B. 7位",
+        "C. 无法判断（信息不足）",
+        "D. 3位"
+      ],
+      "answer": "A",
+      "answer_text": "4位",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "task_id": "emotion",
+  "level": "level1",
+  "dimension": "Speaker Attributes",
+  "task_name": "Emotion Recognition",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "The Cubicle (斗室)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/emotion/en_spk_a.mp3",
+          "start": 129.51,
+          "end": 130.91,
+          "dur": 1.4
+        }
+      },
+      "spk_a_transcript": "Get off me, you bastards!",
+      "spk_b_transcript": "Young men with money have no discipline and very bad manners.",
+      "qa": [
+        {
+          "question": "Which of the following emotions is closest to the speaker's in this solo speech audio?",
+          "question_type": "no_index",
+          "options": [
+            "A. Angry",
+            "B. Disgust",
+            "C. Calm",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "A",
+          "answer_text": "Angry",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "Which of the following emotions is closest to that of the speaker talking from 129.51 to 130.91 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. Disgust",
+            "B. Calm",
+            "C. Angry",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "Angry",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "Which of the following emotions is closest to that of the speaker who said, 'Get off me, you bastards!'?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Disgust",
+            "B. Angry",
+            "C. Cannot be determined (insufficient evidence)",
+            "D. Calm"
+          ],
+          "answer": "B",
+          "answer_text": "Angry",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "Which of the following emotions is closest to that of the speaker who said, 'Get off me, you bastards!' between 129.51 and 130.91 seconds?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Calm",
+            "B. Cannot be determined (insufficient evidence)",
+            "C. Disgust",
+            "D. Angry"
+          ],
+          "answer": "D",
+          "answer_text": "Angry",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "Throughout the entire audio, which speakers expressed the emotion of disgust? Please select the best option.",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. Speaker 3",
+            "B. Speaker 1, Speaker 2",
+            "C. Speaker 3, Speaker 7",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "Speaker 3, Speaker 7",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "In the entire audio, how many speakers in total expressed the emotion of 'disgust'? Please select the most appropriate option.",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 4",
+            "B. 1",
+            "C. Cannot be determined (insufficient evidence)",
+            "D. 2"
+          ],
+          "answer": "D",
+          "answer_text": "2",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "unknown",
+            "ground_truth"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Overheard (窃听风云, 2009)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/emotion/zh_spk_a.mp3",
+          "start": 213.49,
+          "end": 215.33,
+          "dur": 1.84
+        }
+      },
+      "spk_a_transcript": "You think I'm a natural-born killer?",
+      "spk_b_transcript": "Our Renxiao Tang Charity Foundation has raised 51.86 million in donations.",
+      "qa": [
+        {
+          "question": "The speaker's emotion in the audio is closest to which of the following?",
+          "question_type": "no_index",
+          "options": [
+            "A. Happy",
+            "B. Angry",
+            "C. Calm",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "B",
+          "answer_text": "Angry",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "The emotion of the speaker in the audio from 213.49s to 215.33s is closest to which of the following?",
+          "question_type": "time_index",
+          "options": [
+            "A. Calm",
+            "B. Happy",
+            "C. Angry",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "Angry",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "The emotion of the speaker who said “You think I'm a natural-born killer?” in the audio is closest to which of the following?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Angry",
+            "B. Cannot be determined (insufficient evidence)",
+            "C. Happy",
+            "D. Calm"
+          ],
+          "answer": "A",
+          "answer_text": "Angry",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "wrong_speaker",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "The emotion of the speaker who said “You think I'm a natural-born killer?” from 213.49 to 215.33 seconds is closest to which of the following?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Happy",
+            "B. Calm",
+            "C. Cannot be determined (insufficient evidence)",
+            "D. Angry"
+          ],
+          "answer": "D",
+          "answer_text": "Angry",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "Which speaker expressed the emotion of fear in the audio?",
+          "question_type": "reverse_retrieval",
+          "options": [
+            "A. Speaker 2",
+            "B. Speaker 3",
+            "C. Speaker 3 and Speaker 4",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "B",
+          "answer_text": "Speaker 3",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "How many speakers expressed the emotion of fear in the audio?",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 2",
+            "B. 3",
+            "C. 1",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "1",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  }
+}

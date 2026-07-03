@@ -1,0 +1,28 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人对话场景推理能力-对话背景推理.txt",
+  "prompt_relpath": "level2/多说话人对话场景推理能力-对话背景推理.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "question": "这段对话最可能发生在以下哪种场景？",
+      "type": "single_choice",
+      "question_type": "type_text",
+      "options": [
+        "A. 一家人在公共餐厅聚餐，并谈论家庭事务与近期案件。",
+        "B. 警务人员在当事人家中进行问询，并与其家人共进早餐。",
+        "C. 一家人在自己家中用餐，并谈论家庭事务与近期案件。",
+        "D. 无法判断（证据不足）。"
+      ],
+      "answer": "C",
+      "answer_text": "一家人在自己家中用餐，并谈论家庭事务与近期案件。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    }
+  ]
+}

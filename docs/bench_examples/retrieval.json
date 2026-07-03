@@ -1,0 +1,148 @@
+{
+  "task_id": "retrieval",
+  "level": "level1",
+  "dimension": "Speaker Identification",
+  "task_name": "Speaker Retrieval",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Sicario (2015)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/retrieval/en_spk_a.mp3",
+          "start": 36.46,
+          "end": 40.42,
+          "dur": 3.96
+        }
+      },
+      "spk_a_transcript": "So our friends from Delta have volunteered to come along and will escort the Marshals on the exchange.",
+      "spk_b_transcript": "Nothing will make sense to your American ears.",
+      "qa": [
+        {
+          "question": "Who is the speaker from 36.46s to 40.42s, based on their order of appearance in the dialogue?",
+          "question_type": "time_index",
+          "options": [
+            "A. Cannot be determined",
+            "B. Speaker 5",
+            "C. Speaker 1",
+            "D. Speaker 7"
+          ],
+          "answer": "C",
+          "answer_text": "Speaker 1",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "Which speaker, in order of their appearance in the conversation, said 'So our friends from Delta have volunteered to come along'?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker 5",
+            "B. Speaker 1",
+            "C. Speaker 7",
+            "D. Cannot be determined"
+          ],
+          "answer": "B",
+          "answer_text": "Speaker 1",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "Between 36.46s and 40.42s, a male speaker says 'escort the Marshals on the exchange'. Based on the order of appearance, which speaker is he?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker 1",
+            "B. Speaker 7",
+            "C. Cannot be determined",
+            "D. Speaker 5"
+          ],
+          "answer": "A",
+          "answer_text": "Speaker 1",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "unknown",
+            "wrong_speaker"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "The Fighters (激战, 2013)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/retrieval/zh_spk_a.mp3",
+          "start": 33.07,
+          "end": 36.07,
+          "dur": 3.0
+        }
+      },
+      "spk_a_transcript": "The landlord said it was Jianhui, which means it's not you.",
+      "spk_b_transcript": "Wow, it's so dark. Turn on some lights.",
+      "qa": [
+        {
+          "question": "Who is the speaker from 33.07s to 36.07s, based on their order of appearance in the conversation?",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker 2",
+            "B. Speaker 1",
+            "C. Speaker 5",
+            "D. Cannot be determined (insufficient information to determine the speaker)"
+          ],
+          "answer": "B",
+          "answer_text": "Speaker 1",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "The person who said, 'The landlord said it was Jianhui, so that means it’s not you,' is which speaker in order of appearance?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker 5",
+            "B. Speaker 2",
+            "C. Cannot be determined (insufficient information to identify the speaker)",
+            "D. Speaker 1"
+          ],
+          "answer": "D",
+          "answer_text": "Speaker 1",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "The female speaker who says, 'The landlord said it was Jianhui, which means it's not you,' from 33.07s to 36.07s is which speaker in order of appearance?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker 1",
+            "B. Cannot be determined (insufficient information to identify the speaker)",
+            "C. Speaker 2",
+            "D. Speaker 5"
+          ],
+          "answer": "A",
+          "answer_text": "Speaker 1",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "wrong_speaker",
+            "hallucination"
+          ]
+        }
+      ]
+    }
+  }
+}

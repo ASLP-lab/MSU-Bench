@@ -1,0 +1,149 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人上下文推理能力-多说话人情感交互.txt",
+  "prompt_relpath": "level2/多说话人上下文推理能力-多说话人情感交互.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_051",
+            "start_time": 250.42,
+            "end_time": 254.06,
+            "transcript": "You tell Jules Podell, if I don't get my hat, I'm gonna burn his joint down.",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "带有纽约地区特征的美式英语"
+          },
+          {
+            "seg_id": "seg_052",
+            "start_time": 254.06,
+            "end_time": 254.74,
+            "transcript": "You hear me?",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "带有纽约地区特征的美式英语"
+          },
+          {
+            "seg_id": "seg_054",
+            "start_time": 256.42,
+            "end_time": 256.82,
+            "transcript": "Really?",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "带有纽约地区特征的美式英语"
+          },
+          {
+            "seg_id": "seg_055",
+            "start_time": 257.22,
+            "end_time": 261.22,
+            "transcript": "You tell that fat fuck, you bastard! If I don't get my hat, I'll burn the Copa down!",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_053",
+            "start_time": 254.74,
+            "end_time": 256.38,
+            "transcript": "It's gonna turn up. I swear to God it's gonna turn up.",
+            "spk_id": "spk_09",
+            "spk_index": "spk_9",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "恐惧",
+            "accent": "通用美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "在对话中，第 8 个出现的说话人（<spk_8>）所表现出的强烈情绪是什么？这种情绪对他人产生了什么影响？",
+      "question_type": "speaker_index",
+      "options": [
+        "A. 情感：愤怒/不满；该情绪导致<spk_4>出面调解，试图平息事态。",
+        "B. 情感：焦虑/紧张；该情绪使得<spk_9>也变得不耐烦，并与<spk_8>发生了争吵。",
+        "C. 无法判断（证据不足以唯一确定）",
+        "D. 情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。"
+      ],
+      "answer": "D",
+      "answer_text": "情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。",
+      "rationale": [
+        "wrong speaker",
+        "hallucination",
+        "unknown",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "音频中第 250.42 秒到第 254.06 秒这位说话人（<spk_8>）的情感是什么？这种情绪在对话中对他人产生了什么影响？",
+      "question_type": "time_index",
+      "options": [
+        "A. 无法判断（证据不足以唯一确定）",
+        "B. 情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。",
+        "C. 情感：愤怒/不满；该情绪导致<spk_4>出面调解，试图平息事态。",
+        "D. 情感：焦虑/紧张；该情绪使得<spk_9>也变得不耐烦，并与<spk_8>发生了争吵。"
+      ],
+      "answer": "B",
+      "answer_text": "情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。",
+      "rationale": [
+        "unknown",
+        "ground truth",
+        "wrong speaker",
+        "hallucination"
+      ]
+    },
+    {
+      "question": "音频中说“if I don't get my hat, I'm gonna burn his joint down”的这位说话人（<spk_8>）在表述该内容的情感是什么？这种情绪在对话中对他人产生了什么影响？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。",
+        "B. 无法判断（证据不足以唯一确定）",
+        "C. 情感：焦虑/紧张；该情绪使得<spk_9>也变得不耐烦，并与<spk_8>发生了争吵。",
+        "D. 情感：愤怒/不满；该情绪导致<spk_4>出面调解，试图平息事态。"
+      ],
+      "answer": "A",
+      "answer_text": "情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。",
+      "rationale": [
+        "ground truth",
+        "unknown",
+        "hallucination",
+        "wrong speaker"
+      ]
+    },
+    {
+      "question": "音频中第 250.42 秒到第 254.06 秒说过“if I don't get my hat, I'm gonna burn his joint down”的这位说话人（<spk_8>）在表述该内容时的情感是什么？这种情绪对他人产生了什么影响？",
+      "question_type": "complex_index",
+      "options": [
+        "A. 情感：愤怒/不满；该情绪导致<spk_4>出面调解，试图平息事态。",
+        "B. 情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。",
+        "C. 无法判断（证据不足以唯一确定）",
+        "D. 情感：焦虑/紧张；该情绪使得<spk_9>也变得不耐烦，并与<spk_8>发生了争吵。"
+      ],
+      "answer": "B",
+      "answer_text": "情感：愤怒/不满；该情绪导致<spk_9>感到恐惧，并试图安抚<spk_8>。",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "unknown",
+        "hallucination"
+      ]
+    }
+  ]
+}

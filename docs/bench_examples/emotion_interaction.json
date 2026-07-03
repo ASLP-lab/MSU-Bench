@@ -1,0 +1,202 @@
+{
+  "task_id": "emotion_interaction",
+  "level": "level2",
+  "dimension": "Context Reasoning",
+  "task_name": "Emotion Interaction",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Gua Sha (刮痧, 2001)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/emotion_interaction/en_spk_a.mp3",
+          "start": 138.46,
+          "end": 141.14,
+          "dur": 2.68
+        }
+      },
+      "spk_a_transcript": "Did you think no one would notice your son's back looks like a piece of roast beef?",
+      "spk_b_transcript": "That is gua sha, a traditional Chinese medical treatment.",
+      "qa": [
+        {
+          "question": "In the audio, what is the speaker's emotion, and how did it affect the other people in the conversation?",
+          "question_type": "no_index",
+          "options": [
+            "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
+            "B. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "C. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut agitatedly.",
+            "D. Cannot be determined (insufficient evidence)."
+          ],
+          "answer": "B",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What emotion did Speaker 2 express from 138.46 to 141.14 seconds, and what effect did it have on the other speakers?",
+          "question_type": "time_index",
+          "options": [
+            "A. Cannot be determined (insufficient evidence).",
+            "B. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally.",
+            "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking."
+          ],
+          "answer": "C",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "rationale": [
+            "unknown",
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "In the audio, what emotion did Speaker 2 express when saying, “Did you think no one would notice your son's back looks like a piece of roast beef?” and what effect did this have on the other speakers?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut heatedly.",
+            "B. Cannot be determined (insufficient evidence).",
+            "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
+            "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding."
+          ],
+          "answer": "D",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "Throughout the conversation, what emotion did Speaker 2's intense questioning express, and what impact did it have on the other speakers?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "B. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
+            "C. Cannot be determined (insufficient evidence).",
+            "D. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally."
+          ],
+          "answer": "A",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "From 138.46s to 141.14s, what emotion did Speaker 2 express when saying, “Did you think no one would notice your son's back looks like a piece of roast beef?” and what effect did this have on the other speakers?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
+            "B. Cannot be determined (insufficient evidence).",
+            "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "D. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally."
+          ],
+          "answer": "C",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "He Bi (何必)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/emotion_interaction/zh_spk_a.mp3",
+          "start": 129.93,
+          "end": 134.73,
+          "dur": 4.8
+        }
+      },
+      "spk_a_transcript": "Didn't you get enough of your striptease last time in Qingdao? Even if you still want to dance, I'm not interested and don't want to watch anymore.",
+      "spk_b_transcript": "I want to see you dance, my dear nemesis.",
+      "qa": [
+        {
+          "question": "In the audio, what is the emotion of the first speaker (Speaker 1)? How did this emotion affect others throughout the entire conversation?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Emotion: Anger/Displeasure; Impact: It caused Speaker 2 to feel very awkward and try to ease the tension.",
+            "B. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to become angry and have a fierce argument with Speaker 1.",
+            "C. Cannot be determined (insufficient evidence).",
+            "D. Emotion: Disgust/Dissatisfaction; Impact: It leads to Speaker 5 not being provoked, but instead counterattacking and provoking with a playful tone."
+          ],
+          "answer": "D",
+          "answer_text": "Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke in a playful tone.",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What emotion is Speaker 1 expressing in the audio from 129.93 to 134.73 seconds? What impact did this have on others in the conversation?",
+          "question_type": "time_index",
+          "options": [
+            "A. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to become angry and have a fierce argument with Speaker 1.",
+            "B. Emotion: Disgust/Displeasure; Impact: It causes Speaker 5 not to be provoked, but instead to counter-attack and taunt in a playful tone.",
+            "C. Emotion: Anger/Dissatisfaction; Impact: Speaker 2 felt very awkward and attempted to ease the tension.",
+            "D. Cannot be determined (insufficient evidence)."
+          ],
+          "answer": "B",
+          "answer_text": "Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke with a playful tone.",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What emotion is Speaker 1 expressing when they say, \"Even if you still want to dance, I'm not interested and don't want to watch anymore\"? What impact did this have on others in the conversation?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke with a playful tone.",
+            "B. Cannot be determined (insufficient evidence).",
+            "C. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to be provoked and have a heated argument with Speaker 1.",
+            "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 2 to feel very awkward and attempt to ease the atmosphere."
+          ],
+          "answer": "A",
+          "answer_text": "Emotion: Anger/Discontent; Impact: Instead of being angered, Speaker 5 counter-attacks and provokes with a playful tone.",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "hallucination",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "From 129.93 to 134.73 seconds, what emotion was Speaker 1 expressing when they said, \"Even if you still want to dance, I'm not interested and don't want to watch\"? What effect did this have on others?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Cannot be determined (insufficient evidence).",
+            "B. Emotion: Anger/Displeasure; Impact: It caused Speaker 2 to feel very awkward and attempt to ease the tension.",
+            "C. Emotion: Disgust/Dissatisfaction; Impact: It leads to Speaker 5 not being provoked, but instead counterattacking and taunting with a playful tone.",
+            "D. Emotion: Disgust/Displeasure; Impact: It caused Speaker 5 to become angry and get into a heated argument with Speaker 1."
+          ],
+          "answer": "C",
+          "answer_text": "Emotion: Anger/Discontent; Impact: Speaker 5 is not provoked; instead, they counter-attack and provoke with a playful tone.",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人属性识别能力-年龄段识别任务.txt",
+  "prompt_relpath": "level1/说话人属性识别能力-年龄段识别任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_003",
+            "start_time": 18.82,
+            "end_time": 21.26,
+            "transcript": "你们理化老师啊，连他你也忘了？",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "young adult",
+            "gender": "male",
+            "emotion": "惊讶",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_007",
+            "start_time": 49.54,
+            "end_time": 54.22,
+            "transcript": "验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_3",
+            "age": "adult",
+            "gender": "male",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面单人讲话音频中，说话人的年龄段最接近以下哪一项？",
+      "question_type": "no_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. young adult (18 < age < 29)",
+        "C. senior adult (age > 60)",
+        "D. 无法判断（信息不足以确定年龄段）"
+      ],
+      "answer": "B",
+      "answer_text": "young adult (18 < age < 29)",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中在第 18.82 秒到第 21.26 秒的说话人 的年龄段最接近以下哪一项？",
+      "question_type": "time_index",
+      "options": [
+        "A. young adult (18 < age < 29)",
+        "B. teenager (13 < age < 17)",
+        "C. adult (30 < age < 59)",
+        "D. 无法判断（信息不足以确定年龄段）"
+      ],
+      "answer": "A",
+      "answer_text": "young adult (18 < age < 29)",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘连他你也忘了’的说话人 的年龄段最接近以下哪一项？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. young adult (18 < age < 29)",
+        "C. 无法判断（信息不足以确定年龄段）",
+        "D. teenager (13 < age < 17)"
+      ],
+      "answer": "B",
+      "answer_text": "young adult (18 < age < 29)",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "在整段对话中，第 3 个出现的说话人（spk_3）的年龄段最接近以下哪一项？",
+      "question_type": "speaker_index",
+      "options": [
+        "A. senior adult (age > 60)",
+        "B. 无法判断（信息不足以确定年龄段）",
+        "C. adult (30 < age < 59)",
+        "D. young adult (18 < age < 29)"
+      ],
+      "answer": "C",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. hallucination",
+        "B. unknown",
+        "C. ground truth",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "在第 18.82 秒到第 21.26 秒说过‘连他你也忘了’的男性说话人，其年龄段最接近以下哪一项？",
+      "question_type": "complex_index",
+      "options": [
+        "A. young adult (18 < age < 29)",
+        "B. 无法判断（信息不足以确定年龄段）",
+        "C. adult (30 < age < 59)",
+        "D. senior adult (age > 60)"
+      ],
+      "answer": "A",
+      "answer_text": "young adult (18 < age < 29)",
+      "rationale": [
+        "A. ground truth",
+        "B. unknown",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "在整段音频中，年龄段为 adult (30 < age < 59) 的说话人有哪些？（用 全局说话人顺序 作答）请选择最符合的一项。",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. spk_3、spk_4、spk_6、spk_7、spk_8",
+        "B. spk_1、spk_4、spk_6、spk_7、spk_8",
+        "C. spk_3、spk_4、spk_9",
+        "D. 无法判断（信息不足以确定年龄段）"
+      ],
+      "answer": "A",
+      "answer_text": "spk_3、spk_4、spk_6、spk_7、spk_8",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "在整段音频中，年龄段为 adult (30 < age < 59) 的说话人一共有几个？请选择最符合的一项。",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 4 个",
+        "B. 2 个",
+        "C. 5 个",
+        "D. 无法判断（信息不足以确定年龄段）"
+      ],
+      "answer": "C",
+      "answer_text": "5 个",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    }
+  ]
+}

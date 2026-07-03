@@ -1,0 +1,95 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人检索任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人检索任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_007",
+            "start_time": 49.54,
+            "end_time": 54.22,
+            "transcript": "验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_3",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_031",
+            "start_time": 159.31,
+            "end_time": 163.83,
+            "transcript": "如果当初你有好好处理这件事情，我们家会变成这个样子吗？",
+            "spk_id": "spk_07",
+            "spk_index": "spk_7",
+            "age": "中年",
+            "gender": "女声",
+            "emotion": "悲伤",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "音频中在第 49.54 秒到第 54.22 秒的说话人，是整段对话中第几个出现的说话人？",
+      "question_type": "time_index",
+      "options": [
+        "A. spk_7",
+        "B. spk_3",
+        "C. spk_9",
+        "D. 无法判断（信息不足以确定说话人）"
+      ],
+      "answer": "B",
+      "answer_text": "spk_3",
+      "rationale": [
+        "wrong speaker",
+        "ground truth",
+        "hallucination",
+        "unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。’的说话人，是整段对话中第几个出现的说话人？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 无法判断（信息不足以确定说话人）",
+        "B. spk_9",
+        "C. spk_7",
+        "D. spk_3"
+      ],
+      "answer": "D",
+      "answer_text": "spk_3",
+      "rationale": [
+        "unknown",
+        "hallucination",
+        "wrong speaker",
+        "ground truth"
+      ]
+    },
+    {
+      "question": "音频中在第 49.54 秒到第 54.22 秒说过‘验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。’的男性说话人，是整段对话中第几个出现的说话人？",
+      "question_type": "complex_index",
+      "options": [
+        "A. spk_9",
+        "B. spk_7",
+        "C. spk_3",
+        "D. 无法判断（信息不足以确定说话人）"
+      ],
+      "answer": "C",
+      "answer_text": "spk_3",
+      "rationale": [
+        "hallucination",
+        "wrong speaker",
+        "ground truth",
+        "unknown"
+      ]
+    }
+  ]
+}

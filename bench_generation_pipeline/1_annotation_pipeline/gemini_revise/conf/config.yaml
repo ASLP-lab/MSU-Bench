@@ -1,0 +1,38 @@
+# device: cpu
+device: cuda
+thread: 128 # cuda 多线程受可使用的GPU影响
+tos:
+  ak: YOUR_TOS_ACCESS_KEY
+  sk: YOUR_TOS_SECRET_KEY
+  endpoint: tos-cn-beijing.volces.com
+  region: cn-beijing
+  bucket: tos-test-hs-bj-avl-school
+  object_prefix: test
+  expires: 3600  # seconds
+separation: 
+  # sample_rate: 44100
+  sample_rate: 16000
+  max_step: 3600  # seconds
+  smooth_window: 1  # seconds
+  model_path: conf/melBandRoformer/MelBandRoformer.ckpt
+  config_path: conf/melBandRoformer/config_vocals_mel_band_roformer_kj.yaml
+detection:
+  model_path: pipeline/model/silero-vad
+  debug: true
+  threshold: 0.01
+  neg_threshold: 0.01
+recognition:
+  appid: "YOUR_HUOSHAN_APPID"
+  token: YOUR_HUOSHAN_TOKEN
+  uid: "YOUR_HUOSHAN_UID"
+  sample_rate: 16000
+filter: ["medium", "weak", "useless"]
+diarization:
+  model_dir: pipeline/model/wespeaker/model/samresnet_xiechuan
+  # model_dir: pipeline/model/wespeaker/model/voxblink2_samresnet100_ft
+  segmentation: null
+  # segmentation: pyannote/segmentation-3.0
+  use_auth_token: YOUR_HF_TOKEN
+dnsmos:
+  model_path: pipeline/model/dnsmos/model/sig_bak_ovr.onnx
+  sample_rate: 16000

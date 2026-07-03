@@ -1,0 +1,112 @@
+{
+  "task_id": "counting",
+  "level": "level1",
+  "dimension": "Speaker Identification",
+  "task_name": "Speaker Counting",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "The Karate Kid (功夫梦, 2010)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/counting/en_spk_a.mp3",
+          "start": 5.84,
+          "end": 6.92,
+          "dur": 1.08
+        }
+      },
+      "spk_a_transcript": "The journey is complete.",
+      "spk_b_transcript": "Is this the Dragon Well?",
+      "qa": [
+        {
+          "question": "How many different speakers are there in this audio?",
+          "question_type": "speech_index",
+          "options": [
+            "A. 2 speakers",
+            "B. 3 speakers",
+            "C. 6 speakers",
+            "D. Cannot be determined (insufficient information)"
+          ],
+          "answer": "B",
+          "answer_text": "3 speakers",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "How many different speakers are there in the audio from 175 seconds to 181 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. 6 speakers",
+            "B. Cannot be determined (insufficient information)",
+            "C. 3 speakers",
+            "D. 2 speakers"
+          ],
+          "answer": "D",
+          "answer_text": "2 speakers",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Detective Dee (神探狄仁杰, 2004)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/counting/zh_spk_a.mp3",
+          "start": 20.92,
+          "end": 22.96,
+          "dur": 2.04
+        }
+      },
+      "spk_a_transcript": "Got it, I'll go right away.",
+      "spk_b_transcript": "How could something like this happen?",
+      "qa": [
+        {
+          "question": "How many different speakers are there in this audio?",
+          "question_type": "speech_index",
+          "options": [
+            "A. 5 speakers",
+            "B. 6 speakers",
+            "C. Cannot be determined",
+            "D. 2 speakers"
+          ],
+          "answer": "B",
+          "answer_text": "6 speakers",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "How many different speakers appeared in the audio between 31 and 38 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. 6 speakers",
+            "B. 2 speakers",
+            "C. 3 speakers",
+            "D. Cannot be determined"
+          ],
+          "answer": "C",
+          "answer_text": "3 speakers",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  }
+}

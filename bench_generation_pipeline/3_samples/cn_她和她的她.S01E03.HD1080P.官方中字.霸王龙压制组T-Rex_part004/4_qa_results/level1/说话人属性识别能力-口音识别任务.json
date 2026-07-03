@@ -1,0 +1,8 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人属性识别能力-口音识别任务.txt",
+  "prompt_relpath": "level1/说话人属性识别能力-口音识别任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": []
+}

@@ -1,0 +1,167 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人属性识别能力-性别识别任务.txt",
+  "prompt_relpath": "level1/说话人属性识别能力-性别识别任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_016",
+            "start_time": 140.95,
+            "end_time": 142.99,
+            "transcript": "I want you to guard it with your life.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_020",
+            "start_time": 148.91,
+            "end_time": 150.51,
+            "transcript": "Thank you, sir.",
+            "spk_id": "spk_02",
+            "spk_index": "spk_3",
+            "age": "青年",
+            "gender": "女声",
+            "emotion": "快乐",
+            "accent": "通用美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面单人讲话音频中，说话人的性别是什么？",
+      "question_type": "no_index",
+      "options": [
+        "A. 女性",
+        "B. 男性",
+        "C. 不确定性别",
+        "D. 无法判断（信息不足以确定性别）"
+      ],
+      "answer": "B",
+      "answer_text": "男性",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中在第 140.95 秒到第 142.99 秒的说话人的性别是什么？",
+      "question_type": "time_index",
+      "options": [
+        "A. 不确定性别",
+        "B. 无法判断（信息不足以确定性别）",
+        "C. 男性",
+        "D. 女性"
+      ],
+      "answer": "C",
+      "answer_text": "男性",
+      "rationale": [
+        "A. hallucination",
+        "B. unknown",
+        "C. ground truth",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "音频中说过‘I want you to guard it with your life.’的说话人的性别是什么？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 无法判断（信息不足以确定性别）",
+        "B. 女性",
+        "C. 不确定性别",
+        "D. 男性"
+      ],
+      "answer": "D",
+      "answer_text": "男性",
+      "rationale": [
+        "A. unknown",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "在整段对话中，第 2 个出现的说话人（spk_2）的性别是什么？",
+      "question_type": "speaker_index",
+      "options": [
+        "A. 女性",
+        "B. 不确定性别",
+        "C. 男性",
+        "D. 无法判断（信息不足以确定性别）"
+      ],
+      "answer": "C",
+      "answer_text": "男性",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "在第 140.95 秒到第 142.99 秒说过‘I want you to guard it with your life.’的说话人，其性别是什么？",
+      "question_type": "complex_index",
+      "options": [
+        "A. 女性",
+        "B. 无法判断（信息不足以确定性别）",
+        "C. 男性",
+        "D. 不确定性别"
+      ],
+      "answer": "C",
+      "answer_text": "男性",
+      "rationale": [
+        "A. wrong speaker",
+        "B. unknown",
+        "C. ground truth",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "在整段音频中，性别为女性的说话人有哪些？（用 spk_index 作答）请选择最符合的一项。",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. spk_2",
+        "B. spk_3",
+        "C. spk_3、spk_4",
+        "D. 无法判断（信息不足以确定性别）"
+      ],
+      "answer": "B",
+      "answer_text": "spk_3",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "在整段音频中，性别为女性的说话人一共有几个？请选择最符合的一项。",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 1 个",
+        "B. 2 个",
+        "C. 无法判断（信息不足以确定性别）",
+        "D. 3 个"
+      ],
+      "answer": "A",
+      "answer_text": "1 个",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+# 多说话人说话人识别能力：说话人检索（选择题｜统一输出格式｜固定片段 speaker_meta）
+你是 QA 构造专家。输入为多说话人转录与对应音频（含 spk_id、transcript，可能含 start_time/end_time/seg_id，且你可以听音频；可能含 gender 等 meta）。
+目标：构造客观单选题评估模型的【说话人检索能力】：给定“时间范围 / 转录内容 / 组合约束”，让模型判断该片段的说话人是整段对话中第几个出现的说话人（spk_index）。
+
+================================================
+【重要总原则】
+- 本任务的 ground truth 只能来自输入转录中的 spk_id → spk_index 映射（不得臆测、不得编造）。
+- transcript 作为定位证据时，必须逐字复述输入转录原句：不得改写、概括、合并、拆分、补全标点或词序。
+- 不使用 turn/轮次/turn_index 定位。
+- time_index / complex_index 的时间必须来自输入字段（start_time/end_time），且该时间窗内应主要为目标说话人发言（避免混入他人明显讲话）。
+- transcript_index 必须能唯一定位到某一个片段（避免同一句在多处重复出现）；否则该题不出。
+- complex_index 会在题干中出现“男/女性说话人”的约束（这是题干信息的一部分），但该性别必须与该片段真实说话人的性别一致；若无法确定性别则不出该题。
+
+================================================
+【spk_index 定义（必须严格遵守）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  - 第一个首次出现的 spk_id => spk_1
+  - 第二个首次出现的 spk_id => spk_2
+  - 以此类推
+- 题目答案与选项中使用 spk_index（如 spk_1 / spk_2 / ...），不得出现原始 spk_id。
+
+================================================
+【固定片段选择与输出（先选一次，全题复用｜强制执行）】
+在生成任何题目之前，必须先从输入转录中挑选两个不同说话人的“代表性单句片段（segment）”，并在本条输出中只输出一次 speaker_meta：
+- 片段 A：来自说话人 spk_id_A（可定位：seg_id 或 start/end 或 transcript 能唯一定位）
+- 片段 B：来自另一个说话人 spk_id_B（spk_id_B ≠ spk_id_A，同样可唯一定位）
+- 为保证问题质量，片段A和片段B都不能是本段语音中第一句话
+并将片段 A 记为 spk_a、片段 B 记为 spk_b（仅用于 speaker_meta；题干中不使用 <spk_a>/<spk_b>）。
+
+片段选择约束：
+- 每个片段尽量单说话人主导、清晰、非纯语气词。
+- 至少需要 2 位不同说话人，否则输出 []。
+- 若无法唯一定位任一片段（seg_id/time/transcript 都不足以定位）=> 输出 []。
+
+================================================
+【最终输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组，结构固定为：
+- 第 1 个元素：只包含 speaker_meta（spk_a 与 spk_b 的单句片段信息）
+- 后续元素：每个元素是一道选择题对象
+若无法生成任何一道题（所有模板都不满足）=> 直接输出 []（不要只输出 speaker_meta）。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [{"seg_id": "...", "start_time": xxx, "end_time": xxx, "transcript": "...", "spk_id": "...", "spk_index": "spk_1", "age": "...|unknown|null", "gender": "...|unknown|null", "emotion": "...|unknown|null", "accent": "...|unknown|null"}],
+      "spk_b": [{"seg_id": "...", "start_time": xxx, "end_time": xxx, "transcript": "...", "spk_id": "...", "spk_index": "spk_2", "age": "...|unknown|null", "gender": "...|unknown|null", "emotion": "...|unknown|null", "accent": "...|unknown|null"}]
+    }
+  },
+  {
+    "question": "...",
+    "question_type": "time_index|transcript_index|complex_index",
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+字段硬约束：
+- speaker_meta 中的 seg_id/start_time/end_time/transcript 必须对应“你挑选的那两个固定片段”，后续所有题目复用（题目中的 time/content 也应从 spk_a 片段取值）。
+- 若输入缺少某字段：start_time/end_time/seg_id/age/gender/emotion/accent 可填 null 或 "unknown"；
+  但用于 time_index/complex_index 的 start/end 必须可用；用于 transcript_index/complex_index 的 transcript 必须可用。
+- options 必须为 4 个且顺序打乱；answer 必须指向 ground truth；answer_text 不含字母前缀。
+- rationale 必须与 A-D 一一对应，含义固定：
+  - ground truth：正确的 spk_index
+  - wrong speaker：对话中真实存在的另一个 spk_index（且 ≠ 正确答案）
+  - hallucination：不存在的 spk_index（例如 spk_k+n 或大于真实说话人数的编号）
+  - unknown：无法判断（信息不足以确定说话人）
+
+================================================
+【通用选项构造规则（所有模板适用｜4选1）】
+对任一道题：
+- ground truth：目标片段真实 spk_index（来自 spk_id→spk_index 映射）
+- wrong speaker：从“对话中真实存在的其他 spk_index”里选 1 个（优先用 spk_b 的 spk_index 作为强干扰）
+- hallucination：选 1 个“对话中不存在”的 spk_index（例如 spk_k+n）
+- unknown：固定选项一句：无法判断（信息不足以确定说话人）
+若对话中真实说话人数量不足以构造 distinct 的 wrong speaker（例如只有 1 人）=> 输出 []。
+
+================================================
+【模板生成规则】
+- 每个模板若满足条件，最多生成 1 题；不满足则跳过。
+- 推荐生成顺序：time_index → transcript_index → complex_index（能出就出；但必须满足各自唯一性条件）。
+- 任一题若无法保证唯一正确，直接跳过该题。
+
+================================================
+模板0｜no_index（音频检索｜单选）
+question_type = "no_index"
+题干格式：
+“下面音频中的说话人，是整段对话中第几个出现的说话人？”
+约束：
+- 音频取自 speaker_meta 中 spk_a 的 start_time/end_time（同一片段）。
+- 该时间窗应主要由同一说话人发言（避免明显串音或他人插话导致歧义）；否则不出题。
+- 选项为 spk_index（spk_1/spk_2/…）+ hallucination + unknown。
+
+================================================
+模板1｜time_index（时间检索｜单选）
+question_type = "time_index"
+题干格式：
+“音频中在第 start 秒到第 end 秒的说话人，是整段对话中第几个出现的说话人？”
+约束：
+- start/end 必须取自 speaker_meta 中 spk_a 的 start_time/end_time（同一片段）。
+- 该时间窗应主要由同一说话人发言（避免明显串音或他人插话导致歧义）；否则不出题。
+- 选项为 spk_index（spk_1/spk_2/…）+ hallucination + unknown。
+
+================================================
+模板2｜transcript_index（转录检索｜单选）
+question_type = "transcript_index"
+题干格式：
+“音频中说过‘content’的说话人，是整段对话中第几个出现的说话人？”
+约束：
+- content 必须逐字来自 speaker_meta 中 spk_a 的 transcript（允许截取连续子串，但不得改写）。
+- content 必须在整段转录中可唯一定位到同一说话人同一处（避免重复句/口头禅）；否则不出题。
+
+================================================
+模板3｜complex_index（时间+转录+性别约束检索｜单选）
+question_type = "complex_index"
+题干格式：
+“音频中在第 start 秒到第 end 秒说过‘content’的男/女性说话人，是整段对话中第几个出现的说话人？”
+约束（必须全部满足）：
+- start/end/content 必须都来自 speaker_meta 中 spk_a 的同一片段（同一 seg_id）。
+- “男/女”必须与该片段真实说话人的性别一致：
+  - 若输入 meta 提供 gender 且非 unknown/null：直接使用其对应中文“男性/女性”写入题干；
+  - 否则你需要通过音频高置信判断为“男性/女性”；若无法高置信判断性别 => 不出该题。
+- 题干只提供时间与 content 与“男/女”约束，不得出现 spk_id 或 spk_index 任何提示。
+
+================================================
+【全局失败条件（任一触发直接输出 []）】
+- 无法选出两位不同说话人可唯一定位的固定片段（spk_a/spk_b）
+- 对话中只有 1 位真实说话人（无法构造 wrong speaker）
+- 所有模板都无法保证唯一正确（如时间窗混叠、content 重复、性别无法确定等）
+
+开始生成：请仅输出符合格式的 JSON；若无法满足约束则输出 []。

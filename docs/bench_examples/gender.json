@@ -1,0 +1,292 @@
+{
+  "task_id": "gender",
+  "level": "level1",
+  "dimension": "Speaker Attributes",
+  "task_name": "Gender Recognition",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Gua Sha (刮痧, 2001)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/gender/en_spk_a.mp3",
+          "start": 20.02,
+          "end": 25.54,
+          "dur": 5.52
+        }
+      },
+      "spk_a_transcript": "In order to supplement the medical report, you'll note that we provided additional evidence.",
+      "spk_b_transcript": "Your honor, we haven't received any copies of any evidence or reports related to this case.",
+      "qa": [
+        {
+          "question": "What is the gender of the speaker in this audio?",
+          "question_type": "no_index",
+          "options": [
+            "A. Female",
+            "B. Male",
+            "C. Uncertain",
+            "D. Cannot be determined"
+          ],
+          "answer": "B",
+          "answer_text": "Male",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the gender of the speaker from 20.02 to 25.54 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. Female",
+            "B. Uncertain",
+            "C. Male",
+            "D. Cannot be determined"
+          ],
+          "answer": "C",
+          "answer_text": "Male",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the gender of the speaker who said, \"you'll note that we provided additional evidence\"?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Male",
+            "B. Female",
+            "C. Uncertain",
+            "D. Cannot be determined"
+          ],
+          "answer": "A",
+          "answer_text": "Male",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the gender of Speaker 1, the first person to speak in the audio?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Cannot be determined",
+            "B. Uncertain",
+            "C. Female",
+            "D. Male"
+          ],
+          "answer": "D",
+          "answer_text": "Male",
+          "rationale": [
+            "unknown",
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the gender of the speaker who said, \"In order to supplement the medical report,\" between 20.02 and 25.54 seconds?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Female",
+            "B. Cannot be determined",
+            "C. Male",
+            "D. Uncertain"
+          ],
+          "answer": "C",
+          "answer_text": "Male",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "Which of the following are the female speakers in the audio?",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. Speaker 4, Speaker 6",
+            "B. Speaker 4",
+            "C. Cannot be determined",
+            "D. Speaker 2, Speaker 4, Speaker 6"
+          ],
+          "answer": "A",
+          "answer_text": "Speaker 4, Speaker 6",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "How many male speakers are in the audio?",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 6",
+            "B. 3",
+            "C. 4",
+            "D. Cannot be determined"
+          ],
+          "answer": "C",
+          "answer_text": "4",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Shaolin Temple (少林寺, 1982)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/gender/zh_spk_a.mp3",
+          "start": 38.21,
+          "end": 40.97,
+          "dur": 2.76
+        }
+      },
+      "spk_a_transcript": "You really look like a little bride today.",
+      "spk_b_transcript": "What are you laughing at?",
+      "qa": [
+        {
+          "question": "In this single-speaker audio, what is the speaker's gender?",
+          "question_type": "no_index",
+          "options": [
+            "A. Male",
+            "B. Cannot be determined",
+            "C. Female",
+            "D. Uncertain"
+          ],
+          "answer": "A",
+          "answer_text": "Male",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "wrong_speaker",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What is the gender of the speaker in the audio from 38.21 to 40.97 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. Unspecified",
+            "B. Male",
+            "C. Cannot be determined",
+            "D. Female"
+          ],
+          "answer": "B",
+          "answer_text": "Male",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ]
+        },
+        {
+          "question": "What is the gender of the speaker who said, 'You really look like a little bride today'?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Cannot be determined",
+            "B. Female",
+            "C. Uncertain",
+            "D. Male"
+          ],
+          "answer": "D",
+          "answer_text": "Male",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the gender of Speaker 1, the first speaker to appear in the dialogue?",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Male",
+            "B. Cannot be determined",
+            "C. Uncertain",
+            "D. Female"
+          ],
+          "answer": "D",
+          "answer_text": "Female",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "hallucination",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the gender of the speaker who said, 'You really look like a little bride today,' between 38.21 and 40.97 seconds?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Female",
+            "B. Undetermined",
+            "C. Cannot be determined",
+            "D. Male"
+          ],
+          "answer": "D",
+          "answer_text": "Male",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "Which speakers in the audio are female?",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. Cannot be determined",
+            "B. Speaker 2",
+            "C. Speaker 1",
+            "D. Speaker 1 and Speaker 10"
+          ],
+          "answer": "C",
+          "answer_text": "Speaker 1",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "How many male speakers are there in the entire audio?",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 7",
+            "B. 8",
+            "C. 1",
+            "D. Cannot be determined"
+          ],
+          "answer": "B",
+          "answer_text": "8",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        }
+      ]
+    }
+  }
+}

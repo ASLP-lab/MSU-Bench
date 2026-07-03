@@ -1,0 +1,113 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人对话场景推理能力-对话身份识别任务.txt",
+  "prompt_relpath": "level2/多说话人对话场景推理能力-对话身份识别任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_006",
+            "start_time": 47.01,
+            "end_time": 48.25,
+            "transcript": "化验那边有消息吗？",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_007",
+            "start_time": 49.54,
+            "end_time": 54.22,
+            "transcript": "验尸后发现，谢志忠体内有高浓度的安眠药，凶手趁他熟睡时掐死他的。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_3",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面音频中的两个说话人，从整段对话来看，他们之间的关系是什么？请选择最符合的一项。",
+      "question_type": "no_index",
+      "options": [
+        "A. 夫妻",
+        "B. 警务同事",
+        "C. 上下级",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "B",
+      "answer_text": "警务同事",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 47.01 秒到第 48.25 秒讲话的说话人以及在第 49.54 秒到第 54.22 秒讲话的说话人在整段对话中的关系是什么？请选择最符合的一项。",
+      "question_type": "time_index",
+      "options": [
+        "A. 夫妻",
+        "B. 上下级",
+        "C. 警务同事",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "C",
+      "answer_text": "警务同事",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘化验那边有消息吗？’的说话人以及说过‘验尸后发现，谢志忠体内有高浓度的安眠药’的说话人在整段对话中的关系是什么？请选择最符合的一项。",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 警务同事",
+        "B. 上下级",
+        "C. 夫妻",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "A",
+      "answer_text": "警务同事",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 47.01 秒到第 48.25 秒说过‘化验那边有消息吗？’的说话人与第 49.54 秒到第 54.22 秒说过‘验尸后发现，谢志忠体内有高浓度的安眠药’的说话人在整段对话中的关系是什么？请选择最符合的一项。",
+      "question_type": "complex_index",
+      "options": [
+        "A. 上下级",
+        "B. 夫妻",
+        "C. 无法判断（证据不足）",
+        "D. 警务同事"
+      ],
+      "answer": "D",
+      "answer_text": "警务同事",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    }
+  ]
+}

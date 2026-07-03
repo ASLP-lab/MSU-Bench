@@ -1,0 +1,84 @@
+{
+  "video": "mingdynesty-ep41.mp4",
+  "level": "level1",
+  "prompt": "说话人识别能力-说话人计数任务.txt",
+  "success": true,
+  "error": null,
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_001",
+            "start_time": 4.5,
+            "end_time": 6.3,
+            "transcript": "那朕就明示，你是户部尚书，",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Angry",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_004",
+            "start_time": 15.5,
+            "end_time": 16.4,
+            "transcript": "回奏陛下，",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fearful",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "How many speakers are there in the entire audio? Choose the best answer.",
+      "question_type": "speaker_index",
+      "options": [
+        "A. 4",
+        "B. 8",
+        "C. 5",
+        "D. Cannot determine (insufficient evidence)"
+      ],
+      "answer": "C",
+      "answer_text": "5 speakers",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "How many speakers are there in the entire audio? Choose the best answer.",
+      "question_type": "time_index",
+      "options": [
+        "A. 1",
+        "B. 3",
+        "C. Cannot determine (insufficient evidence)",
+        "D. 4"
+      ],
+      "answer": "B",
+      "answer_text": "3 speakers",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    }
+  ],
+  "timestamp": 675069.359886251,
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/说话人识别能力-说话人计数任务_spk_a.mp3",
+    "start_time": 4.5,
+    "end_time": 6.3,
+    "duration": 1.8
+  }
+}

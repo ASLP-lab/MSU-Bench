@@ -1,0 +1,167 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人属性识别能力-口音识别任务.txt",
+  "prompt_relpath": "level1/说话人属性识别能力-口音识别任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_016",
+            "start_time": 140.95,
+            "end_time": 142.99,
+            "transcript": "I want you to guard it with your life.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "male",
+            "emotion": "中性",
+            "accent": "美式英语口音（纽约地区）"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_004",
+            "start_time": 91.17,
+            "end_time": 93.17,
+            "transcript": "It's Saturday night at the Copa.",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1",
+            "age": "青年",
+            "gender": "male",
+            "emotion": "快乐",
+            "accent": "美式英语口音（通用）"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面单人讲话音频中，说话人使用了什么口音？",
+      "question_type": "no_index",
+      "options": [
+        "A. 美式英语口音（纽约地区）",
+        "B. 美式英语口音（通用）",
+        "C. 英式英语口音",
+        "D. 无法判断（信息不足以识别口音）"
+      ],
+      "answer": "A",
+      "answer_text": "美式英语口音（纽约地区）",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中在第 140.95 秒到第 142.99 秒的说话人口音最接近以下哪一种？",
+      "question_type": "time_index",
+      "options": [
+        "A. 美式英语口音（通用）",
+        "B. 英式英语口音",
+        "C. 美式英语口音（纽约地区）",
+        "D. 无法判断（信息不足以识别口音）"
+      ],
+      "answer": "C",
+      "answer_text": "美式英语口音（纽约地区）",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘guard it with your life’的说话人口音最接近以下哪一种？",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 无法判断（信息不足以识别口音）",
+        "B. 美式英语口音（纽约地区）",
+        "C. 英式英语口音",
+        "D. 美式英语口音（通用）"
+      ],
+      "answer": "B",
+      "answer_text": "美式英语口音（纽约地区）",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. hallucination",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "在整段音频中，对话中第 2 个出现的说话人使用了什么口音？",
+      "question_type": "speaker_index",
+      "options": [
+        "A. 美式英语口音（纽约地区）",
+        "B. 英式英语口音",
+        "C. 美式英语口音（通用）",
+        "D. 无法判断（信息不足以识别口音）"
+      ],
+      "answer": "A",
+      "answer_text": "美式英语口音（纽约地区）",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "在第 140.95 秒到第 142.99 秒说过‘I want you to guard it with your life’的男性说话人，其口音最接近以下哪一种？",
+      "question_type": "complex_index",
+      "options": [
+        "A. 英式英语口音",
+        "B. 无法判断（信息不足以识别口音）",
+        "C. 美式英语口音（通用）",
+        "D. 美式英语口音（纽约地区）"
+      ],
+      "answer": "D",
+      "answer_text": "美式英语口音（纽约地区）",
+      "rationale": [
+        "A. hallucination",
+        "B. unknown",
+        "C. wrong speaker",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "在整段音频中，使用美式英语口音（纽约地区）的说话人有哪些？（用 全局说话人顺序索引 作答）请选择最符合的一项。",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. spk_2、spk_4、spk_5、spk_7、spk_8",
+        "B. spk_1、spk_2、spk_4、spk_5、spk_7",
+        "C. 无法判断（信息不足以识别口音）",
+        "D. spk_2、spk_4、spk_5、spk_7、spk_8、spk_10"
+      ],
+      "answer": "A",
+      "answer_text": "spk_2、spk_4、spk_5、spk_7、spk_8",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "在整段音频中，使用美式英语口音（纽约地区）的说话人一共有几个？请选择最符合的一项。",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 6 个",
+        "B. 2 个",
+        "C. 5 个",
+        "D. 无法判断（信息不足以识别口音）"
+      ],
+      "answer": "C",
+      "answer_text": "5 个",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    }
+  ]
+}

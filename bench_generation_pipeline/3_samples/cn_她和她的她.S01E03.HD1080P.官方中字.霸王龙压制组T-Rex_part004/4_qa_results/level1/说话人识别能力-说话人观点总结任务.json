@@ -1,0 +1,267 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level1/说话人识别能力-说话人观点总结任务.txt",
+  "prompt_relpath": "level1/说话人识别能力-说话人观点总结任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_062",
+            "start_time": 322.08,
+            "end_time": 325.36,
+            "transcript": "办案呢就交给警察，反正又不关我们的事情。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          },
+          {
+            "seg_id": "seg_033",
+            "start_time": 167.01,
+            "end_time": 170.65,
+            "transcript": "你还要提起这件事情，就是这件事情毁了这个家。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "生气",
+            "accent": "标准普通话"
+          },
+          {
+            "seg_id": "seg_052",
+            "start_time": 276.87,
+            "end_time": 279.43,
+            "transcript": "没关系，过去呢，忘了就算了。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_8",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_031",
+            "start_time": 159.31,
+            "end_time": 163.83,
+            "transcript": "如果当初你有好好处理这件事情，我们家会变成这个样子吗？",
+            "spk_id": "spk_07",
+            "spk_index": "spk_7",
+            "age": "中年",
+            "gender": "女声",
+            "emotion": "悲伤",
+            "accent": "标准普通话"
+          },
+          {
+            "seg_id": "seg_040",
+            "start_time": 208.95,
+            "end_time": 210.83,
+            "transcript": "我跟你爸那有什么好吵的啊？",
+            "spk_id": "spk_07",
+            "spk_index": "spk_7",
+            "age": "中年",
+            "gender": "女声",
+            "emotion": "中性",
+            "accent": "标准普通话"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面单人讲话音频中的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "no_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 他认为家庭过去的矛盾是现在所有问题的根源，并对此感到悔恨。",
+        "B. 他主张回避和淡化处理过去与现在的麻烦，以维持家庭的平静。",
+        "C. 他正在暗中调查案件，希望能保护家人不受牵连。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "B",
+      "answer_text": "他主张回避和淡化处理过去与现在的麻烦，以维持家庭的平静。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 322.08 秒到第 325.36 秒的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "time_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 他认为应该忘记过去、回避现在的麻烦，以维持家庭表面的和平。",
+        "B. 他认为家人应该坦诚面对过去的错误，才能解决现在的问题。",
+        "C. 他认为女儿的失忆与案件有关，并试图引导她回忆起关键线索。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "A",
+      "answer_text": "他认为应该忘记过去、回避现在的麻烦，以维持家庭表面的和平。",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘反正又不关我们的事情’的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "transcript_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 他希望女儿能尽快恢复记忆，因为这可能与案件有关。",
+        "B. 他主张家庭不应纠结于过去或卷入现在的案件，应保持距离以求安宁。",
+        "C. 他认为妻子对过去事情的处理方式是导致家庭不睦的直接原因。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "B",
+      "answer_text": "他主张家庭不应纠结于过去或卷入现在的案件，应保持距离以求安宁。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 322.08 秒到第 325.36 秒说过‘反正又不关我们的事情’的这位说话人，在整段对话中的整体立场是什么？",
+      "question_type": "complex_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 他认为过去的事情处理不当，导致了家庭的悲剧，并为此深深自责。",
+        "B. 他希望通过离开家去果园来逃避家庭矛盾和案件带来的压力。",
+        "C. 他主张对过去的伤痛和眼前的麻烦采取消极回避的态度，以维持现状。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "C",
+      "answer_text": "他主张对过去的伤痛和眼前的麻烦采取消极回避的态度，以维持现状。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "在整段对话中，第 8 个出现的说话人（spk_8），在整段对话中的整体立场是什么？",
+      "question_type": "speaker_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. 他主张对过去的矛盾和现在的案件都采取回避态度，希望家庭能保持平淡的生活。",
+        "B. 他认为妻子小题大做，过去的矛盾根本不重要。",
+        "C. 他对过去的事件耿耿于怀，认为正是妻子的处理不当才导致了家庭的破裂。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "A",
+      "answer_text": "他主张对过去的矛盾和现在的案件都采取回避态度，希望家庭能保持平淡的生活。",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "下面单人讲话音频中的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "no_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从对提及往事感到愤怒和指责 → 转变为主动回避和淡化处理家庭面临的各种麻烦。",
+        "B. 从对案件漠不关心 → 转变为因女儿被卷入而开始积极寻求真相。",
+        "C. 从情绪激动地指责家人的过错 → 转变为为了维持表面和平而刻意向女儿掩饰矛盾。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "A",
+      "answer_text": "从对提及往事感到愤怒和指责 → 转变为主动回避和淡化处理家庭面临的各种麻烦。",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 322.08 秒到第 325.36 秒的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "time_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从对家人的冷漠和不耐烦 → 转变为对女儿表达深切的关爱和担忧。",
+        "B. 从因往事被重提而情绪激动 → 转变为刻意回避过去与现在的问题以求安宁。",
+        "C. 从激烈地指责妻子处理事情不当 → 转变为在女儿面前假装和睦以掩盖家庭裂痕。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "B",
+      "answer_text": "从因往事被重提而情绪激动 → 转变为刻意回避过去与现在的问题以求安宁。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘反正又不关我们的事情’的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "transcript_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从对妻子的激烈指责 → 转变为试图与妻子和解并共同面对问题。",
+        "B. 从情绪激动地将家庭问题归咎于重提旧事 → 转变为采取息事宁人的态度，主动回避所有敏感话题。",
+        "C. 从与妻子激烈争吵 → 转变为为了安抚女儿而刻意表现出家庭和睦的样子。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "B",
+      "answer_text": "从情绪激动地将家庭问题归咎于重提旧事 → 转变为采取息事宁人的态度，主动回避所有敏感话题。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 322.08 秒到第 325.36 秒说过‘反正又不关我们的事情’的这位说话人，在整段对话中立场如何变化？",
+      "question_type": "complex_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从情绪爆发、指责他人 → 转变为安抚家人并主动回避冲突话题。",
+        "B. 从情绪崩溃地指责丈夫 → 转变为在女儿面前假装无事发生。",
+        "C. 从最初的疲惫无奈 → 转变为因女儿卷入案件而变得警惕和主动。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "A",
+      "answer_text": "从情绪爆发、指责他人 → 转变为安抚家人并主动回避冲突话题。",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "在整段对话中，第 8 个出现的说话人（spk_8），在整段对话中立场如何变化？",
+      "question_type": "speaker_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. 从最初的疲惫和无奈 → 转变为对女儿晚归的严厉质问。",
+        "B. 从因旧事重提而愤怒指责 → 转变为主动安抚家人并回避所有可能引发矛盾的话题。",
+        "C. 从对妻子充满怨恨 → 转变为在女儿面前刻意掩饰矛盾、维持家庭和睦的表象。",
+        "D. 无法判断（证据不足以唯一推出观点/变化）"
+      ],
+      "answer": "B",
+      "answer_text": "从因旧事重提而愤怒指责 → 转变为主动安抚家人并回避所有可能引发矛盾的话题。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人对话场景推理能力-对话身份识别任务.txt",
+  "prompt_relpath": "level2/多说话人对话场景推理能力-对话身份识别任务.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_074",
+            "start_time": 312.04,
+            "end_time": 315.12,
+            "transcript": "Your hat was missing, so I looked into it.",
+            "spk_id": "spk_04",
+            "spk_index": "spk_4",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_077",
+            "start_time": 319.36,
+            "end_time": 321.52,
+            "transcript": "Who had the balls to clip Gio's hat?",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "惊讶",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面音频中的两个说话人，从整段对话来看，他们之间的关系是什么？请选择最符合的一项。",
+      "question_type": "no_index",
+      "options": [
+        "A. 合作伙伴",
+        "B. 同事",
+        "C. 老板—下属",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "C",
+      "answer_text": "老板—下属",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 312.04 秒到第 315.12 秒讲话的说话人以及在第 319.36 秒到第 321.52 秒讲话的说话人在整段对话中的关系是什么？请选择最符合的一项。",
+      "question_type": "time_index",
+      "options": [
+        "A. 同事",
+        "B. 无法判断（证据不足）",
+        "C. 合作伙伴",
+        "D. 老板—下属"
+      ],
+      "answer": "D",
+      "answer_text": "老板—下属",
+      "rationale": [
+        "A. wrong speaker",
+        "B. unknown",
+        "C. hallucination",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "音频中说过‘Your hat was missing, so I looked into it.’的说话人以及说过‘Who had the balls to clip Gio's hat?’的说话人在整段对话中的关系是什么？请选择最符合的一项。",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 老板—下属",
+        "B. 合作伙伴",
+        "C. 同事",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "A",
+      "answer_text": "老板—下属",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 312.04 秒到第 315.12 秒说过‘Your hat was missing’的说话人与第 319.36 秒到第 321.52 秒说过‘Who had the balls to clip’的说话人在整段对话中的关系是什么？请选择最符合的一项。",
+      "question_type": "complex_index",
+      "options": [
+        "A. 无法判断（证据不足）",
+        "B. 老板—下属",
+        "C. 合作伙伴",
+        "D. 同事"
+      ],
+      "answer": "B",
+      "answer_text": "老板—下属",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. hallucination",
+        "D. wrong speaker"
+      ]
+    }
+  ]
+}

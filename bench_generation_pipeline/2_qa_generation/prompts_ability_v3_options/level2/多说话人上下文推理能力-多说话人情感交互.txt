@@ -1,0 +1,161 @@
+# 多说话人上下文推理能力：多说话人情感交互（选择题｜统一输出格式｜去除 retrieval｜含 speaker_index｜仅考察“片段情感 + 对他人的影响”）
+你是 QA 构造专家。输入为多说话人转录与对应音频（含 spk_id、transcript，可能含 start_time/end_time/seg_id，且你可以听音频；可能含[笑]/[叹气]/[沉默]/[打断]等副语言标注）。
+目标：构造客观单选题评估 LALM 的【多说话人情感交互理解】：
+给定“情感显著”的目标发言锚点（必须来自你筛选的 seg），判断：
+(1) 该片段中说话人的情感是什么；
+(2) 该情感表达在整段对话中对他人产生了什么影响（影响对象是谁 + 影响结果是什么）。
+
+仅生成以下 question_type（禁止生成任何 retrieval/反向检索类题目）：
+- no_index / time_index / transcript_index / speaker_index / complex_index
+
+================================================
+【spk_index 定义（必须严格遵守）】
+- spk_index 是“全局说话人顺序编号”，基于整段输入转录中 spk_id 的首次出现顺序确定：
+  - 第一个首次出现的 spk_id => spk_1
+  - 第二个首次出现的 spk_id => spk_2
+  - 以此类推
+
+================================================
+【关键：题干/选项中 spk_a、spk_b 必须替换为全局顺序占位】
+- speaker_meta 仍使用键名 spk_a / spk_b（用于保存筛选 seg 列表），但题干与 options 中不得出现 <spk_a>/<spk_b>。
+- 在生成题干/选项时，必须做占位替换：
+  - <TGT> = "<" + speaker_meta.spk_a[0].spk_index + ">"   （例如 <spk_3>）
+  - <AFF> = "<" + speaker_meta.spk_b[0].spk_index + ">"   （例如 <spk_1>）
+- 题干与选项里严禁出现原始 spk_id、seg_id。
+- speaker_index 题干中的 “第 x 个出现的说话人（spk_x）” 必须与 <TGT> 的编号一致。
+
+================================================
+【重要总原则（去除“行为”）】
+- 不得使用 turn/轮次/turn_index/第几轮 定位。
+- 你筛选出来的 seg（speaker_meta.spk_a[0]）必须就是“要考察情感”的那一段：
+  - time_index/complex_index 的 start/end 必须取自该 seg 的 start_time/end_time
+  - transcript_index/complex_index 的 content 必须取自该 seg 的 transcript（逐字，允许截取连续子串但不得改写）
+- 本任务不再分析/提问“说话人行为”（包括沉默施压、打断/抢话、转移话题等均不允许作为提问目标或选项内容）。
+- 每题只判断：
+  A) 片段情感（只允许选 1 个“最主要”的情感）
+  B) 对他人的影响（影响对象 + 影响结果）
+- 必须保证唯一正确：若片段情感不唯一，或影响对象/影响结果不唯一/证据不足 => 输出 []。
+- 选项中不得出现时间（秒数/区间）与 spk_id/spk_index/seg_id；题干中允许出现时间/内容（按模板），但选项不允许。
+
+================================================
+【情感标签集合（每题只能选 1 个“最主要”）】
+愤怒/不满、悲伤/委屈、焦虑/紧张、厌烦/不耐烦、冷淡/疏离、开心/兴奋、害羞/尴尬、恐惧/担忧、同理/安抚、平静/中性（若中性难以与影响建立因果则不要出题）。
+注意：
+- 情感判断必须主要依据音频情绪线索（语调、强弱、语速、重音、笑声/叹气等副语言），文本语义不能单独决定情感。
+- 题目中的“片段情感”必须来自你挑选的 anchor seg（spk_a[0]）的可听内容；若该 seg 情感不明显/不确定 => 不出题。
+- 如果对应seg中情感不为中性，尽量使用seg标注的情感
+
+================================================
+【speaker_meta 选段与聚合规则（先选一次，全题复用｜强制执行）】
+你必须先挑选两位不同说话人的若干 seg，并按以下格式输出 speaker_meta（同一 spk_id 的多个 seg 可放在同一个 list）：
+- spk_a：目标说话人（其某一句“情感显著”的发言会对他人造成可验证影响）
+- spk_b：受影响最直接/最主要的另一说话人（通常对 spk_a[0] 的情感表达做出反应）
+
+强制要求：
+1) speaker_meta.spk_a 内所有 seg 的 spk_id 必须相同；
+2) speaker_meta.spk_b 内所有 seg 的 spk_id 必须相同；
+3) spk_a 的 spk_id 与 spk_b 的 spk_id 必须不同；
+4) spk_a 至少 1 个 seg，且 spk_a[0] 必须是“要考察情感”的 anchor seg；
+5) spk_b 至少 1 个 seg，且 spk_b[0] 建议为“对 spk_a[0] 的直接反应/受影响表现”的片段（用于你内部验证影响的唯一性）；
+6) spk_a[0] 与 spk_b[0] 都不能是整段音频的第一句话。
+
+================================================
+【最终输出格式（严格 JSON｜speaker_meta 单独输出一次）】
+输出为一个 JSON 数组：
+- 第 1 个元素：只包含 speaker_meta
+- 后续元素：每个元素是一道选择题对象
+若 5 种模板均无法保证唯一正确 => 输出 []（不要只输出 speaker_meta）。
+
+[
+  {
+    "speaker_meta":{
+      "spk_a": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_1",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}],
+      "spk_b": [{"seg_id":"...", "start_time":xxx, "end_time":xxx, "transcript":"...", "spk_id":"...", "spk_index":"spk_2",
+                 "age":"...|unknown|null", "gender":"...|unknown|null", "emotion":"...|unknown|null", "accent":"...|unknown|null"}]
+    }
+  },
+  {
+    "question": "...",
+    "question_type": "no_index|time_index|transcript_index|speaker_index|complex_index",
+    "options": ["A. ...","B. ...","C. ...","D. ..."],
+    "answer": "A",
+    "answer_text": "...",
+    "rationale": ["A. ground truth","B. wrong speaker","C. hallucination","D. unknown"]
+  }
+]
+
+字段硬约束：
+- time_index/complex_index 必须使用 spk_a[0] 的 start_time/end_time；否则跳过该题型。
+- transcript_index/complex_index 必须使用 spk_a[0] 的 transcript（逐字，可截取连续子串且需能唯一定位）；否则跳过该题型。
+- speaker_index 中的 x 必须等于 spk_a[0].spk_index 的编号（例如 spk_3），且该题仍以 spk_a[0] 作为关键情感锚点（但题干不暴露时间/文本）。
+- options 必须为 4 个且顺序打乱；answer 指向唯一正确；answer_text 不含字母前缀。
+- rationale 与 A-D 一一对应：
+  - ground truth：正确“片段情感 + 影响对象(<AFF>) + 影响结果”
+  - wrong speaker：把影响对象说错（把 <AFF> 换成另一位真实说话人的全局顺序占位），或把影响结果错归因
+  - hallucination：捏造不存在的情感/影响/互动（对话中找不到证据）
+  - unknown：无法判断（证据不足以唯一确定情感或影响）
+- 题干与选项中出现的 <TGT>/<AFF> 必须实际写成对应的 <spk_k>（例如 <spk_3>/<spk_1>），不得保留字面 <TGT>/<AFF>。
+
+================================================
+【影响判定口径（必须明确且可证据化）】
+- 影响对象默认限定为 <AFF>（speaker_meta.spk_b[0].spk_index 对应的人）。
+- 影响结果必须能从 <AFF> 的后续反应中验证（只描述结果，不描述/分类“行为”），例如：
+  - <AFF> 态度转为防御/反驳或开始解释澄清
+  - <AFF> 语气软化/安抚/试图缓和
+  - <AFF> 出现让步/道歉/认同
+  - 对话紧张程度上升/下降、对立加剧/缓和、话题被迫转向等
+- 若 <AFF> 的反应不足以支持唯一影响结果 => 不出题。
+
+================================================
+【通用选项构造规则（所有模板适用｜4选1）】
+每题 4 个选项必须包含（顺序打乱）：
+A) ground truth：正确 “情感：E；影响：对 <AFF> 造成了 R”
+B) wrong speaker：情感 E 保持不变或相近，但把影响对象从 <AFF> 换成“另一位真实说话人”的 <spk_k>（或把 R 错归因）
+C) hallucination：编造一个看起来合理但对话中不存在的影响结果/互动（或编造不存在的情感 E）
+D) unknown：固定 “无法判断（证据不足以唯一确定）”
+要求：
+- 选项不得出现时间/seg_id/spk_id/spk_index
+- 选项不得包含任何“行为标签/行为分析”（包括沉默施压、打断、抢话、转移话题等词汇）
+
+================================================
+模板1｜no_index
+question_type = "no_index"
+题干：
+“下面音频中，说话人的情感是什么？这种情绪在整段对话中对其他人产生了什么影响？”
+说明：
+- <spk_x> 必须替换为 <TGT> 对应的 <spk_k>
+- <spk_y> 必须替换为 <AFF> 对应的 <spk_k>
+- 评测侧提供两段切分音频：音频1=spk_a[0]，音频2=spk_b[0]
+- 题干不得出现时间与 transcript
+
+================================================
+模板2｜time_index
+question_type = "time_index"
+题干：
+“音频中第 start 秒到第 end 秒这位说话人（<spk_x>）的情感是什么？这种情绪在对话中对他人产生了什么影响？”
+条件：start/end 取自 spk_a[0]；题干不出现 transcript；<spk_x>/<spk_y> 按占位替换
+
+================================================
+模板3｜transcript_index
+question_type = "transcript_index"
+题干：
+“音频中说‘content’的这位说话人（<spk_x>）在表述该内容的情感是什么？这种情绪在对话中对他人产生了什么影响？”
+条件：content 逐字来自 spk_a[0].transcript 且唯一定位；题干不出现时间；<spk_x>/<spk_y> 按占位替换
+
+
+================================================
+模板4｜complex_index
+question_type = "complex_index"
+题干：
+“音频中第 start 秒到第 end 秒说过‘content’的这位说话人（<spk_x>）在表述该内容时的情感是什么？这种情绪对他人产生了什么影响？”
+条件：start/end/content 同时来自 spk_a[0] 同一 seg；content 逐字；<spk_x>/<spk_y> 按占位替换
+
+================================================
+【全局失败条件（任一触发直接输出 []）】
+- 无法选出 spk_a 与 spk_b 各至少 1 个可唯一定位、且 spk_a[0] 情感显著的 seg
+- spk_a[0] 的情感不唯一或不清晰
+- 影响对象/影响结果不唯一（无法明确主要影响到 <AFF> 且结果可验证）
+- 任一可生成题无法构造 4 个互不相同且唯一正确的选项
+
+开始生成：请仅输出符合格式的 JSON；若无法保证唯一正确则输出 []。

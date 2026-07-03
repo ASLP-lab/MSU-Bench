@@ -1,0 +1,117 @@
+{
+  "source_movie_json": "./3_revised_label/json/part001.json",
+  "source_audio": "./3_revised_label/wav/part001.wav",
+  "prompt_file": "./2_qa_generation/prompts_ability_v3_options/level2/多说话人对话结构分析能力-对话行为识别.txt",
+  "prompt_relpath": "level2/多说话人对话结构分析能力-对话行为识别.txt",
+  "model": "gemini-2.5-pro",
+  "result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_032",
+            "start_time": 168.27,
+            "end_time": 169.11,
+            "transcript": "Give me the Scudo's hat.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2",
+            "age": "中年",
+            "gender": "男声",
+            "emotion": "中性",
+            "accent": "带有纽约地区特征的美式英语"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_033",
+            "start_time": 169.23,
+            "end_time": 170.35,
+            "transcript": "But he said to guard it.",
+            "spk_id": "spk_02",
+            "spk_index": "spk_3",
+            "age": "青年",
+            "gender": "女声",
+            "emotion": "恐惧",
+            "accent": "通用美式英语"
+          }
+        ]
+      }
+    },
+    {
+      "question": "下面音频中的两个说话人，在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "no_index",
+      "options": [
+        "A. 说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。",
+        "B. 说话人A半开玩笑地提出请求，说话人B专业地回应但表示无法满足。",
+        "C. 说话人A发出暴怒的威胁，说话人B则因恐惧而急忙安抚。",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "A",
+      "answer_text": "说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中第 168.27 秒到第 169.11 秒讲话的说话人以及在第 169.23 秒到第 170.35 秒讲话的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "time_index",
+      "options": [
+        "A. 说话人A半开玩笑地提出请求，说话人B专业地回应但表示无法满足。",
+        "B. 说话人A发出暴怒的威胁，说话人B则因恐惧而急忙安抚。",
+        "C. 说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。",
+        "D. 无法判断（证据不足）"
+      ],
+      "answer": "C",
+      "answer_text": "说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "音频中说过‘Give me the Scudo's hat.’的说话人以及说过‘But he said to guard it.’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. 说话人A发出暴怒的威胁，说话人B则因恐惧而急忙安抚。",
+        "B. 无法判断（证据不足）",
+        "C. 说话人A半开玩笑地提出请求，说话人B专业地回应但表示无法满足。",
+        "D. 说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。"
+      ],
+      "answer": "D",
+      "answer_text": "说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。",
+      "rationale": [
+        "A. wrong speaker",
+        "B. unknown",
+        "C. hallucination",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "音频中第 168.27 秒到第 169.11 秒说过‘Give me the Scudo's hat.’的说话人与第 169.23 秒到第 170.35 秒说过‘But he said to guard it.’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. 说话人A半开玩笑地提出请求，说话人B专业地回应但表示无法满足。",
+        "B. 说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。",
+        "C. 无法判断（证据不足）",
+        "D. 说话人A发出暴怒的威胁，说话人B则因恐惧而急忙安抚。"
+      ],
+      "answer": "B",
+      "answer_text": "说话人A发出直接且带有权威感的命令，说话人B则因感到为难而试图辩解。",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    }
+  ]
+}

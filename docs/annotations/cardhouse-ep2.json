@@ -1,0 +1,519 @@
+{
+  "speakers": [
+    {
+      "speaker_id": "spk_1",
+      "speaker_name": "Young Staffer (Indian)",
+      "gender": "Male",
+      "age": "Young Adult",
+      "first_appearance_time": 3.9
+    },
+    {
+      "speaker_id": "spk_2",
+      "speaker_name": "Young Staffer (Caucasian)",
+      "gender": "Male",
+      "age": "Young Adult",
+      "first_appearance_time": 6.7
+    },
+    {
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "gender": "Male",
+      "age": "Middle-aged",
+      "first_appearance_time": 8.3
+    },
+    {
+      "speaker_id": "spk_4",
+      "speaker_name": "Doug Stamper",
+      "gender": "Male",
+      "age": "Middle-aged",
+      "first_appearance_time": 36.1
+    },
+    {
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "gender": "Male",
+      "age": "Elder",
+      "first_appearance_time": 50.2
+    }
+  ],
+  "audio_segments": [
+    {
+      "segment_id": "seg_001",
+      "speaker_id": "spk_1",
+      "speaker_name": "Young Staffer (Indian)",
+      "start_time": 3.9,
+      "end_time": 6.3,
+      "text": "This is major reform, like a complete overhaul.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Young Adult"
+    },
+    {
+      "segment_id": "seg_002",
+      "speaker_id": "spk_2",
+      "speaker_name": "Young Staffer (Caucasian)",
+      "start_time": 6.7,
+      "end_time": 8.1,
+      "text": "That would usually take months.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Young Adult"
+    },
+    {
+      "segment_id": "seg_003",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 8.3,
+      "end_time": 9.9,
+      "text": "Well we only have days, not months.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_004",
+      "speaker_id": "spk_1",
+      "speaker_name": "Young Staffer (Indian)",
+      "start_time": 10.1,
+      "end_time": 12.3,
+      "text": "Alright, but think about the process. I mean we can't just change...",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Young Adult"
+    },
+    {
+      "segment_id": "seg_005",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 12.4,
+      "end_time": 23.2,
+      "text": "When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_006",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 23.2,
+      "end_time": 30.9,
+      "text": "Now I realize it is a difficult task, but we have the opportunity to make history here, and I want all of us to make it together.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_007",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 32.0,
+      "end_time": 33.8,
+      "text": "So good luck. We're counting on you.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_008",
+      "speaker_id": "spk_4",
+      "speaker_name": "Doug Stamper",
+      "start_time": 36.1,
+      "end_time": 36.7,
+      "text": "Page one.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_009",
+      "speaker_id": "spk_4",
+      "speaker_name": "Doug Stamper",
+      "start_time": 37.4,
+      "end_time": 40.9,
+      "text": "These bullet points reflect the key planks at the center of our bill.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_010",
+      "speaker_id": "spk_4",
+      "speaker_name": "Doug Stamper",
+      "start_time": 41.4,
+      "end_time": 42.0,
+      "text": "Get comfy.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_011",
+      "speaker_id": "spk_4",
+      "speaker_name": "Doug Stamper",
+      "start_time": 42.5,
+      "end_time": 45.0,
+      "text": "This is your home until we have a presentable first draft.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_012",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 48.8,
+      "end_time": 50.0,
+      "text": "Donald. What a morning.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_013",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 50.2,
+      "end_time": 55.2,
+      "text": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+      "emotion": "Disgust",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_014",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 55.5,
+      "end_time": 58.7,
+      "text": "It doesn't matter how it happened. We can't make it unhappen. So now we have to adapt.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_015",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 58.7,
+      "end_time": 102.8,
+      "text": "Hopefully they realize that this is a first draft. All we have here really is a perception problem.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_016",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 102.8,
+      "end_time": 106.0,
+      "text": "We don't get a second chance at a first impression, Donald. You know that.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_017",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 106.1,
+      "end_time": 110.1,
+      "text": "Now look, I'm on your side. But Linda is furious.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_018",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 110.4,
+      "end_time": 111.2,
+      "text": "What's she saying?",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_019",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 111.4,
+      "end_time": 113.2,
+      "text": "They want to point fingers.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_020",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 113.5,
+      "end_time": 114.0,
+      "text": "At me?",
+      "emotion": "Surprise",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_021",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 114.1,
+      "end_time": 118.0,
+      "text": "I told her we cannot do that. I mean, you are vital to this process.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_022",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 118.5,
+      "end_time": 123.7,
+      "text": "I'm up to here with them, Donald, for lying, for turning their back on you.",
+      "emotion": "Anger",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_023",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 124.4,
+      "end_time": 130.2,
+      "text": "You know, I'm of a mind to say screw it. I'll fall on this grenade myself just to piss them off.",
+      "emotion": "Anger",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_024",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 131.0,
+      "end_time": 132.4,
+      "text": "Get me John King at CNN.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_025",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 132.5,
+      "end_time": 134.3,
+      "text": "Wait. Frank, this is not your fault.",
+      "emotion": "Fear",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_026",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 134.5,
+      "end_time": 136.4,
+      "text": "No, we have to protect your reputation.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_027",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 136.4,
+      "end_time": 138.2,
+      "text": "No, but you're the man that needs to get the bill through the house.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_028",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 138.3,
+      "end_time": 143.0,
+      "text": "I will, hang on. I will assign it to one of my deputies and quietly manage it and I'll help guide you through the process.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_029",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 143.2,
+      "end_time": 144.5,
+      "text": "I am not comfortable with this.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_030",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 144.5,
+      "end_time": 146.3,
+      "text": "Well then what do you suggest we do?",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_031",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 149.6,
+      "end_time": 159.3,
+      "text": "What a martyr craves more than anything is a sword to fall on. So you sharpen the blade, hold it at just the right angle, and then, three, two, one.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_032",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 159.8,
+      "end_time": 202.1,
+      "text": "It should be me. It was my bill.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_033",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 202.4,
+      "end_time": 206.5,
+      "text": "Impossible. Donald, look. Education has been your life's work.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_034",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 209.5,
+      "end_time": 219.4,
+      "text": "The truth is, my heart is not in this fight. You know me, I'm not a wheeler-dealer. I can put my mind to policy, but I'm no good at this brand of politics.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_035",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 219.5,
+      "end_time": 221.8,
+      "text": "Well if not you, then who?",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_036",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 228.0,
+      "end_time": 230.0,
+      "text": "It should be you, Frank.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_037",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 230.1,
+      "end_time": 236.5,
+      "text": "You're formidable. People respect you. They will follow your lead. Let me, let me be on the sidelines for this.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_038",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 241.0,
+      "end_time": 247.4,
+      "text": "Well I could only consider that as an option if I knew that I could still come to you for counsel.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_039",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 247.4,
+      "end_time": 250.5,
+      "text": "Of course. Whatever you need.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_040",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 253.0,
+      "end_time": 255.9,
+      "text": "Part of me is glad this got leaked.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_041",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 258.3,
+      "end_time": 303.0,
+      "text": "Well, it would have been better if it hadn't, but at least people know where I stand.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    },
+    {
+      "segment_id": "seg_042",
+      "speaker_id": "spk_3",
+      "speaker_name": "Frank Underwood",
+      "start_time": 305.1,
+      "end_time": 306.1,
+      "text": "Thank you, Donald.",
+      "emotion": "Neutral",
+      "gender": "Male",
+      "age": "Middle-aged"
+    },
+    {
+      "segment_id": "seg_043",
+      "speaker_id": "spk_5",
+      "speaker_name": "Donald",
+      "start_time": 306.8,
+      "end_time": 308.0,
+      "text": "Happy to do it, Frank.",
+      "emotion": "Sadness",
+      "gender": "Male",
+      "age": "Elder"
+    }
+  ],
+  "_meta": {
+    "source_video": "cardhouse-ep2.mp4",
+    "model": "gemini-2.5-pro",
+    "annotation_time": "2026-07-03 05:21:07"
+  }
+}

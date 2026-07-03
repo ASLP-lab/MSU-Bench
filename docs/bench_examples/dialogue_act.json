@@ -1,0 +1,184 @@
+{
+  "task_id": "dialogue_act",
+  "level": "level2",
+  "dimension": "Structure Analysis",
+  "task_name": "Dialogue Act Recognition",
+  "variants": {
+    "en": {
+      "language": "English",
+      "source": "Gua Sha (刮痧, 2001)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/dialogue_act/en_spk_a.mp3",
+          "start": 144.53,
+          "end": 158.8,
+          "dur": 14.27
+        }
+      },
+      "spk_a_transcript": "So far, Mr. Davis, all your so-called testimony has been circumstantial at best, not to mention prejudicial. Nothing said thus far would ever stand up in an actual court. Why you would try these stunts in this hearing is beyond me.",
+      "spk_b_transcript": "Y- Your honor.",
+      "qa": [
+        {
+          "question": "What is the interaction between the two speakers in the audio? Please select the most suitable option.",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker A sternly orders Speaker B to remain calm, and Speaker B reluctantly obeys.",
+            "B. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+            "C. Cannot be determined (insufficient evidence)",
+            "D. Speaker A raises a question, and Speaker B makes a strong defense and rebuttal."
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "unknown",
+            "hallucination"
+          ]
+        },
+        {
+          "question": "What is the interaction between the speaker from 144.53s to 158.8s and the speaker from 158.88s to 159.68s? Please select the most suitable option.",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+            "B. Speaker A sternly orders Speaker B to remain calm, and Speaker B reluctantly obeys.",
+            "C. Speaker A raises a question, and Speaker B makes a forceful defense and rebuttal.",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+          "rationale": [
+            "ground_truth",
+            "wrong_speaker",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the interaction between the speaker who said, 'all your so-called testimony has been circumstantial at best,' and the one who said, 'Y- Your honor'? Please choose the most appropriate option.",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker A raises a doubt, and Speaker B offers a forceful defense and rebuttal.",
+            "B. Cannot be determined (insufficient evidence)",
+            "C. Speaker A sternly orders Speaker B to stay calm, and Speaker B reluctantly complies.",
+            "D. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive."
+          ],
+          "answer": "D",
+          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the interaction between the speaker who said, 'Nothing said thus far would ever stand up in an actual court' (from 144.53s to 158.8s), and the speaker who said, 'Y- Your honor' (from 158.88s to 159.68s)? Please choose the most suitable option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+            "B. Speaker A raises a question, and Speaker B makes a powerful defense and rebuttal.",
+            "C. Speaker A sternly commands Speaker B to remain calm, and Speaker B reluctantly complies.",
+            "D. Cannot be determined (insufficient evidence)"
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "language": "Chinese",
+      "source": "Copycat Killer (模仿犯, 2023)",
+      "audio": {
+        "a": {
+          "src": "bench_examples/audio/dialogue_act/zh_spk_a.mp3",
+          "start": 101.63,
+          "end": 106.99,
+          "dur": 5.36
+        }
+      },
+      "spk_a_transcript": "Why he was in Shen Jiawen's car, what happened in between, is not important at all. Nobody cares.",
+      "spk_b_transcript": "I care.",
+      "qa": [
+        {
+          "question": "What is the interactive behavior between the two speakers in this segment?",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
+            "B. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+            "C. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
+            "D. Cannot be determined (Insufficient evidence)"
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the interaction between the speaker from 101.63s to 106.99s and the speaker from 107.11s to 107.59s?",
+          "question_type": "time_index",
+          "options": [
+            "A. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
+            "B. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
+            "C. Cannot be determined (insufficient evidence)",
+            "D. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them."
+          ],
+          "answer": "D",
+          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+          "rationale": [
+            "hallucination",
+            "wrong_speaker",
+            "unknown",
+            "ground_truth"
+          ]
+        },
+        {
+          "question": "What is the interaction between the speaker who says, 'What happened in between isn't important at all, nobody cares,' and the speaker who says, 'I care'?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
+            "B. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
+            "C. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+            "D. Cannot be determined (Insufficient evidence)"
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ]
+        },
+        {
+          "question": "What is the interaction between the speaker who says 'No one cares' (from 101.63s to 106.99s) and the speaker who says 'I care' (from 107.11s to 107.59s)?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+            "B. Cannot be determined (insufficient evidence)",
+            "C. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
+            "D. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "hallucination",
+            "wrong_speaker"
+          ]
+        }
+      ]
+    }
+  }
+}
