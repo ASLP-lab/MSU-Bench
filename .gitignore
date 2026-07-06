@@ -15,3 +15,13 @@ Thumbs.db
 # Local build / temp
 tmp/
 *.log
+
+# ── Evaluation pipeline runtime artefacts ─────────────────────────────
+# Everything produced by bench_evaluation_pipeline/run_all.sh
+bench_evaluation_pipeline/work/
+bench_evaluation_pipeline/**/_logs_*/
+bench_evaluation_pipeline/**/*.log
+
+# Local secrets — the *.example templates are checked in, real .env is not
+bench_evaluation_pipeline/configs/*.env
+!bench_evaluation_pipeline/configs/*.env.example
