@@ -1,181 +1,313 @@
 {
   "task_id": "dialogue_act",
   "level": "level2",
-  "dimension": "Structure Analysis",
-  "task_name": "Dialogue Act Recognition",
+  "dimension": "Dialogue Structure Analysis (DSA)",
+  "task_name": "Dialogue Act Recognition (DAR)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Gua Sha (刮痧, 2001)",
+      "source": "the forbidden kingdom 2008",
+      "video_folder": "the_forbidden_kingdom_2008_part013",
+      "full_audio": {
+        "src": "bench_examples/audio/dialogue_act/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/dialogue_act/en_spk_a.mp3",
-          "start": 144.53,
-          "end": 158.8,
-          "dur": 14.27
+          "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+          "start": 60.38,
+          "end": 60.94,
+          "dur": 0.56,
+          "transcript": "He's gonna die!",
+          "spk_id": "spk_02",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "So far, Mr. Davis, all your so-called testimony has been circumstantial at best, not to mention prejudicial. Nothing said thus far would ever stand up in an actual court. Why you would try these stunts in this hearing is beyond me.",
-      "spk_b_transcript": "Y- Your honor.",
+      "spk_a_transcript": "He's gonna die!",
+      "spk_b_transcript": "We go now, we all die.",
       "qa": [
         {
-          "question": "What is the interaction between the two speakers in the audio? Please select the most suitable option.",
+          "question": "What is the interactive behavior between the two speakers in the corresponding segment of the audio below? Please choose the most suitable option.",
           "question_type": "no_index",
           "options": [
-            "A. Speaker A sternly orders Speaker B to remain calm, and Speaker B reluctantly obeys.",
-            "B. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-            "C. Cannot be determined (insufficient evidence)",
-            "D. Speaker A raises a question, and Speaker B makes a strong defense and rebuttal."
+            "A. Speaker A requests to retreat out of cowardice, while Speaker B sternly reprimands them for their cowardly behavior.",
+            "B. Speaker A warns emotionally, while Speaker B calmly refutes and emphasizes the consequences.",
+            "C. Cannot be determined (Insufficient evidence)",
+            "D. Speaker A affectionately asks Speaker B to stay, whereas Speaker B resolutely says goodbye."
           ],
           "answer": "B",
-          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+          "answer_text": "Speaker A gives an agitated warning, while Speaker B calmly refutes it and emphasizes the consequences.",
           "rationale": [
-            "wrong_speaker",
+            "hallucination",
             "ground_truth",
             "unknown",
-            "hallucination"
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+              "start": 60.38,
+              "end": 60.94,
+              "dur": 0.56,
+              "transcript": "He's gonna die!",
+              "spk_id": "spk_02",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What is the interaction between the speaker from 144.53s to 158.8s and the speaker from 158.88s to 159.68s? Please select the most suitable option.",
+          "question": "What is the interactive behavior between the speaker who speaks from 60.38s to 60.94s and the speaker who speaks from 63.16s to 64.56s, as demonstrated in their respective segments in the audio? Please select the most suitable option.",
           "question_type": "time_index",
           "options": [
-            "A. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-            "B. Speaker A sternly orders Speaker B to remain calm, and Speaker B reluctantly obeys.",
-            "C. Speaker A raises a question, and Speaker B makes a forceful defense and rebuttal.",
-            "D. Cannot be determined (insufficient evidence)"
-          ],
-          "answer": "A",
-          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-          "rationale": [
-            "ground_truth",
-            "wrong_speaker",
-            "hallucination",
-            "unknown"
-          ]
-        },
-        {
-          "question": "What is the interaction between the speaker who said, 'all your so-called testimony has been circumstantial at best,' and the one who said, 'Y- Your honor'? Please choose the most appropriate option.",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Speaker A raises a doubt, and Speaker B offers a forceful defense and rebuttal.",
-            "B. Cannot be determined (insufficient evidence)",
-            "C. Speaker A sternly orders Speaker B to stay calm, and Speaker B reluctantly complies.",
-            "D. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive."
+            "A. Cannot be determined (insufficient evidence)",
+            "B. Speaker A affectionately urges Speaker B to stay, while Speaker B resolutely says goodbye.",
+            "C. Speaker A asks to retreat out of cowardice, while Speaker B severely reprimands his cowardly behavior.",
+            "D. Speaker A gives an agitated warning, while Speaker B calmly rebuts and emphasizes the consequences."
           ],
           "answer": "D",
-          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+          "answer_text": "Speaker A emotionally warns, while Speaker B calmly refutes and emphasizes the consequences.",
           "rationale": [
-            "hallucination",
             "unknown",
             "wrong_speaker",
+            "hallucination",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+              "start": 60.38,
+              "end": 60.94,
+              "dur": 0.56,
+              "transcript": "He's gonna die!",
+              "spk_id": "spk_02",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What is the interaction between the speaker who said, 'Nothing said thus far would ever stand up in an actual court' (from 144.53s to 158.8s), and the speaker who said, 'Y- Your honor' (from 158.88s to 159.68s)? Please choose the most suitable option.",
-          "question_type": "complex_index",
+          "question": "What is the interaction shown in the corresponding segments between the speaker who said ‘He's gonna die!’ and the speaker who said ‘We go now, we all die.’? Please select the most fitting option.",
+          "question_type": "transcript_index",
           "options": [
-            "A. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-            "B. Speaker A raises a question, and Speaker B makes a powerful defense and rebuttal.",
-            "C. Speaker A sternly commands Speaker B to remain calm, and Speaker B reluctantly complies.",
+            "A. Speaker A gives an agitated warning, while Speaker B calmly refutes it and emphasizes the consequences.",
+            "B. Speaker A requests to retreat out of cowardice, while Speaker B sternly reprimands their cowardly behavior.",
+            "C. Speaker A affectionately urges Speaker B to stay, while Speaker B resolutely says goodbye.",
             "D. Cannot be determined (insufficient evidence)"
           ],
           "answer": "A",
-          "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+          "answer_text": "Speaker A gives an agitated warning, while Speaker B calmly refutes it and emphasizes the consequences.",
           "rationale": [
             "ground_truth",
             "hallucination",
             "wrong_speaker",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+              "start": 60.38,
+              "end": 60.94,
+              "dur": 0.56,
+              "transcript": "He's gonna die!",
+              "spk_id": "spk_02",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "What is the interactive behavior demonstrated in the corresponding segments between the speaker who said ‘He's gonna die!’ from 60.38 to 60.94 seconds in the audio, and the speaker who said ‘We go now, we all die.’ from 63.16 to 64.56 seconds? Please choose the most suitable option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A affectionately asks Speaker B to stay, while Speaker B resolutely says goodbye.",
+            "B. Cannot be determined (insufficient evidence)",
+            "C. Speaker A gives an emotional warning, while Speaker B calmly refutes it and emphasizes the consequences.",
+            "D. Speaker A asks to retreat out of cowardice, while Speaker B severely reprimands their cowardly behavior."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A agitatedly gives a warning, while Speaker B calmly refutes it and emphasizes the consequences.",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+              "start": 60.38,
+              "end": 60.94,
+              "dur": 0.56,
+              "transcript": "He's gonna die!",
+              "spk_id": "spk_02",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "Copycat Killer (模仿犯, 2023)",
+      "source": "e nv 2023",
+      "video_folder": "e_nv_2023_part008",
+      "full_audio": {
+        "src": "bench_examples/audio/dialogue_act/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/dialogue_act/zh_spk_a.mp3",
-          "start": 101.63,
-          "end": 106.99,
-          "dur": 5.36
+          "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+          "start": 6.08,
+          "end": 15.44,
+          "dur": 9.36,
+          "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+          "spk_id": "spk_03",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "Why he was in Shen Jiawen's car, what happened in between, is not important at all. Nobody cares.",
-      "spk_b_transcript": "I care.",
+      "spk_a_transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+      "spk_b_transcript": "我当然会保护我爱的人呐。",
       "qa": [
         {
-          "question": "What is the interactive behavior between the two speakers in this segment?",
+          "question": "下面音频中的两个说话人，在对应片段中体现的互动行为是什么？请选择最符合的一项。",
           "question_type": "no_index",
           "options": [
-            "A. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
-            "B. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-            "C. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-            "D. Cannot be determined (Insufficient evidence)"
+            "A. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+            "B. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+            "C. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+            "D. 无法判断（证据不足）"
           ],
           "answer": "B",
-          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+          "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
           "rationale": [
-            "wrong_speaker",
-            "ground_truth",
             "hallucination",
+            "ground_truth",
+            "wrong_speaker",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+              "start": 6.08,
+              "end": 15.44,
+              "dur": 9.36,
+              "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What is the interaction between the speaker from 101.63s to 106.99s and the speaker from 107.11s to 107.59s?",
+          "question": "音频中第 6.08 秒到第 15.44 秒讲话的说话人以及在第 17.03 秒到第 18.99 秒讲话的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
           "question_type": "time_index",
           "options": [
-            "A. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-            "B. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
-            "C. Cannot be determined (insufficient evidence)",
-            "D. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them."
-          ],
-          "answer": "D",
-          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-          "rationale": [
-            "hallucination",
-            "wrong_speaker",
-            "unknown",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "What is the interaction between the speaker who says, 'What happened in between isn't important at all, nobody cares,' and the speaker who says, 'I care'?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
-            "B. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-            "C. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-            "D. Cannot be determined (Insufficient evidence)"
+            "A. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+            "B. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+            "C. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+            "D. 无法判断（证据不足）"
           ],
           "answer": "C",
-          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+          "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
           "rationale": [
-            "wrong_speaker",
             "hallucination",
+            "wrong_speaker",
             "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+              "start": 6.08,
+              "end": 15.44,
+              "dur": 9.36,
+              "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What is the interaction between the speaker who says 'No one cares' (from 101.63s to 106.99s) and the speaker who says 'I care' (from 107.11s to 107.59s)?",
-          "question_type": "complex_index",
+          "question": "音频中说过‘请你不要告诉媒体你们结婚登记的事情’的说话人以及说过‘我当然会保护我爱的人呐’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+          "question_type": "transcript_index",
           "options": [
-            "A. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-            "B. Cannot be determined (insufficient evidence)",
-            "C. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-            "D. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions."
+            "A. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+            "B. 无法判断（证据不足）",
+            "C. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+            "D. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。"
+          ],
+          "answer": "C",
+          "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+              "start": 6.08,
+              "end": 15.44,
+              "dur": 9.36,
+              "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "整段对话第一个发言的说话人以及第二个发言的说话人在对话中体现的互动行为是什么？请选择最符合的一项。",
+          "question_type": "speaker_index",
+          "options": [
+            "A. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+            "B. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+            "C. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+            "D. 无法判断（证据不足）"
           ],
           "answer": "A",
-          "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+          "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
           "rationale": [
             "ground_truth",
-            "unknown",
+            "wrong_speaker",
             "hallucination",
-            "wrong_speaker"
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "音频中第 6.08 秒到第 15.44 秒说过‘请你不要告诉媒体你们结婚登记的事情’的说话人与第 17.03 秒到第 18.99 秒说过‘我当然会保护我爱的人呐’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+          "question_type": "complex_index",
+          "options": [
+            "A. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+            "B. 无法判断（证据不足）",
+            "C. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+            "D. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。"
+          ],
+          "answer": "D",
+          "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+              "start": 6.08,
+              "end": 15.44,
+              "dur": 9.36,
+              "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]

@@ -1,289 +1,463 @@
 {
   "task_id": "profile",
   "level": "level1",
-  "dimension": "Speaker Attributes",
-  "task_name": "Speaker Profile",
+  "dimension": "Speaker Attribute Recognition (SAR)",
+  "task_name": "Speaker Profiling (SP)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Green Book (2018)",
+      "source": "Green Book 2018 1080p BluRay x264 AC3 • CHAOSPACE",
+      "video_folder": "Green_Book_2018_1080p_BluRay_x264_AC3_•_CHAOSPACE_part010",
+      "full_audio": {
+        "src": "bench_examples/audio/profile/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/profile/en_spk_a.mp3",
-          "start": 46.05,
-          "end": 47.05,
-          "dur": 1.0
+          "src": "bench_examples/audio/profile/en_ref_a.mp3",
+          "start": 1.92,
+          "end": 5.32,
+          "dur": 3.4,
+          "transcript": "You people love the fried chicken, the grits and the collard greens.",
+          "spk_id": "spk_01",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "Go home to your family.",
-      "spk_b_transcript": "Holidays, I'm sorry.",
+      "spk_a_transcript": "You people love the fried chicken, the grits and the collard greens.",
+      "spk_b_transcript": "You have a very narrow assessment of me, Tony.",
       "qa": [
         {
-          "question": "Which of the following best describes the speaker's profile in the audio clip?",
+          "question": "In the single-speaker audio below, which of the following is the most accurate profile of the speaker?",
           "question_type": "no_index",
           "options": [
-            "A. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York accent",
-            "B. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
+            "A. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English accent",
+            "B. Gender: Female; Age: Young Adult; Emotion: Happy; Accent: British English",
+            "C. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
+            "D. Cannot be determined (Insufficient information to determine)"
+          ],
+          "answer": "C",
+          "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English accent with New York regional characteristics",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/en_ref_a.mp3",
+              "start": 1.92,
+              "end": 5.32,
+              "dur": 3.4,
+              "transcript": "You people love the fried chicken, the grits and the collard greens.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "Which of the following is closest to the speaker's profile for the person speaking in the audio from 1.92 to 5.32 seconds?",
+          "question_type": "time_index",
+          "options": [
+            "A. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent.",
+            "B. Cannot be determined (insufficient information to determine)",
+            "C. Gender: Female voice; Age: Young Adult; Emotion: Happy; Accent: British English",
+            "D. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English Accent"
+          ],
+          "answer": "A",
+          "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "hallucination",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/en_ref_a.mp3",
+              "start": 1.92,
+              "end": 5.32,
+              "dur": 3.4,
+              "transcript": "You people love the fried chicken, the grits and the collard greens.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "The speaker profile of the person in the audio who said ‘You people love the fried chicken, the grits and the collard greens.’ is closest to which of the following?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English accent",
+            "B. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
             "C. Cannot be determined (insufficient information)",
-            "D. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: New York accent with Italian-American characteristics"
+            "D. Gender: Female; Age: Young Adult; Emotion: Happy; Accent: British English"
           ],
           "answer": "B",
-          "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
+          "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York accent",
           "rationale": [
             "wrong_speaker",
             "ground_truth",
             "unknown",
             "hallucination"
-          ]
-        },
-        {
-          "question": "Which of the following is closest to the speaker profile of the speaker in the audio from 46.05 seconds to 47.05 seconds?",
-          "question_type": "time_index",
-          "options": [
-            "A. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-            "B. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: Italian-American New York accent",
-            "C. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York regional accent",
-            "D. Cannot be determined (insufficient information)"
           ],
-          "answer": "A",
-          "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-          "rationale": [
-            "ground_truth",
-            "hallucination",
-            "wrong_speaker",
-            "unknown"
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/en_ref_a.mp3",
+              "start": 1.92,
+              "end": 5.32,
+              "dur": 3.4,
+              "transcript": "You people love the fried chicken, the grits and the collard greens.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Which of the following is closest to the speaker profile of the person who said 'Go home to your family' in the audio?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: New York accent with Italian-American characteristics",
-            "B. Cannot be determined (insufficient information)",
-            "C. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York regional accent",
-            "D. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent"
-          ],
-          "answer": "D",
-          "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-          "rationale": [
-            "hallucination",
-            "unknown",
-            "wrong_speaker",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "In the entire audio, what is the gender of the sixth speaker?",
+          "question": "In the entire conversation, what is the gender of the first speaker? Speaker indexing starts from the first speaker.",
           "question_type": "speaker_index",
           "options": [
             "A. Female voice",
-            "B. Child's voice",
-            "C. Male voice",
-            "D. Cannot be determined (insufficient information)"
+            "B. Male voice",
+            "C. Children",
+            "D. Cannot determine (Insufficient information to determine)"
           ],
-          "answer": "C",
-          "answer_text": "Male voice",
+          "answer": "B",
+          "answer_text": "Male",
           "rationale": [
-            "wrong_speaker",
             "hallucination",
             "ground_truth",
+            "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "Which of the following speaker profiles is the closest match for the speaker who said 'Go home to your family' between 46.05 and 47.05 seconds?",
+          "question": "For the speaker who said ‘You people love the fried chicken, the grits and the collard greens.’ between 1.92 and 5.32 seconds, which of the following speaker profiles is the closest match?",
           "question_type": "complex_index",
           "options": [
-            "A. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York accent",
-            "B. Cannot be determined (insufficient information)",
-            "C. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-            "D. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: New York accent with Italian-American features"
+            "A. Cannot be determined (Insufficient information to determine)",
+            "B. Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York accent",
+            "C. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English accent",
+            "D. Gender: Female Voice; Age: Young Adult; Emotion: Happy; Accent: British English Accent"
           ],
-          "answer": "C",
-          "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
+          "answer": "B",
+          "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
           "rationale": [
-            "wrong_speaker",
             "unknown",
             "ground_truth",
+            "wrong_speaker",
             "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/en_ref_a.mp3",
+              "start": 1.92,
+              "end": 5.32,
+              "dur": 3.4,
+              "transcript": "You people love the fried chicken, the grits and the collard greens.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Which speaker(s) in the audio match the following profile: 'Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent'?",
+          "question": "In the entire audio, who are the speakers with the profile \"Gender: Male voice; Age: Middle-aged\"? (Answer with spk_index) Please select the most appropriate option. Speaker indexing starts from the first speaker.",
           "question_type": "reverse_retrival",
           "options": [
-            "A. Speaker 2 and Speaker 6",
-            "B. Cannot be determined (insufficient information)",
-            "C. Speaker 6 and Speaker 99",
-            "D. Speaker 6"
+            "A. the first speaker",
+            "B. the first, second and third speakers",
+            "C. Cannot determine (Insufficient information)",
+            "D. the first and second speakers"
           ],
           "answer": "D",
-          "answer_text": "Speaker 6",
+          "answer_text": "the first and second speakers",
           "rationale": [
             "wrong_speaker",
-            "unknown",
             "hallucination",
+            "unknown",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "How many speakers in the audio clip match the following profile: 'Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent'?",
+          "question": "In the entire audio clip, how many speakers are there with the profile “Gender: Male voice; Age: Middle-aged”? Please select the most appropriate option.",
           "question_type": "reverse_count",
           "options": [
             "A. 1",
-            "B. 5",
+            "B. 3",
             "C. 2",
-            "D. Cannot be determined (insufficient information)"
+            "D. Cannot be determined (Insufficient information to determine)"
           ],
-          "answer": "A",
-          "answer_text": "1",
+          "answer": "C",
+          "answer_text": "2",
           "rationale": [
-            "ground_truth",
-            "hallucination",
             "wrong_speaker",
+            "hallucination",
+            "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "Forbidden City Cop (大内密探零零发, 1996)",
+      "source": "to live 1994",
+      "video_folder": "to_live_1994_part009",
+      "full_audio": {
+        "src": "bench_examples/audio/profile/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/profile/zh_spk_a.mp3",
-          "start": 13.71,
-          "end": 15.07,
-          "dur": 1.36
+          "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+          "start": 76.53,
+          "end": 80.37,
+          "dur": 3.84,
+          "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+          "spk_id": "spk_01",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "It's inconvenient that you've come again.",
-      "spk_b_transcript": "Young lady, why must you debase yourself like this?",
+      "spk_a_transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+      "spk_b_transcript": "哎，还不因为你家那院房啊，给龙二定了个地主。",
       "qa": [
         {
-          "question": "In this single-speaker audio, which of the following best describes the speaker's profile?",
+          "question": "下面单人讲话音频中，说话人的说话人画像最接近以下哪一项？",
           "question_type": "no_index",
           "options": [
-            "A. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-            "B. Gender: Female voice; Age: Elderly; Emotion: Fear; Accent: Standard Mandarin",
-            "C. Cannot be determined (insufficient information)",
-            "D. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin"
+            "A. 性别：女声；年龄：中年；情感：中性；口音：标准普通话",
+            "B. 无法判断（信息不足以确定）",
+            "C. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+            "D. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话"
           ],
-          "answer": "D",
-          "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
+          "answer": "C",
+          "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
           "rationale": [
             "wrong_speaker",
-            "hallucination",
             "unknown",
-            "ground_truth"
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+              "start": 76.53,
+              "end": 80.37,
+              "dur": 3.84,
+              "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Which of the following best describes the profile of the speaker from 13.71s to 15.07s?",
+          "question": "音频中在第 76.53 秒到第 80.37 秒的说话人的说话人画像最接近以下哪一项？",
           "question_type": "time_index",
           "options": [
-            "A. Cannot be determined (insufficient information)",
-            "B. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-            "C. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-            "D. Gender: Female voice; Age: Elderly; Emotion: Fear; Accent: Standard Mandarin"
-          ],
-          "answer": "C",
-          "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-          "rationale": [
-            "unknown",
-            "wrong_speaker",
-            "ground_truth",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "Which of the following best describes the speaker profile for the person who said, “It's inconvenient that you've come again”?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-            "B. Gender: Female voice; Age: Elderly; Emotion: Fear; Accent: Standard Mandarin",
-            "C. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-            "D. Cannot be determined (insufficient information)"
-          ],
-          "answer": "A",
-          "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-          "rationale": [
-            "ground_truth",
-            "hallucination",
-            "wrong_speaker",
-            "unknown"
-          ]
-        },
-        {
-          "question": "What is the gender of the second speaker in the conversation?",
-          "question_type": "speaker_index",
-          "options": [
-            "A. Cannot be determined (insufficient information)",
-            "B. Female voice",
-            "C. Neutral",
-            "D. Male voice"
+            "A. 无法判断（信息不足以确定）",
+            "B. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话",
+            "C. 性别：女声；年龄：中年；情感：中性；口音：标准普通话",
+            "D. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音"
           ],
           "answer": "D",
-          "answer_text": "Male voice",
+          "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
           "rationale": [
             "unknown",
-            "wrong_speaker",
             "hallucination",
+            "wrong_speaker",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+              "start": 76.53,
+              "end": 80.37,
+              "dur": 3.84,
+              "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Which of the following best describes the profile of the speaker who said, “It's inconvenient that you've come again” between 13.71s and 15.07s?",
+          "question": "音频中说过‘不是我们家的木头啊，那是反革命的木头’的说话人的说话人画像最接近以下哪一项？",
+          "question_type": "transcript_index",
+          "options": [
+            "A. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+            "B. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话",
+            "C. 无法判断（信息不足以确定）",
+            "D. 性别：女声；年龄：中年；情感：中性；口音：标准普通话"
+          ],
+          "answer": "A",
+          "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+              "start": 76.53,
+              "end": 80.37,
+              "dur": 3.84,
+              "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "在整段对话中，第 1 个出现的说话人的性别是什么？",
+          "question_type": "speaker_index",
+          "options": [
+            "A. 儿童声",
+            "B. 男声",
+            "C. 无法判断（信息不足以确定）",
+            "D. 女声"
+          ],
+          "answer": "B",
+          "answer_text": "男声",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "在第 76.53 秒到第 80.37 秒说过‘啊，不对不对，不是我们家的木头啊’的说话人，其说话人画像最接近以下哪一项？",
           "question_type": "complex_index",
           "options": [
-            "A. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-            "B. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-            "C. Cannot be determined (insufficient information)",
-            "D. Gender: Female voice; Age: Elderly; Emotion: Fearful; Accent: Standard Mandarin"
-          ],
-          "answer": "B",
-          "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-          "rationale": [
-            "wrong_speaker",
-            "ground_truth",
-            "unknown",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "In the audio, which speakers have the profile: \"Gender: Female voice; Age: Young adult; Accent: Standard Mandarin\"? (Answer with speaker index)",
-          "question_type": "reverse_retrival",
-          "options": [
-            "A. Cannot be determined (insufficient information)",
-            "B. Speaker 1, Speaker 6",
-            "C. Speaker 1",
-            "D. Speaker 1, Speaker 6, Speaker 8"
-          ],
-          "answer": "B",
-          "answer_text": "Speaker 1, Speaker 6",
-          "rationale": [
-            "unknown",
-            "ground_truth",
-            "wrong_speaker",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "In the audio, how many speakers have the profile: \"Gender: Female voice; Age: Young adult; Accent: Standard Mandarin\"?",
-          "question_type": "reverse_count",
-          "options": [
-            "A. 1 speaker",
-            "B. 5 speakers",
-            "C. 2 speakers",
-            "D. Cannot be determined (insufficient information)"
+            "A. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话",
+            "B. 无法判断（信息不足以确定）",
+            "C. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+            "D. 性别：女声；年龄：中年；情感：中性；口音：标准普通话"
           ],
           "answer": "C",
-          "answer_text": "2 speakers",
+          "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+          "rationale": [
+            "hallucination",
+            "unknown",
+            "ground_truth",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+              "start": 76.53,
+              "end": 80.37,
+              "dur": 3.84,
+              "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "在整段音频中，说话人画像为“性别：男声；年龄：中年”的说话人有哪些？（用 说话人出现顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. 第一个说话人、第二个说话人、第四个说话人",
+            "B. 无法判断（信息不足以确定）",
+            "C. 第一个说话人、第二个说话人、第四个说话人、第五个说话人",
+            "D. 第一个说话人、第二个说话人、第三个说话人、第四个说话人、第五个说话人"
+          ],
+          "answer": "C",
+          "answer_text": "第一个说话人、第二个说话人、第四个说话人、第五个说话人",
           "rationale": [
             "wrong_speaker",
-            "hallucination",
+            "unknown",
             "ground_truth",
-            "unknown"
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "在整段音频中，说话人画像为“性别：男声；年龄：中年”的说话人一共有几个？请选择最符合的一项。",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 无法判断（信息不足以确定）",
+            "B. 4 个",
+            "C. 3 个",
+            "D. 10 个"
+          ],
+          "answer": "B",
+          "answer_text": "4 个",
+          "rationale": [
+            "unknown",
+            "ground_truth",
+            "wrong_speaker",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/profile/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]

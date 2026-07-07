@@ -1,73 +1,111 @@
 {
   "task_id": "reverse_retrieval",
   "level": "level1",
-  "dimension": "Speaker Identification",
-  "task_name": "Speaker Reverse Retrieval",
+  "dimension": "Speaker Identification (SID)",
+  "task_name": "Reverse Speaker Retrieval (RSR)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Green Book (2018)",
+      "source": "dou shi",
+      "video_folder": "dou_shi_part003",
+      "full_audio": {
+        "src": "bench_examples/audio/reverse_retrieval/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/reverse_retrieval/en_spk_a.mp3",
-          "start": 28.05,
-          "end": 30.33,
-          "dur": 2.28
+          "src": "bench_examples/audio/reverse_retrieval/en_ref_a.mp3",
+          "start": 15.8,
+          "end": 18.32,
+          "dur": 2.52,
+          "transcript": "Well, we're at war, there's no doubt about it.",
+          "spk_id": "spk_03",
+          "spk_index": "spk_2"
         }
       },
-      "spk_a_transcript": "This guy's sayin' Doctor Shirley can't eat here.",
-      "spk_b_transcript": "But these are long-standing traditions, club rules. I'm sure you understand.",
+      "spk_a_transcript": "Well, we're at war, there's no doubt about it.",
+      "spk_b_transcript": "There are reports of Japanese troops heading south towards Taipo.",
       "qa": [
         {
-          "question": "Which of the statements below was said by the second speaker in the dialogue? Please select the most appropriate option.\nCandidate statements:\n1) He's the main event.\n2) The man is the reason everyone's here.\n3) He's playin' tonight.\n4) I'm afraid not.\n5) Yeah, well he's not from down here.\n6) Yeah, I know 'em.",
-          "question_type": "reverse_retrieval",
+          "question": "In the statements below, what did the second speaker in the dialogue say? Please select the best match. Speaker indexing starts from the first speaker.\nCandidate statements:\n1) We'll have to send more reinforcements to the area.\n2) There are reports of Japanese troops heading south towards Taipo.\n3) Our naval superiority is the key to holding Hong Kong.\n4) All right, all right, alert the troops station on the eastern side of the gin drinkers line.\n5) What we really need is a couple of battleships stationed here.",
+          "question_type": "reverse_retrival",
           "options": [
-            "A. 1, 3, 4, 5",
-            "B. 1, 2, 3, 5",
-            "C. 1, 3, 5, 6",
-            "D. Cannot be determined (Insufficient information to determine)"
+            "A. 1, 4, 5",
+            "B. 1, 2, 5",
+            "C. 1, 3, 4",
+            "D. Cannot determine (insufficient information to determine)"
           ],
-          "answer": "C",
-          "answer_text": "1, 3, 5, 6",
+          "answer": "A",
+          "answer_text": "1, 4, 5",
           "rationale": [
+            "ground_truth",
             "wrong_speaker",
             "hallucination",
-            "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/reverse_retrieval/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "Echoes of the Rainbow (岁月神偷, 2010)",
+      "source": "beyond the realm of conscience 2009 ep22",
+      "video_folder": "beyond_the_realm_of_conscience_2009_ep22_part006",
+      "full_audio": {
+        "src": "bench_examples/audio/reverse_retrieval/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/reverse_retrieval/zh_spk_a.mp3",
-          "start": 27.78,
-          "end": 29.46,
-          "dur": 1.68
+          "src": "bench_examples/audio/reverse_retrieval/zh_ref_a.mp3",
+          "start": 30.91,
+          "end": 35.19,
+          "dur": 4.28,
+          "transcript": "我想穿尚宫服，我想住这间寝室，",
+          "spk_id": "spk_01",
+          "spk_index": "spk_2"
         }
       },
-      "spk_a_transcript": "Your mom is at the hospital visiting your brother.",
-      "spk_b_transcript": "Why is Mom taking so long to come back?",
+      "spk_a_transcript": "我想穿尚宫服，我想住这间寝室，",
+      "spk_b_transcript": "这件尚宫服手工很精细，全靠我们司制房费尽心思。",
       "qa": [
         {
-          "question": "Which of the following statements did Speaker A make during the dialogue? Please select the most suitable option.\nCandidate statements:\n1) Are you hungry?\n2) Why is it taking longer and longer?\n3) How could it be that fast?\n4) Mom will be back soon, don't worry.\n5) You're hungry, go buy yourself some sesame buns at Jinmen.",
+          "question": "在下面的语句中，对话中第 2 个出现的说话人 说过哪些话？请选择最符合的一项。\n候选语句：\n1) 你杀人都行，还有什么能难倒你啊？\n2) 也不一定是你住的。\n3) 吉祥知道我一直以来都以尚宫之位为奋斗目标。\n4) 为了吉祥，我绝不会把尚宫之位拱手让人。\n5) 我想做尚宫。",
           "question_type": "reverse_retrival",
           "options": [
-            "A. 1, 4, 5",
+            "A. 1, 2, 5",
             "B. 1, 3, 5",
-            "C. 1, 2, 5",
-            "D. Cannot determine (Insufficient information to determine)"
+            "C. 无法判断（信息不足以确定）",
+            "D. 3, 4, 5"
           ],
           "answer": "B",
           "answer_text": "1, 3, 5",
           "rationale": [
-            "hallucination",
-            "ground_truth",
             "wrong_speaker",
-            "unknown"
+            "ground_truth",
+            "unknown",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/reverse_retrieval/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]

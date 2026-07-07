@@ -1,0 +1,26 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level2",
+  "task": "Dialogue_Scene_Reasoning-Background_Inference",
+  "qa_result": [
+    {
+      "question": "What is the most likely scenario where this conversation takes place?",
+      "type": "single_choice",
+      "question_type": "type_text",
+      "options": [
+        "A. In a government office meeting room, relevant political personnel negotiate the crisis response plan after the education reform bill is leaked",
+        "B. In a private residence, relevant political personnel negotiate the crisis response plan after the education reform bill is leaked",
+        "C. In a TV studio, guests are recording a news interview program themed on education reform",
+        "D. Cannot be judged (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "In a government office meeting room, relevant political personnel negotiate the crisis response plan after the education reform bill is leaked",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ]
+}

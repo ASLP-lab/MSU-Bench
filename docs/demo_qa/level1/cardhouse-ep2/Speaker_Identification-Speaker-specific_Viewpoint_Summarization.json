@@ -1,0 +1,202 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker-specific_Viewpoint_Summarization",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_003",
+            "start_time": 8.3,
+            "end_time": 9.9,
+            "transcript": "Well we only have days, not months.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_023",
+            "start_time": 124.4,
+            "end_time": 130.2,
+            "transcript": "I'm of a mind to say screw it. I'll fall on this grenade myself just to piss them off.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the overall stance of the speaker who said 'The truth is, my heart is not in this fight. You know me, I'm not a wheeler-dealer. I can put my mind to policy, but I'm no good at this brand of politics.' in the whole conversation?",
+      "question_type": "transcript_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. Finally agrees to step down from the frontline position of promoting the education bill, and only provides support as a policy advisor",
+        "B. Insists on taking full responsibility for all events entirely by himself",
+        "C. Firmly opposes other people taking over the education-related projects he has led for many years",
+        "D. Cannot judge"
+      ],
+      "answer": "A",
+      "answer_text": "Finally agrees to step down from the frontline position of promoting the education bill, and only provides support as a policy advisor",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the audio, what is the stance change of the speaker who said 'The truth is, my heart is not in this fight. You know me, I'm not a wheeler-dealer. I can put my mind to policy, but I'm no good at this brand of politics.' throughout the whole conversation?",
+      "question_type": "transcript_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. From initially believing the document leak is only a simple perception issue → finally voluntarily proposing to withdraw from the project leadership, taking a backseat and only providing policy consultation",
+        "B. From initially being strongly dissatisfied with the incident leak → finally planning to take the initiative to step forward and take full responsibility for all mistakes",
+        "C. From initially supporting Frank to take the blame for all responsibilities → finally refusing to cooperate with all subsequent relevant policy work",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "From initially believing the document leak is merely a simple perception issue, he finally voluntarily offers to withdraw from the project leadership, takes a backseat and only provides policy consultation",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole conversation, what is the overall stance of the fifth speaker who appears in the dialogue?",
+      "question_type": "speaker_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. Finally agrees to step down from the frontline position of promoting the education bill, and only provides support as a policy advisor",
+        "B. Insists that Frank take full responsibility for all incidents alone",
+        "C. Resolutely opposes other people taking over the education-related project that he has led for many years",
+        "D. Cannot be judged"
+      ],
+      "answer": "A",
+      "answer_text": "Finally agrees to step down from the frontline position of promoting the education bill, and only provides support as a policy advisor",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Throughout the entire conversation, how does the stance of the fifth speaker that appears in the dialogue change?",
+      "question_type": "speaker_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. From initially believing the document leak is just a simple perception issue → finally voluntarily proposes to withdraw from the project's leadership, step back to a supporting role and only provide policy consultation",
+        "B. From initially being strongly dissatisfied with the leak of the incident → finally intends to voluntarily step forward and take full responsibility for all the faults",
+        "C. From initially supporting Frank to take the blame for the incident → finally refuses to cooperate with all subsequent relevant policy work",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "From initially believing that the document leak is only a simple perception issue, to finally voluntarily proposing to withdraw from the project leadership, step back to a supporting role and only provide policy consultation",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the following single-speaker audio clip, what is the overall stance of this speaker throughout the whole conversation?",
+      "question_type": "no_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. Guide Donald to take the initiative to take responsibility for the leak incident, and take over to promote education-related bills",
+        "B. Consider the leak incident as only a minor perceptual issue that does not require any personnel-level adjustment",
+        "C. Demand a thorough investigation of the source of the leak incident and shift all the blame to the external personnel who leaked the information",
+        "D. Cannot judge (there is insufficient evidence to derive the unique viewpoint)"
+      ],
+      "answer": "A",
+      "answer_text": "Guide Donald to voluntarily take responsibility for the leak incident and take over to push forward the education-related bills",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What stance change did the speaker who is talking from 124.4s to 130.2s in the audio experience throughout the whole conversation?",
+      "question_type": "time_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. From planning to take personal responsibility for the leak-related matters → guide Donald to take the initiative to take responsibility, and take over to push forward the bill himself",
+        "B. From being flustered and at a loss over the leak incident → step forward voluntarily to take all relevant responsibilities for the leak incident",
+        "C. From being completely unwilling to participate in the incident handling → proactively report all personnel suspected of leaking secrets",
+        "D. Cannot be judged (the evidence is not sufficient to uniquely infer the change in stance)"
+      ],
+      "answer": "A",
+      "answer_text": "From planning to take personal responsibility for the leak-related matters, guiding Donald to take the initiative to take responsibility, and taking over to push forward the bill himself",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the audio, what is the overall stance of the speaker who said 'I'm of a mind to say screw it. I'll fall on this grenade myself just to piss them off.' from 124.4s to 130.2s in the whole conversation?",
+      "question_type": "complex_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. Guide Donald to voluntarily take responsibility for the leak incident, and ensure that the education-related bill can be smoothly passed in the House of Representatives",
+        "B. Believe that the leak incident only has public perception deviation, and there is no need to adjust the core participants of the project",
+        "C. Insist on disclosing all the content of classified documents, and completely abandon the promotion of the education bill",
+        "D. Cannot judge (the evidence is not sufficient to uniquely derive the viewpoint)"
+      ],
+      "answer": "A",
+      "answer_text": "Guide Donald to voluntarily take responsibility for the leak incident, and ensure that the education-related bill can be smoothly passed in the House of Representatives",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker-specific_Viewpoint_Summarization_spk_a.mp3",
+    "start_time": 50.2,
+    "end_time": 55.2,
+    "duration": 5.0
+  }
+}

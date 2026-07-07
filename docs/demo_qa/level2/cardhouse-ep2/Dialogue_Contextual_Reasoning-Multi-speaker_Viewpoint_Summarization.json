@@ -1,0 +1,159 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level2",
+  "task": "Dialogue_Contextual_Reasoning-Multi-speaker_Viewpoint_Summarization",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_031",
+            "start_time": 149.6,
+            "end_time": 159.3,
+            "transcript": "What a martyr craves more than anything is a sword to fall on. So you sharpen the blade, hold it at just the right angle, and then, three, two, one.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What are the respective stances of the third speaker and the fifth speaker in the entire conversation? Please choose the most appropriate option.",
+      "question_type": "speaker_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. the first speaker: Regarding the accountability of the leak incident, generally advocates taking full responsibility to protect the other party's reputation, and finally agrees to let the person designated by the other party lead the related work; the second speaker: Regarding the accountability of the leak incident, generally is willing to give up the relevant leading power, voluntarily step back to the second line to provide policy consultation support",
+        "B. the first speaker: Regarding the accountability of the leak incident, generally is willing to give up the relevant leading power, voluntarily step back to the second line to provide policy consultation support; the second speaker: Regarding the accountability of the leak incident, generally advocates taking full responsibility to protect the other party's reputation, and finally agrees to let the person designated by the other party lead the related work",
+        "C. the first speaker: Regarding the accountability of the leak incident, generally believes that the incident is a serious work error, and it is necessary to thoroughly investigate the source of the leak and hold relevant personnel strictly accountable; the second speaker: Regarding the accountability of the leak incident, generally believes that the incident will not cause any negative impact, and no response measures are required",
+        "D. Both the first speaker and the second speaker have no clear stance on the accountability of the leak incident, and only pass the buck to each other throughout the process without wanting to take any responsibility"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker: Regarding the accountability of the leak incident, generally advocates taking full responsibility to protect the other party's reputation, and finally agrees to let the person designated by the other party lead the related work; the second speaker: Regarding the accountability of the leak incident, generally is willing to give up the relevant leading power, voluntarily step back to the second line to provide policy consultation support",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What are the respective stance changes of the third speaker and the fifth speaker in the whole conversation? Please choose the most appropriate option.",
+      "question_type": "speaker_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. the first speaker: In terms of the accountability handling for the leak incident: from [volunteering to take the blame himself to protect the other party's reputation] → [accepting the other party's arrangement to take over the leading power of the bill and retain the other party's consultant status]; the second speaker: In terms of the accountability handling for the leak incident: from [believing that it is only a public relations perception issue that no one needs to take responsibility] → [volunteering to take responsibility first, then switching to supporting the other party to take the lead, and stepping back to provide assistance]",
+        "B. the first speaker: In terms of the accountability handling for the leak incident: from [believing that it is only a public relations perception issue that no one needs to take responsibility] → [volunteering to take responsibility first, then switching to supporting the other party to take the lead, and stepping back to provide assistance]; the second speaker: In terms of the accountability handling for the leak incident: from [volunteering to take the blame himself to protect the other party's reputation] → [accepting the other party's arrangement to take over the leading power of the bill and retain the other party's consultant status]",
+        "C. the first speaker: In terms of the accountability handling for the leak incident: from [insisting on thoroughly investigating the internal leaker and holding them seriously accountable] → [choosing to disclose all leak details to the media and make a public apology]; the second speaker: In terms of the accountability handling for the leak incident: from [firmly denying that the relevant leaked content was drafted by himself] → [shifting all the responsibility to subordinate staff]",
+        "D. Both the first speaker and the second speaker have no clear stance change on the accountability handling of the leak incident, and have been avoiding discussions on related topics throughout the conversation"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker: In terms of the accountability handling for the leak incident: from [volunteering to take the blame himself to protect the other party's reputation] → [accepting the other party's arrangement to take over the leading power of the bill and retain the other party's consultant status]; the second speaker: In terms of the accountability handling for the leak incident: from [believing that it is only a public relations perception issue that no one needs to take responsibility] → [volunteering to take responsibility first, then switching to supporting the other party to take the lead, and stepping back to provide assistance]",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the following audio with two speakers, what are their respective positions in the whole conversation? Please select the most appropriate option.",
+      "question_type": "no_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. the first speaker: Regarding the leak of the education reform draft, advocates flexibly adjusting the response plan to promote the smooth implementation of the bill; the second speaker: Regarding the leak of the education reform draft, advocates voluntarily stepping back from frontline promotion of the bill and shifting to providing policy consultation support behind the scenes.",
+        "B. the first speaker: Regarding the leak of the education reform draft, advocates voluntarily stepping back from frontline promotion of the bill and shifting to providing policy consultation support behind the scenes; the second speaker: Regarding the leak of the education reform draft, advocates flexibly adjusting the response plan to promote the smooth implementation of the bill.",
+        "C. the first speaker: Regarding the leak of the education reform draft, advocates directly disclosing all leak details to the public and issuing a public apology; the second speaker: Regarding the leak of the education reform draft, advocates immediately investigating all personnel who leaked the documents and holding them accountable.",
+        "D. The two speakers hold completely opposing attitudes towards the leak of the education reform draft and have no consensus at all."
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker advocates flexibly adjusting the response plan for the leak of the education reform draft to promote the smooth implementation of the bill; the second speaker advocates voluntarily stepping back from frontline promotion of the bill and shifting to providing policy consultation support behind the scenes for the same incident.",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the stance of the speaker talking from 55.5s to 58.7s in the audio and the speaker talking from 149.6s to 159.3s in the audio throughout the whole conversation? Please select the most appropriate option.",
+      "question_type": "time_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. the first speaker: Regarding the leak incident of the education reform draft, holds that the core problem is public opinion cognitive bias and no adjustment is needed at all; the second speaker: Regarding the leak incident of the education reform draft, holds that the leak incident has minimal impact and no response is required",
+        "B. the first speaker: Regarding the leak incident of the education reform draft, advocates flexible adjustment of response plans to promote the smooth implementation of the bill; the second speaker: Regarding the leak incident of the education reform draft, advocates voluntarily withdrawing from the frontline promotion of the bill and shifting to providing policy consultation support behind the scenes",
+        "C. the first speaker: Regarding the leak incident of the education reform draft, advocates voluntarily withdrawing from the frontline promotion of the bill and shifting to providing policy consultation support behind the scenes; the second speaker: Regarding the leak incident of the education reform draft, advocates flexible adjustment of response plans to promote the smooth implementation of the bill",
+        "D. Both speakers hold a very negative attitude towards the leak incident of the education reform draft and plan to directly abandon the entire education reform project"
+      ],
+      "answer": "B",
+      "answer_text": "the first speaker: Regarding the leak incident of the education reform draft, advocates flexible adjustment of response plans to promote the smooth implementation of the bill; the second speaker: Regarding the leak incident of the education reform draft, advocates voluntarily withdrawing from the frontline promotion of the bill and shifting to providing policy consultation support behind the scenes",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What are the positions of the speaker who said \"What a martyr craves more than anything is a sword to fall on. So you sharpen the blade, hold it at just the right angle, and then, three, two, one.\" and the speaker who said \"I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...\" in the whole conversation? Please select the most appropriate option.",
+      "question_type": "transcript_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. For the leaked education reform draft incident, the first speaker advocates strictly advancing the bill according to the original plan without making any modifications; the second speaker advocates immediately disclosing all the truth to the public to win public understanding",
+        "B. For the leaked education reform draft incident, the first speaker advocates voluntarily stepping back from the frontline promotion of the bill and turning to provide policy consultation support behind the scenes; the second speaker advocates flexibly adjusting the response plan to promote the smooth implementation of the bill",
+        "C. For the leaked education reform draft incident, the first speaker advocates flexibly adjusting the response plan to promote the smooth implementation of the bill; the second speaker advocates voluntarily stepping back from the frontline promotion of the bill and turning to provide policy consultation support behind the scenes",
+        "D. Both speakers do not want to take any responsibility for the leaked education reform draft incident and shift the blame to each other"
+      ],
+      "answer": "C",
+      "answer_text": "the first speaker advocates flexibly adjusting the response plan for the leaked education reform draft incident to promote the smooth implementation of the bill; the second speaker advocates voluntarily stepping back from the frontline promotion of the bill for the incident and turning to provide policy consultation support behind the scenes",
+      "rationale": [
+        "hallucination",
+        "wrong speaker",
+        "ground truth",
+        "unknown"
+      ]
+    },
+    {
+      "question": "What is the stance change of the speaker who said \"What a martyr craves more than anything is a sword to fall on. So you sharpen the blade, hold it at just the right angle, and then, three, two, one.\" from 55.5s to 58.7s in the audio, and the speaker who said \"I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...\" from 149.6s to 159.3s in the whole conversation? Please select the most appropriate option.",
+      "question_type": "complex_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. the first speaker: Regarding the responsibility arrangement for the leak incident: from [insisting on stepping forward to take full responsibility for the leak] → [agreeing to accept the leading power of the bill, with the other party providing support behind the scenes]; the second speaker: Regarding whether he will continue to lead the bill: from [believing that public perception deviation is the only issue and no major adjustment is needed] → [voluntarily giving up the leading power of the bill, willing to take the responsibility related to the leak]",
+        "B. the first speaker: Regarding whether he will continue to lead the bill: from [believing that public perception deviation is the only issue and no major adjustment is needed] → [voluntarily giving up the leading power of the bill, willing to take the responsibility related to the leak]; the second speaker: Regarding the responsibility arrangement for the leak incident: from [insisting on stepping forward to take full responsibility for the leak] → [agreeing to accept the leading power of the bill, with the other party providing support behind the scenes]",
+        "C. the first speaker: Regarding the responsibility arrangement for the leak incident, the attitude remains [insisting that relevant staff take full responsibility for the leak] all the time; the second speaker: Regarding whether he will continue to lead the bill, the attitude remains [sticking to full control of the bill's leading power and never letting go] all the time",
+        "D. The two speakers have changed all their stances related to the leak incident for multiple times, and no clear path can be summarized accurately"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker: Regarding the responsibility arrangement for the leak incident: from [insisting on stepping forward to take full responsibility for the leak] → [agreeing to accept the leading power of the bill, with the other party providing support behind the scenes]; the second speaker: Regarding whether he will continue to lead the bill: from [believing that public perception deviation is the only issue and no major adjustment is needed] → [voluntarily giving up the leading power of the bill, willing to take the responsibility related to the leak]",
+      "rationale": [
+        "ground truth",
+        "wrong speaker",
+        "hallucination",
+        "unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/cardhouse-ep2/Dialogue_Contextual_Reasoning-Multi-speaker_Viewpoint_Summarization_spk_a.mp3",
+    "start_time": 149.6,
+    "end_time": 159.3,
+    "duration": 9.7
+  }
+}

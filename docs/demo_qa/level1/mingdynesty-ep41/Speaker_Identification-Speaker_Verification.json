@@ -1,0 +1,275 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker_Verification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_001",
+            "start_time": 4.5,
+            "end_time": 6.3,
+            "transcript": "那朕就明示，你是户部尚书，",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_050",
+            "start_time": 266.1,
+            "end_time": 274.0,
+            "transcript": "包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_005",
+            "start_time": 17.3,
+            "end_time": 19.7,
+            "transcript": "海瑞是臣主管的户部主事。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fear",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_034",
+            "start_time": 179.3,
+            "end_time": 187.1,
+            "transcript": "海瑞既然备下了棺材愿意伏诛，臣无非也备下一口棺材，伏诛罢了。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "Are the speakers in the following two audio clips the same person?",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. No, they are not the same person",
+        "B. Yes, they are the same person",
+        "C. The two speakers have partially similar timbres, and it is impossible to determine whether they are the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "No, they are not the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Are the speakers in the following two audio clips the same person?",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. Yes, they are the same person",
+        "B. No, they are not the same person",
+        "C. The two speakers have different tones and are suspected to be different roles",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "Yes, they are the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Is the speaker talking from 4.5s to 6.3s in the audio the same person as the speaker talking from 17.3s to 19.7s in the audio?",
+      "question_type": "time_index",
+      "pair": {
+        "left": "the first speaker[0]",
+        "right": "the second speaker[0]"
+      },
+      "options": [
+        "A. No, they are not the same person",
+        "B. Yes, they are the same person",
+        "C. Both speakers are middle-aged men, most likely the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "No, they are not the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Is the speaker talking from 4.5s to 6.3s in the audio the same person as the speaker talking from 266.1s to 274.0s in the audio?",
+      "question_type": "time_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. Yes, they are the same person",
+        "B. No, they are not the same person",
+        "C. The emotion of both clips is angry, which most likely means they are not the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "Yes, they are the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Are the speaker who said 'Then I, the emperor, will make it explicit that you are the Minister of Revenue' and the speaker who said 'Hai Rui is the director of the Ministry of Revenue under my supervision' in the audio the same person?",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. No, they are not the same person",
+        "B. Yes, they are the same person",
+        "C. Both mentioned content related to the Minister of Revenue, so they should be the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "No, they are not the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Are the speaker who said \"那朕就明示，你是户部尚书，\" and the speaker who said \"海瑞是臣主管的户部主事。\" the same person?",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. Yes, they are the same person",
+        "B. No, they are not the same person",
+        "C. Both lines carry a sense of majesty, so it is impossible for them to be from the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "Yes, they are the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Is the speaker who said \"那朕就明示，你是户部尚书，\" from 4.5s to 6.3s in the audio the same person as the speaker who said \"海瑞是臣主管的户部主事。\" from 17.3s to 19.7s?",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. No, they are not the same person",
+        "B. Yes, they are the same person",
+        "C. Both of their speeches are related to the affairs of the Ministry of Household Affairs, so they should be the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "No, they are not the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Are the speaker who said \"那朕就明示，你是户部尚书，\" from 4.5s to 6.3s in the audio and the speaker who said \"海瑞是臣主管的户部主事。\" from 266.1s to 274.0s in the audio the same speaker?",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. Yes, they are the same person",
+        "B. No, they are not the same person",
+        "C. The two lines are separated by too long an interval, so they are definitely not the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "Yes, they are the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker_Verification_spk_a.mp3",
+    "start_time": 4.5,
+    "end_time": 6.3,
+    "duration": 1.8
+  },
+  "qa_audio_pairs": {
+    "1": {
+      "left": {
+        "path": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker_Verification_q1_left.mp3",
+        "start_time": 4.5,
+        "end_time": 6.3,
+        "duration": 1.8
+      },
+      "right": {
+        "path": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker_Verification_q1_right.mp3",
+        "start_time": 17.3,
+        "end_time": 19.7,
+        "duration": 2.4
+      }
+    },
+    "2": {
+      "left": {
+        "path": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker_Verification_q2_left.mp3",
+        "start_time": 4.5,
+        "end_time": 6.3,
+        "duration": 1.8
+      },
+      "right": {
+        "path": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker_Verification_q2_right.mp3",
+        "start_time": 266.1,
+        "end_time": 274.0,
+        "duration": 7.9
+      }
+    }
+  }
+}

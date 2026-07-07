@@ -1,0 +1,121 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level2",
+  "task": "Dialogue_Structure_Analysis-QA_Structure_ID",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_029",
+            "start_time": 143.2,
+            "end_time": 144.5,
+            "transcript": "I am not comfortable with this.",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_030",
+            "start_time": 144.5,
+            "end_time": 146.3,
+            "transcript": "Well then what do you suggest we do?",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "According to the conversation content, the response from other speakers to one speaker's utterance of \"I am not comfortable with this\" is:",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. the second speaker: Well then what do you suggest we do?",
+        "B. the second speaker: Wait. Frank, this is not your fault.",
+        "C. the second speaker: I fully understand your concerns, we will adjust our plan immediately.",
+        "D. Cannot judge (insufficient information to locate the response)"
+      ],
+      "answer": "A",
+      "answer_text": "Well then what do you suggest we do?",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "According to the conversation content, the statement replied by others to a certain speaker's utterance from 10.1s to 12.3s in the audio is:",
+      "type": "single_choice",
+      "question_type": "time_index",
+      "options": [
+        "A. the second speaker: When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.",
+        "B. the second speaker: That would usually take months.",
+        "C. the second speaker: Don't worry, we have arranged all the procedures properly for you.",
+        "D. Cannot judge (insufficient information to locate the reply)"
+      ],
+      "answer": "A",
+      "answer_text": "When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "According to the content of the conversation, the response from other speakers to the utterance \"I am not comfortable with this.\" made by one speaker from 110.4s to 111.2s in the audio is:",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. the second speaker: I am not comfortable with this.",
+        "B. the second speaker: They want to point fingers.",
+        "C. the second speaker: She is completely on our side and fully supports us.",
+        "D. Cannot judge (insufficient information to locate the response)"
+      ],
+      "answer": "B",
+      "answer_text": "They want to point fingers.",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "The following is a monologue clip from one speaker. Which of the following is the most probable response to this utterance in the full conversation?",
+      "type": "single_choice",
+      "question_type": "no_index",
+      "options": [
+        "A. the second speaker: This reform has been discussed for years and it's finally coming true.",
+        "B. the second speaker: That would usually take months.",
+        "C. the second speaker: Well we only have days, not months.",
+        "D. Cannot judge (insufficient information to locate the corresponding response)"
+      ],
+      "answer": "B",
+      "answer_text": "That would usually take months.",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/cardhouse-ep2/Dialogue_Structure_Analysis-QA_Structure_ID_spk_a.mp3",
+    "start_time": 143.2,
+    "end_time": 144.5,
+    "duration": 1.3
+  }
+}

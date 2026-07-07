@@ -1,0 +1,142 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level2",
+  "task": "Dialogue_Structure_Analysis-Dialogue_Act_Recognition",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_050",
+            "start_time": 266.1,
+            "end_time": 274.0,
+            "transcript": "包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_054",
+            "start_time": 279.1,
+            "end_time": 282.5,
+            "transcript": "臣不是英雄好汉，臣也没有同党。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the interactive behavior demonstrated in their corresponding segments by the speaker who said \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" and the speaker who said \"臣不是英雄好汉，臣也没有同党。\"? Please select the most appropriate option.",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. A superior exerts angry pressure demanding the other party to reveal their accomplices, while the subordinate immediately defends himself to clear all relations and show loyalty",
+        "B. A subordinate voluntarily reports other involved personnel to the superior, requesting that all people involved in the case be handed over for interrogation",
+        "C. A superior soothes and comforts the subordinate, guiding the other party to voluntarily step forward and clarify all misunderstandings",
+        "D. Cannot be determined (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "A superior exerts angry pressure demanding the other party to reveal their accomplices, while the subordinate immediately defends himself to clear all relations and show loyalty",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the interactive behavior demonstrated by the first speaker and the second speaker in the whole conversation? Please choose the most appropriate option.",
+      "type": "single_choice",
+      "question_type": "speaker_index",
+      "options": [
+        "A. A monarch harshly interrogates his subordinate about related charges, and the subordinate responds truthfully in fear to clear himself of the suspicion of treason",
+        "B. A eunuch publicly rebukes his subordinate for not taking responsibility, and the subordinate retorts that the eunuch's words are treasonous",
+        "C. A monarch comforts his erring subordinate and exempts him from accountability, and the subordinate voluntarily asks for credit to show that he has made no mistakes at all",
+        "D. Cannot be judged (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "A monarch harshly interrogates his subordinate about related charges, and the subordinate responds truthfully in fear to clear himself of the suspicion of treason",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the interactive behavior reflected by the speaker talking from 12.1s to 14.1s in the audio and the speaker talking from 17.3s to 19.7s in their respective corresponding segments? Please select the most appropriate option.",
+      "type": "single_choice",
+      "question_type": "time_index",
+      "options": [
+        "A. A superior interrogates his subordinate about the identity of the personnel under the subordinate's jurisdiction, and the subordinate respectfully answers the question truthfully",
+        "B. The eunuch reprimands the official for refusing to take responsibility, and the official confronts the eunuch furiously on the spot for having ulterior motives",
+        "C. A superior asks his subordinate about the appointment and removal arrangement of positions, and the subordinate evades responsibility and deliberately conceals information",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "A superior interrogates his subordinate about the identity of the personnel under the subordinate's jurisdiction, and the subordinate respectfully answers the question truthfully",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the interactive behavior presented by the two speakers in the following audio clip during the corresponding segments? Please select the most consistent option.",
+      "options": [
+        "A. The emperor inquires about the source of a key item, and the courtier truthfully and voluntarily claims full responsibility for the related matter.",
+        "B. The Chief of the Imperial Ceremonial Supervisorate reports to the emperor that certain officials have accomplices, and the emperor orders him to directly interrogate the involved personnel.",
+        "C. The emperor asks the official why he submitted the memorial of a traitor, and the official immediately quibbles that he knows nothing about it at all.",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "The emperor inquires about the source of a key item, and the courtier truthfully and voluntarily claims the related responsibility.",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ],
+      "question_type": "no_index",
+      "sub_question_type": "",
+      "type": "single_choice",
+      "speaker_meta": {}
+    },
+    {
+      "question": "What is the interactive behavior demonstrated in their respective corresponding clips by the speaker who said \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" from 49.2s to 51.1s in the audio, and the speaker who said \"臣不是英雄好汉，臣也没有同党。\" from 53.6s to 56.8s? Please choose the most matching option.",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. The emperor points out the other party's deliberate concealment to exert pressure, and the minister confesses the relevant personnel under pressure",
+        "B. The subordinate reports to the emperor that the eunuch framed loyal officials, and the eunuch denies that he has ever made inappropriate remarks on the spot",
+        "C. The emperor reminds the minister not to randomly implicate important court officials, and the minister understands the emperor's intention and deliberately modifies his confession",
+        "D. Cannot be judged (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "The emperor points out the other party's deliberate concealment to exert pressure, and the minister confesses the relevant personnel under pressure",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/mingdynesty-ep41/Dialogue_Structure_Analysis-Dialogue_Act_Recognition_spk_a.mp3",
+    "start_time": 266.1,
+    "end_time": 274.0,
+    "duration": 7.9
+  }
+}

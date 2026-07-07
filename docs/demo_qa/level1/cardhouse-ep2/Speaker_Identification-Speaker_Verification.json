@@ -1,0 +1,275 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker_Verification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_005",
+            "start_time": 12.4,
+            "end_time": 23.2,
+            "transcript": "When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_031",
+            "start_time": 149.6,
+            "end_time": 159.3,
+            "transcript": "What a martyr craves more than anything is a sword to fall on. So you sharpen the blade, hold it at just the right angle, and then, three, two, one.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "Are the speakers in the following two audio clips the same person?",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. They are not the same speaker",
+        "B. They are the same speaker",
+        "C. The voice characteristics of the two speakers in the audio overlap, so it is impossible to directly determine their identity relationship",
+        "D. Unable to judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "They are not the same speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Are the speakers in the following two audio clips the same person?",
+      "question_type": "no_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. Are the same speaker",
+        "B. Are not the same speaker",
+        "C. The two people in the audio have different emotional states, making it impossible to determine whether their sources are consistent",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "The two are the same speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Is the speaker talking from 12.4s to 23.2s in the audio the same person as the speaker talking from 50.2s to 55.2s in the audio?",
+      "question_type": "time_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. They are not the same speaker",
+        "B. They are the same speaker",
+        "C. The time interval between the two audio segments is too long to confirm whether the speaker has changed",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "They are not the same speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Are the speaker talking from 12.4s to 23.2s and the speaker talking from 149.6s to 159.3s in the audio the same person?",
+      "question_type": "time_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. They are the same speaker",
+        "B. They are not the same speaker",
+        "C. The two audio segments have vastly different themes, making it impossible to determine whether the speaker is the same",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "They are the same speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Is the speaker who said \"When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.\" in the audio the same person as the speaker who said \"I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...\"?",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. are not the same speaker",
+        "B. are the same speaker",
+        "C. It is impossible to infer whether they are the same person due to different stances of the two statements",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "The two speakers are not the same person",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the audio, is the speaker who said \"When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.\" the same as the speaker who said \"What a martyr craves more than anything is a sword to fall on. So you sharpen the blade, hold it at just the right angle, and then, three, two, one.\"?",
+      "question_type": "transcript_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. They are the same speaker",
+        "B. They are not the same speaker",
+        "C. The speech rates of the two utterances differ significantly, making it impossible to confirm if they come from the same person",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "The two utterances are made by the same speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Is the speaker who said 'When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.' from 12.4s to 23.2s in the audio the same person as the speaker who said 'I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...' from 50.2s to 55.2s in the audio?",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_b[0]"
+      },
+      "options": [
+        "A. Not the same speaker",
+        "B. Is the same speaker",
+        "C. It is impossible to determine whether the speakers are the same subject due to different speaking occasions",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "Not the same speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Is the speaker who said 'When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.' between 12.4s and 23.2s in the audio the same person as the speaker who said 'What a martyr craves more than anything is a sword to fall on. So you sharpen the blade, hold it at just the right angle, and then, three, two, one.' between 149.6s and 159.3s in the audio?",
+      "question_type": "complex_index",
+      "pair": {
+        "left": "spk_a[0]",
+        "right": "spk_a[1]"
+      },
+      "options": [
+        "A. Is the same speaker",
+        "B. Is not the same speaker",
+        "C. It is impossible to determine whether they are the same person due to differences in the emotional state of the speeches",
+        "D. Cannot judge (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "They are the same speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker_Verification_spk_a.mp3",
+    "start_time": 12.4,
+    "end_time": 23.2,
+    "duration": 10.8
+  },
+  "qa_audio_pairs": {
+    "1": {
+      "left": {
+        "path": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker_Verification_q1_left.mp3",
+        "start_time": 12.4,
+        "end_time": 23.2,
+        "duration": 10.8
+      },
+      "right": {
+        "path": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker_Verification_q1_right.mp3",
+        "start_time": 50.2,
+        "end_time": 55.2,
+        "duration": 5.0
+      }
+    },
+    "2": {
+      "left": {
+        "path": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker_Verification_q2_left.mp3",
+        "start_time": 12.4,
+        "end_time": 23.2,
+        "duration": 10.8
+      },
+      "right": {
+        "path": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker_Verification_q2_right.mp3",
+        "start_time": 149.6,
+        "end_time": 159.3,
+        "duration": 9.7
+      }
+    }
+  }
+}

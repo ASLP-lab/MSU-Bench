@@ -1,0 +1,171 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Speaker_Profiling",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_050",
+            "start_time": 266.1,
+            "end_time": 274.0,
+            "transcript": "包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_034",
+            "start_time": 179.3,
+            "end_time": 187.1,
+            "transcript": "海瑞既然备下了棺材愿意伏诛，臣无非也备下一口棺材，伏诛罢了。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, which of the following options is the closest to the speaker's profile?",
+      "question_type": "no_index",
+      "options": [
+        "A. Gender: Male; Age: Middle-aged; Emotion: Anger",
+        "B. Gender: Male; Age: Middle-aged; Emotion: Sadness",
+        "C. Gender: Female; Age: Child; Emotion: Happy",
+        "D. Cannot be judged (insufficient information to confirm)"
+      ],
+      "answer": "A",
+      "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest match to the speaker profile of the speaker talking from 49.2s to 51.1s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. Gender: Male; Age: Middle-aged; Emotion: Anger",
+        "B. Gender: Male; Age: Middle-aged; Emotion: Fear",
+        "C. Gender: Female; Age: Elder; Emotion: Sadness",
+        "D. Cannot judge (the information is insufficient for confirmation)"
+      ],
+      "answer": "A",
+      "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following is the closest speaker profile of the speaker who uttered the line \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Gender: Male; Age: Middle-aged; Emotion: Fear",
+        "B. Gender: Male; Age: Middle-aged; Emotion: Anger",
+        "C. Gender: Female; Age: Child; Emotion: Happy",
+        "D. Cannot judge (insufficient information to determine)"
+      ],
+      "answer": "B",
+      "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Anger",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest to the speaker profile of the person who said \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" from 62.1s to 65.1s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Gender: Male; Age: Middle-aged; Emotion: Anger",
+        "B. Gender: Male; Age: Middle-aged; Emotion: Fear",
+        "C. Gender: Female; Age: Young; Emotion: Sadness",
+        "D. Cannot judge (the information is insufficient to confirm)"
+      ],
+      "answer": "A",
+      "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the gender of the second appearing speaker in the whole conversation?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Female",
+        "B. Male",
+        "C. Transgender",
+        "D. Unable to judge (insufficient information to determine)"
+      ],
+      "answer": "B",
+      "answer_text": "Male",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers have the speaker profile of gender: Male; Age: Elder; Emotion: Fear? (list the speakers) Please select the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the second speaker",
+        "B. the fourth speaker, the fifth speaker",
+        "C. the first speaker, the second speaker, the ninety-ninth speaker",
+        "D. Cannot judge (insufficient information for confirmation)"
+      ],
+      "answer": "B",
+      "answer_text": "the fourth speaker, the fifth speaker",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Throughout the entire audio, how many speakers in total have a speaker profile of gender: Male; age: Elder; emotion: Fear? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 2 speakers",
+        "B. 1 speaker",
+        "C. 99 speakers",
+        "D. Cannot judge (insufficient information to determine)"
+      ],
+      "answer": "A",
+      "answer_text": "2 speakers",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Attribute_Recognition-Speaker_Profiling_spk_a.mp3",
+    "start_time": 266.1,
+    "end_time": 274.0,
+    "duration": 7.9
+  }
+}

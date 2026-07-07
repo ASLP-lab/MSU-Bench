@@ -1,0 +1,140 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level2",
+  "task": "Dialogue_Structure_Analysis-Dialogue_Act_Recognition",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_003",
+            "start_time": 8.3,
+            "end_time": 9.9,
+            "transcript": "Well we only have days, not months.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the interactive behavior demonstrated in their respective segments by the speaker who uttered 'Education has been your life's work' and the speaker who uttered 'The truth is, my heart is not in this fight' in the audio? Please select the most appropriate option.",
+      "type": "single_choice",
+      "question_type": "transcript_index",
+      "options": [
+        "A. The former guides in an empathetic manner, while the latter frankly reveals that he is not suited for the current political struggle, and voluntarily expresses his difficulty in continuing to lead the relevant projects",
+        "B. The former expresses dissatisfaction with the time-consuming problem of reform raised by the latter, demanding that the latter complete work that originally takes several months within an extremely short period of time",
+        "C. The former severely accuses the latter of the serious mistake of leaking documents, ordering the latter to immediately make a public appearance and take full responsibility for all related matters",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "The former guides in an empathetic manner, while the latter frankly reveals that he is not suited for the current political struggle, and voluntarily expresses his difficulty in continuing to lead the relevant projects",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the following audio with two speakers, what is the interactive behavior reflected in the corresponding segments? Please select the most appropriate option.",
+      "type": "single_choice",
+      "question_type": "no_index",
+      "options": [
+        "A. The senior person in charge at the meeting emphasizes that only a few days are left for the reform task, and the young employee at the meeting immediately points out that the existing conventional process can hardly adapt to such a tight schedule",
+        "B. The two speakers cooperate to read out the key points of the bill to all attendees on site, and inform everyone that they need to work in closed office until a qualified first version of the draft is produced",
+        "C. The two argue over the specific details of the support amount in the education bill item by item, and reject each other's proposed plans for many times",
+        "D. Cannot be judged (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "The senior person in charge at the meeting emphasizes that only a few days are left for the reform task, and the young employee at the meeting immediately points out that the existing conventional process can hardly adapt to such a tight schedule",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the interactive behavior shown in the corresponding clips by the speaker talking from 8.3s to 9.9s and the speaker talking from 10.1s to 12.3s in the audio? Please select the most appropriate option.",
+      "options": [
+        "A. The two call the police regarding the information leakage incident, demanding the police immediately locate the internal personnel who secretly leaked the draft content",
+        "B. After the senior person in charge explicitly informs that the task must be completed within only a few days, the young subordinate immediately states that it is impossible to skip the regular compliance procedures to move forward directly",
+        "C. The two comfort each other and agree to report other colleagues' dereliction of duty to Linda together",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "B",
+      "answer_text": "After the senior person in charge explicitly informs that the task must be completed within only a few days, the young subordinate immediately states that it is impossible to skip the regular compliance procedures to move forward directly",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ],
+      "question_type": "time_index",
+      "type": "single_choice"
+    },
+    {
+      "question": "What is the interactive behavior demonstrated by the first speaker and the second speaker in the entire conversation? Please select the most appropriate option.",
+      "type": "single_choice",
+      "question_type": "speaker_index",
+      "options": [
+        "A. The former clarifies that the major reform to be implemented this time is completely disruptive, and the latter adds that reforms at this level normally take several months to push forward",
+        "B. The former takes the initiative to calm the other party's flustered mood, and guides the other party to step forward voluntarily to take full responsibility for the first draft information leakage incident",
+        "C. The two chat about the taste of the morning meal of the day to liven up the on-site atmosphere before the formal meeting starts",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "The former clarifies that the major reform to be implemented this time is completely disruptive, and the latter adds that reforms at this level normally take several months to push forward",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the interactive behavior demonstrated by the speaker who said 'So now we have to adapt' from 55.5s to 58.7s in the audio, and the speaker who said 'All we have here really is a perception problem' from 58.7s to 102.8s in their respective corresponding segments? Please choose the most appropriate option.",
+      "type": "single_choice",
+      "question_type": "complex_index",
+      "options": [
+        "A. The former proposes to accept the established fact that the information has been leaked and adjust the response plan, while the latter believes that the current event is essentially only a public perception problem with no substantial damage",
+        "B. The former asks all personnel present to turn to the first page of the document immediately, while the latter explains the meaning of all core clauses of the bill item by item",
+        "C. The two jointly hold an official press conference to the public, directly disclosing all content of the leaked draft and subsequent revision plans",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "The former proposes to accept the established fact that the information has been leaked and adjust the response plan, while the latter believes that the current event is essentially only a public perception problem with no substantial damage",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/cardhouse-ep2/Dialogue_Structure_Analysis-Dialogue_Act_Recognition_spk_a.mp3",
+    "start_time": 8.3,
+    "end_time": 9.9,
+    "duration": 1.6
+  }
+}

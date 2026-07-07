@@ -1,253 +1,403 @@
 {
   "task_id": "emotion",
   "level": "level1",
-  "dimension": "Speaker Attributes",
-  "task_name": "Emotion Recognition",
+  "dimension": "Speaker Attribute Recognition (SAR)",
+  "task_name": "Emotion Recognition (ER)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "The Cubicle (斗室)",
+      "source": "dune 2021",
+      "video_folder": "dune_2021_part005",
+      "full_audio": {
+        "src": "bench_examples/audio/emotion/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/emotion/en_spk_a.mp3",
-          "start": 129.51,
-          "end": 130.91,
-          "dur": 1.4
+          "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+          "start": 11.43,
+          "end": 12.87,
+          "dur": 1.44,
+          "transcript": "You dismiss my mother in her own house.",
+          "spk_id": "spk_01",
+          "spk_index": "spk_3"
         }
       },
-      "spk_a_transcript": "Get off me, you bastards!",
-      "spk_b_transcript": "Young men with money have no discipline and very bad manners.",
+      "spk_a_transcript": "You dismiss my mother in her own house.",
+      "spk_b_transcript": "You must do everything that your mother tells you.",
       "qa": [
         {
-          "question": "Which of the following emotions is closest to the speaker's in this solo speech audio?",
+          "question": "In the single-person audio below, the speaker's emotion is closest to which of the following?",
           "question_type": "no_index",
           "options": [
+            "A. Fear",
+            "B. Cannot determine (insufficient evidence to determine the emotion)",
+            "C. Angry",
+            "D. Happy"
+          ],
+          "answer": "C",
+          "answer_text": "Angry",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+              "start": 11.43,
+              "end": 12.87,
+              "dur": 1.44,
+              "transcript": "You dismiss my mother in her own house.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_3"
+            }
+          ]
+        },
+        {
+          "question": "Which of the following is closest to the emotion of the speaker in the audio from 11.43 to 12.87 seconds?",
+          "question_type": "time_index",
+          "options": [
             "A. Angry",
-            "B. Disgust",
-            "C. Calm",
-            "D. Cannot be determined (insufficient evidence)"
+            "B. Fear",
+            "C. Cannot determine (insufficient evidence to determine sentiment)",
+            "D. Happy"
           ],
           "answer": "A",
           "answer_text": "Angry",
           "rationale": [
             "ground_truth",
             "wrong_speaker",
-            "hallucination",
-            "unknown"
-          ]
-        },
-        {
-          "question": "Which of the following emotions is closest to that of the speaker talking from 129.51 to 130.91 seconds?",
-          "question_type": "time_index",
-          "options": [
-            "A. Disgust",
-            "B. Calm",
-            "C. Angry",
-            "D. Cannot be determined (insufficient evidence)"
-          ],
-          "answer": "C",
-          "answer_text": "Angry",
-          "rationale": [
-            "wrong_speaker",
-            "hallucination",
-            "ground_truth",
-            "unknown"
-          ]
-        },
-        {
-          "question": "Which of the following emotions is closest to that of the speaker who said, 'Get off me, you bastards!'?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Disgust",
-            "B. Angry",
-            "C. Cannot be determined (insufficient evidence)",
-            "D. Calm"
-          ],
-          "answer": "B",
-          "answer_text": "Angry",
-          "rationale": [
-            "wrong_speaker",
-            "ground_truth",
             "unknown",
             "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+              "start": 11.43,
+              "end": 12.87,
+              "dur": 1.44,
+              "transcript": "You dismiss my mother in her own house.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_3"
+            }
           ]
         },
         {
-          "question": "Which of the following emotions is closest to that of the speaker who said, 'Get off me, you bastards!' between 129.51 and 130.91 seconds?",
-          "question_type": "complex_index",
+          "question": "In the audio, the emotion of the speaker who said ‘You dismiss my mother in her own house’ is closest to which of the following?",
+          "question_type": "transcript_index",
           "options": [
-            "A. Calm",
-            "B. Cannot be determined (insufficient evidence)",
-            "C. Disgust",
+            "A. Cannot determine (Insufficient evidence to determine emotion)",
+            "B. Fear",
+            "C. Happy",
             "D. Angry"
           ],
           "answer": "D",
           "answer_text": "Angry",
           "rationale": [
-            "hallucination",
             "unknown",
             "wrong_speaker",
+            "hallucination",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+              "start": 11.43,
+              "end": 12.87,
+              "dur": 1.44,
+              "transcript": "You dismiss my mother in her own house.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_3"
+            }
           ]
         },
         {
-          "question": "Throughout the entire audio, which speakers expressed the emotion of disgust? Please select the best option.",
+          "question": "The emotion of the speaker who said ‘You dismiss my mother’ between 11.43 and 12.87 seconds is closest to which of the following?",
+          "question_type": "complex_index",
+          "options": [
+            "A. Angry",
+            "B. Happy",
+            "C. Fear",
+            "D. Cannot determine (Insufficient evidence to determine emotion)"
+          ],
+          "answer": "A",
+          "answer_text": "Angry",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+              "start": 11.43,
+              "end": 12.87,
+              "dur": 1.44,
+              "transcript": "You dismiss my mother in her own house.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_3"
+            }
+          ]
+        },
+        {
+          "question": "Throughout the entire audio, which speakers have expressed the emotion Fear? (Answer in global speaker order) Please select the most suitable option. Speaker indexing starts from the first speaker.",
           "question_type": "reverse_retrival",
           "options": [
-            "A. Speaker 3",
-            "B. Speaker 1, Speaker 2",
-            "C. Speaker 3, Speaker 7",
-            "D. Cannot be determined (insufficient evidence)"
+            "A. the third speaker",
+            "B. the second and third speakers",
+            "C. Cannot determine (insufficient evidence to determine emotion)",
+            "D. the first and second speakers"
           ],
-          "answer": "C",
-          "answer_text": "Speaker 3, Speaker 7",
+          "answer": "B",
+          "answer_text": "the second and third speakers",
           "rationale": [
             "wrong_speaker",
-            "hallucination",
             "ground_truth",
-            "unknown"
+            "unknown",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "In the entire audio, how many speakers in total expressed the emotion of 'disgust'? Please select the most appropriate option.",
+          "question": "In the entire audio, how many speakers expressed the emotion of fear? Please select the most suitable option.",
           "question_type": "reverse_count",
           "options": [
-            "A. 4",
-            "B. 1",
-            "C. Cannot be determined (insufficient evidence)",
+            "A. 1",
+            "B. Cannot determine (Insufficient evidence to determine emotion)",
+            "C. 3",
             "D. 2"
           ],
           "answer": "D",
-          "answer_text": "2",
+          "answer_text": "2 items",
           "rationale": [
-            "hallucination",
             "wrong_speaker",
             "unknown",
+            "hallucination",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "Overheard (窃听风云, 2009)",
+      "source": "small alley 1981",
+      "video_folder": "small_alley_1981_part016",
+      "full_audio": {
+        "src": "bench_examples/audio/emotion/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/emotion/zh_spk_a.mp3",
-          "start": 213.49,
-          "end": 215.33,
-          "dur": 1.84
+          "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+          "start": 3.52,
+          "end": 4.52,
+          "dur": 1.0,
+          "transcript": "啊，是你呀。",
+          "spk_id": "spk_03",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "You think I'm a natural-born killer?",
-      "spk_b_transcript": "Our Renxiao Tang Charity Foundation has raised 51.86 million in donations.",
+      "spk_a_transcript": "啊，是你呀。",
+      "spk_b_transcript": "哥哥。",
       "qa": [
         {
-          "question": "The speaker's emotion in the audio is closest to which of the following?",
+          "question": "下面单人讲话音频中，说话人的情感最接近以下哪一项？",
           "question_type": "no_index",
           "options": [
-            "A. Happy",
-            "B. Angry",
-            "C. Calm",
-            "D. Cannot be determined (insufficient evidence)"
+            "A. 愤怒",
+            "B. 悲伤",
+            "C. 快乐",
+            "D. 无法判断（证据不足以确定情感）"
           ],
-          "answer": "B",
-          "answer_text": "Angry",
+          "answer": "C",
+          "answer_text": "快乐",
           "rationale": [
+            "hallucination",
             "wrong_speaker",
             "ground_truth",
-            "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+              "start": 3.52,
+              "end": 4.52,
+              "dur": 1.0,
+              "transcript": "啊，是你呀。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "The emotion of the speaker in the audio from 213.49s to 215.33s is closest to which of the following?",
+          "question": "音频中在第 3.52 秒到第 4.52 秒讲话的说话人情感最接近以下哪一项？",
           "question_type": "time_index",
           "options": [
-            "A. Calm",
-            "B. Happy",
-            "C. Angry",
-            "D. Cannot be determined (insufficient evidence)"
+            "A. 悲伤",
+            "B. 无法判断（证据不足以确定情感）",
+            "C. 快乐",
+            "D. 愤怒"
           ],
           "answer": "C",
-          "answer_text": "Angry",
+          "answer_text": "快乐",
           "rationale": [
-            "hallucination",
             "wrong_speaker",
+            "unknown",
             "ground_truth",
-            "unknown"
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+              "start": 3.52,
+              "end": 4.52,
+              "dur": 1.0,
+              "transcript": "啊，是你呀。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "The emotion of the speaker who said “You think I'm a natural-born killer?” in the audio is closest to which of the following?",
+          "question": "音频中说过‘啊，是你呀’的说话人在该句话的情感最接近以下哪一项？",
           "question_type": "transcript_index",
           "options": [
-            "A. Angry",
-            "B. Cannot be determined (insufficient evidence)",
-            "C. Happy",
-            "D. Calm"
+            "A. 快乐",
+            "B. 愤怒",
+            "C. 悲伤",
+            "D. 无法判断（证据不足以确定情感）"
           ],
           "answer": "A",
-          "answer_text": "Angry",
+          "answer_text": "快乐",
           "rationale": [
             "ground_truth",
-            "unknown",
+            "hallucination",
             "wrong_speaker",
-            "hallucination"
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+              "start": 3.52,
+              "end": 4.52,
+              "dur": 1.0,
+              "transcript": "啊，是你呀。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "The emotion of the speaker who said “You think I'm a natural-born killer?” from 213.49 to 215.33 seconds is closest to which of the following?",
+          "question": "在第 3.52 秒到第 4.52 秒说过‘啊，是你呀’的说话人，其情感最接近以下哪一项？",
           "question_type": "complex_index",
           "options": [
-            "A. Happy",
-            "B. Calm",
-            "C. Cannot be determined (insufficient evidence)",
-            "D. Angry"
-          ],
-          "answer": "D",
-          "answer_text": "Angry",
-          "rationale": [
-            "wrong_speaker",
-            "hallucination",
-            "unknown",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "Which speaker expressed the emotion of fear in the audio?",
-          "question_type": "reverse_retrieval",
-          "options": [
-            "A. Speaker 2",
-            "B. Speaker 3",
-            "C. Speaker 3 and Speaker 4",
-            "D. Cannot be determined (insufficient evidence)"
+            "A. 无法判断（证据不足以确定情感）",
+            "B. 快乐",
+            "C. 愤怒",
+            "D. 悲伤"
           ],
           "answer": "B",
-          "answer_text": "Speaker 3",
+          "answer_text": "快乐",
           "rationale": [
-            "wrong_speaker",
+            "unknown",
             "ground_truth",
             "hallucination",
-            "unknown"
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+              "start": 3.52,
+              "end": 4.52,
+              "dur": 1.0,
+              "transcript": "啊，是你呀。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "How many speakers expressed the emotion of fear in the audio?",
-          "question_type": "reverse_count",
+          "question": "在整段音频中，出现过情感 惊讶 的说话人有哪些？（用 全局说话人顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
+          "question_type": "reverse_retrival",
           "options": [
-            "A. 2",
-            "B. 3",
-            "C. 1",
-            "D. Cannot be determined (insufficient evidence)"
+            "A. 第一个说话人",
+            "B. 无法判断（证据不足以确定情感）",
+            "C. 第一个说话人、第二个说话人",
+            "D. 第二个说话人"
           ],
           "answer": "C",
-          "answer_text": "1",
+          "answer_text": "第一个说话人、第二个说话人",
           "rationale": [
             "wrong_speaker",
-            "hallucination",
+            "unknown",
             "ground_truth",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "在整段音频中，出现过情感 悲伤 的说话人一共有几个？请选择最符合的一项。",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 1 个",
+            "B. 2 个",
+            "C. 3 个",
+            "D. 无法判断（证据不足以确定情感）"
+          ],
+          "answer": "B",
+          "answer_text": "2 个",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]

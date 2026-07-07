@@ -1,0 +1,117 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker_Retrieval",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_003",
+            "start_time": 12.1,
+            "end_time": 14.1,
+            "transcript": "海瑞是哪个部的主事？",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_005",
+            "start_time": 17.3,
+            "end_time": 19.7,
+            "transcript": "海瑞是臣主管的户部主事。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fear",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the appearance order of the speaker who talks from 12.1s to 14.1s in the audio among all speakers appearing in the entire conversation?",
+      "question_type": "time_index",
+      "options": [
+        "A. the first speaker",
+        "B. the second speaker",
+        "C. the sixth speaker",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the order of appearance of the speaker who uttered the line \"海瑞是哪个部的主事？\" in the entire audio conversation?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. the second speaker",
+        "B. the first speaker",
+        "C. the seventh speaker",
+        "D. Cannot judge"
+      ],
+      "answer": "B",
+      "answer_text": "the first speaker",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Among all speakers appearing in the whole conversation, what is the appearance sequence number of the male speaker who uttered the line \"海瑞是哪个部的主事？\" from 12.1s to 14.1s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Cannot be judged",
+        "B. the third speaker",
+        "C. the second speaker",
+        "D. the first speaker"
+      ],
+      "answer": "D",
+      "answer_text": "the first speaker",
+      "rationale": [
+        "A. unknown",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "What is the appearance order of the speaker in the following audio among all speakers in the whole conversation?",
+      "question_type": "no_index",
+      "options": [
+        "A. the first speaker",
+        "B. the second speaker",
+        "C. the sixth speaker",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker_Retrieval_spk_a.mp3",
+    "start_time": 12.1,
+    "end_time": 14.1,
+    "duration": 2.0
+  }
+}

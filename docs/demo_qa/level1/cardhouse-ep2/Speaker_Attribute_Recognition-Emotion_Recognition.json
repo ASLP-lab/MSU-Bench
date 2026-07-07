@@ -1,0 +1,171 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Emotion_Recognition",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_022",
+            "start_time": 118.5,
+            "end_time": 123.7,
+            "transcript": "I'm up to here with them, Donald, for lying, for turning their back on you.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, which of the following options is the closest to the speaker's emotion?",
+      "options": [
+        "A. Anger",
+        "B. Disgust",
+        "C. Happy",
+        "D. Cannot judge (insufficient evidence to determine the emotion)"
+      ],
+      "answer": "A",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ],
+      "question_type": "no_index"
+    },
+    {
+      "question": "Which of the following options is the closest match to the emotion of the speaker talking from 118.5s to 123.7s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. Disgust",
+        "B. Anger",
+        "C. Happy",
+        "D. Cannot be determined (the evidence is insufficient to identify the emotion)"
+      ],
+      "answer": "B",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest match to the emotion of the speaker who said \"I'm up to here with them, Donald, for lying, for turning their back on you.\" in the audio when uttering this line?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Happy",
+        "B. Disgust",
+        "C. Anger",
+        "D. Cannot judge (insufficient evidence to determine the emotion)"
+      ],
+      "answer": "C",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the emotion that is closest to the speaker who said 'I'm up to here with them, Donald, for lying, for turning their back on you.' between 118.5s and 123.7s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Anger",
+        "B. Happy",
+        "C. Disgust",
+        "D. Cannot judge (the evidence is insufficient to confirm the emotion)"
+      ],
+      "answer": "A",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the entire conversation, which of the following options is the emotion of the second appearing speaker closest to? Please number the speakers starting from the first speaker.",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Neutral",
+        "B. Disgust",
+        "C. Happy",
+        "D. Cannot be judged (insufficient evidence to determine the emotion)"
+      ],
+      "answer": "A",
+      "answer_text": "Neutral",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers have shown the emotion of Anger? (Answer according to the global speaker order) Please select the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the second speaker",
+        "B. the third speaker",
+        "C. the first speaker, the fourth speaker",
+        "D. Cannot be determined (the evidence is insufficient to confirm the emotion)"
+      ],
+      "answer": "B",
+      "answer_text": "the third speaker",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the entire audio, how many speakers have ever shown the Anger emotion? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 6",
+        "B. Cannot judge (the evidence is insufficient to confirm the emotion)",
+        "C. 1",
+        "D. 2"
+      ],
+      "answer": "C",
+      "answer_text": "1",
+      "rationale": [
+        "A. hallucination",
+        "B. unknown",
+        "C. ground truth",
+        "D. wrong speaker"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Attribute_Recognition-Emotion_Recognition_spk_a.mp3",
+    "start_time": 118.5,
+    "end_time": 123.7,
+    "duration": 5.2
+  }
+}

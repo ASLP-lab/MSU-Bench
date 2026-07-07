@@ -1,181 +1,283 @@
 {
   "task_id": "qa_structure",
   "level": "level2",
-  "dimension": "Structure Analysis",
-  "task_name": "QA Structure Recognition",
+  "dimension": "Dialogue Structure Analysis (DSA)",
+  "task_name": "Q&A Structure ID (QASI)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Pacific Rim: Uprising (2018)",
+      "source": "robin hood origins",
+      "video_folder": "robin_hood_origins_part003",
+      "full_audio": {
+        "src": "bench_examples/audio/qa_structure/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/qa_structure/en_spk_a.mp3",
-          "start": 257.54,
-          "end": 258.86,
-          "dur": 1.32
+          "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+          "start": 28.98,
+          "end": 29.42,
+          "dur": 0.44,
+          "transcript": "What are you doing?",
+          "spk_id": "spk_04",
+          "spk_index": "spk_4"
         }
       },
-      "spk_a_transcript": "Yeah, what's her problem?",
-      "spk_b_transcript": "Took her three shots to pass the entrance test.",
+      "spk_a_transcript": "What are you doing?",
+      "spk_b_transcript": "My duty, Loxley.",
       "qa": [
         {
-          "question": "The following is a line of dialogue from one speaker. In the full conversation, what is the most likely response to this line?",
+          "question": "The following is a monologue from a speaker. The most likely response to it in a complete dialogue is:",
           "question_type": "no_index",
           "options": [
-            "A. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-            "B. Speaker B: Moyulan is for pilots.",
-            "C. Speaker B: Took her three shots to pass the entrance test.",
-            "D. Cannot be determined (Insufficient information to pinpoint the response)"
+            "A. Speaker B: I've been killing crusaders all my life.",
+            "B. Speaker B: I'm just following the king's decree.",
+            "C. Cannot determine (Insufficient information to provide a specific response)",
+            "D. Speaker B: My duty, Loxley."
           ],
-          "answer": "C",
-          "answer_text": "Took her three shots to pass the entrance test.",
+          "answer": "D",
+          "answer_text": "My duty, Loxley.",
           "rationale": [
-            "hallucination",
             "wrong_speaker",
-            "ground_truth",
-            "unknown"
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+              "start": 28.98,
+              "end": 29.42,
+              "dur": 0.44,
+              "transcript": "What are you doing?",
+              "spk_id": "spk_04",
+              "spk_index": "spk_4"
+            }
           ]
         },
         {
-          "question": "According to the conversation, what is the response to the line spoken between 257.54 and 258.86 seconds?",
+          "question": "According to the conversation, the reply from other people to what a speaker said from 28.98 to 29.42 seconds is:",
           "question_type": "time_index",
           "options": [
-            "A. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-            "B. Speaker B: Moyulan is for pilots.",
-            "C. Speaker B: Took her three shots to pass the entrance test.",
-            "D. Cannot determine (Insufficient information to identify the response)"
+            "A. Speaker B: I've been killing crusaders all my life.",
+            "B. Speaker B: I'm just following the king's decree.",
+            "C. Unable to judge (insufficient information to provide a targeted response)",
+            "D. Speaker B: My duty, Loxley."
           ],
-          "answer": "C",
-          "answer_text": "Took her three shots to pass the entrance test.",
+          "answer": "D",
+          "answer_text": "My duty, Loxley.",
           "rationale": [
-            "hallucination",
             "wrong_speaker",
-            "ground_truth",
-            "unknown"
+            "hallucination",
+            "unknown",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+              "start": 28.98,
+              "end": 29.42,
+              "dur": 0.44,
+              "transcript": "What are you doing?",
+              "spk_id": "spk_04",
+              "spk_index": "spk_4"
+            }
           ]
         },
         {
-          "question": "According to the dialogue, what is the other speaker's reply to the statement, 'what's her problem?'",
+          "question": "Based on the dialogue, the reply from others to a speaker's question 'What are you doing?' is:",
           "question_type": "transcript_index",
           "options": [
-            "A. Speaker B: Moyulan is for pilots.",
-            "B. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-            "C. Cannot be determined (insufficient information to locate the response)",
-            "D. Speaker B: Took her three shots to pass the entrance test."
+            "A. Speaker B: I've been killing crusaders all my life.",
+            "B. Speaker B: I'm just following the king's decree.",
+            "C. Cannot determine (Insufficient information to identify the response)",
+            "D. Speaker B: My duty, Loxley."
           ],
           "answer": "D",
-          "answer_text": "Took her three shots to pass the entrance test.",
+          "answer_text": "My duty, Loxley.",
           "rationale": [
             "wrong_speaker",
             "hallucination",
             "unknown",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+              "start": 28.98,
+              "end": 29.42,
+              "dur": 0.44,
+              "transcript": "What are you doing?",
+              "spk_id": "spk_04",
+              "spk_index": "spk_4"
+            }
           ]
         },
         {
-          "question": "Based on the conversation, what is the response to the statement 'what's her problem?', spoken between 257.54 and 258.86 seconds?",
+          "question": "According to the dialogue, the other people's response to the speaker's utterance of 'What are you doing?' between 28.98 and 29.42 seconds is:",
           "question_type": "complex_index",
           "options": [
-            "A. Speaker B: Moyulan is for pilots.",
-            "B. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-            "C. Cannot determine (insufficient information to locate the response)",
-            "D. Speaker B: Took her three shots to pass the entrance test."
+            "A. Speaker B: I've been killing crusaders all my life.",
+            "B. Speaker B: I'm just following the king's decree.",
+            "C. Cannot determine (Insufficient information to provide a response)",
+            "D. Speaker B: My duty, Loxley."
           ],
           "answer": "D",
-          "answer_text": "Took her three shots to pass the entrance test.",
+          "answer_text": "My duty, Loxley.",
           "rationale": [
             "wrong_speaker",
             "hallucination",
             "unknown",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+              "start": 28.98,
+              "end": 29.42,
+              "dur": 0.44,
+              "transcript": "What are you doing?",
+              "spk_id": "spk_04",
+              "spk_index": "spk_4"
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "Dwelling Narrowness (蜗居, 2009)",
+      "source": "yang guifei ep08",
+      "video_folder": "yang_guifei_ep08_part001",
+      "full_audio": {
+        "src": "bench_examples/audio/qa_structure/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/qa_structure/zh_spk_a.mp3",
-          "start": 255.94,
-          "end": 262.86,
-          "dur": 6.92
+          "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+          "start": 13.05,
+          "end": 14.73,
+          "dur": 1.68,
+          "transcript": "陛下，请息怒。",
+          "spk_id": "spk_14",
+          "spk_index": "spk_2"
         }
       },
-      "spk_a_transcript": "But the old rule still applies: no matter how late you work or what methods you use, it must be finished by tomorrow morning.",
-      "spk_b_transcript": "Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+      "spk_a_transcript": "陛下，请息怒。",
+      "spk_b_transcript": "点样息怒？",
       "qa": [
         {
-          "question": "The following is a monologue from a speaker. What is the most likely response to this utterance in a complete dialogue?",
+          "question": "下面是某个说话人的单讲片段，在完整对话中最可能对该语音回应的一项是：",
           "question_type": "no_index",
           "options": [
-            "A. Speaker B: Okay, Manager. We guarantee we'll complete the task and won't fall behind schedule.",
-            "B. Speaker B: Manager, please don't ask me to work overtime on Mondays, Wednesdays, and Fridays anymore. I've signed up for a professional development course, because if I don't keep learning, I'll soon be left behind by society, right?",
-            "C. Speaker B: Exactly, Manager. Why does it seem like our generation is always the one being left behind by society?",
-            "D. Cannot determine (Insufficient information to locate the response)"
+            "A. 说话人B：点样息怒？",
+            "B. 说话人B：你叫朕点样息怒？国事家事一团糟。",
+            "C. 说话人B：都要恁办法 㗎 嘛。",
+            "D. 无法判断（信息不足以定位回复）"
           ],
-          "answer": "B",
-          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "answer": "A",
+          "answer_text": "说话人B：点样息怒？",
           "rationale": [
-            "hallucination",
             "ground_truth",
+            "hallucination",
             "wrong_speaker",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+              "start": 13.05,
+              "end": 14.73,
+              "dur": 1.68,
+              "transcript": "陛下，请息怒。",
+              "spk_id": "spk_14",
+              "spk_index": "spk_2"
+            }
           ]
         },
         {
-          "question": "Based on the conversation, what is the response to the speaker's utterance from 255.94s to 262.86s?",
+          "question": "根据对话内容，其他人对某个说话人在第 13.05 秒到第 14.73 秒的讲话内容回复的语句是：",
           "question_type": "time_index",
           "options": [
-            "A. Speaker B: Okay, Manager. We promise to complete the task and won't fall behind schedule.",
-            "B. Cannot determine (Insufficient information to locate the response)",
-            "C. Speaker B: Exactly, Manager. Why is it that our generation is always the one being left behind by society?",
-            "D. Speaker B: Manager, please don't ask me to work overtime on Mondays, Wednesdays, and Fridays anymore. I've enrolled in a professional development course because if I don't keep improving, I'll soon be left behind by society, right?"
+            "A. 说话人B：都要恁办法 㗎 嘛。",
+            "B. 无法判断（信息不足以定位回复）",
+            "C. 说话人B：点样息怒？",
+            "D. 说话人B：你叫朕点样息怒？国事家事一团糟。"
           ],
-          "answer": "D",
-          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "answer": "C",
+          "answer_text": "说话人B：点样息怒？",
           "rationale": [
-            "hallucination",
-            "unknown",
             "wrong_speaker",
-            "ground_truth"
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+              "start": 13.05,
+              "end": 14.73,
+              "dur": 1.68,
+              "transcript": "陛下，请息怒。",
+              "spk_id": "spk_14",
+              "spk_index": "spk_2"
+            }
           ]
         },
         {
-          "question": "According to the dialogue, what is the response to the statement, '...it must be finished by tomorrow morning'?",
+          "question": "根据对话内容，其他人对某个说话人关于‘陛下，请息怒’的表述的回复语句是：",
           "question_type": "transcript_index",
           "options": [
-            "A. Speaker B: Exactly, Manager. It's like our generation is always the one being left behind by society.",
-            "B. Speaker B: Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a training course, because if I don't keep learning, I'll be left behind by society soon, right?",
-            "C. Speaker B: Okay, Manager. We guarantee we'll complete the task and won't delay our progress.",
-            "D. Cannot be determined (Insufficient information to locate the response)"
+            "A. 说话人B：你叫朕点样息怒？国事家事一团糟。",
+            "B. 说话人B：都要恁办法 㗎 嘛。",
+            "C. 无法判断（信息不足以定位回复）",
+            "D. 说话人B：点样息怒？"
           ],
-          "answer": "B",
-          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "answer": "D",
+          "answer_text": "说话人B：点样息怒？",
           "rationale": [
-            "wrong_speaker",
-            "ground_truth",
             "hallucination",
-            "unknown"
+            "wrong_speaker",
+            "unknown",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+              "start": 13.05,
+              "end": 14.73,
+              "dur": 1.68,
+              "transcript": "陛下，请息怒。",
+              "spk_id": "spk_14",
+              "spk_index": "spk_2"
+            }
           ]
         },
         {
-          "question": "According to the dialogue, what is the response to the speaker's statement between 255.94s and 262.86s, which includes the phrase '...must be finished by tomorrow morning'?",
+          "question": "根据对话内容，其他人对某个说话人在第 13.05 秒到第 14.73 秒说话人关于‘请息怒’的表述的回复是：",
           "question_type": "complex_index",
           "options": [
-            "A. Cannot determine (Insufficient information to locate the response)",
-            "B. Speaker B: Exactly, Manager. It seems our generation is always the one that gets left behind by society.",
-            "C. Speaker B: Okay, Manager. We promise to complete the task and won't delay the schedule.",
-            "D. Speaker B: Manager, please don't call me in for overtime on Mondays, Wednesdays, and Fridays anymore. I've signed up for a professional development course, because if I don't keep upgrading my skills, I'll be left behind by society soon, right?"
+            "A. 无法判断（信息不足以定位回复）",
+            "B. 说话人B：都要恁办法 㗎 嘛。",
+            "C. 说话人B：点样息怒？",
+            "D. 说话人B：你叫朕点样息怒？国事家事一团糟。"
           ],
-          "answer": "D",
-          "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+          "answer": "C",
+          "answer_text": "说话人B：点样息怒？",
           "rationale": [
             "unknown",
             "wrong_speaker",
-            "hallucination",
-            "ground_truth"
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+              "start": 13.05,
+              "end": 14.73,
+              "dur": 1.68,
+              "transcript": "陛下，请息怒。",
+              "spk_id": "spk_14",
+              "spk_index": "spk_2"
+            }
           ]
         }
       ]

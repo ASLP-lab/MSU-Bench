@@ -513,7 +513,6 @@
   ],
   "_meta": {
     "source_video": "cardhouse-ep2.mp4",
-    "model": "gemini-2.5-pro",
     "annotation_time": "2026-07-03 05:21:07"
   }
 }

@@ -1,0 +1,171 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Speaker_Profiling",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_003",
+            "start_time": 8.3,
+            "end_time": 9.9,
+            "transcript": "Well we only have days, not months.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, which of the following descriptions best matches the speaker profile?",
+      "question_type": "no_index",
+      "options": [
+        "A. Gender: Male; Age: Middle-aged; Emotion: Neutral",
+        "B. Gender: Male; Age: Elder; Emotion: Sadness",
+        "C. Gender: Female; Age: Child; Emotion: Happy",
+        "D. Cannot be judged (insufficient information to confirm)"
+      ],
+      "answer": "A",
+      "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest to the speaker profile of the speaker talking from 12.4s to 23.2s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. Gender: Male; Age: Middle-aged; Emotion: Neutral",
+        "B. Gender: Male; Age: Elder; Emotion: Disgust",
+        "C. Gender: Female; Age: Child; Emotion: Happy",
+        "D. Cannot judge (insufficient information to confirm)"
+      ],
+      "answer": "A",
+      "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest to the speaker profile of the speaker who uttered the sentence 'Now I realize it is a difficult task, but we have the opportunity to make history here, and I want all of us to make it together.' in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Gender: Male; Age: Young Adult; Emotion: Anger",
+        "B. Gender: Male; Age: Middle-aged; Emotion: Neutral",
+        "C. Gender: Female; Age: Teenager; Emotion: Sadness",
+        "D. Cannot judge (insufficient information to determine)"
+      ],
+      "answer": "B",
+      "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following descriptions best matches the speaker who said 'I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...' from 50.2s to 55.2s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Gender: Male; Age: Elder; Emotion: Disgust",
+        "B. Gender: Male; Age: Middle-aged; Emotion: Neutral",
+        "C. Gender: Female; Age: Young Adult; Emotion: Surprise",
+        "D. Cannot judge (insufficient information to confirm)"
+      ],
+      "answer": "A",
+      "answer_text": "Gender: Male; Age: Elder; Emotion: Disgust",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole conversation, what is the age group of the fifth speaker that appears?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Elder",
+        "B. Middle-aged",
+        "C. Child",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "Elder",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers have the speaker profile of Gender: Male; Age: Elder; Emotion: Disgust? (list the speakers) Please select the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the third speaker",
+        "B. the fifth speaker",
+        "C. the first speaker, the ninety-ninth speaker",
+        "D. Unable to determine (insufficient information to confirm)"
+      ],
+      "answer": "B",
+      "answer_text": "the fifth speaker",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole audio, how many speakers have the speaker profile: Gender: Male; Age: Elder; Emotion: Disgust? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 2 speakers",
+        "B. 1 speaker",
+        "C. 99 speakers",
+        "D. Cannot judge (insufficient information to determine)"
+      ],
+      "answer": "B",
+      "answer_text": "1 speaker",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Attribute_Recognition-Speaker_Profiling_spk_a.mp3",
+    "start_time": 8.3,
+    "end_time": 9.9,
+    "duration": 1.6
+  }
+}

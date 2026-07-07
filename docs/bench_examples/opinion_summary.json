@@ -1,397 +1,635 @@
 {
   "task_id": "opinion_summary",
   "level": "level2",
-  "dimension": "Context Reasoning",
-  "task_name": "Multi-Speaker Opinion Summary",
+  "dimension": "Dialogue Contextual Reasoning (DCR)",
+  "task_name": "Multi-speaker Viewpoint Summarization (MSVS)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Mission: Impossible – Rogue Nation (2015)",
+      "source": "hao shi cheng shuang 1995",
+      "video_folder": "hao_shi_cheng_shuang_1995_part007",
+      "full_audio": {
+        "src": "bench_examples/audio/opinion_summary/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/opinion_summary/en_spk_a.mp3",
-          "start": 89.32,
-          "end": 94.36,
-          "dur": 5.04
+          "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+          "start": 7.64,
+          "end": 10.8,
+          "dur": 3.16,
+          "transcript": "Yeah, and it'd be nice to have a father too.",
+          "spk_id": "spk_01",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "Killing to keep things as they were, and now I'm killing to bring about change.",
-      "spk_b_transcript": "We only think we're fighting for the right side, because that's what we choose to believe.",
+      "spk_a_transcript": "Yeah, and it'd be nice to have a father too.",
+      "spk_b_transcript": "Well, I I haven't been much of a father lately.",
       "qa": [
         {
-          "question": "What are the stances of the two speakers throughout the conversation? Please choose the best-fitting option.",
+          "question": "What are the stances of the two speakers throughout the entire conversation in the audio below? Please choose the most suitable option.",
           "question_type": "no_index",
           "options": [
-            "A. Speaker A: On their violent actions: Admits their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-            "B. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Views them as a necessary and precise means to achieve change and justifies them on this basis.",
-            "C. Speaker A: On their violent actions: Defends them as a necessary and precise means to achieve change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-            "D. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is indecisive."
+            "A. Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but the core is a desire to spend time with the father.; Speaker B: Regarding the relationship with the daughter: Acknowledges their own failings and actively seeks to repair the relationship by increasing companionship.",
+            "B. Speaker A: On his relationship with his daughter: Admits his failings and actively seeks to repair the relationship by spending more time with her.; Speaker B: On her father's companionship: Shows resistance due to feeling neglected, but at heart, longs to spend time with her father.",
+            "C. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the family's integrity.; Speaker B: View on the new mother: Tries to persuade her daughter to accept the new member, but ultimately gives up her own plans for her daughter's sake.",
+            "D. Speaker A: Regarding family issues: has big mood swings and feels uncertain about the future.; Speaker B: Regarding family issues: is trying to resolve the immediate conflict, but has complex inner thoughts."
           ],
-          "answer": "C",
-          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+          "answer": "A",
+          "answer_text": "Speaker A: Regarding companionship with his father: He shows resistance due to feeling neglected, but his core desire is to spend time with his father.; Speaker B: Regarding his relationship with his daughter: He acknowledges his own failings and actively seeks to repair the relationship by spending more time with her.",
           "rationale": [
-            "hallucination",
-            "wrong_speaker",
             "ground_truth",
+            "wrong_speaker",
+            "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Throughout the conversation, what are the stances of the speaker from 89.32s-94.36s (Speaker A) and the speaker from 282.84s-285.92s (Speaker B)? Please select the most appropriate option.",
+          "question": "What is the stance in the entire conversation of the speaker who talks from 7.64s to 10.8s and the speaker who talks from 20.52s to 24.12s in the audio? Please choose the most suitable option.",
           "question_type": "time_index",
           "options": [
-            "A. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multiple considerations and is indecisive.",
-            "B. Speaker A: On their violent actions: Views them as a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-            "C. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they are a necessary and precise means to achieve change and defends them on that basis.",
-            "D. Speaker A: On their violent actions: Acknowledges their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender."
+            "A. Speaker A: On his relationship with his daughter: acknowledges his neglect and actively seeks to mend the relationship by spending more time with her.; Speaker B: On her father's companionship: shows resistance due to feeling neglected, but her core desire is to spend time with her father.",
+            "B. Speaker A: Regarding family issues: is emotionally volatile and feels uncertain about the future.; Speaker B: Regarding family issues: is trying to resolve the immediate conflicts, but has complex inner thoughts.",
+            "C. Speaker A: Regarding companionship with their father: Acts resistant due to feeling neglected, but at heart, longs to spend time with their father.; Speaker B: Regarding his relationship with his daughter: Acknowledges his own failings and proactively seeks to repair the relationship by spending more time with her.",
+            "D. Speaker A: View on the stepmother: Strongly opposes the father's remarriage, believing it would destroy the family's integrity.; Speaker B: View on the stepmother: Tries to persuade the daughter to accept the new member, but ultimately gives up their own plans for the daughter's sake."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A: Regarding companionship with her father: She shows resistance because she feels neglected, but at her core, she longs to spend time with her father.\nSpeaker B: Regarding his relationship with his daughter: He acknowledges his failings and proactively seeks to mend the relationship by spending more time with her.",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "What is the stance in the entire conversation of the speaker who said ‘and it'd be nice to have a father too’ and the speaker who said ‘I haven't been much of a father lately’? Please choose the most suitable option.",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Speaker A: Regarding companionship with his father: Shows resistance due to feeling neglected, but at his core, desires to spend time with his father.; Speaker B: Regarding his relationship with his daughter: Acknowledges his own shortcomings and proactively seeks to mend the relationship by spending more time with her.",
+            "B. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the integrity of the family.; Speaker B: View on the new mother: Tries to persuade the daughter to accept the new member, but ultimately gives up their own plans for the daughter's sake.",
+            "C. Speaker A: Regarding his relationship with his daughter: Admits his negligence and proactively seeks to repair the relationship by spending more time with her.; Speaker B: Regarding her father's companionship: Acts resistant due to feeling neglected, but what she really wants is to spend time with her father.",
+            "D. Speaker A: On family issues: Emotionally volatile and uncertain about the future.; Speaker B: On family issues: Trying to resolve the immediate conflict, but has complex inner thoughts."
+          ],
+          "answer": "A",
+          "answer_text": "Speaker A: Regarding companionship with his father: Shows resistance due to feeling neglected, but at the core is a longing to spend time with his father.; Speaker B: Regarding the relationship with his daughter: Acknowledges his own failings and proactively seeks to repair the relationship by spending more time with her.",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "What are the respective stances of the first speaker and the second speaker throughout the conversation? Please select the most suitable option. Speaker indexing starts from the first speaker.",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the family's integrity.; Speaker B: View on the new mother: Tries to persuade his daughter to accept the new member, but ultimately gives up his own plan for his daughter's sake.",
+            "B. Speaker A: Regarding companionship with his father: Shows resistance from feeling neglected, but at the core is a desire to spend time with his father.; Speaker B: Regarding his relationship with his daughter: Acknowledges his own shortcomings and actively seeks to repair the relationship by spending more time with her.",
+            "C. Speaker A: Regarding the family issue: is very emotional and uncertain about the future.; Speaker B: Regarding the family issue: tries to resolve the immediate conflict, but has complex inner thoughts.",
+            "D. Speaker A: Regarding his relationship with his daughter: Admits his own shortcomings and proactively seeks to repair the relationship by spending more time with her.; Speaker B: Regarding her father's companionship: Shows resistance due to feeling neglected, but her core desire is to spend time with her father."
           ],
           "answer": "B",
-          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+          "answer_text": "Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but at the core, desires to spend time with the father.; Speaker B: Regarding the relationship with his daughter: Acknowledges his own failings and proactively seeks to repair the relationship by increasing companionship.",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "What is the stance in the entire conversation of the speaker who said ‘it'd be nice to have a father too’ from 7.64s to 10.8s in the audio, and the speaker who said ‘I haven't been much of a father lately’ from 20.52s to 24.12s? Please choose the most fitting option.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Speaker A: On the family issue: is very emotional and uncertain about the future.; Speaker B: On the family issue: is trying to resolve the immediate conflict, but has complex inner thoughts.",
+            "B. Speaker A: Regarding his relationship with his daughter: Acknowledges his shortcomings and proactively seeks to mend the relationship by spending more time with her.; Speaker B: Regarding her father's companionship: Shows resistance due to feeling neglected, but at her core, she longs to spend time with her father.",
+            "C. Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but at the core is a desire to spend time with him.; Speaker B: Regarding the relationship with his daughter: Acknowledges his own shortcomings and proactively seeks to repair the relationship by spending more time with her.",
+            "D. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the family's integrity.; Speaker B: View on the new mother: Tries to persuade his daughter to accept the new member, but ultimately gives up his own plan for his daughter's sake."
+          ],
+          "answer": "C",
+          "answer_text": "Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but the core is a longing to spend time with the father.; Speaker B: Regarding the relationship with the daughter: Acknowledges their own failings and proactively seeks to mend the relationship by increasing companionship.",
+          "rationale": [
+            "unknown",
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "What is the change in the positions of the two speakers in the audio below throughout the entire conversation? Please select the most suitable option.",
+          "question_type": "no_index",
+          "options": [
+            "A. Speaker A: Attitude towards the conversation: From [Emotionally agitated] → [Gradually calming down]; Speaker B: Attitude towards the conversation: From [Trying to persuade] → [Shifting to comforting and explaining].",
+            "B. Speaker A: Attitude towards the father-daughter relationship: From [full of resentment and defiance from feeling neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → [shifting to admitting his own fault and promising to make up for it with companionship].",
+            "C. Speaker A: Approach to resolving the father-daughter conflict: From 【Trying to solve the problem by introducing a new member】 → 【Shifting to admitting his own fault and promising to make up for it with companionship】.; Speaker B: Attitude towards the father-daughter relationship: From 【Full of resentment and resistance due to feeling neglected】 → 【Shifting to reconciliation and closeness after receiving her father's understanding and promise】.",
+            "D. Speaker A: Attitude towards the father-daughter relationship: has always been 【hoping her father would care more about her】; Speaker B: Plans for his future family: from 【planning to start a family with a new partner】→【shifting to temporarily setting aside personal plans to prioritize his daughter】."
+          ],
+          "answer": "B",
+          "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [full of resentment and resistance due to feeling neglected] → to [reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → to [admitting his own fault and promising to make up for it with companionship].",
           "rationale": [
             "unknown",
             "ground_truth",
             "wrong_speaker",
             "hallucination"
-          ]
-        },
-        {
-          "question": "Throughout the conversation, what are the stances of the speaker who says, “now I'm killing to bring about change” (Speaker A) and the speaker who says, “that's what we choose to believe” (Speaker B)? Please choose the most suitable option.",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Speaker A: On their violent actions: Justifies them as a necessary and precise means for bringing about change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-            "B. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering.",
-            "C. Speaker A: On their violent actions: Acknowledges their wrongdoing and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-            "D. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis."
           ],
-          "answer": "A",
-          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from it.",
-          "rationale": [
-            "ground_truth",
-            "unknown",
-            "hallucination",
-            "wrong_speaker"
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Throughout the conversation, what are the respective stances of the first speaker (Speaker A) and the second speaker (Speaker B)? Please select the best-fitting option.",
-          "question_type": "speaker_index",
+          "question": "What is the change in viewpoint of the speaker who speaks from 7.64s to 10.8s and the speaker who speaks from 20.52s to 24.12s in the audio during their dialogue about their stances? Please select the most fitting option.",
+          "question_type": "time_index",
           "options": [
-            "A. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they were a necessary and precise means to bring about change and justifies them on this basis.",
-            "B. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering.",
-            "C. Speaker A: On their violent actions: Admits their mistake and hopes to reconcile. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-            "D. Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them as such. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the conflict."
+            "A. Speaker A: Approach to resolving the father-daughter conflict: From 【trying to solve the problem by introducing a new member】→【to admitting his own fault and promising to make up for it with companionship】.; Speaker B: Attitude towards the father-daughter relationship: From 【being full of resentment and resistance due to feeling neglected】→【to reconciliation and closeness after receiving her father's understanding and promise】.",
+            "B. Speaker A: Attitude towards the conversation: From 【Agitated】→【Gradually calming down】.; Speaker B: Attitude towards the conversation: From 【Trying to persuade】→【Shifting to comforting and explaining】.",
+            "C. Speaker A: Attitude towards the father-daughter relationship: Consistently [wishing her father would care more about her].; Speaker B: Plans for a future family: From [planning to start a family with a new partner] → [temporarily putting aside personal plans and prioritizing his daughter].",
+            "D. Speaker A: Attitude towards the father-daughter relationship: from [full of resentment and resistance due to feeling neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: from [trying to solve the problem by introducing a new member] → [shifting to admitting his own faults and promising to make up for it with companionship]."
           ],
           "answer": "D",
-          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+          "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [resentment and resistance due to feeling neglected] → to [reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → to [admitting his own faults and promising to make up for it with companionship].",
           "rationale": [
             "wrong_speaker",
             "unknown",
             "hallucination",
             "ground_truth"
-          ]
-        },
-        {
-          "question": "Throughout the conversation, what is the stance of the speaker who says, “now I'm killing to bring about change” (from 89.32s to 94.36s, Speaker A) and the speaker who says, “that's what we choose to believe” (from 282.84s to 285.92s, Speaker B)? Please select the best-fitting option.",
-          "question_type": "complex_index",
-          "options": [
-            "A. Speaker A: On their violent actions: Justifies them as a necessary and precise means to achieve change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-            "B. Speaker A: On their violent actions: Admits their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-            "C. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Considers them a necessary and precise means for achieving change and defends them on this basis.",
-            "D. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering."
           ],
-          "answer": "A",
-          "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
-          "rationale": [
-            "ground_truth",
-            "hallucination",
-            "wrong_speaker",
-            "unknown"
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What change, if any, occurs in the speakers' stances during the conversation? Please select the best-fitting option.",
-          "question_type": "no_index",
-          "options": [
-            "A. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-            "B. Speaker A (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-            "C. Speaker A (View on actions): Attitude remains largely consistent. Speaker B (View on the struggle): Shows an evolution of thought during the dialogue.",
-            "D. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization."
-          ],
-          "answer": "A",
-          "answer_text": "Speaker A's defense of their actions remains consistent: they insist their violent behavior is a necessary means for achieving change. Speaker B's view of the struggle evolves from clearly defining the opponent as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-          "rationale": [
-            "ground_truth",
-            "wrong_speaker",
-            "unknown",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "What change in stance occurs for the speaker from 89.32s-94.36s (Speaker A) and the speaker from 282.84s-285.92s (Speaker B)? Please select the most appropriate option.",
-          "question_type": "time_index",
-          "options": [
-            "A. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought during the dialogue.",
-            "B. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (On the struggle): Shifts from hesitation to firmly supporting their organization.",
-            "C. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-            "D. Speaker A (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change."
-          ],
-          "answer": "C",
-          "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-          "rationale": [
-            "unknown",
-            "hallucination",
-            "ground_truth",
-            "wrong_speaker"
-          ]
-        },
-        {
-          "question": "What change in stance occurs for the speaker who says, “now I'm killing to bring about change” (Speaker A) and the one who says, “that's what we choose to believe” (Speaker B)? Please choose the most fitting option.",
+          "question": "What is the change in the stances of the speaker who said ‘and it'd be nice to have a father too’ and the speaker who said ‘I haven't been much of a father lately’ throughout the entire conversation? Please select the best option.",
           "question_type": "transcript_index",
           "options": [
-            "A. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-            "B. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-            "C. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization.",
-            "D. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought during the dialogue."
+            "A. Speaker A: Attitude towards the father-daughter relationship: From 【filled with resentment and resistance due to feeling neglected】→【changes to reconciliation and closeness after receiving her father's understanding and promise】.; Speaker B: Approach to resolving the father-daughter conflict: From 【attempting to solve the problem by introducing a new member】→【changes to admitting his own fault and promising to make up for it with companionship】.",
+            "B. Speaker A: Approach to resolving the father-daughter conflict: from [attempting to solve the problem by introducing a new member] → [admitting his own fault and promising to make up for it with companionship].; Speaker B: Attitude towards the father-daughter relationship: from [resentment and resistance due to feeling neglected] → [reconciliation and closeness after receiving her father's understanding and promise].",
+            "C. Speaker A: Attitude towards the father-daughter relationship: Attitude has consistently been [hoping her father would care more about her].; Speaker B: Plans for his future family: from [planning to start a family with a new partner] → [shifting to temporarily putting personal plans on hold to prioritize his daughter].",
+            "D. Speaker A: Attitude towards the conversation: From 【Emotionally agitated】→【Gradually calming down】; Speaker B: Attitude towards the conversation: From 【Trying to persuade】→【Shifting to comforting and explaining】."
           ],
-          "answer": "B",
-          "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "answer": "A",
+          "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [being full of resentment and resistance due to feeling neglected] → [to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [trying to introduce a new member to solve the problem] → [to admitting his own fault and promising to make up for it with companionship].",
           "rationale": [
-            "wrong_speaker",
             "ground_truth",
+            "wrong_speaker",
             "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What are the changes in the stances of the first speaker (Speaker A) and the second speaker (Speaker B) during the conversation? Please select the best-fitting option.",
+          "question": "Throughout the entire conversation, what are the respective changes in stance for the first speaker and the second speaker? Please select the best-fitting option. Speaker indexing starts from the first speaker.",
           "question_type": "speaker_index",
           "options": [
-            "A. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought throughout the dialogue.",
-            "B. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-            "C. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-            "D. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from indecision to firmly supporting their organization."
+            "A. Speaker A: Approach to resolving the father-daughter conflict: From [trying to introduce a new member to solve the problem] → To [admitting his own fault and promising to make up for it with companionship].; Speaker B: Attitude towards the father-daughter relationship: From [being full of resentment and resistance due to feeling neglected] → To [reconciliation and closeness after receiving her father's understanding and promise].",
+            "B. Speaker A: Attitude towards the father-daughter relationship: Has always been [hoping her father would care more about her].; Speaker B: Plans for his future family: From [planning to start a family with a new partner] → [temporarily setting aside personal plans to prioritize his daughter].",
+            "C. Speaker A: Attitude towards the father-daughter relationship: From [resentment and resistance due to feeling neglected] → [reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → [admitting his own fault and promising to make up for it with companionship].",
+            "D. Speaker A: Attitude towards the conversation: From 【Emotional】 → 【Gradually calming down】.; Speaker B: Attitude towards the conversation: From 【Trying to persuade】 → 【Shifting to comforting and explaining】."
           ],
           "answer": "C",
-          "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [being filled with resentment and resistance due to feeling neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Method for resolving the father-daughter conflict: From [trying to solve the problem by introducing a new member] → [shifting to admitting his own fault and promising to make up for it with companionship].",
           "rationale": [
-            "unknown",
             "wrong_speaker",
+            "hallucination",
             "ground_truth",
-            "hallucination"
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "What change in stance occurs for the speaker who says, “now I'm killing to bring about change” (89.32s-94.36s, Speaker A) and the one who says, “that's what we choose to believe” (282.84s-285.92s, Speaker B)? Please choose the most fitting option.",
+          "question": "What is the change in stance throughout the entire conversation between the speaker who said ‘it'd be nice to have a father too’ from 7.64 seconds to 10.8 seconds in the audio, and the speaker who said ‘I haven't been much of a father lately’ from 20.52 seconds to 24.12 seconds? Please choose the most suitable option.",
           "question_type": "complex_index",
           "options": [
-            "A. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization.",
-            "B. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought in the dialogue.",
-            "C. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-            "D. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly defining the opposition as an enemy to becoming disillusioned with the entire system and advocating for disengagement."
+            "A. Speaker A: Attitude towards the conversation: From [Emotionally agitated] → [Gradually calming down].; Speaker B: Attitude towards the conversation: From [Attempting to persuade] → [Shifting to comforting and explaining].",
+            "B. Speaker A: Attitude towards the father-daughter relationship: Has always been [hoping her father would care more about her].; Speaker B: Plans for his future family: From [planning to start a family with a new partner] → [shifting to temporarily putting personal plans on hold to prioritize his daughter].",
+            "C. Speaker A: Approach to resolving the father-daughter conflict: from [attempting to solve the problem by introducing a new member] → [shifting to admitting his own fault and promising to make up for it with companionship].; Speaker B: Attitude towards the father-daughter relationship: from [feeling resentful and resistant due to being neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].",
+            "D. Speaker A: Attitude towards the father-daughter relationship: from [full of resentment and resistance due to feeling neglected] → [changes to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Method of resolving the father-daughter conflict: from [trying to solve the problem by introducing a new member] → [changes to admitting his own faults and promising to make up for it with companionship]."
           ],
           "answer": "D",
-          "answer_text": "Speaker A's defense of their actions remains consistent: they insist their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+          "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [being filled with resentment and resistance due to feeling neglected] → [to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Method for resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → [to admitting his own mistakes and promising to make up for it with companionship].",
           "rationale": [
-            "hallucination",
             "unknown",
+            "hallucination",
             "wrong_speaker",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+              "start": 7.64,
+              "end": 10.8,
+              "dur": 3.16,
+              "transcript": "Yeah, and it'd be nice to have a father too.",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "TV Series (S03E07)",
+      "source": "great hero zheng chenggong ep03",
+      "video_folder": "great_hero_zheng_chenggong_ep03_part008",
+      "full_audio": {
+        "src": "bench_examples/audio/opinion_summary/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/opinion_summary/zh_spk_a.mp3",
-          "start": 47.16,
-          "end": 49.72,
-          "dur": 2.56
+          "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+          "start": 25.79,
+          "end": 31.19,
+          "dur": 5.4,
+          "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+          "spk_id": "spk_04",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "She's already been through enough with what happened. Do you really have to fire her?",
-      "spk_b_transcript": "How can we let one dead branch ruin a perfectly good pot of flowers?",
+      "spk_a_transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+      "spk_b_transcript": "我绝对没有参与盗窃西周宝印呐，那是镇台之宝，是郑太师的东西。",
       "qa": [
         {
-          "question": "What are the respective stances of the two speakers throughout the entire conversation? Please select the best option.",
+          "question": "下面音频中的两个说话人在整段对话中的立场是什么？请选择最符合的一项。",
           "question_type": "no_index",
           "options": [
-            "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
-            "B. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's in the store's best interest.",
-            "C. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-            "D. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements."
+            "A. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+            "B. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+            "C. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+            "D. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。"
           ],
           "answer": "B",
-          "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's in the store's best interest.",
+          "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
           "rationale": [
             "wrong_speaker",
             "ground_truth",
             "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What are the respective stances of the speaker who talks from 47.16s to 49.72s and the speaker who talks from 56.18s to 60.82s? Please choose the most suitable option.",
+          "question": "音频中第 25.79 秒到第 31.19 秒讲话的说话人以及在第 12.249 秒到第 17.409 秒讲话的说话人在整段对话中的立场是什么？请选择最符合的一项。",
           "question_type": "time_index",
           "options": [
-            "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
-            "B. Speaker A: Has their own views on store management; Speaker B: Has a different opinion on staffing arrangements.",
-            "C. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-            "D. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit."
+            "A. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+            "B. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。",
+            "C. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+            "D. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。"
           ],
           "answer": "D",
-          "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
+          "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
           "rationale": [
-            "wrong_speaker",
-            "unknown",
             "hallucination",
+            "unknown",
+            "wrong_speaker",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What are the respective stances of the speaker who said, 'It's sad enough that something like that happened to her,' and the speaker who said, 'How can we let it be ruined by a dead branch?' Please choose the most fitting option.",
+          "question": "音频中说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人以及说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场是什么？请选择最符合的一项。",
           "question_type": "transcript_index",
           "options": [
-            "A. Speaker A: On firing Hana: firmly against it, believing the employee should be protected; Speaker B: On firing Hana: strongly in favor, believing it's in the store's best interest.",
-            "B. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-            "C. Speaker A: On firing Hana: in strong support, believing it's for the store's benefit; Speaker B: On firing Hana: in strong opposition, believing the employee should be protected.",
-            "D. Speaker A: Has a personal opinion on store management; Speaker B: Has a different opinion on personnel arrangements."
+            "A. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+            "B. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。",
+            "C. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+            "D. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。"
           ],
           "answer": "A",
-          "answer_text": "Speaker A: On firing Hana: firmly against it, believing the employee should be protected; Speaker B: On firing Hana: strongly in favor, believing it's in the store's best interest.",
+          "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
           "rationale": [
             "ground_truth",
-            "hallucination",
+            "unknown",
             "wrong_speaker",
-            "unknown"
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What are the respective stances of the 1st speaker and the 2nd speaker in the entire dialogue? Please choose the most suitable option.",
+          "question": "整段对话中第 1 个发言的说话人和第 2 个发言的说话人，在对话中的立场分别是什么？请选择最符合的一项。",
           "question_type": "speaker_index",
           "options": [
-            "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
-            "B. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements.",
-            "C. Speaker A: Strongly opposes firing Hana, believing the employee should be protected; Speaker B: Strongly supports firing Hana, believing it's for the store's benefit.",
-            "D. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees."
+            "A. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+            "B. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+            "C. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+            "D. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。"
           ],
           "answer": "C",
-          "answer_text": "Speaker A: Strongly opposes firing Hana, believing the employee should be protected; Speaker B: Strongly supports firing Hana, believing it's for the store's benefit.",
-          "rationale": [
-            "wrong_speaker",
-            "unknown",
-            "ground_truth",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "What are the respective stances of the speaker who said, 'It's already sad enough for her that something like that happened,' between 47.16s and 49.72s, and the speaker who said, 'How can we let a dead branch ruin it?' between 56.18s and 60.82s? Please choose the most fitting option.",
-          "question_type": "complex_index",
-          "options": [
-            "A. Speaker A: On firing Hana: expresses understanding, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-            "B. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
-            "C. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements.",
-            "D. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing employees should be protected."
-          ],
-          "answer": "B",
-          "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
+          "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
           "rationale": [
             "hallucination",
+            "wrong_speaker",
             "ground_truth",
-            "unknown",
-            "wrong_speaker"
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "How do the stances of the two speakers evolve throughout the conversation? Please select the most fitting option.",
+          "question": "音频中第 25.79 秒到第 31.19 秒说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人与第 12.249 秒到第 17.409 秒说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场是什么？请选择最符合的一项。",
+          "question_type": "complex_index",
+          "options": [
+            "A. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。",
+            "B. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+            "C. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+            "D. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。"
+          ],
+          "answer": "D",
+          "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+          "rationale": [
+            "unknown",
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "下面音频中的两个说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
           "question_type": "no_index",
           "options": [
-            "A. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-            "B. Speaker A: Regarding firing Hana: shifts from 【hesitant】 to 【strongly opposed】; Speaker B: Regarding firing Hana: shifts from 【strongly supportive】 to 【wavering】.",
-            "C. Speaker A: Regarding firing Hana: wavers between emotion and reason; Speaker B: Regarding firing Hana: the two sides had an in-depth discussion on the matter.",
-            "D. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests."
+            "A. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+            "B. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+            "C. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+            "D. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。"
           ],
-          "answer": "D",
-          "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+          "answer": "A",
+          "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
           "rationale": [
+            "ground_truth",
             "wrong_speaker",
-            "hallucination",
             "unknown",
-            "ground_truth"
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "How do the stances of the speaker from 47.16s to 49.72s and the speaker from 56.18s to 60.82s evolve throughout the conversation? Please select the best-fitting option.",
+          "question": "音频中第 25.79 秒到第 31.19 秒讲话的说话人以及在第 12.249 秒到第 17.409 秒讲话的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
           "question_type": "time_index",
           "options": [
-            "A. Speaker A: On firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: On firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-            "B. Speaker A: On firing Hana: shifts from 【Hesitation】 to 【Firm opposition】; Speaker B: On firing Hana: shifts from 【Firm support】 to 【Wavering】.",
-            "C. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-            "D. Speaker A: On firing Hana: wavers between emotion and reason; Speaker B: On firing Hana: the two sides had an in-depth discussion on the matter."
-          ],
-          "answer": "A",
-          "answer_text": "Speaker A: On firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: On firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-          "rationale": [
-            "ground_truth",
-            "hallucination",
-            "wrong_speaker",
-            "unknown"
-          ]
-        },
-        {
-          "question": "How do the stances of the speaker who said, 'She’s already sad enough about what happened to her,' and the speaker who said, 'How can we let it be ruined by a dead branch?' evolve throughout the conversation? Please choose the most fitting option.",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Speaker A: Regarding firing Hana: their stance wavers between emotion and reason; Speaker B: Regarding firing Hana: the two sides had an in-depth discussion on the matter.",
-            "B. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-            "C. Speaker A: Consistently 【Opposed】 to firing Hana, advocating for the employee's protection; Speaker B: Consistently 【Supportive】 of firing Hana, prioritizing the store's interests.",
-            "D. Speaker A: Regarding firing Hana: shifts from 【hesitation】 to 【firm opposition】; Speaker B: Regarding firing Hana: shifts from 【firm support】 to 【wavering】."
-          ],
-          "answer": "C",
-          "answer_text": "Speaker A: Consistently 【Opposed】 to firing Hana, advocating for the employee's protection; Speaker B: Consistently 【Supportive】 of firing Hana, prioritizing the store's interests.",
-          "rationale": [
-            "unknown",
-            "wrong_speaker",
-            "ground_truth",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "How do the respective stances of the first speaker and the second speaker evolve throughout the conversation? Please select the option that fits best.",
-          "question_type": "speaker_index",
-          "options": [
-            "A. Speaker A: Regarding firing Hana: shifts from 【hesitant】 to 【firmly opposed】; Speaker B: Regarding firing Hana: shifts from 【firmly supportive】 to 【wavering】.",
-            "B. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-            "C. Speaker A: On firing Hana: their stance wavers between emotion and reason; Speaker B: On firing Hana: the two parties had an in-depth discussion on the matter.",
-            "D. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection."
+            "A. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。",
+            "B. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+            "C. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+            "D. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。"
           ],
           "answer": "B",
-          "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+          "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
           "rationale": [
             "hallucination",
             "ground_truth",
-            "unknown",
-            "wrong_speaker"
+            "wrong_speaker",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "How do the stances of the speaker who said, 'It's already sad enough for her that something like that happened,' between 47.16s and 49.72s, and the speaker who said, 'How can we let a dead branch ruin it?' between 56.18s and 60.82s, evolve throughout the conversation? Please choose the most fitting option.",
-          "question_type": "complex_index",
+          "question": "音频中说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人以及说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
+          "question_type": "transcript_index",
           "options": [
-            "A. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-            "B. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-            "C. Speaker A: On firing Hana: their stance wavers between emotion and reason; Speaker B: On firing Hana: the two parties held an in-depth discussion on this matter.",
-            "D. Speaker A: Regarding firing Hana: shifts from 【Hesitant】 to 【firmly opposed】; Speaker B: Regarding firing Hana: shifts from 【Firmly supportive】 to 【wavering】."
+            "A. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+            "B. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。",
+            "C. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+            "D. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。"
+          ],
+          "answer": "D",
+          "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+          "rationale": [
+            "unknown",
+            "hallucination",
+            "wrong_speaker",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "整段对话中第 1 个发言的说话人和第 2 个发言的说话人，在对话中的立场变化分别是什么？请选择最符合的一项。",
+          "question_type": "speaker_index",
+          "options": [
+            "A. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+            "B. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。",
+            "C. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+            "D. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。"
           ],
           "answer": "A",
-          "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+          "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
           "rationale": [
             "ground_truth",
+            "hallucination",
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "音频中第 25.79 秒到第 31.19 秒说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人与第 12.249 秒到第 17.409 秒说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
+          "question_type": "complex_index",
+          "options": [
+            "A. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+            "B. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+            "C. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+            "D. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。"
+          ],
+          "answer": "C",
+          "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+          "rationale": [
             "wrong_speaker",
             "unknown",
+            "ground_truth",
             "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+              "start": 25.79,
+              "end": 31.19,
+              "dur": 5.4,
+              "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]

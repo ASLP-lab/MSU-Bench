@@ -1,0 +1,171 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Gender_Identification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_005",
+            "start_time": 12.4,
+            "end_time": 23.2,
+            "transcript": "When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, what is the gender of the speaker?",
+      "question_type": "no_index",
+      "options": [
+        "A. Male",
+        "B. Female",
+        "C. Uncertain gender",
+        "D. Cannot judge (insufficient information to confirm the gender)"
+      ],
+      "answer": "A",
+      "answer_text": "Male",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the gender of the speaker talking from 12.4s to 23.2s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. Female",
+        "B. Male",
+        "C. Gender uncertain",
+        "D. Cannot judge (insufficient information to determine gender)"
+      ],
+      "answer": "B",
+      "answer_text": "Male",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the gender of the speaker who said \"When I asked my colleagues, your bosses, who are the smartest minds in education\" in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Cannot judge (insufficient information to determine the gender)",
+        "B. Female",
+        "C. Male",
+        "D. Gender cannot be determined"
+      ],
+      "answer": "C",
+      "answer_text": "Male",
+      "rationale": [
+        "A. unknown",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the whole conversation, what is the gender of the third speaker that appears?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Uncertain gender",
+        "B. Male",
+        "C. Female",
+        "D. Cannot be judged (insufficient information to determine gender)"
+      ],
+      "answer": "B",
+      "answer_text": "Male",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the gender of the speaker who said \"out of hundreds, we arrived at you, the six of you in this room\" from 12.4s to 23.2s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Male",
+        "B. Female",
+        "C. Cannot be determined (insufficient information to confirm the gender)",
+        "D. Gender is uncertain"
+      ],
+      "answer": "A",
+      "answer_text": "Male",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers are male? (list the speakers) Please select the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the first speaker, the second speaker, the third speaker, the fourth speaker",
+        "B. the first speaker, the second speaker, the third speaker, the fourth speaker, the fifth speaker, the sixth speaker",
+        "C. Unable to judge (insufficient information to determine gender)",
+        "D. the first speaker, the second speaker, the third speaker, the fourth speaker, the fifth speaker"
+      ],
+      "answer": "D",
+      "answer_text": "the first speaker, the second speaker, the third speaker, the fourth speaker, the fifth speaker",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    },
+    {
+      "question": "In the whole audio, how many speakers are male? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 4 speakers",
+        "B. 7 speakers",
+        "C. Cannot judge (the information is insufficient to determine the gender)",
+        "D. 5 speakers"
+      ],
+      "answer": "D",
+      "answer_text": "5 speakers",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Attribute_Recognition-Gender_Identification_spk_a.mp3",
+    "start_time": 12.4,
+    "end_time": 23.2,
+    "duration": 10.8
+  }
+}

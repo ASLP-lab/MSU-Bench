@@ -1,289 +1,463 @@
 {
   "task_id": "accent",
   "level": "level1",
-  "dimension": "Speaker Attributes",
-  "task_name": "Accent Recognition",
+  "dimension": "Speaker Attribute Recognition (SAR)",
+  "task_name": "Accent Identification (AI)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Bumblebee (2018)",
+      "source": "big shots funeral 2001",
+      "video_folder": "big_shots_funeral_2001_part003",
+      "full_audio": {
+        "src": "bench_examples/audio/accent/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/accent/en_spk_a.mp3",
-          "start": 320.41,
-          "end": 322.45,
-          "dur": 2.04
+          "src": "bench_examples/audio/accent/en_ref_a.mp3",
+          "start": 91.97,
+          "end": 97.37,
+          "dur": 5.4,
+          "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+          "spk_id": "spk_04",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "Yeah, you're unsuccessful at everything.",
-      "spk_b_transcript": "You sound like a little bumblebee. I'm gonna call you that from now on. Bumblebee.",
+      "spk_a_transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+      "spk_b_transcript": "You believe me, when I tell you I got nothing but respect for you.",
       "qa": [
         {
-          "question": "What is the speaker's accent in the audio?",
+          "question": "What accent does the speaker have in the following single-speaker audio?",
           "question_type": "no_index",
           "options": [
-            "A. General American English",
-            "B. British English accent",
-            "C. Southern American accent",
-            "D. The accent is not obvious and cannot be determined."
+            "A. British English accent",
+            "B. New York accent",
+            "C. General American English accent",
+            "D. Indistinct accent, cannot be determined."
           ],
           "answer": "C",
-          "answer_text": "Southern American accent",
+          "answer_text": "General American English Accent",
           "rationale": [
-            "wrong_speaker",
             "hallucination",
+            "wrong_speaker",
             "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/en_ref_a.mp3",
+              "start": 91.97,
+              "end": 97.37,
+              "dur": 5.4,
+              "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Which of the following is closest to the speaker's accent in the audio from 320.41 to 322.45 seconds?",
+          "question": "Which of the following does the speaker's accent in the audio from 91.971 seconds to 97.371 seconds most closely resemble?",
           "question_type": "time_index",
           "options": [
-            "A. British accent",
-            "B. Southern American accent",
-            "C. General American English",
-            "D. The accent is not obvious and cannot be determined."
+            "A. New York area English accent",
+            "B. General American English Accent",
+            "C. British English accent",
+            "D. Accent not obvious, cannot determine."
           ],
           "answer": "B",
-          "answer_text": "Southern American accent",
+          "answer_text": "General American accent",
           "rationale": [
-            "hallucination",
-            "ground_truth",
             "wrong_speaker",
+            "ground_truth",
+            "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/en_ref_a.mp3",
+              "start": 91.97,
+              "end": 97.37,
+              "dur": 5.4,
+              "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Which of the following best describes the accent of the speaker who says, “you're unsuccessful at everything”?",
+          "question": "The accent of the speaker who says “that's the whole point of me scrapping it” in the audio is closest to which of the following?",
           "question_type": "transcript_index",
           "options": [
-            "A. General American English",
-            "B. The accent is not obvious and cannot be determined.",
-            "C. Southern American accent",
-            "D. British English accent"
+            "A. General American English accent",
+            "B. British English accent",
+            "C. New York area English accent",
+            "D. The accent is not obvious, cannot be determined."
           ],
-          "answer": "C",
-          "answer_text": "Southern American accent",
+          "answer": "A",
+          "answer_text": "General American accent",
           "rationale": [
-            "wrong_speaker",
-            "unknown",
             "ground_truth",
-            "hallucination"
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/en_ref_a.mp3",
+              "start": 91.97,
+              "end": 97.37,
+              "dur": 5.4,
+              "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What is the accent of the third speaker in the conversation?",
+          "question": "What accent is used by the second speaker in the conversation throughout the entire audio? Speaker indexing starts from the first speaker.",
           "question_type": "speaker_index",
           "options": [
-            "A. General American English",
+            "A. General American English accent",
             "B. Australian English accent",
-            "C. The accent is not obvious and cannot be determined.",
-            "D. Southern American accent"
+            "C. The accent isn't distinct, so it's impossible to tell.",
+            "D. New York regional English accent"
           ],
           "answer": "D",
-          "answer_text": "Southern American accent",
+          "answer_text": "New York English accent",
           "rationale": [
             "wrong_speaker",
             "hallucination",
             "unknown",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "What is the accent of the female speaker who says “you're unsuccessful at everything” between 320.41 and 322.45 seconds?",
+          "question": "Which of the following accents is closest to that of the male speaker who said “that's the whole point of me scrapping it” between 91.971 and 97.371 seconds?",
           "question_type": "complex_index",
           "options": [
             "A. The accent is not obvious and cannot be determined.",
-            "B. General American English",
-            "C. Southern American accent",
-            "D. British accent"
+            "B. British English accent",
+            "C. New York area English accent",
+            "D. General American English Accent"
           ],
-          "answer": "C",
-          "answer_text": "Southern American accent",
+          "answer": "D",
+          "answer_text": "General American English accent",
           "rationale": [
             "unknown",
+            "hallucination",
             "wrong_speaker",
-            "ground_truth",
-            "hallucination"
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/en_ref_a.mp3",
+              "start": 91.97,
+              "end": 97.37,
+              "dur": 5.4,
+              "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+              "spk_id": "spk_04",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "Which speakers in the audio have a Southern American accent? (Please answer in order of appearance)",
+          "question": "In the entire audio, which speakers use a General American English accent? (Answer in order of speaker appearance) Please select the one that best fits. Speaker indexing starts from the first speaker.",
           "question_type": "reverse_retrival",
           "options": [
-            "A. The third speaker",
-            "B. The second speaker, the third speaker",
-            "C. The third speaker, the fourth speaker",
-            "D. The accent is not obvious and cannot be determined."
+            "A. The first speaker",
+            "B. The first speaker and the second speaker",
+            "C. The first speaker, the third speaker",
+            "D. Accent not obvious, unable to determine."
           ],
           "answer": "C",
-          "answer_text": "The third speaker, the fourth speaker",
+          "answer_text": "The first speaker, the third speaker",
           "rationale": [
             "wrong_speaker",
             "hallucination",
             "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "How many speakers in the audio have a Southern American accent?",
+          "question": "How many speakers with a General American accent are there in the entire audio clip? Please select the most suitable option.",
           "question_type": "reverse_count",
           "options": [
-            "A. 1",
-            "B. 4",
-            "C. 2",
-            "D. The accent is not obvious and cannot be determined."
+            "A. 3",
+            "B. 2",
+            "C. 1",
+            "D. Accent not distinct, unable to determine."
           ],
-          "answer": "C",
+          "answer": "B",
           "answer_text": "2",
           "rationale": [
-            "wrong_speaker",
             "hallucination",
             "ground_truth",
+            "wrong_speaker",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "He Bi (何必)",
+      "source": "detective zhugeli",
+      "video_folder": "detective_zhugeli_part018",
+      "full_audio": {
+        "src": "bench_examples/audio/accent/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/accent/zh_spk_a.mp3",
-          "start": 29.72,
-          "end": 31.52,
-          "dur": 1.8
+          "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+          "start": 18.89,
+          "end": 22.61,
+          "dur": 3.72,
+          "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+          "spk_id": "spk_06",
+          "spk_index": "spk_2"
         }
       },
-      "spk_a_transcript": "I've been massaged a lot, so I know a little bit too.",
-      "spk_b_transcript": "I never rely on those things.",
+      "spk_a_transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+      "spk_b_transcript": "听我说听我说，那旋转餐厅我没有去嘛，你生气我知道，所以我特地买了巧克力来给你的嘛。",
       "qa": [
         {
-          "question": "In this audio of a single speaker, what is the speaker's accent?",
+          "question": "下面单人讲话音频中，说话人使用了什么口音？",
           "question_type": "no_index",
           "options": [
-            "A. Mandarin with a Minnan accent",
-            "B. Mandarin with a Cantonese accent",
-            "C. Mandarin with a Northeastern accent",
-            "D. The accent is not obvious and cannot be determined."
+            "A. 台湾口音普通话",
+            "B. 粤语口音普通话",
+            "C. 东北口音普通话",
+            "D. 口音不明显，无法判断"
           ],
           "answer": "B",
-          "answer_text": "Cantonese-accented Mandarin",
+          "answer_text": "粤语口音普通话",
           "rationale": [
             "hallucination",
             "ground_truth",
             "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+              "start": 18.89,
+              "end": 22.61,
+              "dur": 3.72,
+              "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+              "spk_id": "spk_06",
+              "spk_index": "spk_2"
+            }
           ]
         },
         {
-          "question": "The speaker's accent between 29.72 and 31.52 seconds is closest to which of the following?",
+          "question": "音频中在第 18.89 秒到第 22.61 秒的说话人口音最接近以下哪一种？",
           "question_type": "time_index",
           "options": [
-            "A. Mandarin with a Sichuan accent",
-            "B. Mandarin with a Taiwanese accent",
-            "C. Mandarin with a Cantonese accent",
-            "D. The accent is not distinct and cannot be determined."
+            "A. 东北口音普通话",
+            "B. 口音不明显，无法判断",
+            "C. 粤语口音普通话",
+            "D. 四川口音普通话"
           ],
           "answer": "C",
-          "answer_text": "Cantonese-accented Mandarin",
+          "answer_text": "粤语口音普通话",
           "rationale": [
             "hallucination",
-            "hallucination",
-            "ground_truth",
-            "unknown"
-          ]
-        },
-        {
-          "question": "The accent of the speaker who said 'I've been massaged a lot' is closest to which of the following?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Mandarin with a Wu accent",
-            "B. Mandarin with a Shandong accent",
-            "C. The accent is not distinct enough to tell.",
-            "D. Mandarin with a Cantonese accent"
-          ],
-          "answer": "D",
-          "answer_text": "Cantonese-accented Mandarin",
-          "rationale": [
-            "hallucination",
-            "hallucination",
-            "unknown",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "What is the accent of Speaker 2 in the audio?",
-          "question_type": "speaker_index",
-          "options": [
-            "A. Mandarin with a Hunan accent",
-            "B. Mandarin with a Cantonese accent",
-            "C. Mandarin with a Beijing accent",
-            "D. The accent is not obvious and cannot be determined."
-          ],
-          "answer": "B",
-          "answer_text": "Cantonese-accented Mandarin",
-          "rationale": [
-            "hallucination",
-            "ground_truth",
-            "hallucination",
-            "unknown"
-          ]
-        },
-        {
-          "question": "The accent of the male speaker who said 'I know a little bit too' between 29.72 and 31.52 seconds is closest to which of the following?",
-          "question_type": "complex_index",
-          "options": [
-            "A. Singaporean-accented Mandarin",
-            "B. The accent is not distinct and cannot be determined.",
-            "C. Mandarin with a Henan accent",
-            "D. Mandarin with a Cantonese accent"
-          ],
-          "answer": "D",
-          "answer_text": "Cantonese-accented Mandarin",
-          "rationale": [
-            "hallucination",
-            "unknown",
-            "hallucination",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "Which speakers in the audio speak Mandarin with a Cantonese accent? (Please select the option that lists them in order of appearance.)",
-          "question_type": "reverse_retrival",
-          "options": [
-            "A. Speaker 1, Speaker 2, Speaker 3",
-            "B. There is no obvious accent; it is impossible to determine.",
-            "C. Speaker 1, Speaker 2, Speaker 3, Speaker 4",
-            "D. Speaker 1, Speaker 5"
-          ],
-          "answer": "C",
-          "answer_text": "Speaker 1, Speaker 2, Speaker 3, Speaker 4",
-          "rationale": [
-            "wrong_speaker",
             "unknown",
             "ground_truth",
             "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+              "start": 18.89,
+              "end": 22.61,
+              "dur": 3.72,
+              "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+              "spk_id": "spk_06",
+              "spk_index": "spk_2"
+            }
           ]
         },
         {
-          "question": "How many speakers in the audio speak Mandarin with a Cantonese accent?",
-          "question_type": "reverse_count",
+          "question": "音频中说过“你们要说第几名才行”的说话人口音最接近以下哪一种？",
+          "question_type": "transcript_index",
           "options": [
-            "A. 1",
-            "B. 3",
-            "C. 4",
-            "D. The accent is not obvious; cannot be determined."
+            "A. 粤语口音普通话",
+            "B. 口音不明显，无法判断",
+            "C. 台湾口音普通话",
+            "D. 东北口音普通话"
           ],
-          "answer": "C",
-          "answer_text": "4",
+          "answer": "A",
+          "answer_text": "粤语口音普通话",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "hallucination",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+              "start": 18.89,
+              "end": 22.61,
+              "dur": 3.72,
+              "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+              "spk_id": "spk_06",
+              "spk_index": "spk_2"
+            }
+          ]
+        },
+        {
+          "question": "在整段音频中，对话里第 2 个出现的说话人使用了什么口音？",
+          "question_type": "speaker_index",
+          "options": [
+            "A. 口音不明显，无法判断",
+            "B. 东北口音普通话",
+            "C. 台湾口音普通话",
+            "D. 粤语口音普通话"
+          ],
+          "answer": "D",
+          "answer_text": "粤语口音普通话",
+          "rationale": [
+            "unknown",
+            "hallucination",
+            "hallucination",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "在第 18.89 秒到第 22.61 秒说过“你们要说第几名才行”的女性说话人，其口音最接近以下哪一种？",
+          "question_type": "complex_index",
+          "options": [
+            "A. 口音不明显，无法判断",
+            "B. 粤语口音普通话",
+            "C. 四川口音普通话",
+            "D. 东北口音普通话"
+          ],
+          "answer": "B",
+          "answer_text": "粤语口音普通话",
+          "rationale": [
+            "unknown",
+            "ground_truth",
+            "hallucination",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+              "start": 18.89,
+              "end": 22.61,
+              "dur": 3.72,
+              "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+              "spk_id": "spk_06",
+              "spk_index": "spk_2"
+            }
+          ]
+        },
+        {
+          "question": "在整段音频中，使用粤语口音普通话的说话人有哪些？（用 说话人出现顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
+          "question_type": "reverse_retrival",
+          "options": [
+            "A. 第一个说话人、第二个说话人、第三个说话人、第四个说话人",
+            "B. 第二个说话人、第三个说话人",
+            "C. 口音不明显，无法判断",
+            "D. 第一个说话人、第二个说话人"
+          ],
+          "answer": "B",
+          "answer_text": "第二个说话人、第三个说话人",
           "rationale": [
             "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "在整段音频中，使用粤语口音普通话的说话人一共有几个？请选择最符合的一项。",
+          "question_type": "reverse_count",
+          "options": [
+            "A. 1 个",
+            "B. 4 个",
+            "C. 2 个",
+            "D. 口音不明显，无法判断"
+          ],
+          "answer": "C",
+          "answer_text": "2 个",
+          "rationale": [
             "wrong_speaker",
+            "hallucination",
             "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/accent/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]

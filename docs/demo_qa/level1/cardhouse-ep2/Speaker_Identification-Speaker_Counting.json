@@ -1,0 +1,81 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker_Counting",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_001",
+            "start_time": 3.9,
+            "end_time": 6.3,
+            "transcript": "This is major reform, like a complete overhaul.",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Young Adult",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_002",
+            "start_time": 6.7,
+            "end_time": 8.1,
+            "transcript": "That would usually take months.",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Young Adult",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "How many distinct speakers are there in total in this audio clip?",
+      "question_type": "speech_index",
+      "options": [
+        "A. 4 speakers",
+        "B. 5 speakers",
+        "C. 10 speakers",
+        "D. Cannot be determined (insufficient information)"
+      ],
+      "answer": "B",
+      "answer_text": "5 speakers",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "How many distinct speakers in total appear during the period from 3s to 10s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. 7 speakers",
+        "B. 2 speakers",
+        "C. 3 speakers",
+        "D. Cannot be determined (insufficient information)"
+      ],
+      "answer": "C",
+      "answer_text": "3 speakers",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker_Counting_spk_a.mp3",
+    "start_time": 3.9,
+    "end_time": 6.3,
+    "duration": 2.4
+  }
+}

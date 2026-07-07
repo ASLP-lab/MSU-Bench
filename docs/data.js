@@ -46,16 +46,16 @@ window.MSU_DATA = {
     level2: [
       {
         id: 'emotion_interaction',
-        name: 'Emotion Interaction',
-        nameCN: '情感交互',
+        name: 'Emotion Interaction Reasoning',
+        nameCN: '多说话人情感交互',
         description: 'Analyze emotional dynamics and influence between speakers',
         icon: '⚡'
       },
       {
         id: 'context',
-        name: 'Context Reasoning',
-        nameCN: '背景推理',
-        description: 'Infer conversational context and speaker relationships',
+        name: 'Background Inference',
+        nameCN: '对话背景推理',
+        description: 'Infer dialogue background and situational context from multi-speaker evidence',
         icon: '🧩'
       },
       {
@@ -73,8 +73,7 @@ window.MSU_DATA = {
     { id: 'time_index', name: 'Time Index', description: 'Target speaker specified by time range' },
     { id: 'transcript_index', name: 'Transcript Index', description: 'Target speaker identified via quoted text' },
     { id: 'speaker_index', name: 'Speaker Index', description: 'Target speaker by appearance order' },
-    { id: 'complex_index', name: 'Complex Index', description: 'Combined multiple cues for speaker localization' },
-    { id: 'type_text', name: 'Context Reasoning', description: 'Dialogue context and scene understanding' }
+    { id: 'complex_index', name: 'Complex Index', description: 'Combined multiple cues for speaker localization' }
   ],
 
   paperInfo: {

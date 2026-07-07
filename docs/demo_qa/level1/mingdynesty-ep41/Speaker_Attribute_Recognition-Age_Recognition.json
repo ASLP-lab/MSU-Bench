@@ -1,0 +1,171 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Age_Recognition",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_050",
+            "start_time": 266.1,
+            "end_time": 274.0,
+            "transcript": "包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "adult (30 < age < 59)",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_017",
+            "start_time": 70.7,
+            "end_time": 72.6,
+            "transcript": "你是英雄是好汉就敢做敢认。",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "adult (30 < age < 59)",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, which of the following options is the speaker's age group closest to?",
+      "question_type": "no_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. teenager (13 < age < 17)",
+        "C. unable to judge (the information is insufficient to determine the age group)",
+        "D. young adult (18 < age < 29)"
+      ],
+      "answer": "A",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest to the age group of the speaker talking from 266.1s to 274.0s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. Cannot judge (insufficient information to determine the age group)",
+        "B. adult (30 < age < 59)",
+        "C. senior adult (age > 60)",
+        "D. child (age < 12)"
+      ],
+      "answer": "B",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "Which of the following age ranges is the closest to the age group of the speaker who said the line \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. teenager (13 < age < 17)",
+        "B. adult (30 < age < 59)",
+        "C. Cannot be judged (the information is insufficient to determine the age range)",
+        "D. senior adult (age > 60)"
+      ],
+      "answer": "B",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. unknown",
+        "D. wrong speaker"
+      ]
+    },
+    {
+      "question": "Which of the following age groups is the closest to the age range of the male speaker who said the line \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" from 266.1s to 274.0s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. young adult (18 < age < 29)",
+        "B. Unable to judge (insufficient information to determine the age group)",
+        "C. adult (30 < age < 59)",
+        "D. child (age < 12)"
+      ],
+      "answer": "C",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. hallucination",
+        "B. unknown",
+        "C. ground truth",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the whole conversation, which of the following options is the age group of the first speaker closest to?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. senior adult (age > 60)",
+        "C. Cannot be judged (insufficient information to determine the age group)",
+        "D. teenager (13 < age < 17)"
+      ],
+      "answer": "A",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers belong to the age group of adult (30 < age < 59)? (Answer according to the global speaker order) Please choose the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the first speaker, the second speaker, the third speaker",
+        "B. the first speaker, the second speaker",
+        "C. Cannot judge (insufficient information to determine the age group)",
+        "D. the third speaker, the fourth speaker, the fifth speaker"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker, the second speaker, the third speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the entire audio, how many speakers fall into the age group of adult (30 < age < 59) in total? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 2 speakers",
+        "B. 3 speakers",
+        "C. Cannot be determined (insufficient information to confirm the age group)",
+        "D. 5 speakers"
+      ],
+      "answer": "B",
+      "answer_text": "3 speakers",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Attribute_Recognition-Age_Recognition_spk_a.mp3",
+    "start_time": 266.1,
+    "end_time": 274.0,
+    "duration": 7.9
+  }
+}

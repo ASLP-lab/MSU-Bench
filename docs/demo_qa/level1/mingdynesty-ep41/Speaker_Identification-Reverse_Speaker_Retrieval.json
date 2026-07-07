@@ -1,0 +1,63 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Identification-Reverse_Speaker_Retrieval",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_050",
+            "start_time": 266.1,
+            "end_time": 274.0,
+            "transcript": "包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_055",
+            "start_time": 284.2,
+            "end_time": 288.8,
+            "transcript": "臣是嘉靖二十一年的进士，是天子的门生。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "Which of the following statements were spoken by the first speaker? Please select the most appropriate option.\nCandidate statements:\n1) Then I, the Emperor, will make it clear: you are the Minister of the Ministry of Household Affairs,\n2) Which department is Hai Rui the chief official of?\n3) Who asked you to get it?\n4) Your behind-the-scenes accomplice is Xu Jie, and I, the Emperor, have long known the whole truth,\n5) I became an imperial scholar in the 21st year of Jiajing, and am the student of the Son of Heaven.\n6) You still insist that this is a celebratory memorial now.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. 1,2,3,6",
+        "B. 1,2,5,6",
+        "C. 1,2,3,4",
+        "D. Unable to judge (insufficient information to confirm)"
+      ],
+      "answer": "A",
+      "answer_text": "1,2,3,6",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Reverse_Speaker_Retrieval_spk_a.mp3",
+    "start_time": 266.1,
+    "end_time": 274.0,
+    "duration": 7.9
+  }
+}

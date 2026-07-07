@@ -1,0 +1,171 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Gender_Identification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_027",
+            "start_time": 134.3,
+            "end_time": 137.9,
+            "transcript": "你就不想听他如何说你是大逆不道吗？",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_030",
+            "start_time": 147.6,
+            "end_time": 155.0,
+            "transcript": "海瑞是臣的属下，他欺君，等同于臣欺君，此臣罪一。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, what is the gender of the speaker?",
+      "question_type": "no_index",
+      "options": [
+        "A. Male",
+        "B. Female",
+        "C. Uncertain gender",
+        "D. Cannot judge (insufficient information to determine gender)"
+      ],
+      "answer": "A",
+      "answer_text": "Male",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the gender of the speaker talking from 134.3s to 137.9s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. Female",
+        "B. Male",
+        "C. Cannot judge (insufficient information to determine the gender)",
+        "D. Gender is uncertain"
+      ],
+      "answer": "B",
+      "answer_text": "Male",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "What is the gender of the speaker who uttered the line 'Don't you want to hear how he accuses you of being treasonous?' in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Male",
+        "B. Female",
+        "C. Cannot judge (insufficient information to determine the gender)",
+        "D. The gender is uncertain"
+      ],
+      "answer": "A",
+      "answer_text": "Male",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the whole conversation, what is the gender of the first speaker that appears in the audio?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Female",
+        "B. Uncertain gender",
+        "C. Male",
+        "D. Cannot be judged (the information is insufficient to determine the gender)"
+      ],
+      "answer": "C",
+      "answer_text": "Male",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the gender of the speaker who said \"你就不想听他如何说你是大逆不道吗？\" from 134.3s to 137.9s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Cannot be judged (insufficient information to determine the gender)",
+        "B. Male",
+        "C. Female",
+        "D. Gender cannot be determined"
+      ],
+      "answer": "B",
+      "answer_text": "Male",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers are male? (list the speakers) Please choose the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the first speaker, the second speaker, the third speaker, the fourth speaker",
+        "B. the first speaker, the second speaker, the third speaker, the fourth speaker, the fifth speaker",
+        "C. Unable to judge (insufficient information to determine the gender)",
+        "D. the first speaker, the second speaker, the third speaker, the fourth speaker, the fifth speaker, the sixth speaker"
+      ],
+      "answer": "B",
+      "answer_text": "the first speaker, the second speaker, the third speaker, the fourth speaker, the fifth speaker",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. unknown",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the entire audio, how many male speakers are there in total? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 3",
+        "B. 7",
+        "C. Cannot judge (insufficient information to determine the gender)",
+        "D. 5"
+      ],
+      "answer": "D",
+      "answer_text": "5",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. unknown",
+        "D. ground truth"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Attribute_Recognition-Gender_Identification_spk_a.mp3",
+    "start_time": 134.3,
+    "end_time": 137.9,
+    "duration": 3.6
+  }
+}

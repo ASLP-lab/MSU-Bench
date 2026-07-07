@@ -1,0 +1,183 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker-specific_Viewpoint_Summarization",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_017",
+            "start_time": 70.7,
+            "end_time": 72.6,
+            "transcript": "你是英雄是好汉就敢做敢认。",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_025",
+            "start_time": 102.0,
+            "end_time": 105.3,
+            "transcript": "主子，海瑞就是这个赵贞吉指使的。",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Happy",
+            "accent": "unknown"
+          },
+          {
+            "seg_id": "seg_028",
+            "start_time": 142.4,
+            "end_time": 142.8,
+            "transcript": "是。",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_005",
+            "start_time": 17.3,
+            "end_time": 19.7,
+            "transcript": "海瑞是臣主管的户部主事。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fear",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the overall stance of the speaker who said \"你是英雄是好汉就敢做敢认。\" in the whole conversation?",
+      "question_type": "transcript_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. Rebukes Zhao Zhenji for refusing to take responsibility when encountering problems, and advocates a thorough investigation of all relevant personnel behind the Hai Rui incident",
+        "B. Always defends Zhao Zhenji, and believes that he has no crime of deceiving the emperor",
+        "C. Considers the remarks calling him a hero and a true man to be treasonous, and pleads with the emperor to withdraw such improper remarks",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "Rebukes Zhao Zhenji for refusing to take responsibility when encountering problems, and advocates a thorough investigation of all relevant personnel behind the Hai Rui incident",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What changes does the stance of the speaker who once said \"你是英雄是好汉就敢做敢认。\" undergo throughout the whole conversation?",
+      "question_type": "transcript_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. From angrily rebuking Zhao Zhenji for failing to take responsibility → voluntarily requests the Emperor to order a thorough investigation into relevant personnel → respectfully complies with the Emperor's instructions afterwards",
+        "B. From refusing to plead guilty from the start → voluntarily takes full responsibility for all charges → finally states that he only has the Emperor as his backer",
+        "C. From being amiable to all people at the beginning → consistently opposes the thorough investigation of personnel related to Hai Rui → firmly stands on Zhao Zhenji's side in the end",
+        "D. It cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "From angrily rebuking Zhao Zhenji for failing to take responsibility, to voluntarily requesting the Emperor to order a thorough investigation into relevant personnel, and then to respectfully complying with the Emperor's instructions afterwards",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the overall stance of the speaker in the following single-speaker audio clip throughout the whole conversation?",
+      "question_type": "no_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. Voluntarily take responsibility for the charges related to the Hai Rui incident, do not implicate other court officials, and clearly state that he takes the emperor as the only mentor and patron, and never forms any private faction",
+        "B. Claim that he is the mastermind behind Hai Rui's serious crime of defying the sovereign, and demand the emperor to execute him immediately",
+        "C. Intend to confess all his associated allies in the imperial court related to the Hai Rui incident, and cooperate with the emperor to thoroughly investigate all relevant personnel",
+        "D. Unable to judge"
+      ],
+      "answer": "A",
+      "answer_text": "Voluntarily take responsibility for the charges related to the Hai Rui incident, do not implicate other court officials, and explicitly state that he regards only the emperor as his mentor and backer, and has no private faction at all",
+      "rationale": [
+        "A. ground truth, the speaker explicitly admitted that he bears two counts of responsibility for the Hai Rui incident, and later publicly stated that all his official promotions came from the emperor's promotion, he has no private faction and will not implicate other court officials, which is his core stance throughout the whole process",
+        "B. wrong speaker, this statement is the demand of another speaker in the conversation who tries to coerce the target speaker to plead guilty, it is not the target speaker's own stance, which mismatches the view of other speakers",
+        "C. hallucination, the conversation has no content mentioning that the speaker voluntarily confesses his accomplices at all, which is fabricated false information",
+        "D. unknown, there is clear evidence from multiple segments of the conversation to support the speaker's core stance, so it does not belong to the situation that cannot be judged"
+      ]
+    },
+    {
+      "question": "What is the change of stance of the speaker talking from 17.3s to 19.7s in the audio throughout the whole conversation?",
+      "question_type": "time_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. From being frightened and flustered when facing the emperor's inquiry at the beginning, passively responding and shirking responsibility, to gradually becoming resolute and tough afterwards, voluntarily taking responsibility to clear his connection with other court officials, and fully demonstrating his loyalty by standing on the side of imperial power",
+        "B. He tried to shift all the blame to his subordinate Hai Rui from the very beginning, and finally had to admit that he was the mastermind behind the scenes under pressure",
+        "C. He initially took the initiative to expose the charges of other involved court officials, then later retracted his confession and refused to admit his previous statements",
+        "D. Cannot be judged"
+      ],
+      "answer": "A",
+      "answer_text": "From being frightened and flustered when facing the emperor's inquiry at the beginning, passively responding and shirking responsibility, to gradually becoming resolute and tough afterwards, voluntarily taking responsibility to clear his connection with other court officials, and fully demonstrating his loyalty by standing on the side of imperial power",
+      "rationale": [
+        "A. ground truth, The speaker was full of fear and dared not speak actively in the early stage of response, and his emotion gradually turned tough later. He publicly refuted Chen Hong's remarks, voluntarily took the blame and showed his loyalty to the emperor, which conforms to the only verifiable change path",
+        "B. wrong speaker, This content is the false remarks deliberately framed by other eunuchs in the conversation against the target speaker, which is not the real change track of the target speaker, and belongs to misattributing the demands of other speakers",
+        "C. hallucination, In the conversation, the speaker never made any statement of voluntarily exposing other court officials throughout the whole process, which is a completely fabricated false change",
+        "D. unknown, The changes of the speaker's emotion and attitude are supported by multiple explicit speeches, which does not belong to the situation that cannot be judged"
+      ]
+    },
+    {
+      "question": "What is the overall stance of the speaker who said \"你是英雄是好汉就敢做敢认。\" from 17.3s to 19.7s in the audio throughout the whole conversation?",
+      "question_type": "complex_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. Takes the initiative to assume all responsibility related to the Hai Rui incident, does not implicate other court officials, explicitly states that he only takes the Emperor as his mentor and backer, and has no private faction at all",
+        "B. Believes that Hai Rui's submission of remonstrance to the throne is a just act, and publicly supports all opinions that Hai Rui put forward to the Emperor",
+        "C. Unites most officials in the imperial court to collectively pressure the Emperor, demanding that Hai Rui be given a lenient punishment",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "Takes the initiative to assume all responsibility related to the Hai Rui incident, does not implicate other court officials, explicitly states that he only takes the Emperor as his mentor and backer, and has no private faction at all",
+      "rationale": [
+        "A. ground truth, the speaker clearly admitted that he bore two counts of responsibility for the Hai Rui incident, and later publicly stated that all his official promotions came from the Emperor's special promotion. Having no private faction and not implicating other court officials is his core stance that runs through the whole conversation",
+        "B. wrong speaker, the statement that the target speaker believed Hai Rui's act was just is content deliberately framed by other speakers, not the stance of the target speaker, which is a wrong matching of other speakers' views",
+        "C. hallucination, the plot that the speaker united other officials to put pressure on the Emperor is not mentioned at all in the conversation, which is fabricated false content",
+        "D. wrong, there is clear multi-segment dialogue evidence supporting the core stance of the speaker, so it does not belong to the situation that cannot be judged"
+      ]
+    },
+    {
+      "question": "Throughout the whole conversation, how does the stance of the second speaker that appears change during the dialogue?",
+      "question_type": "speaker_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. From initially being fearful and flustered when questioned by the emperor, passively responding and shifting blame, to gradually becoming firm and tough later, voluntarily taking responsibility to distance himself from other court officials, and fully showing his loyalty by standing on the side of imperial power",
+        "B. From initially responding calmly and passively, to gradually flying into a rage and losing his mind later, arguing loudly with the emperor in public",
+        "C. From firmly standing on the side of other cabinet court officials at the beginning, to later betraying all his colleagues in exchange for his own chance of survival under pressure",
+        "D. Cannot be judged"
+      ],
+      "answer": "A",
+      "answer_text": "From initially being fearful and flustered when questioned by the emperor, passively responding and shifting blame, to gradually becoming firm and tough later, voluntarily taking responsibility to distance himself from other court officials, and fully showing his loyalty by standing on the side of imperial power",
+      "rationale": [
+        "A. ground truth, This speaker was full of fear and dared not take the initiative to speak in the early stage of response, later his emotion gradually turned tough, he publicly refuted Chen Hong's remarks, voluntarily took the blame to show his loyalty to the emperor, which conforms to the only verifiable change path",
+        "B. wrong speaker, There is no relevant description that this speaker argued with the emperor in public throughout the conversation, and the related behavior belongs to the characteristics of other characters in the dialogue, which is a mismatch of other speakers' behavior trajectories",
+        "C. hallucination, There is no relevant description that this speaker betrayed his colleagues to survive throughout the conversation, which is a completely fabricated and untrue change",
+        "D. unknown, The change of this speaker's emotion and attitude is supported by multiple explicit segments of his speech, which does not belong to the situation that cannot be judged"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker-specific_Viewpoint_Summarization_spk_a.mp3",
+    "start_time": 70.7,
+    "end_time": 72.6,
+    "duration": 1.9
+  }
+}

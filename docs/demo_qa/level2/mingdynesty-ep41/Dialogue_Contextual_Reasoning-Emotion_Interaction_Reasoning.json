@@ -1,0 +1,117 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level2",
+  "task": "Dialogue_Contextual_Reasoning-Emotion_Interaction_Reasoning",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_050",
+            "start_time": 266.1,
+            "end_time": 274.0,
+            "transcript": "包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_054",
+            "start_time": 279.1,
+            "end_time": 282.5,
+            "transcript": "臣不是英雄好汉，臣也没有同党。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the emotion of the speaker (<the first speaker>) who utters the line \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" in the audio when delivering that content? What impact does this emotion exert on other participants in the conversation?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. The emotion is anger/discontent, which makes <the second speaker> hurriedly state that he has no private faction, and all his promotions come from superiors to prove his innocence",
+        "B. The emotion is anger/discontent, which makes <the third speaker> hurriedly state that he has no private faction, and all his promotions come from superiors to prove his innocence",
+        "C. The emotion is calm/neutral, which makes all officials present fall into collective silence immediately and dare not speak",
+        "D. Cannot be determined (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is anger/discontent, which makes <the second speaker> hurriedly state that he has no private faction, and all his promotions come from superiors to prove his innocence",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the following audio, what is the emotion of the speaker? What impact does this emotion have on other people in the whole conversation?",
+      "question_type": "no_index",
+      "options": [
+        "A. The emotion is angry, which makes the second speaker voluntarily clarify that he has no other mentors, backers or associates, and is only loyal to the monarch",
+        "B. The emotion is angry, which makes the third speaker voluntarily admit that the remarks he made before are wrong",
+        "C. The emotion is happy and excited, which makes all the officials present stand out and voluntarily admit that they are associates of the relevant person",
+        "D. Cannot judge (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is angry, which makes the second speaker voluntarily clarify that he has no other mentors, backers or associates, and is only loyal to the monarch",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the emotion of the first speaker talking from 258.5s to 263.9s in the audio? What impact does this emotion have on others during the conversation?",
+      "question_type": "time_index",
+      "options": [
+        "A. The emotion is Angry, which makes the second speaker voluntarily clarify that he has no other mentors, backers or associates, and is only loyal to the monarch",
+        "B. The emotion is Discontent, which makes the fourth speaker and the fifth speaker voluntarily step forward to identify the hidden accomplices behind the scenes",
+        "C. The emotion is Angry, which makes the third speaker voluntarily request the monarch to allow him to interrogate relevant personnel to force them to confess",
+        "D. It cannot be judged (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is Angry, which makes the second speaker voluntarily clarify that he has no other mentors, backers or associates, and is only loyal to the monarch",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the emotion of the speaker (the first speaker) who said the line \"包括你的什么恩师, 什么靠山, 什么同党，是英雄好汉都站出来。\" from 258.5s to 263.9s in the audio when uttering this content? What impact did this emotion have on other people?",
+      "question_type": "complex_index",
+      "options": [
+        "A. The emotion is angry, which makes the second speaker voluntarily clarify that he has no other mentors, backers or accomplices, and is only loyal to the monarch",
+        "B. The emotion is angry, which makes the fourth speaker and the fifth speaker step forward to identify the accomplices behind the scenes",
+        "C. The emotion is calm and neutral, all people stop speaking, keep silent and wait for the monarch's next instruction",
+        "D. Cannot be judged (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is angry, which makes the second speaker voluntarily clarify that he has no other mentors, backers or accomplices, and is only loyal to the monarch",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/mingdynesty-ep41/Dialogue_Contextual_Reasoning-Emotion_Interaction_Reasoning_spk_a.mp3",
+    "start_time": 266.1,
+    "end_time": 274.0,
+    "duration": 7.9
+  }
+}

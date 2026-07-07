@@ -1,0 +1,171 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Emotion_Recognition",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_006",
+            "start_time": 19.9,
+            "end_time": 22.1,
+            "transcript": "海瑞的这个东西是谁拿来的？",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_034",
+            "start_time": 179.3,
+            "end_time": 187.1,
+            "transcript": "海瑞既然备下了棺材愿意伏诛，臣无非也备下一口棺材，伏诛罢了。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, which of the following options is the closest to the speaker's emotion?",
+      "question_type": "no_index",
+      "options": [
+        "A. Anger",
+        "B. Sadness",
+        "C. Surprise",
+        "D. Cannot be judged (the evidence is insufficient to determine the emotion)"
+      ],
+      "answer": "A",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the emotion that most closely matches the speaker talking from 19.9s to 22.1s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. Sadness",
+        "B. Anger",
+        "C. Surprise",
+        "D. Cannot be judged (insufficient evidence to determine the emotion)"
+      ],
+      "answer": "B",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest to the emotion the speaker expressed when uttering the sentence \"海瑞的这个东西是谁拿来的？\" in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Surprise",
+        "B. Sadness",
+        "C. Anger",
+        "D. Cannot be judged (insufficient evidence to confirm the emotion)"
+      ],
+      "answer": "C",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. hallucination",
+        "B. wrong speaker",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following emotions is the closest to the emotion of the speaker who said the sentence \"海瑞的这个东西是谁拿来的？\" from 19.9s to 22.1s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Anger",
+        "B. Surprise",
+        "C. Sadness",
+        "D. Unable to judge (the evidence is insufficient to determine the emotion)"
+      ],
+      "answer": "A",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole conversation, which of the following options is the closest to the emotion of the first appearing speaker? Please start numbering from the first speaker.",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Cannot judge (insufficient evidence to determine the emotion)",
+        "B. Anger",
+        "C. Sadness",
+        "D. Surprise"
+      ],
+      "answer": "B",
+      "answer_text": "Anger",
+      "rationale": [
+        "A. unknown",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. hallucination"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers have ever exhibited the Anger emotion? (Answer according to the global speaker order) Please select the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the first speaker, the second speaker, the third speaker",
+        "B. the first speaker, the third speaker",
+        "C. the first speaker, the second speaker, the third speaker, the fourth speaker",
+        "D. Cannot judge (insufficient evidence to determine the emotion)"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker, the second speaker, the third speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the entire audio, how many speakers that have ever appeared show the emotion of Fear? Please choose the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 3 speakers",
+        "B. 2 speakers",
+        "C. 6 speakers",
+        "D. Cannot judge (insufficient evidence to confirm the emotion)"
+      ],
+      "answer": "A",
+      "answer_text": "3 speakers",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Attribute_Recognition-Emotion_Recognition_spk_a.mp3",
+    "start_time": 19.9,
+    "end_time": 22.1,
+    "duration": 2.2
+  }
+}

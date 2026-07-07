@@ -1,0 +1,171 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Accent_Identification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_004",
+            "start_time": 10.1,
+            "end_time": 12.3,
+            "transcript": "Alright, but think about the process. I mean we can't just change...",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Young Adult",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "Indian English accent"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_009",
+            "start_time": 37.4,
+            "end_time": 40.9,
+            "transcript": "These bullet points reflect the key planks at the center of our bill.",
+            "spk_id": "spk_4",
+            "spk_index": "spk_4",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "American English accent"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, what accent does the speaker use?",
+      "question_type": "no_index",
+      "options": [
+        "A. Indian English accent",
+        "B. American English accent",
+        "C. Australian English accent",
+        "D. Cannot be determined (insufficient information to identify the accent)"
+      ],
+      "answer": "A",
+      "answer_text": "Indian English accent",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following accents is the closest to the speaker's accent from 10.1s to 12.3s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. British English accent",
+        "B. Indian English accent",
+        "C. American English accent",
+        "D. Cannot judge (insufficient information to identify the accent)"
+      ],
+      "answer": "B",
+      "answer_text": "Indian English accent",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following accents is the closest to the accent of the speaker who said \"Alright, but think about the process. I mean we can't just change...\" in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. American English accent",
+        "B. Indian English accent",
+        "C. Singaporean English accent",
+        "D. Cannot judge (insufficient information to identify the accent)"
+      ],
+      "answer": "B",
+      "answer_text": "Indian English accent",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole audio, what accent does the first appearing speaker in the conversation use?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Indian English accent",
+        "B. American English accent",
+        "C. Singapore English accent",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "Indian English accent",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following accents is the closest to the male speaker who said \"Alright, but think about the process\" from 10.1s to 12.3s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. American English accent",
+        "B. Indian English accent",
+        "C. British English accent",
+        "D. Cannot be determined"
+      ],
+      "answer": "B",
+      "answer_text": "Indian English accent",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole conversation, which speakers use Indian English accent? (Answer with the global speaker sequential index) Please select the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the first speaker",
+        "B. the first speaker and the second speaker",
+        "C. the second speaker and the third speaker",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "How many speakers with Indian English accent are there in the whole audio? Please choose the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 2",
+        "B. 1",
+        "C. 4",
+        "D. Cannot be determined"
+      ],
+      "answer": "B",
+      "answer_text": "1",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Attribute_Recognition-Accent_Identification_spk_a.mp3",
+    "start_time": 10.1,
+    "end_time": 12.3,
+    "duration": 2.2
+  }
+}

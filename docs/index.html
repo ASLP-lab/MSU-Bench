@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="qa_data.js"></script>
-    <script src="bench_examples.js"></script>
+    <script src="qa_data.js?v=20260707b"></script>
+    <script src="bench_examples.js?v=20260707b"></script>
     <style>
         :root {
             --primary: #00f0ff;
@@ -184,6 +184,22 @@
             color: var(--text-muted);
             font-style: italic;
             margin-bottom: 30px;
+        }
+
+        .affiliation .aff-item,
+        .affiliation .aff-sep {
+            font-size: inherit;
+            font-family: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+            color: inherit;
+            line-height: 1;
+            vertical-align: baseline;
+            white-space: nowrap;
+        }
+        .affiliation .aff-sep {
+            margin: 0 0.6em;
+            opacity: 0.75;
         }
 
         /* Nav Buttons */
@@ -400,6 +416,43 @@
             border-radius: 20px;
             font-size: 0.8rem;
             color: var(--primary);
+        }
+
+        .capability-group {
+            margin-top: 22px;
+            padding: 16px 18px;
+            background: rgba(0, 240, 255, 0.03);
+            border: 1px solid rgba(0, 240, 255, 0.15);
+            border-radius: 12px;
+        }
+
+        .capability-header {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .capability-name {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .capability-abbr {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            color: var(--secondary);
+            letter-spacing: 2px;
+        }
+
+        .capability-def {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+            margin-bottom: 12px;
         }
 
         /* Referencing Schemes */
@@ -1118,6 +1171,75 @@
             margin-top: 6px;
         }
 
+        /* -------- New gallery styles for full-audio + per-QA clips -------- */
+        .gallery-full-audio {
+            background: linear-gradient(180deg, rgba(0, 240, 255, 0.09) 0%, rgba(0, 240, 255, 0.03) 100%);
+            border: 1px solid rgba(0, 240, 255, 0.28);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-bottom: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .gallery-full-audio .full-audio-title {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .gallery-full-audio .full-audio-title::before { content: '🎬'; }
+        .gallery-full-audio audio { width: 100%; max-width: 640px; }
+        .qa-clip-list {
+            margin: 8px 0 12px;
+            padding: 10px;
+            background: rgba(0, 240, 255, 0.04);
+            border: 1px dashed rgba(0, 240, 255, 0.25);
+            border-radius: 8px;
+        }
+        .qa-clip-list .ref-row-compact { margin-bottom: 8px; }
+        .qa-clip-list .ref-row-compact:last-child { margin-bottom: 0; }
+        .qa-clip-list audio { width: 100%; max-width: 480px; }
+        .qa-card-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+        .qa-card-head .qa-index {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-family: 'Orbitron', 'JetBrains Mono', monospace;
+        }
+        .spk-tag {
+            font-size: 0.72rem;
+            padding: 1px 8px;
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--primary);
+            border-radius: 999px;
+        }
+        .dl-btn {
+            display: inline-block;
+            margin-left: auto;
+            padding: 2px 10px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            color: var(--primary);
+            background: rgba(0, 240, 255, 0.10);
+            border: 1px solid rgba(0, 240, 255, 0.32);
+            text-decoration: none;
+            transition: background .15s ease;
+        }
+        .dl-btn:hover { background: rgba(0, 240, 255, 0.22); }
+        .dl-btn-primary {
+            align-self: flex-start;
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -1256,8 +1378,17 @@
         </div>
         <h1>MSU-Bench</h1>
         <p class="subtitle">Towards Speaker-Centric Understanding in Conversational Multi-Speaker Scenarios</p>
-        <p class="authors">Zhaokai Sun, Shuai Wang, Zhennan Lin, Chengyou Wang, Dehui Gao, Yu'ang Cao, Chunjiang He, Pan Zhou, Lei Xie</p>
-        <p class="affiliation">ASLP@NPU, Northwestern Polytechnical University &nbsp;·&nbsp; Li Auto</p>
+        <p class="authors">Zhaokai Sun<sup>*</sup>, Shuai Wang<sup>*</sup>, Zhennan Lin<sup>*</sup>, Chengyou Wang, Dehui Gao, Yu'ang Cao, Chunjiang He, Pan Zhou, Lei Xie</p>
+        <p class="affiliation"><sup>*</sup> Equal contribution</p>
+        <p class="affiliation">
+            <span class="aff-item">ASLP@NPU</span>
+            <span class="aff-sep">·</span>
+            <span class="aff-item">NJU</span>
+            <span class="aff-sep">·</span>
+            <span class="aff-item">SLAI</span>
+            <span class="aff-sep">·</span>
+            <span class="aff-item">Li Auto</span>
+        </p>
         <div class="nav-buttons">
             <a href="https://arxiv.org/abs/2606.22868" target="_blank" class="btn btn-primary">📄 Read Paper</a>
             <a href="https://github.com/ASLP-lab/MSU-Bench" target="_blank" class="btn btn-secondary">💻 View Code</a>
@@ -1397,9 +1528,9 @@
                     <div class="control-group">
                         <label>Task Type</label>
                         <select id="qa-task-select">
-                            <option value="emotion">Emotion Recognition</option>
-                            <option value="retrieval">Speaker Retrieval</option>
-                            <option value="counting">Speaker Counting</option>
+                            <option value="emotion">Emotion Recognition (ER)</option>
+                            <option value="retrieval">Speaker Retrieval (SR)</option>
+                            <option value="counting">Speaker Counting (SC)</option>
                         </select>
                     </div>
                 </div>
@@ -1457,18 +1588,43 @@
                 <div class="arch-tier">Tier 1</div>
                 <h3 class="arch-title">Speaker Grounding & Identification</h3>
                 <p class="arch-desc">
-                    Can the model accurately locate speakers and bind content to speakers?
-                    This tier evaluates fundamental capabilities for identifying who is speaking
-                    and what attributes they have.
+                    Bind speech content, speaker identity, and speaker attributes together —
+                    <em>who is who, who said what, whose attribute is this</em>.
+                    Two capabilities, ten sub-tasks.
                 </p>
-                <div class="task-tags">
-                    <span class="task-tag">Speaker Retrieval</span>
-                    <span class="task-tag">Speaker Verification</span>
-                    <span class="task-tag">Speaker Counting</span>
-                    <span class="task-tag">Gender Recognition</span>
-                    <span class="task-tag">Age Estimation</span>
-                    <span class="task-tag">Emotion Recognition</span>
-                    <span class="task-tag">Speaker Profile</span>
+
+                <div class="capability-group">
+                    <div class="capability-header">
+                        <span class="capability-name">Speaker Identification</span>
+                        <span class="capability-abbr">SID</span>
+                    </div>
+                    <p class="capability-def">
+                        Ground speaker identities and speaker-specific information across dialogue segments.
+                    </p>
+                    <div class="task-tags">
+                        <span class="task-tag">Reverse Speaker Retrieval (RSR)</span>
+                        <span class="task-tag">Speaker Retrieval (SR)</span>
+                        <span class="task-tag">Speaker-specific Viewpoint Summarization (SVS)</span>
+                        <span class="task-tag">Speaker Counting (SC)</span>
+                        <span class="task-tag">Speaker Verification (SV)</span>
+                    </div>
+                </div>
+
+                <div class="capability-group">
+                    <div class="capability-header">
+                        <span class="capability-name">Speaker Attribute Recognition</span>
+                        <span class="capability-abbr">SAR</span>
+                    </div>
+                    <p class="capability-def">
+                        Infer core speaker attributes and a brief profile from multi-speaker conversational audio.
+                    </p>
+                    <div class="task-tags">
+                        <span class="task-tag">Accent Identification (AI)</span>
+                        <span class="task-tag">Age Recognition (AR)</span>
+                        <span class="task-tag">Gender Identification (GI)</span>
+                        <span class="task-tag">Emotion Recognition (ER)</span>
+                        <span class="task-tag">Speaker Profiling (SP)</span>
+                    </div>
                 </div>
             </div>
 
@@ -1476,16 +1632,51 @@
                 <div class="arch-tier">Tier 2</div>
                 <h3 class="arch-title">Multi-Speaker Dialogue Reasoning</h3>
                 <p class="arch-desc">
-                    Can the model understand relationships and interactions between speakers?
-                    This tier evaluates higher-level capabilities for understanding conversational
-                    structure, emotional dynamics, and speaker relationships.
+                    Reason about relationships, structure, and context across speakers —
+                    <em>what these utterances mean in the conversation</em>.
+                    Three capabilities, six sub-tasks.
                 </p>
-                <div class="task-tags">
-                    <span class="task-tag">Emotion Interaction</span>
-                    <span class="task-tag">Context Reasoning</span>
-                    <span class="task-tag">Dialogue Act</span>
-                    <span class="task-tag">Role Identification</span>
-                    <span class="task-tag">QA Structure</span>
+
+                <div class="capability-group">
+                    <div class="capability-header">
+                        <span class="capability-name">Dialogue Scene Reasoning</span>
+                        <span class="capability-abbr">DSR</span>
+                    </div>
+                    <p class="capability-def">
+                        Infer dialogue background, speaker roles, and situational context from multi-speaker evidence.
+                    </p>
+                    <div class="task-tags">
+                        <span class="task-tag">Background Inference (BI)</span>
+                        <span class="task-tag">Role/Identity Identification (RII)</span>
+                    </div>
+                </div>
+
+                <div class="capability-group">
+                    <div class="capability-header">
+                        <span class="capability-name">Dialogue Structure Analysis</span>
+                        <span class="capability-abbr">DSA</span>
+                    </div>
+                    <p class="capability-def">
+                        Recognize dialogue acts and question–answer relations across turns.
+                    </p>
+                    <div class="task-tags">
+                        <span class="task-tag">Dialogue Act Recognition (DAR)</span>
+                        <span class="task-tag">Q&amp;A Structure ID (QASI)</span>
+                    </div>
+                </div>
+
+                <div class="capability-group">
+                    <div class="capability-header">
+                        <span class="capability-name">Dialogue Contextual Reasoning</span>
+                        <span class="capability-abbr">DCR</span>
+                    </div>
+                    <p class="capability-def">
+                        Reason over multi-speaker context for emotion interactions and viewpoint aggregation.
+                    </p>
+                    <div class="task-tags">
+                        <span class="task-tag">Emotion Interaction Reasoning (EIR)</span>
+                        <span class="task-tag">Multi-speaker Viewpoint Summarization (MSVS)</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1532,7 +1723,7 @@
         <h2 class="section-title">Task Architecture Overview</h2>
         <p class="section-desc">
             Complete overview of MSU-Bench task hierarchy and speaker referencing schemes,
-            showing how 16 tasks are organized across two tiers.
+            showing how <strong>16 tasks</strong> are organized across <strong>2 tiers</strong> and <strong>5 capabilities</strong>.
         </p>
         <div class="image-container">
             <img src="assets/images/MSU-layers.png" alt="MSU Bench Layers">
@@ -1764,21 +1955,39 @@
         const qaLevelSelect = document.getElementById('qa-level-select');
         const qaTaskSelect = document.getElementById('qa-task-select');
 
-        const level2Tasks = [
-            { value: 'emotion_interaction', text: 'Emotion Interaction' },
-            { value: 'context', text: 'Context Reasoning' },
-            { value: 'dialogue_act', text: 'Dialogue Act Recognition' }
-        ];
-
         const level1Tasks = [
-            { value: 'emotion', text: 'Emotion Recognition' },
-            { value: 'retrieval', text: 'Speaker Retrieval' },
-            { value: 'counting', text: 'Speaker Counting' }
+            { value: 'retrieval',         text: 'Speaker Retrieval (SR)' },
+            { value: 'reverse_retrieval', text: 'Reverse Speaker Retrieval (RSR)' },
+            { value: 'counting',          text: 'Speaker Counting (SC)' },
+            { value: 'verification',      text: 'Speaker Verification (SV)' },
+            { value: 'opinion',           text: 'Speaker-specific Viewpoint Summarization (SVS)' },
+            { value: 'gender',            text: 'Gender Identification (GI)' },
+            { value: 'age',               text: 'Age Recognition (AR)' },
+            { value: 'emotion',           text: 'Emotion Recognition (ER)' },
+            { value: 'accent',            text: 'Accent Identification (AI)' },
+            { value: 'profile',           text: 'Speaker Profiling (SP)' }
         ];
 
-        qaLevelSelect.addEventListener('change', () => {
+        const level2Tasks = [
+            { value: 'emotion_interaction', text: 'Emotion Interaction Reasoning (EIR)' },
+            { value: 'opinion_summary',     text: 'Multi-speaker Viewpoint Summarization (MVS)' },
+            { value: 'background',          text: 'Background Inference (BI)' },
+            { value: 'identity',            text: 'Role-Identity Identification (RII)' },
+            { value: 'dialogue_act',        text: 'Dialogue Act Recognition (DAR)' },
+            { value: 'qa_structure',        text: 'QA Structure Identification (QSI)' }
+        ];
+
+        // Populate task dropdown according to the current level (called on init & on level change)
+        function populateTaskSelect() {
             const tasks = qaLevelSelect.value === 'level1' ? level1Tasks : level2Tasks;
             qaTaskSelect.innerHTML = tasks.map(t => `<option value="${t.value}">${t.text}</option>`).join('');
+        }
+
+        // Populate immediately so the initial dropdown shows all tasks (not just the 3 hardcoded ones in HTML)
+        populateTaskSelect();
+
+        qaLevelSelect.addEventListener('change', () => {
+            populateTaskSelect();
             loadQA();
         });
 
@@ -1804,8 +2013,8 @@
 
             // Check cache first for instant loading
             if (QA_CACHE[cacheKey]) {
-                const { qaItems, qaAudio } = QA_CACHE[cacheKey];
-                renderQA(qaItems, qaAudio);
+                const { qaItems, qaAudio, qaAudioPairs } = QA_CACHE[cacheKey];
+                renderQA(qaItems, qaAudio, qaAudioPairs || null);
                 return;
             }
 
@@ -1820,8 +2029,9 @@
                         return item;
                     });
                     const qaAudio = data.qa_audio || null;
-                    QA_CACHE[cacheKey] = { qaItems, qaAudio };
-                    renderQA(qaItems, qaAudio);
+                    const qaAudioPairs = data.qa_audio_pairs || null;
+                    QA_CACHE[cacheKey] = { qaItems, qaAudio, qaAudioPairs };
+                    renderQA(qaItems, qaAudio, qaAudioPairs);
                     return;
                 }
             }
@@ -1837,12 +2047,25 @@
             // Build file path
             const videoMap = { 'cardhouse': 'cardhouse-ep2', 'mingdynesty': 'mingdynesty-ep41' };
             const taskMap = {
-                'emotion': '说话人属性识别能力-情感识别任务',
-                'retrieval': '说话人识别能力-说话人检索任务',
-                'counting': '说话人识别能力-说话人计数任务',
-                'emotion_interaction': '多说话人上下文推理能力-多说话人情感交互',
-                'context': '多说话人对话场景推理能力-对话背景推理',
-                'dialogue_act': '多说话人对话结构分析能力-对话行为识别'
+                // level 1 · Speaker Identification
+                'retrieval':          'Speaker_Identification-Speaker_Retrieval',
+                'reverse_retrieval':  'Speaker_Identification-Reverse_Speaker_Retrieval',
+                'counting':           'Speaker_Identification-Speaker_Counting',
+                'verification':       'Speaker_Identification-Speaker_Verification',
+                'opinion':            'Speaker_Identification-Speaker-specific_Viewpoint_Summarization',
+                // level 1 · Speaker Attribute Recognition
+                'gender':  'Speaker_Attribute_Recognition-Gender_Identification',
+                'age':     'Speaker_Attribute_Recognition-Age_Recognition',
+                'emotion': 'Speaker_Attribute_Recognition-Emotion_Recognition',
+                'accent':  'Speaker_Attribute_Recognition-Accent_Identification',
+                'profile': 'Speaker_Attribute_Recognition-Speaker_Profiling',
+                // level 2
+                'emotion_interaction': 'Dialogue_Contextual_Reasoning-Emotion_Interaction_Reasoning',
+                'opinion_summary':     'Dialogue_Contextual_Reasoning-Multi-speaker_Viewpoint_Summarization',
+                'background':          'Dialogue_Scene_Reasoning-Background_Inference',
+                'identity':            'Dialogue_Scene_Reasoning-Role-Identity_Identification',
+                'dialogue_act':        'Dialogue_Structure_Analysis-Dialogue_Act_Recognition',
+                'qa_structure':        'Dialogue_Structure_Analysis-QA_Structure_ID'
             };
 
             const filePath = `demo_qa/${level}/${videoMap[videoId]}/${taskMap[taskId]}.json`;
@@ -1865,9 +2088,10 @@
                 });
 
                 const qaAudio = data.qa_audio || null;
+                const qaAudioPairs = data.qa_audio_pairs || null;
 
-                QA_CACHE[cacheKey] = { qaItems, qaAudio };
-                renderQA(qaItems, qaAudio);
+                QA_CACHE[cacheKey] = { qaItems, qaAudio, qaAudioPairs };
+                renderQA(qaItems, qaAudio, qaAudioPairs);
 
             } catch (e) {
                 console.error('Failed to load QA:', e);
@@ -1875,8 +2099,13 @@
             }
         }
 
-        function renderQA(qaItems, qaAudioInfo) {
+        function renderQA(qaItems, qaAudioInfo, qaAudioPairs) {
             const list = document.getElementById('qa-list');
+
+            if (!qaItems || qaItems.length === 0) {
+                list.innerHTML = '<div class="loading">No QA data available for this selection. Please try another task.</div>';
+                return;
+            }
 
             const schemeNameMap = {
                 'no_index': 'No Index',
@@ -1884,6 +2113,8 @@
                 'transcript_index': 'Transcript Index',
                 'speaker_index': 'Speaker Index',
                 'complex_index': 'Complex Index',
+                'reverse_retrival': 'Reverse Retrieval',
+                'reverse_count': 'Reverse Count',
                 'type_text': 'Context Reasoning'
             };
 
@@ -1891,24 +2122,53 @@
                 if (!qa.question) return '';
                 const schemeName = schemeNameMap[qa.question_type] || qa.question_type;
                 const isNoIndex = qa.question_type === 'no_index';
-                const hasAudio = isNoIndex && qaAudioInfo;
+
+                // Pair-mode: SV-style questions with left+right clips
+                const pair = (qaAudioPairs && (qaAudioPairs[String(idx)] || qaAudioPairs[idx])) || null;
+                const hasPair = isNoIndex && pair && pair.left && pair.right;
+                // Single-clip fallback
+                const hasAudio = isNoIndex && !hasPair && qaAudioInfo && qaAudioInfo.spk_a_audio;
+
+                let audioBlock = '';
+                if (hasPair) {
+                    audioBlock = `
+                        <div class="qa-audio-container">
+                            <div class="qa-audio-label">
+                                <span class="audio-icon">🎵</span>
+                                <span>Clip A</span>
+                                <span class="audio-time">(${pair.left.start_time}s - ${pair.left.end_time}s, ${pair.left.duration}s)</span>
+                            </div>
+                            <audio controls class="qa-audio-player">
+                                <source src="${pair.left.path}" type="audio/mpeg">
+                            </audio>
+                            <div class="qa-audio-label" style="margin-top:8px;">
+                                <span class="audio-icon">🎵</span>
+                                <span>Clip B</span>
+                                <span class="audio-time">(${pair.right.start_time}s - ${pair.right.end_time}s, ${pair.right.duration}s)</span>
+                            </div>
+                            <audio controls class="qa-audio-player">
+                                <source src="${pair.right.path}" type="audio/mpeg">
+                            </audio>
+                        </div>`;
+                } else if (hasAudio) {
+                    audioBlock = `
+                        <div class="qa-audio-container">
+                            <div class="qa-audio-label">
+                                <span class="audio-icon">🎵</span>
+                                <span>Listen to the audio snippet</span>
+                                <span class="audio-time">(${qaAudioInfo.start_time}s - ${qaAudioInfo.end_time}s, ${qaAudioInfo.duration}s)</span>
+                            </div>
+                            <audio controls class="qa-audio-player">
+                                <source src="${qaAudioInfo.spk_a_audio}" type="audio/mpeg">
+                                Your browser does not support audio.
+                            </audio>
+                        </div>`;
+                }
 
                 return `
                     <div class="qa-card">
                         <span class="qa-badge">${schemeName}</span>
-                        ${hasAudio ? `
-                            <div class="qa-audio-container">
-                                <div class="qa-audio-label">
-                                    <span class="audio-icon">🎵</span>
-                                    <span>Listen to the audio snippet</span>
-                                    <span class="audio-time">(${qaAudioInfo.start_time}s - ${qaAudioInfo.end_time}s, ${qaAudioInfo.duration}s)</span>
-                                </div>
-                                <audio controls class="qa-audio-player">
-                                    <source src="${qaAudioInfo.spk_a_audio}" type="audio/mpeg">
-                                    Your browser does not support audio.
-                                </audio>
-                            </div>
-                        ` : ''}
+                        ${audioBlock}
                         <div class="qa-question">${qa.question}</div>
                         <div class="qa-options">
                             ${(qa.options || []).map((opt, i) => {
@@ -1994,19 +2254,32 @@
             renderGalleryDetail(taskId, lang);
         }
 
-        function audioBlock(label, info, transcript) {
-            if (!info) return '';
+        function audioBlock(label, info, transcript, opts) {
+            if (!info || !info.src) return '';
+            opts = opts || {};
+            const timeMeta = info.is_full
+                ? '(full dialogue)'
+                : (info.dur != null ? `(${info.dur}s • ${info.start}s → ${info.end}s)` : '');
+            const dl = `<a class="dl-btn" href="${info.src}" download title="Download">⬇</a>`;
+            const trHtml = transcript
+                ? `<div class="gallery-ref-transcript">"${transcript}"</div>`
+                : '';
+            const spkTag = (info.spk_index && !info.is_full)
+                ? `<span class="spk-tag">${info.spk_index}</span>`
+                : '';
             return `
-                <div class="ref-row">
+                <div class="ref-row ${opts.compact ? 'ref-row-compact' : ''}">
                     <div class="gallery-ref-label">
                         <span class="audio-icon">🎧</span>
                         <span>${label}</span>
-                        <span class="audio-time">(${info.dur}s clip)</span>
+                        ${spkTag}
+                        <span class="audio-time">${timeMeta}</span>
+                        ${dl}
                     </div>
-                    <audio controls class="qa-audio-player">
+                    <audio controls preload="none" class="qa-audio-player">
                         <source src="${info.src}" type="audio/mpeg">
                     </audio>
-                    ${transcript ? `<div class="gallery-ref-transcript">“${transcript}”</div>` : ''}
+                    ${trHtml}
                 </div>`;
         }
 
@@ -2032,24 +2305,30 @@
                     </div>`;
             }
 
-            const isVerification = taskId === 'verification';
-            let refAudio = '';
-            if (v.audio && (v.audio.a || v.audio.b)) {
-                refAudio = '<div class="gallery-ref-audio">';
-                refAudio += audioBlock(isVerification ? 'Reference audio — Clip 1' : 'Reference audio (target speaker)',
-                    v.audio.a, v.spk_a_transcript);
-                if (isVerification) {
-                    refAudio += audioBlock('Reference audio — Clip 2', v.audio.b, v.spk_b_transcript);
-                }
-                refAudio += '</div>';
+            // ---------------- Full source dialogue audio ----------------
+            let fullAudioHtml = '';
+            if (v.full_audio && v.full_audio.src) {
+                fullAudioHtml = `
+                    <div class="gallery-full-audio">
+                        <div class="full-audio-title">Full multi-speaker dialogue audio</div>
+                        <audio controls preload="none" class="qa-audio-player">
+                            <source src="${v.full_audio.src}" type="audio/mpeg">
+                        </audio>
+                        <a class="dl-btn dl-btn-primary" href="${v.full_audio.src}" download>⬇ Download full audio</a>
+                    </div>`;
             }
 
-            const qaHtml = (v.qa || []).map(qa => {
-                const schemeName = { no_index: 'No Index', time_index: 'Time Index',
-                    transcript_index: 'Transcript Index', speaker_index: 'Speaker Index',
-                    complex_index: 'Complex Index', speech_index: 'Audio Index',
-                    reverse_retrival: 'Reverse Retrieval', reverse_count: 'Reverse Counting',
-                    type_text: 'Context' }[qa.question_type] || qa.question_type;
+            // ---------------- QA cards ----------------
+            const schemeName = { no_index: 'No Index', time_index: 'Time Index',
+                transcript_index: 'Transcript Index', speaker_index: 'Speaker Index',
+                complex_index: 'Complex Index', speech_index: 'Audio Index',
+                reverse_retrival: 'Reverse Retrieval',
+                reverse_retrieval: 'Reverse Retrieval',
+                reverse_count: 'Reverse Counting',
+                type_text: 'Context' };
+
+            const qaHtml = (v.qa || []).map((qa, qidx) => {
+                const scheme = schemeName[qa.question_type] || qa.question_type;
                 const opts = (qa.options || []).map((opt, i) => {
                     const letter = String.fromCharCode(65 + i);
                     const text = /^[A-D][.、\)]/.test(opt.trim()) ? opt.trim().substring(2).trim() : opt;
@@ -2059,10 +2338,23 @@
                             <span class="option-text">${text}</span>
                         </div>`;
                 }).join('');
+
+                // per-question audio clip(s)
+                const clips = qa.clips && qa.clips.length ? qa.clips : [];
+                const clipsHtml = clips.length
+                    ? `<div class="qa-clip-list">${clips.map((c, i) => audioBlock(
+                          clips.length > 1 ? `Clip ${i + 1}` : 'Audio for this question',
+                          c, c.transcript, { compact: true })).join('')}</div>`
+                    : '';
+
                 return `
                     <div class="qa-card">
-                        <span class="qa-badge">${schemeName}</span>
+                        <div class="qa-card-head">
+                            <span class="qa-badge">${scheme}</span>
+                            <span class="qa-index">Q${qidx + 1}</span>
+                        </div>
                         <div class="qa-question">${(qa.question || '').replace(/\n/g, '<br>')}</div>
+                        ${clipsHtml}
                         <div class="qa-options">${opts}</div>
                         <div class="qa-answer">
                             <span class="qa-answer-label">Answer:</span>
@@ -2085,11 +2377,11 @@
                         <span class="meta-tier">${ex.dimension}</span>
                         <span class="gallery-chip-lang ${lang === 'zh' ? 'lang-zh' : 'lang-en'}">${v.language}</span>
                         <span class="meta-source">🎬 ${v.source}</span>
-                        <span>${(v.qa || []).length} referencing variant(s)</span>
+                        <span>${(v.qa || []).length} question(s)</span>
                     </div>
                     ${langToggle}
                 </div>
-                ${refAudio}
+                ${fullAudioHtml}
                 <div class="qa-list" style="padding:0;max-height:none;overflow:visible;">${qaHtml}</div>`;
         }
 

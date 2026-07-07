@@ -1,0 +1,81 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker_Counting",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_001",
+            "start_time": 4.5,
+            "end_time": 6.3,
+            "transcript": "那朕就明示，你是户部尚书，",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_004",
+            "start_time": 15.5,
+            "end_time": 16.4,
+            "transcript": "回奏陛下，",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fear",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "How many distinct speakers appear in this audio in total?",
+      "question_type": "speech_index",
+      "options": [
+        "A. 5 speakers",
+        "B. 4 speakers",
+        "C. 2 speakers",
+        "D. Cannot be determined (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "5 speakers",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "How many distinct speakers appear in total in the audio during the period from 15s to 75s?",
+      "question_type": "time_index",
+      "options": [
+        "A. 3 speakers",
+        "B. 2 speakers",
+        "C. 6 speakers",
+        "D. Cannot determine (insufficient information)"
+      ],
+      "answer": "A",
+      "answer_text": "3 speakers",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Identification-Speaker_Counting_spk_a.mp3",
+    "start_time": 4.5,
+    "end_time": 6.3,
+    "duration": 1.8
+  }
+}

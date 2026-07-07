@@ -1,59 +1,91 @@
 {
   "task_id": "background",
   "level": "level2",
-  "dimension": "Scene Reasoning",
-  "task_name": "Dialogue Background Reasoning",
+  "dimension": "Dialogue Scene Reasoning (DSR)",
+  "task_name": "Background Inference (BI)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Robin Hood (2018)",
+      "source": "aces go places 4 1986",
+      "video_folder": "aces_go_places_4_1986_part001",
+      "full_audio": {
+        "src": "bench_examples/audio/background/en_full.mp3"
+      },
       "audio": {},
       "spk_a_transcript": "",
       "spk_b_transcript": "",
       "qa": [
         {
-          "question": "In which of the following scenarios is this conversation most likely taking place?",
+          "question": "In which of the following scenarios did this conversation most likely take place?",
           "question_type": "type_text",
           "options": [
-            "A. A local official (Speaker 3) discusses a tax bill with a small group of aides in his private office.",
-            "B. A judge and jury are trying a suspect in a courtroom.",
-            "C. A local magistrate (Speaker 3) delivers a speech in the town's public assembly hall and deliberates on a tax bill.",
-            "D. Cannot determine (Insufficient evidence)"
+            "A. A police officer is conducting a formal, official interrogation of a suspect in a police station interrogation room.",
+            "B. The protagonist is inside a private residence or hideout, informally interrogating a suspect.",
+            "C. Family members had a fierce argument over property in the living room and physically struck a visiting guest.",
+            "D. Cannot be determined (insufficient evidence)"
           ],
-          "answer": "C",
-          "answer_text": "A local magistrate (Speaker 3) is delivering a speech in the town's public assembly hall, deliberating on a tax bill.",
+          "answer": "B",
+          "answer_text": "The protagonist is conducting an informal interrogation of a suspect inside a private residence or hideout.",
           "rationale": [
             "wrong_speaker",
-            "hallucination",
             "ground_truth",
+            "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/background/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "Detective Dee (神探狄仁杰, 2004)",
+      "source": "back to back face to face 1994",
+      "video_folder": "back_to_back_face_to_face_1994_part023",
+      "full_audio": {
+        "src": "bench_examples/audio/background/zh_full.mp3"
+      },
       "audio": {},
       "spk_a_transcript": "",
       "spk_b_transcript": "",
       "qa": [
         {
-          "question": "In which of the following scenarios does this conversation most likely take place?",
+          "question": "这段对话最可能发生在以下哪种场景？",
           "question_type": "type_text",
           "options": [
-            "A. Merchants are at a bank discussing a large silver loan.",
-            "B. Officials are reporting on a case and inspecting the treasury in a government office (yamen).",
-            "C. Officials are at the private residences of individuals involved in a case, conducting searches and questioning.",
-            "D. Cannot be determined (insufficient evidence)"
+            "A. 会计上门到当事人家中解释工资扣款明细，并与对方发生激烈争执。",
+            "B. 在派出所调解室内，民警正在就一起财务纠纷对双方进行调解。",
+            "C. 在单位的财务办公室内，几位当事人因工资扣款问题与会计发生激烈争执。",
+            "D. 无法判断（证据不足）"
           ],
-          "answer": "B",
-          "answer_text": "The officials are reporting on a case and inspecting the treasury within a government office (yamen).",
+          "answer": "C",
+          "answer_text": "在单位的财务办公室内，几位当事人因工资扣款问题与会计发生激烈争执。",
           "rationale": [
+            "wrong_speaker",
             "hallucination",
             "ground_truth",
-            "wrong_speaker",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/background/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]

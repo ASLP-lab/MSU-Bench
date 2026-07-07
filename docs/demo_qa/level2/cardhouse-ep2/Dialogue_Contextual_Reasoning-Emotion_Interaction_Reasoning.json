@@ -1,0 +1,135 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level2",
+  "task": "Dialogue_Contextual_Reasoning-Emotion_Interaction_Reasoning",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_022",
+            "start_time": 118.5,
+            "end_time": 123.7,
+            "transcript": "I'm up to here with them, Donald, for lying, for turning their back on you.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_025",
+            "start_time": 132.5,
+            "end_time": 134.3,
+            "transcript": "Wait. Frank, this is not your fault.",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Fear",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the emotion of the 3rd speaker (<the third speaker>) in this utterance? What impact does this emotion have on other participants in the whole conversation?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. The emotion is angry, which makes the fifth speaker soften his tone, take the initiative to comfort the other side, and stop the other party from taking responsibility for the incident",
+        "B. The emotion is angry, which causes the fourth speaker to have obvious emotional fluctuations, and immediately puts forward new follow-up work arrangements",
+        "C. The emotion is happy/excited, which makes the fifth speaker fly into a rage and put forward refutation on the spot",
+        "D. Cannot judge (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is angry, which makes the fifth speaker soften his tone, take the initiative to comfort the other side, and stop the other party from taking responsibility for the incident",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the following audio, what is the speaker's emotion? What impact does this emotion have on other people in the whole conversation?",
+      "question_type": "no_index",
+      "options": [
+        "A. The emotion is anger/dissatisfaction, which affects the fifth speaker, making them worried and finally voluntarily offering to take responsibility for the relevant incident",
+        "B. The emotion is anger/dissatisfaction, which affects the second speaker, making them worried and finally voluntarily offering to take responsibility for the relevant incident",
+        "C. The emotion is joy/excitement, which affects the fifth speaker, making them completely indifferent to the subsequent development of the incident",
+        "D. Cannot be judged (the evidence is not sufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is anger/dissatisfaction, which affects the fifth speaker, making them worried and finally voluntarily offering to take responsibility for the relevant incident",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the emotion of the speaker (the third speaker) speaking from 118.5s to 123.7s in the audio? What impact does this emotion exert on other people in the conversation?",
+      "question_type": "time_index",
+      "options": [
+        "A. The emotion is anger/discontent, which affects the fifth speaker, making him feel worried and finally voluntarily offers to take responsibility for the related incident",
+        "B. The emotion is sadness/grievance, which affects the first speaker, making him immediately terminate all ongoing work",
+        "C. The emotion is anxiety/nervousness, which affects the fourth speaker, making him immediately state that he is willing to obey all arrangements",
+        "D. Cannot be judged (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is anger/discontent, which affects the fifth speaker, making him feel worried and finally voluntarily offers to take responsibility for the related incident",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the emotion of the speaker (the third speaker) who says \"I'm up to here with them, Donald, for lying, for turning their back on you.\" in the audio? What impact does this emotion have on others in the conversation?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. The emotion is anger/discontent, which affects the fifth speaker, making him worried and finally voluntarily offering to take responsibility for the related incident",
+        "B. The emotion is anger/discontent, which affects the fourth speaker, making him worried and finally voluntarily offering to take responsibility for the related incident",
+        "C. The emotion is empathy/comfort, which affects the fifth speaker, making him completely indifferent to the subsequent development of the incident",
+        "D. Cannot judge (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is anger and discontent, which affects the fifth speaker, making him worried and finally voluntarily offering to take responsibility for the related incident",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the emotion of the speaker (the third speaker) who said \"I'm up to here with them, Donald, for lying, for turning their back on you.\" from 118.5s to 123.7s in the audio when uttering this content? What impact does this emotion have on others?",
+      "question_type": "complex_index",
+      "options": [
+        "A. The emotion is angry/dissatisfied, which affects the fifth speaker, making him feel worried and finally take the initiative to take responsibility for the related incident",
+        "B. The emotion is annoyed/impatient, which affects the second speaker, making him feel worried and finally take the initiative to take responsibility for the related incident",
+        "C. The emotion is calm/neutral, which affects the fifth speaker, making him completely unwilling to participate in any discussion related to the incident",
+        "D. Cannot be judged (the evidence is insufficient to draw a unique conclusion)"
+      ],
+      "answer": "A",
+      "answer_text": "The emotion is angry and dissatisfied, which affects the fifth speaker, making him feel worried and finally take the initiative to take responsibility for the related incident",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/cardhouse-ep2/Dialogue_Contextual_Reasoning-Emotion_Interaction_Reasoning_spk_a.mp3",
+    "start_time": 118.5,
+    "end_time": 123.7,
+    "duration": 5.2
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level2",
+  "task": "Dialogue_Contextual_Reasoning-Multi-speaker_Viewpoint_Summarization",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_046",
+            "start_time": 238.7,
+            "end_time": 242.8,
+            "transcript": "这个海瑞是英雄好汉，这个赵贞吉也是英雄好汉。",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_059",
+            "start_time": 320.4,
+            "end_time": 325.9,
+            "transcript": "要说同党，臣也只能是陛下的臣党。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Sadness",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What are the positions of the two speakers in the following audio throughout the whole conversation? Please select the most matching option.",
+      "question_type": "no_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. the first speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he recognizes that both Hai Rui and Zhao Zhenji are heroic figures with a strong sense of responsibility, and admires all people who dare to take responsibility; the second speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he voluntarily takes full responsibility for submitting the memorial, and states that he is only loyal to the emperor and has no personal faction",
+        "B. the first speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he voluntarily takes full responsibility for submitting the memorial, and states that he is only loyal to the emperor and has no personal faction; the second speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he recognizes that both Hai Rui and Zhao Zhenji are heroic figures with a strong sense of responsibility, and admires all people who dare to take responsibility",
+        "C. the first speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he confirms that both Hai Rui and Zhao Zhenji are disloyal ministers who form cliques to deceive the emperor, and demands a thorough investigation of all their behind-the-scenes accomplices; the second speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he advocates that all involved officials be severely punished with collective implication",
+        "D. Both speakers expressed their complex views on the current situation of the imperial court in the incident of Hai Rui submitting a reckless and impertinent memorial, and there is no clear unified position orientation"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he recognizes that both Hai Rui and Zhao Zhenji are heroic figures with a strong sense of responsibility, and admires all people who dare to take responsibility; the second speaker: Regarding the incident where Hai Rui submitted a reckless and impertinent memorial to the throne, he voluntarily takes full responsibility for submitting the memorial, and states that he is only loyal to the emperor and has no personal faction",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What are the positions of the speaker talking from 238.7s to 242.8s in the audio and the speaker talking from 320.4s to 325.9s in the audio throughout the whole conversation? Please select the most appropriate option.",
+      "question_type": "time_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. the first speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, insists on handing over Zhao Zhenji to the judicial authorities for torture to extract confessions, and thoroughly investigate all his affiliated parties; the second speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, always shifts all responsibilities and claims that he knows absolutely nothing about it",
+        "B. the first speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, acknowledges that both Hai Rui and Zhao Zhenji are heroic people who dare to take responsibility, and admires all people who dare to take responsibility; the second speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, voluntarily takes full responsibility for presenting the memorial, and clarifies that he is only loyal to the emperor and has no affiliated parties",
+        "C. the first speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, voluntarily takes full responsibility for presenting the memorial, and clarifies that he is only loyal to the emperor and has no affiliated parties; the second speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, acknowledges that both Hai Rui and Zhao Zhenji are heroic people who dare to take responsibility, and admires all people who dare to take responsibility",
+        "D. Both of them hold a reserved attitude towards the incident of Hai Rui presenting a rebellious memorial, and do not explicitly express their own positions"
+      ],
+      "answer": "B",
+      "answer_text": "the first speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, acknowledges that both Hai Rui and Zhao Zhenji are heroic people who dare to take responsibility, and admires all people who dare to take responsibility; the second speaker: Regarding the incident of Hai Rui presenting a rebellious memorial, voluntarily takes full responsibility for presenting the memorial, and clarifies that he is only loyal to the emperor and has no affiliated parties",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What are the stances of the speaker who once said \"这个海瑞是英雄好汉，这个赵贞吉也是英雄好汉。\" and the speaker who once said \"要说同党，臣也只能是陛下的臣党。\" in the whole conversation? Please select the most appropriate option.",
+      "question_type": "transcript_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. the first speaker: Regarding the incident that Hai Rui submitted the insolent remonstrance memorial, he voluntarily took full responsibility for submitting the memorial, stating that he only pledges allegiance to the emperor and has no private factions; the second speaker: Regarding the incident that Hai Rui submitted the insolent remonstrance memorial, he recognizes that both Hai Rui and Zhao Zhenji are courageous heroes who dare to take responsibility, and appreciates all people with a strong sense of responsibility",
+        "B. the first speaker: Regarding the incident that Hai Rui submitted the insolent remonstrance memorial, he believes that the two openly defied imperial power and should be executed immediately without any leniency; the second speaker: Regarding the incident that Hai Rui submitted the insolent remonstrance memorial, he believes that Hai Rui committed the offense of offending his superior and should be severely punished, while Zhao Zhenji was completely unaware of the matter and should be acquitted",
+        "C. the first speaker: Regarding the incident that Hai Rui submitted the insolent remonstrance memorial, he recognizes that both Hai Rui and Zhao Zhenji are courageous heroes who dare to take responsibility, and appreciates all people with a strong sense of responsibility; the second speaker: Regarding the incident that Hai Rui submitted the insolent remonstrance memorial, he voluntarily took full responsibility for submitting the memorial, stating that he only pledges allegiance to the emperor and has no private factions",
+        "D. The two speakers spent the whole conversation testing each other's bottom line and never showed their real stances"
+      ],
+      "answer": "C",
+      "answer_text": "the first speaker recognizes that both Hai Rui and Zhao Zhenji are courageous heroes who dare to take responsibility and appreciates all responsible people in the incident that Hai Rui submitted the insolent remonstrance memorial; the second speaker voluntarily takes full responsibility for submitting the memorial and states that he only pledges allegiance to the emperor and has no private factions in the same incident.",
+      "rationale": [
+        "A. wrong speaker",
+        "B. hallucination",
+        "C. ground truth",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What are the respective positions of the first speaker and the second speaker in the whole conversation? Please choose the most appropriate option.",
+      "question_type": "speaker_index",
+      "sub_question_type": "static_question",
+      "options": [
+        "A. the first speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, advocates exiling all relevant involved personnel and will not pursue their criminal liability any more; the second speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, advocates punishing Hai Rui alone and will not implicate any other officials",
+        "B. the first speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, recognizes that both Hai Rui and Zhao Zhenji are courageous heroes who dare to take responsibility, and appreciates all people who dare to take on duties; the second speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, voluntarily takes full responsibility for presenting the memorial, and states that he only pledges allegiance to the emperor and has no private faction",
+        "C. the first speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, voluntarily takes full responsibility for presenting the memorial, and states that he only pledges allegiance to the emperor and has no private faction; the second speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, recognizes that both Hai Rui and Zhao Zhenji are courageous heroes who dare to take responsibility, and appreciates all people who dare to take on duties",
+        "D. Neither of the two wants to make a clear statement on the incident where Hai Rui presented a defiant remonstrance memorial, and both are deliberately avoiding the core issue"
+      ],
+      "answer": "B",
+      "answer_text": "the first speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, recognizes that both Hai Rui and Zhao Zhenji are courageous heroes who dare to take responsibility, and appreciates all people who dare to take on duties; the second speaker: Regarding the incident where Hai Rui presented a defiant remonstrance memorial, voluntarily takes full responsibility for presenting the memorial, and states that he only pledges allegiance to the emperor and has no private faction",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the stance change of the two speakers in the following audio throughout the entire conversation? Please select the most appropriate option.",
+      "question_type": "no_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. the first speaker: Regarding whether Zhao Zhenji is hiding the accomplices behind the scenes, the stance changes from suspecting that Zhao Zhenji is deliberately shielding the mastermind behind the scenes to recognizing that Zhao Zhenji is a responsible and courageous hero; the second speaker: Regarding the attribution of responsibility for Hai Rui's presenting the outrageous remonstrance memorial, the stance changes from shifting the blame to Chief Xu to voluntarily taking full responsibility and stating that he only pledges allegiance to the emperor",
+        "B. the first speaker: Regarding whether Zhao Zhenji is hiding the accomplices behind the scenes, the stance changes from suspecting that Zhao Zhenji is deliberately shielding the mastermind behind the scenes to severely punishing Zhao Zhenji and thoroughly investigating all associated accomplices; the second speaker: Regarding the attribution of responsibility for Hai Rui's presenting the outrageous remonstrance memorial, the stance changes from shifting the blame to Chief Xu to voluntarily taking full responsibility and stating that he only pledges allegiance to the emperor",
+        "C. the first speaker: Regarding whether Zhao Zhenji is hiding the accomplices behind the scenes, the stance changes from suspecting that Zhao Zhenji is deliberately shielding the mastermind behind the scenes to recognizing that Zhao Zhenji is a responsible and courageous hero; the second speaker: Regarding the attribution of responsibility for Hai Rui's presenting the outrageous remonstrance memorial, the stance changes from voluntarily taking full responsibility and stating that he only pledges allegiance to the emperor to shifting the blame to Chief Xu",
+        "D. Neither of the two speakers has obvious stance changes on the related topics, and their attitudes remain completely consistent all the time"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker: Regarding whether Zhao Zhenji is hiding the accomplices behind the scenes, the stance changes from suspecting that Zhao Zhenji is deliberately shielding the mastermind behind the scenes to recognizing that Zhao Zhenji is a responsible and courageous hero; the second speaker: Regarding the attribution of responsibility for Hai Rui's presenting the outrageous remonstrance memorial, the stance changes from shifting the blame to Chief Xu to voluntarily taking full responsibility and stating that he only pledges allegiance to the emperor",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the stance change throughout the whole conversation between the speaker who said \"这个海瑞是英雄好汉，这个赵贞吉也是英雄好汉。\" from 238.7s to 242.8s in the audio, and the speaker who said \"要说同党，臣也只能是陛下的臣党。\" from 320.4s to 325.9s in the audio? Please select the most appropriate option.",
+      "question_type": "complex_index",
+      "sub_question_type": "dynamic_question",
+      "options": [
+        "A. the first speaker: On whether Zhao Zhenji is hiding the behind-the-scenes accomplices: from questioning that Zhao Zhenji intentionally shielded the mastermind behind the scenes → recognizing that Zhao Zhenji is a heroic figure with a strong sense of responsibility; the second speaker: On the culpability attribution of Hai Rui submitting the reckless remonstrance memorial: from evading responsibility and shifting the blame to Grand Secretary Xu → voluntarily taking full responsibility and stating that he only pledges allegiance to the emperor",
+        "B. the first speaker: On whether Zhao Zhenji is hiding the behind-the-scenes accomplices: the attitude always insists that Zhao Zhenji has long had treasonous intentions and must be severely punished; the second speaker: On the culpability attribution of Hai Rui submitting the reckless remonstrance memorial: the attitude always firmly refuses to bear any relevant responsibility, shifting all the blame to Hai Rui himself",
+        "C. the first speaker: On whether Zhao Zhenji is hiding the behind-the-scenes accomplices: from fully trusting that Zhao Zhenji has no private faction at all → determining that Zhao Zhenji formed a faction to deceive the emperor and intended to stage a rebellion; the second speaker: On the culpability attribution of Hai Rui submitting the reckless remonstrance memorial: from voluntarily taking full responsibility and stating that he only pledges allegiance to the emperor → evading responsibility and shifting the blame to Grand Secretary Xu",
+        "D. The stances of the two speakers on relevant issues are ambiguous, and it cannot be clearly confirmed that any stance change has occurred"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker: On whether Zhao Zhenji is hiding the behind-the-scenes accomplices: from questioning that Zhao Zhenji intentionally shielded the mastermind behind the scenes → recognizing that Zhao Zhenji is a heroic figure with a strong sense of responsibility; the second speaker: On the culpability attribution of Hai Rui submitting the reckless remonstrance memorial: from evading responsibility and shifting the blame to Grand Secretary Xu → voluntarily taking full responsibility and stating that he only pledges allegiance to the emperor",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/mingdynesty-ep41/Dialogue_Contextual_Reasoning-Multi-speaker_Viewpoint_Summarization_spk_a.mp3",
+    "start_time": 238.7,
+    "end_time": 242.8,
+    "duration": 4.1
+  }
+}

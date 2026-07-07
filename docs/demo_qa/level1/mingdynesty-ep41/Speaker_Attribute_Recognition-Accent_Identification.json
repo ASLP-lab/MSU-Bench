@@ -1,0 +1,174 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Accent_Identification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_017",
+            "start_time": 70.7,
+            "end_time": 72.6,
+            "transcript": "你是英雄是好汉就敢做敢认。",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "Beijing-accent Mandarin"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_030",
+            "start_time": 147.6,
+            "end_time": 155.0,
+            "transcript": "海瑞是臣的属下，他欺君，等同于臣欺君，此臣罪一。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "Standard Mandarin"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, what accent does the speaker use?",
+      "question_type": "no_index",
+      "options": [
+        "A. Beijing-accented Mandarin",
+        "B. Standard Mandarin",
+        "C. Sichuan-accented Mandarin",
+        "D. Cannot determine"
+      ],
+      "answer": "A",
+      "answer_text": "Beijing-accented Mandarin",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following accents is the closest match for the accent of the speaker talking from 70.7s to 72.6s in the audio?",
+      "options": [
+        "A. Standard Mandarin",
+        "B. Mandarin with Beijing accent",
+        "C. Mandarin with Minnan accent",
+        "D. Cannot be determined"
+      ],
+      "answer": "B",
+      "answer_text": "Mandarin with Beijing accent",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ],
+      "question_type": "time_index",
+      "sub_question_type": "",
+      "type": "single_choice",
+      "speaker_meta": {}
+    },
+    {
+      "question": "Which of the following accents is closest to the accent of the speaker who said the line \"你是英雄是好汉就敢做敢认。\" in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Northeast-accented Mandarin",
+        "B. Beijing-accented Mandarin",
+        "C. Standard Mandarin",
+        "D. Unable to determine"
+      ],
+      "answer": "B",
+      "answer_text": "Beijing-accented Mandarin",
+      "rationale": [
+        "A. hallucination",
+        "B. ground truth",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following accents is the closest to the male speaker who said \"你是英雄是好汉就敢做敢认。\" from 70.7s to 72.6s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. Beijing-accented Mandarin",
+        "B. Shandong-accented Mandarin",
+        "C. Standard Mandarin",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "Beijing-accented Mandarin",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the entire audio clip, what accent does the third speaker that appears in the conversation use?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Standard Mandarin",
+        "B. Beijing-accented Mandarin",
+        "C. Shanghai-accented Mandarin",
+        "D. Cannot be determined"
+      ],
+      "answer": "B",
+      "answer_text": "Beijing-accented Mandarin",
+      "rationale": [
+        "A. wrong speaker",
+        "B. ground truth",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole conversation, which speakers use Mandarin with a Beijing accent? (Answer using the global speaker sequence index) Please select the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the first speaker, the third speaker",
+        "B. the second speaker, the third speaker",
+        "C. the second speaker, the fourth speaker",
+        "D. Cannot determine"
+      ],
+      "answer": "A",
+      "answer_text": "the first speaker, the third speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole audio, how many speakers use Mandarin with a Beijing accent? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 2",
+        "B. 1",
+        "C. 4",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "2",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/mingdynesty-ep41/Speaker_Attribute_Recognition-Accent_Identification_spk_a.mp3",
+    "start_time": 70.7,
+    "end_time": 72.6,
+    "duration": 1.9
+  }
+}

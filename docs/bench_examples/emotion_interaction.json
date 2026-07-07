@@ -1,199 +1,343 @@
 {
   "task_id": "emotion_interaction",
   "level": "level2",
-  "dimension": "Context Reasoning",
-  "task_name": "Emotion Interaction",
+  "dimension": "Dialogue Contextual Reasoning (DCR)",
+  "task_name": "Emotion Interaction Reasoning (EIR)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Gua Sha (刮痧, 2001)",
+      "source": "dou shi",
+      "video_folder": "dou_shi_part002",
+      "full_audio": {
+        "src": "bench_examples/audio/emotion_interaction/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/emotion_interaction/en_spk_a.mp3",
-          "start": 138.46,
-          "end": 141.14,
-          "dur": 2.68
+          "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+          "start": 82.47,
+          "end": 87.03,
+          "dur": 4.56,
+          "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+          "spk_id": "spk_03",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "Did you think no one would notice your son's back looks like a piece of roast beef?",
-      "spk_b_transcript": "That is gua sha, a traditional Chinese medical treatment.",
+      "spk_a_transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+      "spk_b_transcript": "Outright executions.",
       "qa": [
         {
-          "question": "In the audio, what is the speaker's emotion, and how did it affect the other people in the conversation?",
+          "question": "In the audio below, what is the speaker's emotion? What effect did this emotion have on the other people in the entire conversation? Speaker indexing starts from the first speaker.",
           "question_type": "no_index",
           "options": [
-            "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-            "B. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-            "C. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut agitatedly.",
-            "D. Cannot be determined (insufficient evidence)."
+            "A. Emotion: Calm/Neutral; Impact: Successfully persuaded the second speaker to accept their course of action.",
+            "B. Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to feel shocked and question the proposal.",
+            "C. Cannot be determined (Insufficient evidence to uniquely determine).",
+            "D. Emotion: Anger/Dissatisfaction; Effect: Causes the third speaker to be shocked by and question the proposal."
           ],
           "answer": "B",
-          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked by and question the proposal.",
           "rationale": [
-            "wrong_speaker",
-            "ground_truth",
             "hallucination",
-            "unknown"
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+              "start": 82.47,
+              "end": 87.03,
+              "dur": 4.56,
+              "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What emotion did Speaker 2 express from 138.46 to 141.14 seconds, and what effect did it have on the other speakers?",
+          "question": "What is the emotion of the speaker (the first speaker) in the audio from 82.47s to 87.03s? What effect did this emotion have on others in the conversation? Speaker indexing starts from the first speaker.",
           "question_type": "time_index",
           "options": [
-            "A. Cannot be determined (insufficient evidence).",
-            "B. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally.",
-            "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-            "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking."
+            "A. Cannot be determined (Insufficient evidence to uniquely determine).",
+            "B. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to feel shocked and question the proposal.",
+            "C. Emotion: Anger/Dissatisfaction; Impact: Led to the second speaker feeling shocked and questioning the proposal.",
+            "D. Emotion: Calm/Neutral; Impact: Successfully persuaded the second speaker to accept their course of action."
           ],
           "answer": "C",
-          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to feel shocked and question their proposal.",
           "rationale": [
             "unknown",
-            "hallucination",
+            "wrong_speaker",
             "ground_truth",
-            "wrong_speaker"
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+              "start": 82.47,
+              "end": 87.03,
+              "dur": 4.56,
+              "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "In the audio, what emotion did Speaker 2 express when saying, “Did you think no one would notice your son's back looks like a piece of roast beef?” and what effect did this have on the other speakers?",
+          "question": "What is the emotion of the speaker (the first speaker) who says ‘You need to push back hard on these bastards’ in the audio? What impact did this emotion have on others in the conversation? Speaker indexing starts from the first speaker.",
           "question_type": "transcript_index",
           "options": [
-            "A. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut heatedly.",
-            "B. Cannot be determined (insufficient evidence).",
-            "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-            "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding."
-          ],
-          "answer": "D",
-          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-          "rationale": [
-            "hallucination",
-            "unknown",
-            "wrong_speaker",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "Throughout the conversation, what emotion did Speaker 2's intense questioning express, and what impact did it have on the other speakers?",
-          "question_type": "speaker_index",
-          "options": [
-            "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-            "B. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-            "C. Cannot be determined (insufficient evidence).",
-            "D. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally."
+            "A. Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked by and question the proposal.",
+            "B. Emotion: Calm/Neutral; Influence: Successfully persuaded the second speaker to accept their course of action.",
+            "C. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to be shocked by and question the proposal.",
+            "D. Cannot be determined (insufficient evidence to uniquely determine)."
           ],
           "answer": "A",
-          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked by and question the proposal.",
           "rationale": [
             "ground_truth",
+            "hallucination",
             "wrong_speaker",
-            "unknown",
-            "hallucination"
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+              "start": 82.47,
+              "end": 87.03,
+              "dur": 4.56,
+              "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "From 138.46s to 141.14s, what emotion did Speaker 2 express when saying, “Did you think no one would notice your son's back looks like a piece of roast beef?” and what effect did this have on the other speakers?",
-          "question_type": "complex_index",
+          "question": "In the audio, what is a strong emotion expressed by the first speaker during the latter half of the conversation? What impact did this emotion have on others? Speaker indexing starts from the first speaker.",
+          "question_type": "speaker_index",
           "options": [
-            "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-            "B. Cannot be determined (insufficient evidence).",
-            "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-            "D. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally."
+            "A. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to feel shocked and doubtful about the proposal.",
+            "B. Cannot be determined (insufficient evidence to uniquely determine).",
+            "C. Emotion: Calm/Neutral; Influence: Successfully persuaded the second speaker to accept their course of action.",
+            "D. Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to feel shocked and question their proposal."
           ],
-          "answer": "C",
-          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+          "answer": "D",
+          "answer_text": "Emotion: Anger/Displeasure; Impact: Causes the second speaker to be shocked by and question the proposal.",
           "rationale": [
             "wrong_speaker",
             "unknown",
+            "hallucination",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "What is the emotion of the speaker (the first speaker) who says ‘shoot them in the alleys if you have to’ from 82.47s to 87.03s in the audio? What impact did this emotion have on others? Speaker indexing starts from the first speaker.",
+          "question_type": "complex_index",
+          "options": [
+            "A. Emotion: Calm/Neutral; Impact: Successfully persuaded the second speaker to accept their course of action.",
+            "B. Emotion: Anger/Dissatisfaction; Impact: Caused the second speaker to be shocked and question the proposal.",
+            "C. Cannot be determined (insufficient evidence to uniquely determine).",
+            "D. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to feel shocked and question their proposal."
+          ],
+          "answer": "B",
+          "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked and skeptical about the proposal.",
+          "rationale": [
+            "hallucination",
             "ground_truth",
-            "hallucination"
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+              "start": 82.47,
+              "end": 87.03,
+              "dur": 4.56,
+              "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "He Bi (何必)",
+      "source": "detective zhugeli",
+      "video_folder": "detective_zhugeli_part014",
+      "full_audio": {
+        "src": "bench_examples/audio/emotion_interaction/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/emotion_interaction/zh_spk_a.mp3",
-          "start": 129.93,
-          "end": 134.73,
-          "dur": 4.8
+          "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+          "start": 35.16,
+          "end": 35.72,
+          "dur": 0.56,
+          "transcript": "放屁。",
+          "spk_id": "spk_03",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "Didn't you get enough of your striptease last time in Qingdao? Even if you still want to dance, I'm not interested and don't want to watch anymore.",
-      "spk_b_transcript": "I want to see you dance, my dear nemesis.",
+      "spk_a_transcript": "放屁。",
+      "spk_b_transcript": "我放你个屁呀，放屁。",
       "qa": [
         {
-          "question": "In the audio, what is the emotion of the first speaker (Speaker 1)? How did this emotion affect others throughout the entire conversation?",
-          "question_type": "speaker_index",
+          "question": "下面音频中，说话人的情感是什么？这种情绪在整段对话中对其他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
+          "question_type": "no_index",
           "options": [
-            "A. Emotion: Anger/Displeasure; Impact: It caused Speaker 2 to feel very awkward and try to ease the tension.",
-            "B. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to become angry and have a fierce argument with Speaker 1.",
-            "C. Cannot be determined (insufficient evidence).",
-            "D. Emotion: Disgust/Dissatisfaction; Impact: It leads to Speaker 5 not being provoked, but instead counterattacking and provoking with a playful tone."
-          ],
-          "answer": "D",
-          "answer_text": "Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke in a playful tone.",
-          "rationale": [
-            "wrong_speaker",
-            "hallucination",
-            "unknown",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "What emotion is Speaker 1 expressing in the audio from 129.93 to 134.73 seconds? What impact did this have on others in the conversation?",
-          "question_type": "time_index",
-          "options": [
-            "A. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to become angry and have a fierce argument with Speaker 1.",
-            "B. Emotion: Disgust/Displeasure; Impact: It causes Speaker 5 not to be provoked, but instead to counter-attack and taunt in a playful tone.",
-            "C. Emotion: Anger/Dissatisfaction; Impact: Speaker 2 felt very awkward and attempted to ease the tension.",
-            "D. Cannot be determined (insufficient evidence)."
+            "A. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+            "B. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+            "C. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+            "D. 无法判断（证据不足以唯一确定）"
           ],
           "answer": "B",
-          "answer_text": "Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke with a playful tone.",
+          "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
           "rationale": [
             "hallucination",
             "ground_truth",
             "wrong_speaker",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+              "start": 35.16,
+              "end": 35.72,
+              "dur": 0.56,
+              "transcript": "放屁。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What emotion is Speaker 1 expressing when they say, \"Even if you still want to dance, I'm not interested and don't want to watch anymore\"? What impact did this have on others in the conversation?",
+          "question": "音频中第 35.16 秒到第 35.72 秒这位说话人（第一个说话人）的情感是什么？这种情绪在对话中对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
+          "question_type": "time_index",
+          "options": [
+            "A. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+            "B. 无法判断（证据不足以唯一确定）",
+            "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+            "D. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。"
+          ],
+          "answer": "D",
+          "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+          "rationale": [
+            "wrong_speaker",
+            "unknown",
+            "hallucination",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+              "start": 35.16,
+              "end": 35.72,
+              "dur": 0.56,
+              "transcript": "放屁。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "音频中说‘放屁’的这位说话人（第一个说话人）在表述该内容的情感是什么？这种情绪在对话中对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
           "question_type": "transcript_index",
           "options": [
-            "A. Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke with a playful tone.",
-            "B. Cannot be determined (insufficient evidence).",
-            "C. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to be provoked and have a heated argument with Speaker 1.",
-            "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 2 to feel very awkward and attempt to ease the atmosphere."
+            "A. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+            "B. 无法判断（证据不足以唯一确定）",
+            "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+            "D. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。"
           ],
           "answer": "A",
-          "answer_text": "Emotion: Anger/Discontent; Impact: Instead of being angered, Speaker 5 counter-attacks and provokes with a playful tone.",
+          "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
           "rationale": [
             "ground_truth",
             "unknown",
             "hallucination",
             "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+              "start": 35.16,
+              "end": 35.72,
+              "dur": 0.56,
+              "transcript": "放屁。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "From 129.93 to 134.73 seconds, what emotion was Speaker 1 expressing when they said, \"Even if you still want to dance, I'm not interested and don't want to watch\"? What effect did this have on others?",
+          "question": "音频中第一个说话人在某段发言中表达的主要情感是什么？这种情绪在对话中对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
+          "question_type": "speaker_index",
+          "options": [
+            "A. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+            "B. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+            "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+            "D. 无法判断（证据不足以唯一确定）"
+          ],
+          "answer": "B",
+          "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+          "rationale": [
+            "wrong_speaker",
+            "ground_truth",
+            "hallucination",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "音频中第 35.16 秒到第 35.72 秒说过‘放屁’的这位说话人（第一个说话人）在表述该内容时的情感是什么？这种情绪对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
           "question_type": "complex_index",
           "options": [
-            "A. Cannot be determined (insufficient evidence).",
-            "B. Emotion: Anger/Displeasure; Impact: It caused Speaker 2 to feel very awkward and attempt to ease the tension.",
-            "C. Emotion: Disgust/Dissatisfaction; Impact: It leads to Speaker 5 not being provoked, but instead counterattacking and taunting with a playful tone.",
-            "D. Emotion: Disgust/Displeasure; Impact: It caused Speaker 5 to become angry and get into a heated argument with Speaker 1."
+            "A. 无法判断（证据不足以唯一确定）",
+            "B. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+            "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+            "D. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。"
           ],
-          "answer": "C",
-          "answer_text": "Emotion: Anger/Discontent; Impact: Speaker 5 is not provoked; instead, they counter-attack and provoke with a playful tone.",
+          "answer": "D",
+          "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
           "rationale": [
             "unknown",
             "wrong_speaker",
-            "ground_truth",
-            "hallucination"
+            "hallucination",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+              "start": 35.16,
+              "end": 35.72,
+              "dur": 0.56,
+              "transcript": "放屁。",
+              "spk_id": "spk_03",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]

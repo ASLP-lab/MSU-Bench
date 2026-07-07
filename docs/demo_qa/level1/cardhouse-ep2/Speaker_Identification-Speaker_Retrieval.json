@@ -1,0 +1,117 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Identification-Speaker_Retrieval",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_003",
+            "start_time": 8.3,
+            "end_time": 9.9,
+            "transcript": "Well we only have days, not months.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the order of first appearance of the speaker who talks from 8.3s to 9.9s in the audio across the whole conversation?",
+      "question_type": "time_index",
+      "options": [
+        "A. the third speaker",
+        "B. the fifth speaker",
+        "C. the sixth speaker",
+        "D. Cannot judge (insufficient information to confirm the speaker's identity)"
+      ],
+      "answer": "A",
+      "answer_text": "the third speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the order of appearance of the speaker who said 'Education has been your life's work.' in the audio among all speakers in the whole conversation?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. the third speaker",
+        "B. the first speaker",
+        "C. the seventh speaker",
+        "D. Cannot judge (the information is insufficient to determine the speaker)"
+      ],
+      "answer": "A",
+      "answer_text": "the third speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Among all speakers appearing in the whole conversation, what is the ordinal position of the male speaker who said \"Well we only have days, not months.\" from 8.3s to 9.9s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. the third speaker",
+        "B. the second speaker",
+        "C. the eighth speaker",
+        "D. Cannot be judged (insufficient information to identify the speaker)"
+      ],
+      "answer": "A",
+      "answer_text": "the third speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the occurrence order of the speaker in the following audio among all speakers that appear in the whole conversation?",
+      "question_type": "no_index",
+      "options": [
+        "A. the fourth speaker",
+        "B. the second speaker",
+        "C. the sixth speaker",
+        "D. Cannot judge (insufficient information to confirm the speaker)"
+      ],
+      "answer": "A",
+      "answer_text": "the fourth speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Identification-Speaker_Retrieval_spk_a.mp3",
+    "start_time": 8.3,
+    "end_time": 9.9,
+    "duration": 1.6
+  }
+}

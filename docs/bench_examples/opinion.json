@@ -1,397 +1,519 @@
 {
   "task_id": "opinion",
   "level": "level1",
-  "dimension": "Speaker Identification",
-  "task_name": "Speaker Opinion Summary",
+  "dimension": "Speaker Identification (SID)",
+  "task_name": "Speaker-specific Viewpoint Summarization (SVS)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "Mission: Impossible – Rogue Nation (2015)",
+      "source": "dolittle 2020",
+      "video_folder": "dolittle_2020_part004",
+      "full_audio": {
+        "src": "bench_examples/audio/opinion/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/opinion/en_spk_a.mp3",
-          "start": 236.54,
-          "end": 241.9,
-          "dur": 5.36
+          "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+          "start": 56.83,
+          "end": 60.91,
+          "dur": 4.08,
+          "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+          "spk_id": "spk_15",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "We have a responsibility to warn the British government, and not gamble with the Prime Minister's life, Ethan.",
-      "spk_b_transcript": "No, we're gonna find Lane, we're gonna get him.",
+      "spk_a_transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+      "spk_b_transcript": "I shall continue to leech, to circulate the vapors in the bloodstream.",
       "qa": [
         {
-          "question": "What is the speaker's overall stance throughout the entire conversation?",
+          "question": "What is the overall stance of the speaker in the following single-person audio throughout the entire dialogue?",
           "question_type": "no_index",
           "options": [
-            "A. He believes the mission is too risky and advocates for abandoning the operation entirely to ensure the team's safety.",
-            "B. He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-            "C. He insists on proactively pursuing their opponents, rather than adopting a conservative warning strategy.",
-            "D. Cannot be determined due to insufficient evidence."
+            "A. Believes that traditional therapies such as bloodletting with leeches should continue to be used to treat the queen.",
+            "B. Is highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+            "C. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+            "D. Cannot be determined (The evidence is insufficient to uniquely deduce the conclusion/change)."
           ],
           "answer": "B",
-          "answer_text": "He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
+          "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
           "rationale": [
-            "hallucination",
-            "ground_truth",
             "wrong_speaker",
+            "ground_truth",
+            "hallucination",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What is the overall stance throughout the entire dialogue of the speaker who is speaking from 236.54s to 241.9s?",
+          "question": "What is the overall stance of the speaker from 56.83 to 60.91 seconds in the audio throughout the entire conversation?",
           "question_type": "time_index",
           "options": [
-            "A. He insists on actively pursuing their opponents, rather than adopting a conservative warning strategy.",
-            "B. He finally compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-            "C. Cannot be determined due to insufficient evidence.",
-            "D. He believes the mission is too high-risk and advocates for abandoning the operation entirely to ensure the team's safety."
-          ],
-          "answer": "B",
-          "answer_text": "He finally compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-          "rationale": [
-            "wrong_speaker",
-            "ground_truth",
-            "unknown",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "What is the overall stance throughout the dialogue of the speaker who says, 'We have a responsibility to warn the British government'?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Cannot be determined due to insufficient evidence.",
-            "B. He insists on actively pursuing their opponents, instead of adopting a conservative warning strategy.",
-            "C. He considers the mission's risk to be too high and advocates for abandoning the operation entirely to ensure the team's safety.",
-            "D. He finally compromised and agreed to a direct confrontation, but expressed doubt about its feasibility."
+            "A. Initially supported inviting Doctor Dolittle, but turned to opposition after seeing the animals he brought.",
+            "B. Believed that traditional therapies such as leech bloodletting should continue to be used to treat the queen.",
+            "C. Cannot be determined (The evidence is insufficient to uniquely determine the conclusion/change).",
+            "D. Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods."
           ],
           "answer": "D",
-          "answer_text": "He finally compromised and agreed to a direct confrontation, but expressed doubt about its feasibility.",
+          "answer_text": "Highly suspicious of and opposed to Doctor Dolittle's intervention and his methods.",
           "rationale": [
-            "unknown",
-            "wrong_speaker",
             "hallucination",
+            "wrong_speaker",
+            "unknown",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "What is the overall stance throughout the conversation of the speaker who says, 'We have a responsibility to warn the British government,' between 236.54s and 241.9s?",
+          "question": "What is the overall stance in the entire conversation of the speaker in the audio who said ‘I demand their immediate removal!’?",
+          "question_type": "transcript_index",
+          "options": [
+            "A. Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+            "B. Cannot be determined (The evidence is insufficient to uniquely support the viewpoint/change).",
+            "C. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+            "D. Believed that traditional therapies, such as leech bloodletting, should continue to be used to treat the queen."
+          ],
+          "answer": "A",
+          "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+          "rationale": [
+            "ground_truth",
+            "unknown",
+            "hallucination",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "What is the overall stance, throughout the entire conversation, of the speaker who says ‘I demand their immediate removal!’ between 56.83 and 60.91 seconds in the audio?",
           "question_type": "complex_index",
           "options": [
-            "A. He ultimately compromised and agreed to a direct confrontation, but expressed doubt about its feasibility.",
-            "B. He considers the mission's risk to be too high and advocates for abandoning the operation entirely to ensure the team's safety.",
-            "C. Cannot be determined due to insufficient evidence.",
-            "D. He insists on actively pursuing their opponents, rather than adopting a conservative warning strategy."
-          ],
-          "answer": "A",
-          "answer_text": "He ultimately compromised and agreed to a direct confrontation, but expressed doubt about its feasibility.",
-          "rationale": [
-            "ground_truth",
-            "hallucination",
-            "unknown",
-            "wrong_speaker"
-          ]
-        },
-        {
-          "question": "What is the overall stance of Speaker 6 throughout the entire conversation?",
-          "question_type": "speaker_index",
-          "options": [
-            "A. He considers the mission's risk to be too high and advocates for abandoning the operation entirely to ensure the team's safety.",
-            "B. Cannot be determined due to insufficient evidence.",
-            "C. He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-            "D. He insists on actively pursuing their opponent, rather than adopting a conservative warning strategy."
+            "A. Believes that traditional therapies such as bloodletting with leeches should continue to be used to treat the queen.",
+            "B. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+            "C. Highly suspicious of and opposed to Doctor Dolittle's intervention and his methods.",
+            "D. Cannot be determined (Insufficient evidence to uniquely determine the viewpoint/change)."
           ],
           "answer": "C",
-          "answer_text": "He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-          "rationale": [
-            "hallucination",
-            "unknown",
-            "ground_truth",
-            "wrong_speaker"
-          ]
-        },
-        {
-          "question": "How does the speaker's stance change throughout the entire dialogue?",
-          "question_type": "no_index",
-          "options": [
-            "A. He changed from firmly insisting on reporting to superiors to avoid risk, to reluctantly accepting a risky plan for direct confrontation.",
-            "B. He always maintained a hard-line stance of actively pursuing the opponent and never wavered.",
-            "C. Cannot be determined due to insufficient evidence.",
-            "D. He shifted from initially supporting direct action to advocating a cautious warning strategy due to the high risks."
-          ],
-          "answer": "A",
-          "answer_text": "He changed from firmly insisting on reporting to superiors to avoid risk, to reluctantly accepting a risky plan for direct confrontation.",
-          "rationale": [
-            "ground_truth",
-            "wrong_speaker",
-            "unknown",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "How does the stance of the speaker who is speaking from 236.54s to 241.9s change throughout the entire conversation?",
-          "question_type": "time_index",
-          "options": [
-            "A. He always maintained a tough stance of actively pursuing the opponent and never wavered.",
-            "B. He shifted from initially supporting direct action to advocating a cautious warning strategy due to the high risks.",
-            "C. He changed from firmly insisting on reporting to superiors to avoid risk, to ultimately being forced to accept a risky plan for direct confrontation.",
-            "D. Cannot be determined due to insufficient evidence."
-          ],
-          "answer": "C",
-          "answer_text": "He changed from firmly insisting on reporting to superiors to avoid risk, to ultimately being forced to accept a risky plan for direct confrontation.",
+          "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
           "rationale": [
             "wrong_speaker",
             "hallucination",
             "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "How does the stance of the speaker who says, 'We have a responsibility to warn the British government,' change throughout the entire conversation?",
+          "question": "What is the overall stance of the first speaker throughout the entire conversation? Speaker indexing starts from the first speaker.",
+          "question_type": "speaker_index",
+          "options": [
+            "A. Cannot be determined (Insufficient evidence to uniquely determine the conclusion/change).",
+            "B. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+            "C. Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+            "D. Believed that traditional therapies such as leech bloodletting should continue to be used to treat the queen."
+          ],
+          "answer": "C",
+          "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+          "rationale": [
+            "unknown",
+            "hallucination",
+            "ground_truth",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "How does the speaker in the following monologue audio change their stance throughout the entire dialogue?",
+          "question_type": "no_index",
+          "options": [
+            "A. From being full of confidence in one's medical skills → to becoming flustered and eager to apologize for a slip of the tongue in front of the powerful.",
+            "B. From having hope for the Queen's recovery → to falling into complete despair after seeing Doctor Dolittle.",
+            "C. From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition towards Dr. Dolittle's arrival and methods.",
+            "D. Cannot be determined (Insufficient evidence to uniquely deduce the conclusion/change)"
+          ],
+          "answer": "C",
+          "answer_text": "From pessimistic concerns about the Queen's health → to strong anger and opposition towards Doctor Dolittle's arrival and methods.",
+          "rationale": [
+            "wrong_speaker",
+            "hallucination",
+            "ground_truth",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "How does the stance of the speaker from 56.83s to 60.91s in the audio change throughout the entire conversation?",
+          "question_type": "time_index",
+          "options": [
+            "A. Cannot be determined (Insufficient evidence to uniquely conclude the viewpoint/change).",
+            "B. From pessimistic concerns about the Queen's health → to strong anger and opposition towards Doctor Dolittle's arrival and methods.",
+            "C. From being full of confidence in his own medical skills → to becoming flustered and rushing to apologize for misspeaking in front of the powerful and influential.",
+            "D. From being hopeful for the queen's recovery → to falling into complete despair after seeing Doctor Dolittle."
+          ],
+          "answer": "B",
+          "answer_text": "From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition towards Doctor Doolittle's arrival and methods.",
+          "rationale": [
+            "unknown",
+            "ground_truth",
+            "wrong_speaker",
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
+          ]
+        },
+        {
+          "question": "How does the stance of the speaker in the audio, who said ‘I demand their immediate removal!’, change throughout the conversation?",
           "question_type": "transcript_index",
           "options": [
-            "A. He shifted from initially supporting direct action to advocating a cautious warning strategy because the risks were too high.",
-            "B. Cannot be determined due to insufficient evidence.",
-            "C. He always maintained a hardline stance of actively pursuing their opponents and never wavered.",
-            "D. He changed from firmly insisting on reporting to superiors to avoid risk, to finally and reluctantly accepting a risky plan for direct confrontation."
+            "A. From being hopeful for the Queen's recovery → to completely despairing after seeing Doctor Dolittle.",
+            "B. Cannot be determined (Insufficient evidence to uniquely determine the viewpoint/change).",
+            "C. From being full of confidence in one's medical skills → to becoming flustered and hastily apologizing for misspeaking in front of the powerful and influential.",
+            "D. From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition towards Doctor Dolittle's arrival and methods."
           ],
           "answer": "D",
-          "answer_text": "He changed from firmly insisting on reporting to superiors to avoid risk, to finally and reluctantly accepting a risky plan for direct confrontation.",
+          "answer_text": "From pessimistic concerns about the queen's health → to strong anger and opposition towards Doctor Dolittle's arrival and methods.",
           "rationale": [
             "hallucination",
             "unknown",
             "wrong_speaker",
             "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "How does the stance of the speaker who says, 'We have a responsibility to warn the British government,' between 236.54s and 241.9s change throughout the entire conversation?",
+          "question": "How does the stance of the speaker, who says ‘I demand their immediate removal!’ in the audio from 56.83 to 60.91 seconds, change throughout the entire conversation?",
           "question_type": "complex_index",
           "options": [
-            "A. He changed from strongly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
-            "B. Cannot be determined due to insufficient evidence.",
-            "C. He shifted from initially supporting direct action to advocating a cautious warning strategy because the risks were too high.",
-            "D. He always maintained a hard-line position of actively pursuing the opponent and never wavered."
+            "A. From pessimistic concern about the Queen's health → to strong anger and opposition to Doctor Dolittle's arrival and methods.",
+            "B. From being completely confident in one's medical skills → to becoming flustered and rushing to apologize after misspeaking in front of the powerful.",
+            "C. Cannot be determined (Insufficient evidence to lead to a unique conclusion/change).",
+            "D. From hoping for the queen's recovery → completely despairing after seeing Doctor Dolittle."
           ],
           "answer": "A",
-          "answer_text": "He changed from strongly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
+          "answer_text": "From expressing pessimistic concerns about the Queen's health → to strong anger and opposition towards the arrival and methods of Doctor Dolittle.",
           "rationale": [
             "ground_truth",
+            "wrong_speaker",
             "unknown",
-            "hallucination",
-            "wrong_speaker"
+            "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+              "start": 56.83,
+              "end": 60.91,
+              "dur": 4.08,
+              "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+              "spk_id": "spk_15",
+              "spk_index": "spk_1"
+            }
           ]
         },
         {
-          "question": "How does the stance of Speaker 6 change throughout the entire conversation?",
+          "question": "Throughout the entire conversation, how does the stance of the first speaker change? Speaker indexing starts from the first speaker.",
           "question_type": "speaker_index",
           "options": [
-            "A. He always maintained a hardline stance of actively pursuing the opponent and never wavered.",
-            "B. He changed from firmly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
-            "C. Cannot be determined due to insufficient evidence.",
-            "D. He shifted from initially supporting direct action to advocating a cautious warning strategy due to the risks being too high."
+            "A. From being full of confidence in his own medical skills → to becoming flustered and eager to apologize for a slip of the tongue in front of the powerful and influential.",
+            "B. From being hopeful about the Queen's recovery → to falling into complete despair after seeing Doctor Dolittle.",
+            "C. Cannot be determined (Insufficient evidence to draw a unique conclusion/change).",
+            "D. From pessimistic concern for the Queen's health → strong anger and opposition to Doctor Dolittle's arrival and methods."
           ],
-          "answer": "B",
-          "answer_text": "He changed from firmly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
+          "answer": "D",
+          "answer_text": "From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition to Doctor Dolittle's arrival and methods.",
           "rationale": [
             "wrong_speaker",
-            "ground_truth",
+            "hallucination",
             "unknown",
-            "hallucination"
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "A Better Tomorrow-era Diary (大丈夫日记, 1988)",
+      "source": "a chinese odyssey 1995",
+      "video_folder": "a_chinese_odyssey_1995_part015",
+      "full_audio": {
+        "src": "bench_examples/audio/opinion/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/opinion/zh_spk_a.mp3",
-          "start": 18.01,
-          "end": 20.73,
-          "dur": 2.72
+          "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+          "start": 23.93,
+          "end": 26.81,
+          "dur": 2.88,
+          "transcript": "我骗他的，我在等我的男人回来接我。",
+          "spk_id": "spk_01",
+          "spk_index": "spk_2"
         }
       },
-      "spk_a_transcript": "There are many people with the same name in this world. You should check carefully first.",
-      "spk_b_transcript": "I'm here to ask, do you have two wives?",
+      "spk_a_transcript": "我骗他的，我在等我的男人回来接我。",
+      "spk_b_transcript": "不过就算他回来，他有什么本事把你从牛魔王手上抢回去啊？",
       "qa": [
         {
-          "question": "What is the overall stance of the main speaker being questioned throughout the entire conversation?",
-          "question_type": "no_index",
-          "options": [
-            "A. Conducts an investigation with an objective and neutral attitude, aiming to find out the truth.",
-            "B. Admits to having an extramarital affair, but argues it is not bigamy, and attempts to seek help from the police.",
-            "C. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "D. Cannot be determined due to insufficient evidence."
-          ],
-          "answer": "C",
-          "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-          "rationale": [
-            "wrong_speaker",
-            "hallucination",
-            "ground_truth",
-            "unknown"
-          ]
-        },
-        {
-          "question": "What is the overall stance of the speaker who speaks from 18.01s to 20.73s throughout the entire conversation?",
-          "question_type": "time_index",
-          "options": [
-            "A. Cannot be determined due to insufficient evidence.",
-            "B. Conducts an investigation with an objective and neutral attitude to find out the truth.",
-            "C. Admits to having an extramarital affair, but argues it is not bigamy, and seeks help from the police.",
-            "D. Adamantly denies having two wives and tries to cover up the truth with various lies."
-          ],
-          "answer": "D",
-          "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-          "rationale": [
-            "unknown",
-            "wrong_speaker",
-            "hallucination",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "What is the overall stance of the speaker who said, \"There are many people with the same name in this world\"?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. Admits to having an extramarital affair, but argues that it is not bigamy, and attempts to seek help from the police.",
-            "B. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "C. Cannot be determined due to insufficient evidence.",
-            "D. Conducts an investigation with an objective and neutral attitude, aiming to ascertain the truth."
-          ],
-          "answer": "B",
-          "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-          "rationale": [
-            "hallucination",
-            "ground_truth",
-            "unknown",
-            "wrong_speaker"
-          ]
-        },
-        {
-          "question": "What is the overall stance of the speaker who says, \"You should check carefully first,\" between 18.01s and 20.73s?",
-          "question_type": "complex_index",
-          "options": [
-            "A. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "B. Conducts an investigation with an objective and neutral attitude, aiming to ascertain the truth.",
-            "C. Cannot be determined due to insufficient evidence.",
-            "D. Admits to having an extramarital affair, but argues it is not bigamy and attempts to seek help from the police."
-          ],
-          "answer": "A",
-          "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-          "rationale": [
-            "ground_truth",
-            "wrong_speaker",
-            "unknown",
-            "hallucination"
-          ]
-        },
-        {
-          "question": "What is the overall stance of the first speaker (Speaker 1) throughout the entire conversation?",
+          "question": "在整段对话中，第二个说话人，在整段对话中的整体立场是什么？ 说话人序号从第一个说话人开始编号。",
           "question_type": "speaker_index",
           "options": [
-            "A. Admits to having an extramarital affair, but argues it is not bigamy, and attempts to seek help from the police.",
-            "B. Conducts an investigation with an objective and neutral attitude, aiming to ascertain the facts.",
-            "C. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "D. Cannot be determined due to insufficient evidence."
+            "A. 认为她的意中人只是个不可靠的“小滑头”，对他能否救自己持怀疑态度。",
+            "B. 为了逃避不想要的婚事，计划在婚礼前自己偷偷逃跑。",
+            "C. 坚信自己的意中人是一位不凡的英雄，并且会以万众瞩目的方式来迎娶她。",
+            "D. 无法判断（证据不足以唯一推出观点/变化）。"
           ],
           "answer": "C",
-          "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
+          "answer_text": "坚信自己的意中人是一位不凡的英雄，并且会以万众瞩目的方式来迎娶她。",
           "rationale": [
-            "hallucination",
             "wrong_speaker",
+            "hallucination",
             "ground_truth",
             "unknown"
-          ]
-        },
-        {
-          "question": "How does the stance of the main speaker being questioned change throughout the conversation?",
-          "question_type": "no_index",
-          "options": [
-            "A. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "B. From a strong initial denial to a later emotional breakdown, finally confessing everything to his wife.",
-            "C. From initially suspecting the other party to believing their story and deciding to end the investigation.",
-            "D. Cannot be determined due to insufficient evidence."
           ],
-          "answer": "A",
-          "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-          "rationale": [
-            "ground_truth",
-            "hallucination",
-            "wrong_speaker",
-            "unknown"
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "How does the stance of the speaker who speaks from 18.01s to 20.73s change throughout the entire conversation?",
-          "question_type": "time_index",
-          "options": [
-            "A. From a strong initial denial to an emotional breakdown, finally confessing everything to his wife.",
-            "B. Cannot be determined due to insufficient evidence.",
-            "C. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "D. From initially suspecting the other party to believing their account and deciding to end the investigation."
-          ],
-          "answer": "C",
-          "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-          "rationale": [
-            "hallucination",
-            "unknown",
-            "ground_truth",
-            "wrong_speaker"
-          ]
-        },
-        {
-          "question": "How does the stance of the speaker who said, \"There are many people with the same name in this world,\" change throughout the conversation?",
-          "question_type": "transcript_index",
-          "options": [
-            "A. From initially suspecting the other party to believing their explanation and deciding to end the investigation.",
-            "B. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "C. From a strong initial denial to a later emotional breakdown, finally confessing everything to his wife.",
-            "D. Cannot be determined due to insufficient evidence."
-          ],
-          "answer": "B",
-          "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-          "rationale": [
-            "wrong_speaker",
-            "ground_truth",
-            "hallucination",
-            "unknown"
-          ]
-        },
-        {
-          "question": "How does the stance of the speaker who says, \"You should check it carefully first,\" between 18.01s and 20.73s change throughout the conversation?",
-          "question_type": "complex_index",
-          "options": [
-            "A. Cannot be determined due to insufficient evidence.",
-            "B. From a strong initial denial to a later emotional breakdown, ultimately confessing everything to his wife.",
-            "C. From initially suspecting the other party to believing their story and deciding to end the investigation.",
-            "D. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth."
-          ],
-          "answer": "D",
-          "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-          "rationale": [
-            "unknown",
-            "hallucination",
-            "wrong_speaker",
-            "ground_truth"
-          ]
-        },
-        {
-          "question": "How does the stance of the first speaker (Speaker 1) change throughout the conversation?",
+          "question": "在整段对话中，第二个说话人，在整段对话中立场如何变化？ 说话人序号从第一个说话人开始编号。",
           "question_type": "speaker_index",
           "options": [
-            "A. From a strong initial denial to an emotional breakdown, ultimately confessing everything to his wife.",
-            "B. Cannot be determined due to insufficient evidence.",
-            "C. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "D. From initially suspecting the other party to believing their story and deciding to end the investigation."
+            "A. 从表面同意一桩婚事 → 转变为揭示这只是谎言，并表达了对意中人到来的坚定信念。",
+            "B. 从最初的坚决反对 → 到最后在家人的压力下被迫同意婚事。",
+            "C. 从怀疑对方的决定 → 到最终认定对方精神不正常。",
+            "D. 无法判断（证据不足以唯一推出观点/变化）。"
           ],
-          "answer": "C",
-          "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
+          "answer": "A",
+          "answer_text": "从表面同意一桩婚事 → 转变为揭示这只是谎言，并表达了对意中人到来的坚定信念。",
+          "rationale": [
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker",
+            "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
+          ]
+        },
+        {
+          "question": "音频中说过‘我在等我的男人回来接我’的这位说话人，在整段对话中的整体立场是什么？",
+          "question_type": "transcript_index",
+          "options": [
+            "A. 对自己的意中人能否出现持怀疑态度。",
+            "B. 无法判断（证据不足以唯一推出观点/变化）。",
+            "C. 认为她的意中人没有能力把自己从牛魔王手中救走。",
+            "D. 坚定地相信自己的意中人是一个不平凡的人，并且一定会来娶她。"
+          ],
+          "answer": "D",
+          "answer_text": "坚定地相信自己的意中人是一个不平凡的人，并且一定会来娶她。",
           "rationale": [
             "hallucination",
             "unknown",
+            "wrong_speaker",
+            "ground_truth"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+              "start": 23.93,
+              "end": 26.81,
+              "dur": 2.88,
+              "transcript": "我骗他的，我在等我的男人回来接我。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_2"
+            }
+          ]
+        },
+        {
+          "question": "音频中说过‘我在等我的男人回来接我’的这位说话人，在整段对话中立场如何变化？",
+          "question_type": "transcript_index",
+          "options": [
+            "A. 从起初的犹豫不决 → 到后来坚定了等待意中人的决心。",
+            "B. 从假意答应与牛魔王成亲 → 转变为坦白真实想法并坚信意中人会来迎娶自己。",
+            "C. 无法判断（证据不足以唯一推出观点/变化）。",
+            "D. 从相信意中人会来 → 到后来被说服并认为这只是不切实际的幻想。"
+          ],
+          "answer": "B",
+          "answer_text": "从假意答应与牛魔王成亲 → 转变为坦白真实想法并坚信意中人会来迎娶自己。",
+          "rationale": [
+            "hallucination",
+            "ground_truth",
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+              "start": 23.93,
+              "end": 26.81,
+              "dur": 2.88,
+              "transcript": "我骗他的，我在等我的男人回来接我。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_2"
+            }
+          ]
+        },
+        {
+          "question": "下面单人讲话音频中的这位说话人，在整段对话中的整体立场是什么？",
+          "question_type": "no_index",
+          "options": [
+            "A. 无法判断（证据不足以唯一推出观点/变化）。",
+            "B. 她认为等待意中人只是理想，现实中可能无法实现。",
+            "C. 她坚信自己的意中人是天选之人，一定会来拯救并迎娶她。",
+            "D. 她认为对方的所谓意中人只是个“小滑头”，根本不可能回来。"
+          ],
+          "answer": "C",
+          "answer_text": "她坚信自己的意中人是天选之人，一定会来拯救并迎娶她。",
+          "rationale": [
+            "unknown",
+            "hallucination",
             "ground_truth",
             "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+              "start": 23.93,
+              "end": 26.81,
+              "dur": 2.88,
+              "transcript": "我骗他的，我在等我的男人回来接我。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_2"
+            }
+          ]
+        },
+        {
+          "question": "下面单人讲话音频中的这位说话人，在整段对话中立场如何变化？",
+          "question_type": "no_index",
+          "options": [
+            "A. 无法判断（证据不足以唯一推出观点/变化）。",
+            "B. 从表面上屈服于一桩婚事 → 转变为吐露真言，表明自己其实在等待意中人。",
+            "C. 从对意中人的到来充满希望 → 转变为怀疑他是否有能力救自己。",
+            "D. 从最初认为对方是疯子 → 到最后用“神经病”来更准确地形容她。"
+          ],
+          "answer": "B",
+          "answer_text": "从表面上屈服于一桩婚事 → 转变为吐露真言，表明自己其实在等待意中人。",
+          "rationale": [
+            "unknown",
+            "ground_truth",
+            "hallucination",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+              "start": 23.93,
+              "end": 26.81,
+              "dur": 2.88,
+              "transcript": "我骗他的，我在等我的男人回来接我。",
+              "spk_id": "spk_01",
+              "spk_index": "spk_2"
+            }
           ]
         }
       ]

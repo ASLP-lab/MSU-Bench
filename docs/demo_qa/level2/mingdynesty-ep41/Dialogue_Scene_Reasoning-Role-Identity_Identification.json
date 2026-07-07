@@ -1,0 +1,135 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level2",
+  "task": "Dialogue_Scene_Reasoning-Role-Identity_Identification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_006",
+            "start_time": 19.9,
+            "end_time": 22.1,
+            "transcript": "海瑞的这个东西是谁拿来的？",
+            "spk_id": "spk_1",
+            "spk_index": "spk_1",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Anger",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_007",
+            "start_time": 22.7,
+            "end_time": 25.0,
+            "transcript": "是臣，亲自到他家里拿来的。",
+            "spk_id": "spk_2",
+            "spk_index": "spk_2",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Fear",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the relationship between the first speaker and the second speaker in the whole conversation? Please choose the most appropriate option.",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Monarch - court minister",
+        "B. Colleagues serving in the same imperial court",
+        "C. Direct superior - subordinate",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "Monarch - court minister",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the following audio with two speakers, judging from the whole conversation, what is the relationship between them? Please select the most appropriate option.",
+      "question_type": "no_index",
+      "options": [
+        "A. Monarch - court minister",
+        "B. Imperial palace eunuch - court official",
+        "C. Chief minister of the imperial court - subordinate official",
+        "D. Cannot be determined (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Monarch - court minister",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the relationship between the speaker talking from 12.1s to 14.1s and the speaker talking from 17.3s to 19.7s in the whole conversation? Please select the most appropriate option.",
+      "question_type": "time_index",
+      "options": [
+        "A. Monarch - court minister",
+        "B. Court eunuch - court official",
+        "C. Chief imperial minister - subordinate official",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Monarch - court minister",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the relationship between the speaker who said \"海瑞的这个东西是谁拿来的？\" and the speaker who said \"是臣，亲自到他家里拿来的。\" in the whole conversation? Please choose the most appropriate option.",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Monarch - Court Minister",
+        "B. Court Eunuch - Court Official",
+        "C. Senior Grand Secretary of the Imperial Court - Subordinate Official",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Monarch - Court Minister",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the relationship between the speaker who said \"海瑞的这个东西是谁拿来的？\" from 12.1s to 14.1s in the audio, and the speaker who said \"是臣，亲自到他家里拿来的。\" from 17.3s to 19.7s in the whole conversation? Please select the most consistent option.",
+      "question_type": "complex_index",
+      "options": [
+        "A. Monarch - Court official",
+        "B. Palace eunuch - Court official",
+        "C. Chief Grand Secretary of the imperial court - Subordinate official",
+        "D. Cannot be judged (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Monarch - Court official",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/mingdynesty-ep41/Dialogue_Scene_Reasoning-Role-Identity_Identification_spk_a.mp3",
+    "start_time": 19.9,
+    "end_time": 22.1,
+    "duration": 2.2
+  }
+}

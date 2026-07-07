@@ -1,0 +1,26 @@
+{
+  "video": "mingdynesty-ep41",
+  "level": "level2",
+  "task": "Dialogue_Scene_Reasoning-Background_Inference",
+  "qa_result": [
+    {
+      "question": "What is the most likely scenario where this conversation takes place?",
+      "type": "single_choice",
+      "question_type": "type_text",
+      "options": [
+        "A. The emperor interrogates and holds the involved officials accountable in the grand hall of the Ming Dynasty imperial palace",
+        "B. Relevant officials privately follow up on the case and pursue accountability in the official residence of the Minister of Revenue",
+        "C. Several imperial officials discuss official business privately in the private room of a restaurant in the capital city",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "The emperor interrogates and holds the involved officials accountable in the grand hall of the Ming Dynasty imperial palace",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ]
+}

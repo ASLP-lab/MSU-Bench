@@ -1,0 +1,171 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level1",
+  "task": "Speaker_Attribute_Recognition-Age_Recognition",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_005",
+            "start_time": 12.4,
+            "end_time": 23.2,
+            "transcript": "When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "adult (30 < age < 59)",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_013",
+            "start_time": 50.2,
+            "end_time": 55.2,
+            "transcript": "I have no idea how they got this. I specifically told my staff to destroy everything. I can't imagine...",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "senior adult (age > 60)",
+            "gender": "Male",
+            "emotion": "Disgust",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "In the following single-speaker audio clip, which of the following options is the age group of the speaker closest to?",
+      "question_type": "no_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. senior adult (age > 60)",
+        "C. young adult (18 < age < 29)",
+        "D. Unidentifiable (insufficient information to determine the age group)"
+      ],
+      "answer": "A",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the closest to the age group of the speaker talking from 12.4s to 23.2s in the audio?",
+      "question_type": "time_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. senior adult (age > 60)",
+        "C. young adult (18 < age < 29)",
+        "D. Cannot judge (insufficient information to determine the age group)"
+      ],
+      "answer": "A",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following options is the age group that best matches the speaker who said \"When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.\" in the audio?",
+      "question_type": "transcript_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. senior adult (age > 60)",
+        "C. young adult (18 < age < 29)",
+        "D. Unidentifiable (insufficient information to determine the age group)"
+      ],
+      "answer": "A",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole conversation, which of the following options is the closest to the age group of the third appearing speaker?",
+      "question_type": "speaker_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. senior adult (age > 60)",
+        "C. young adult (18 < age < 29)",
+        "D. Cannot be judged (the information is insufficient to determine the age group)"
+      ],
+      "answer": "A",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "Which of the following age ranges is the closest to the male speaker who said 'When I asked my colleagues, your bosses, who are the smartest minds in education, out of hundreds, we arrived at you, the six of you in this room.' between 12.4s and 23.2s in the audio?",
+      "question_type": "complex_index",
+      "options": [
+        "A. adult (30 < age < 59)",
+        "B. senior adult (age > 60)",
+        "C. young adult (18 < age < 29)",
+        "D. Cannot judge (insufficient information to determine the age range)"
+      ],
+      "answer": "A",
+      "answer_text": "adult (30 < age < 59)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the whole audio, which speakers are in the age group of adult (30 < age < 59)? (Answer in the global speaker order) Please choose the most appropriate option.",
+      "question_type": "reverse_retrival",
+      "options": [
+        "A. the third speaker, the fourth speaker",
+        "B. the first speaker, the second speaker",
+        "C. the third speaker, the fourth speaker, the fifth speaker",
+        "D. Cannot judge (insufficient information to determine the age group)"
+      ],
+      "answer": "A",
+      "answer_text": "the third speaker, the fourth speaker",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "In the entire audio, how many speakers in total belong to the age group of adult (30 < age < 59)? Please select the most appropriate option.",
+      "question_type": "reverse_count",
+      "options": [
+        "A. 2 speakers",
+        "B. 4 speakers",
+        "C. 1 speaker",
+        "D. Cannot determine (the information is insufficient to confirm the age group)"
+      ],
+      "answer": "A",
+      "answer_text": "2 speakers",
+      "rationale": [
+        "A. ground truth",
+        "B. hallucination",
+        "C. wrong speaker",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level1/cardhouse-ep2/Speaker_Attribute_Recognition-Age_Recognition_spk_a.mp3",
+    "start_time": 12.4,
+    "end_time": 23.2,
+    "duration": 10.8
+  }
+}

@@ -3,145 +3,225 @@ window.BENCH_EXAMPLES = {
   "retrieval": {
     "task_id": "retrieval",
     "level": "level1",
-    "dimension": "Speaker Identification",
-    "task_name": "Speaker Retrieval",
+    "dimension": "Speaker Identification (SID)",
+    "task_name": "Speaker Retrieval (SR)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Sicario (2015)",
+        "source": "Sicario 2015 2160p BluRay REMUX HEVC DTS-HD MA TrueHD 7 1 Atmos-FGT",
+        "video_folder": "Sicario.2015.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT_part009",
+        "full_audio": {
+          "src": "bench_examples/audio/retrieval/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/retrieval/en_spk_a.mp3",
-            "start": 36.46,
-            "end": 40.42,
-            "dur": 3.96
+            "src": "bench_examples/audio/retrieval/en_ref_a.mp3",
+            "start": 13.3,
+            "end": 15.22,
+            "dur": 1.92,
+            "transcript": "Yeah, you gotta learn how to sleep on a plane.",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "So our friends from Delta have volunteered to come along and will escort the Marshals on the exchange.",
-        "spk_b_transcript": "Nothing will make sense to your American ears.",
+        "spk_a_transcript": "Yeah, you gotta learn how to sleep on a plane.",
+        "spk_b_transcript": "They leave you on the base when you need a ride, don't they?",
         "qa": [
           {
-            "question": "Who is the speaker from 36.46s to 40.42s, based on their order of appearance in the dialogue?",
+            "question": "The speaker in the audio from 13.3 seconds to 15.22 seconds is which speaker, by order of appearance, in the entire conversation? Speaker indexing starts from the first speaker.",
             "question_type": "time_index",
             "options": [
-              "A. Cannot be determined",
-              "B. Speaker 5",
-              "C. Speaker 1",
-              "D. Speaker 7"
-            ],
-            "answer": "C",
-            "answer_text": "Speaker 1",
-            "rationale": [
-              "unknown",
-              "wrong_speaker",
-              "ground_truth",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "Which speaker, in order of their appearance in the conversation, said 'So our friends from Delta have volunteered to come along'?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Speaker 5",
-              "B. Speaker 1",
-              "C. Speaker 7",
-              "D. Cannot be determined"
+              "A. the third speaker",
+              "B. the first speaker",
+              "C. Cannot determine (insufficient information to determine the speaker)",
+              "D. the seventh speaker"
             ],
             "answer": "B",
-            "answer_text": "Speaker 1",
+            "answer_text": "the first speaker",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
-              "hallucination",
-              "unknown"
+              "unknown",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/retrieval/en_ref_a.mp3",
+                "start": 13.3,
+                "end": 15.22,
+                "dur": 1.92,
+                "transcript": "Yeah, you gotta learn how to sleep on a plane.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Between 36.46s and 40.42s, a male speaker says 'escort the Marshals on the exchange'. Based on the order of appearance, which speaker is he?",
+            "question": "The speaker in the audio who said ‘Yeah, you gotta learn how to sleep on a plane.’ is which speaker by order of appearance in the entire dialogue? Speaker indexing starts from the first speaker.",
+            "question_type": "transcript_index",
+            "options": [
+              "A. Cannot be determined (Insufficient information to identify the speaker)",
+              "B. the third speaker",
+              "C. the seventh speaker",
+              "D. the first speaker"
+            ],
+            "answer": "D",
+            "answer_text": "the first speaker",
+            "rationale": [
+              "unknown",
+              "wrong_speaker",
+              "hallucination",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/retrieval/en_ref_a.mp3",
+                "start": 13.3,
+                "end": 15.22,
+                "dur": 1.92,
+                "transcript": "Yeah, you gotta learn how to sleep on a plane.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "The male speaker in the audio who said ‘Yeah, you gotta learn how to sleep on a plane.’ from 13.3 seconds to 15.22 seconds, which speaker is he by order of appearance in the entire dialogue? Speaker indexing starts from the first speaker.",
             "question_type": "complex_index",
             "options": [
-              "A. Speaker 1",
-              "B. Speaker 7",
-              "C. Cannot be determined",
-              "D. Speaker 5"
+              "A. the third speaker",
+              "B. Cannot be determined (Insufficient information to identify the speaker)",
+              "C. the first speaker",
+              "D. the eighth speaker"
             ],
-            "answer": "A",
-            "answer_text": "Speaker 1",
+            "answer": "C",
+            "answer_text": "the first speaker",
             "rationale": [
-              "ground_truth",
-              "hallucination",
+              "wrong_speaker",
               "unknown",
-              "wrong_speaker"
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/retrieval/en_ref_a.mp3",
+                "start": 13.3,
+                "end": 15.22,
+                "dur": 1.92,
+                "transcript": "Yeah, you gotta learn how to sleep on a plane.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "The Fighters (激战, 2013)",
+        "source": "border town 1984",
+        "video_folder": "border_town_1984_part014",
+        "full_audio": {
+          "src": "bench_examples/audio/retrieval/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/retrieval/zh_spk_a.mp3",
-            "start": 33.07,
-            "end": 36.07,
-            "dur": 3.0
+            "src": "bench_examples/audio/retrieval/zh_ref_a.mp3",
+            "start": 17.57,
+            "end": 22.13,
+            "dur": 4.56,
+            "transcript": "光包工就花了七百吊大钱呐，好碾坊啊！",
+            "spk_id": "spk_02",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "The landlord said it was Jianhui, which means it's not you.",
-        "spk_b_transcript": "Wow, it's so dark. Turn on some lights.",
+        "spk_a_transcript": "光包工就花了七百吊大钱呐，好碾坊啊！",
+        "spk_b_transcript": "要是为我，我要好好想一想，过些日子再说吧。",
         "qa": [
           {
-            "question": "Who is the speaker from 33.07s to 36.07s, based on their order of appearance in the conversation?",
+            "question": "音频中在第 17.57 秒到第 22.13 秒的说话人，是整段对话中第几个出现的说话人？ 说话人序号从第一个说话人开始编号。",
             "question_type": "time_index",
             "options": [
-              "A. Speaker 2",
-              "B. Speaker 1",
-              "C. Speaker 5",
-              "D. Cannot be determined (insufficient information to determine the speaker)"
+              "A. 第一个说话人",
+              "B. 第二个说话人",
+              "C. 第四个说话人",
+              "D. 无法判断（信息不足以确定说话人）"
             ],
             "answer": "B",
-            "answer_text": "Speaker 1",
+            "answer_text": "第二个说话人",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
               "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/retrieval/zh_ref_a.mp3",
+                "start": 17.57,
+                "end": 22.13,
+                "dur": 4.56,
+                "transcript": "光包工就花了七百吊大钱呐，好碾坊啊！",
+                "spk_id": "spk_02",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "The person who said, 'The landlord said it was Jianhui, so that means it’s not you,' is which speaker in order of appearance?",
+            "question": "音频中说过‘光包工就花了七百吊大钱呐，好碾坊啊！’的说话人，是整段对话中第几个出现的说话人？ 说话人序号从第一个说话人开始编号。",
             "question_type": "transcript_index",
             "options": [
-              "A. Speaker 5",
-              "B. Speaker 2",
-              "C. Cannot be determined (insufficient information to identify the speaker)",
-              "D. Speaker 1"
+              "A. 第四个说话人",
+              "B. 第三个说话人",
+              "C. 无法判断（信息不足以确定说话人）",
+              "D. 第二个说话人"
             ],
             "answer": "D",
-            "answer_text": "Speaker 1",
+            "answer_text": "第二个说话人",
             "rationale": [
               "hallucination",
               "wrong_speaker",
               "unknown",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/retrieval/zh_ref_a.mp3",
+                "start": 17.57,
+                "end": 22.13,
+                "dur": 4.56,
+                "transcript": "光包工就花了七百吊大钱呐，好碾坊啊！",
+                "spk_id": "spk_02",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "The female speaker who says, 'The landlord said it was Jianhui, which means it's not you,' from 33.07s to 36.07s is which speaker in order of appearance?",
+            "question": "音频中在第 17.57 秒到第 22.13 秒说过‘光包工就花了七百吊大钱呐，好碾坊啊！’的男性说话人，是整段对话中第几个出现的说话人？ 说话人序号从第一个说话人开始编号。",
             "question_type": "complex_index",
             "options": [
-              "A. Speaker 1",
-              "B. Cannot be determined (insufficient information to identify the speaker)",
-              "C. Speaker 2",
-              "D. Speaker 5"
+              "A. 第二个说话人",
+              "B. 无法判断（信息不足以确定说话人）",
+              "C. 第三个说话人",
+              "D. 第四个说话人"
             ],
             "answer": "A",
-            "answer_text": "Speaker 1",
+            "answer_text": "第二个说话人",
             "rationale": [
               "ground_truth",
               "unknown",
               "wrong_speaker",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/retrieval/zh_ref_a.mp3",
+                "start": 17.57,
+                "end": 22.13,
+                "dur": 4.56,
+                "transcript": "光包工就花了七百吊大钱呐，好碾坊啊！",
+                "spk_id": "spk_02",
+                "spk_index": "spk_2"
+              }
             ]
           }
         ]
@@ -151,73 +231,111 @@ window.BENCH_EXAMPLES = {
   "reverse_retrieval": {
     "task_id": "reverse_retrieval",
     "level": "level1",
-    "dimension": "Speaker Identification",
-    "task_name": "Speaker Reverse Retrieval",
+    "dimension": "Speaker Identification (SID)",
+    "task_name": "Reverse Speaker Retrieval (RSR)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Green Book (2018)",
+        "source": "dou shi",
+        "video_folder": "dou_shi_part003",
+        "full_audio": {
+          "src": "bench_examples/audio/reverse_retrieval/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/reverse_retrieval/en_spk_a.mp3",
-            "start": 28.05,
-            "end": 30.33,
-            "dur": 2.28
+            "src": "bench_examples/audio/reverse_retrieval/en_ref_a.mp3",
+            "start": 15.8,
+            "end": 18.32,
+            "dur": 2.52,
+            "transcript": "Well, we're at war, there's no doubt about it.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "This guy's sayin' Doctor Shirley can't eat here.",
-        "spk_b_transcript": "But these are long-standing traditions, club rules. I'm sure you understand.",
+        "spk_a_transcript": "Well, we're at war, there's no doubt about it.",
+        "spk_b_transcript": "There are reports of Japanese troops heading south towards Taipo.",
         "qa": [
           {
-            "question": "Which of the statements below was said by the second speaker in the dialogue? Please select the most appropriate option.\nCandidate statements:\n1) He's the main event.\n2) The man is the reason everyone's here.\n3) He's playin' tonight.\n4) I'm afraid not.\n5) Yeah, well he's not from down here.\n6) Yeah, I know 'em.",
-            "question_type": "reverse_retrieval",
+            "question": "In the statements below, what did the second speaker in the dialogue say? Please select the best match. Speaker indexing starts from the first speaker.\nCandidate statements:\n1) We'll have to send more reinforcements to the area.\n2) There are reports of Japanese troops heading south towards Taipo.\n3) Our naval superiority is the key to holding Hong Kong.\n4) All right, all right, alert the troops station on the eastern side of the gin drinkers line.\n5) What we really need is a couple of battleships stationed here.",
+            "question_type": "reverse_retrival",
             "options": [
-              "A. 1, 3, 4, 5",
-              "B. 1, 2, 3, 5",
-              "C. 1, 3, 5, 6",
-              "D. Cannot be determined (Insufficient information to determine)"
+              "A. 1, 4, 5",
+              "B. 1, 2, 5",
+              "C. 1, 3, 4",
+              "D. Cannot determine (insufficient information to determine)"
             ],
-            "answer": "C",
-            "answer_text": "1, 3, 5, 6",
+            "answer": "A",
+            "answer_text": "1, 4, 5",
             "rationale": [
+              "ground_truth",
               "wrong_speaker",
               "hallucination",
-              "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/reverse_retrieval/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Echoes of the Rainbow (岁月神偷, 2010)",
+        "source": "beyond the realm of conscience 2009 ep22",
+        "video_folder": "beyond_the_realm_of_conscience_2009_ep22_part006",
+        "full_audio": {
+          "src": "bench_examples/audio/reverse_retrieval/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/reverse_retrieval/zh_spk_a.mp3",
-            "start": 27.78,
-            "end": 29.46,
-            "dur": 1.68
+            "src": "bench_examples/audio/reverse_retrieval/zh_ref_a.mp3",
+            "start": 30.91,
+            "end": 35.19,
+            "dur": 4.28,
+            "transcript": "我想穿尚宫服，我想住这间寝室，",
+            "spk_id": "spk_01",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "Your mom is at the hospital visiting your brother.",
-        "spk_b_transcript": "Why is Mom taking so long to come back?",
+        "spk_a_transcript": "我想穿尚宫服，我想住这间寝室，",
+        "spk_b_transcript": "这件尚宫服手工很精细，全靠我们司制房费尽心思。",
         "qa": [
           {
-            "question": "Which of the following statements did Speaker A make during the dialogue? Please select the most suitable option.\nCandidate statements:\n1) Are you hungry?\n2) Why is it taking longer and longer?\n3) How could it be that fast?\n4) Mom will be back soon, don't worry.\n5) You're hungry, go buy yourself some sesame buns at Jinmen.",
+            "question": "在下面的语句中，对话中第 2 个出现的说话人 说过哪些话？请选择最符合的一项。\n候选语句：\n1) 你杀人都行，还有什么能难倒你啊？\n2) 也不一定是你住的。\n3) 吉祥知道我一直以来都以尚宫之位为奋斗目标。\n4) 为了吉祥，我绝不会把尚宫之位拱手让人。\n5) 我想做尚宫。",
             "question_type": "reverse_retrival",
             "options": [
-              "A. 1, 4, 5",
+              "A. 1, 2, 5",
               "B. 1, 3, 5",
-              "C. 1, 2, 5",
-              "D. Cannot determine (Insufficient information to determine)"
+              "C. 无法判断（信息不足以确定）",
+              "D. 3, 4, 5"
             ],
             "answer": "B",
             "answer_text": "1, 3, 5",
             "rationale": [
-              "hallucination",
-              "ground_truth",
               "wrong_speaker",
-              "unknown"
+              "ground_truth",
+              "unknown",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/reverse_retrieval/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
@@ -227,109 +345,169 @@ window.BENCH_EXAMPLES = {
   "counting": {
     "task_id": "counting",
     "level": "level1",
-    "dimension": "Speaker Identification",
-    "task_name": "Speaker Counting",
+    "dimension": "Speaker Identification (SID)",
+    "task_name": "Speaker Counting (SC)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "The Karate Kid (功夫梦, 2010)",
+        "source": "dou shi",
+        "video_folder": "dou_shi_part014",
+        "full_audio": {
+          "src": "bench_examples/audio/counting/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/counting/en_spk_a.mp3",
-            "start": 5.84,
-            "end": 6.92,
-            "dur": 1.08
+            "src": "bench_examples/audio/counting/en_ref_a.mp3",
+            "start": 0.0,
+            "end": 2.6,
+            "dur": 2.6,
+            "transcript": "You tell me. That is your handwriting, isn't it?",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "The journey is complete.",
-        "spk_b_transcript": "Is this the Dragon Well?",
+        "spk_a_transcript": "You tell me. That is your handwriting, isn't it?",
+        "spk_b_transcript": "Yes, that's my note.",
         "qa": [
           {
             "question": "How many different speakers are there in this audio?",
             "question_type": "speech_index",
             "options": [
-              "A. 2 speakers",
-              "B. 3 speakers",
-              "C. 6 speakers",
-              "D. Cannot be determined (insufficient information)"
+              "A. 3 digits",
+              "B. 5 digits",
+              "C. 2 digits",
+              "D. Cannot determine (Insufficient information)"
             ],
-            "answer": "B",
-            "answer_text": "3 speakers",
+            "answer": "C",
+            "answer_text": "2-bit",
             "rationale": [
               "wrong_speaker",
-              "ground_truth",
               "hallucination",
+              "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/counting/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How many different speakers are there in the audio from 175 seconds to 181 seconds?",
+            "question": "How many different speakers are there in the audio between the 30th and 40th second?",
             "question_type": "time_index",
             "options": [
-              "A. 6 speakers",
-              "B. Cannot be determined (insufficient information)",
-              "C. 3 speakers",
-              "D. 2 speakers"
+              "A. 4-bit",
+              "B. 2 bits",
+              "C. Cannot determine (Insufficient information)",
+              "D. 3 people"
             ],
-            "answer": "D",
-            "answer_text": "2 speakers",
+            "answer": "B",
+            "answer_text": "2 digits",
             "rationale": [
               "hallucination",
+              "ground_truth",
               "unknown",
-              "wrong_speaker",
-              "ground_truth"
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/counting/en_ref_a.mp3",
+                "start": 0.0,
+                "end": 2.6,
+                "dur": 2.6,
+                "transcript": "You tell me. That is your handwriting, isn't it?",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Detective Dee (神探狄仁杰, 2004)",
+        "source": "black mask 1996",
+        "video_folder": "black_mask_1996_part005",
+        "full_audio": {
+          "src": "bench_examples/audio/counting/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/counting/zh_spk_a.mp3",
-            "start": 20.92,
-            "end": 22.96,
-            "dur": 2.04
+            "src": "bench_examples/audio/counting/zh_ref_a.mp3",
+            "start": 0.0,
+            "end": 1.84,
+            "dur": 1.84,
+            "transcript": "这腿是我女儿的。",
+            "spk_id": "spk_10",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Got it, I'll go right away.",
-        "spk_b_transcript": "How could something like this happen?",
+        "spk_a_transcript": "这腿是我女儿的。",
+        "spk_b_transcript": "小心一点。",
         "qa": [
           {
-            "question": "How many different speakers are there in this audio?",
+            "question": "这段音频中一共出现了多少个不同的说话人？",
             "question_type": "speech_index",
             "options": [
-              "A. 5 speakers",
-              "B. 6 speakers",
-              "C. Cannot be determined",
-              "D. 2 speakers"
+              "A. 4位",
+              "B. 无法判断（信息不足）",
+              "C. 5位",
+              "D. 10位"
             ],
-            "answer": "B",
-            "answer_text": "6 speakers",
+            "answer": "C",
+            "answer_text": "5位",
             "rationale": [
               "wrong_speaker",
-              "ground_truth",
               "unknown",
+              "ground_truth",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/counting/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How many different speakers appeared in the audio between 31 and 38 seconds?",
+            "question": "音频中在第 8 秒到第 19 秒这段时间内，一共出现了多少个不同的说话人？",
             "question_type": "time_index",
             "options": [
-              "A. 6 speakers",
-              "B. 2 speakers",
-              "C. 3 speakers",
-              "D. Cannot be determined"
+              "A. 7位",
+              "B. 3位",
+              "C. 无法判断（信息不足）",
+              "D. 4位"
             ],
-            "answer": "C",
-            "answer_text": "3 speakers",
+            "answer": "B",
+            "answer_text": "3位",
             "rationale": [
               "hallucination",
-              "wrong_speaker",
               "ground_truth",
-              "unknown"
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/counting/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 1.84,
+                "dur": 1.84,
+                "transcript": "这腿是我女儿的。",
+                "spk_id": "spk_10",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
@@ -339,369 +517,677 @@ window.BENCH_EXAMPLES = {
   "verification": {
     "task_id": "verification",
     "level": "level1",
-    "dimension": "Speaker Identification",
-    "task_name": "Speaker Verification",
+    "dimension": "Speaker Identification (SID)",
+    "task_name": "Speaker Verification (SV)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Mission: Impossible – Rogue Nation (2015)",
+        "source": "Seventh Son 2014 BluRay",
+        "video_folder": "Seventh.Son.2014.BluRay_part008",
+        "full_audio": {
+          "src": "bench_examples/audio/verification/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/verification/en_spk_a.mp3",
-            "start": 56.67,
-            "end": 62.15,
-            "dur": 5.48
+            "src": "bench_examples/audio/verification/en_ref_a.mp3",
+            "start": 22.16,
+            "end": 24.2,
+            "dur": 2.04,
+            "transcript": "You do not want to know.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_1"
           },
           "b": {
-            "src": "bench_examples/audio/verification/en_spk_b.mp3",
-            "start": 35.46,
-            "end": 39.22,
-            "dur": 3.76
+            "src": "bench_examples/audio/verification/en_ref_b.mp3",
+            "start": 29.73,
+            "end": 32.29,
+            "dur": 2.56,
+            "transcript": "The signs of evil are everywhere.",
+            "spk_id": "spk_05",
+            "spk_index": "spk_4"
           }
         },
-        "spk_a_transcript": "What I do know is he's our only possible link to the syndicate, and I have reason to believe he's going to be here tonight.",
-        "spk_b_transcript": "Please don't tell me that, because it's just another thing I will have to lie about in my weekly polygraph.",
+        "spk_a_transcript": "You do not want to know.",
+        "spk_b_transcript": "The signs of evil are everywhere.",
         "qa": [
           {
-            "question": "Are the speakers in the two audio clips the same person?",
+            "question": "Are the speakers in the two audio clips below the same?",
             "question_type": "no_index",
             "options": [
-              "A. Yes, they are the same person.",
-              "B. The speakers have somewhat similar voice timbres.",
-              "C. No, they are not the same person.",
-              "D. Cannot be determined."
-            ],
-            "answer": "C",
-            "answer_text": "No, they are not the same person.",
-            "rationale": [
-              "wrong_speaker",
-              "hallucination",
-              "ground_truth",
-              "unknown"
-            ]
-          },
-          {
-            "question": "Are the speakers in the two audio clips the same person?",
-            "question_type": "no_index",
-            "options": [
-              "A. Although their timbres are similar, it might be an imitation.",
-              "B. No, they are not the same person.",
-              "C. Cannot be determined.",
-              "D. Yes, they are the same person."
-            ],
-            "answer": "D",
-            "answer_text": "Yes, they are the same person.",
-            "rationale": [
-              "hallucination",
-              "wrong_speaker",
-              "unknown",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "Is the speaker from 56.67s to 62.15s the same person as the speaker from 35.46s to 39.22s?",
-            "question_type": "time_index",
-            "options": [
-              "A. Cannot be determined.",
-              "B. No, they are not the same person.",
-              "C. Yes, they are the same person.",
-              "D. Their voice timbres are somewhat similar, but they are not the same person."
+              "A. Yes, it is the same person.",
+              "B. No, not the same person",
+              "C. The two speakers' voices are partially similar, but it cannot be determined whether they are the same person.",
+              "D. Cannot be determined (insufficient information)"
             ],
             "answer": "B",
             "answer_text": "No, they are not the same person.",
             "rationale": [
-              "unknown",
-              "ground_truth",
               "wrong_speaker",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "Is the speaker from 56.67s to 62.15s the same person as the speaker from 75.55s to 79.71s?",
-            "question_type": "time_index",
-            "options": [
-              "A. Yes, they are the same person.",
-              "B. Although their timbres are similar, it might be a deliberate imitation.",
-              "C. No, they are not the same person.",
-              "D. Cannot be determined."
-            ],
-            "answer": "A",
-            "answer_text": "Yes, they are the same person.",
-            "rationale": [
               "ground_truth",
               "hallucination",
-              "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "Is the speaker who said ‘our only possible link to the syndicate’ the same person as the one who said ‘lie about in my weekly polygraph’?",
-            "question_type": "transcript_index",
+            "question": "Are the speakers in the two audio clips below the same person?",
+            "question_type": "no_index",
             "options": [
-              "A. Cannot be determined.",
-              "B. Their voices have some similarities.",
-              "C. Yes, they are the same person.",
+              "A. No, they are not the same person.",
+              "B. Cannot determine (Insufficient information)",
+              "C. Yes, it is the same person.",
+              "D. The two speakers' voices are partially similar, but it cannot be determined whether they are the same person."
+            ],
+            "answer": "C",
+            "answer_text": "Yes, it's the same person.",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
+            ]
+          },
+          {
+            "question": "Is the speaker from 22.16s to 24.2s in the audio the same person as the speaker from 29.73s to 32.29s?",
+            "question_type": "time_index",
+            "options": [
+              "A. Cannot be determined (Insufficient information)",
+              "B. Yes, they are the same person.",
+              "C. The voices of the two speakers are partially similar, but it cannot be determined if they are the same person.",
               "D. No, they are not the same person."
             ],
             "answer": "D",
             "answer_text": "No, they are not the same person.",
             "rationale": [
               "unknown",
-              "hallucination",
               "wrong_speaker",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "Is the speaker who said ‘our only possible link to the syndicate’ the same person as the one who said ‘back at work Monday morning, no one is the wiser’?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Cannot be determined.",
-              "B. Yes, they are the same person.",
-              "C. Although their timbres are similar, it might be an imitation.",
-              "D. No, they are not the same person."
-            ],
-            "answer": "B",
-            "answer_text": "Yes, they are the same person.",
-            "rationale": [
-              "unknown",
-              "ground_truth",
               "hallucination",
-              "wrong_speaker"
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "In the audio, is the speaker who said ‘our only possible link to the syndicate’ from 56.67s to 62.15s the same person as the speaker who said ‘lie about in my weekly polygraph’ from 35.46s to 39.22s?",
-            "question_type": "complex_index",
+            "question": "Is the speaker from 22.16 to 24.2 seconds the same as the speaker from 43.62 to 46.26 seconds?",
+            "question_type": "time_index",
             "options": [
-              "A. No, they are not the same person.",
-              "B. Yes, they are the same person.",
-              "C. Cannot be determined.",
-              "D. They have similar speaking styles."
+              "A. Yes, they are the same person.",
+              "B. No, not the same person",
+              "C. Cannot determine (insufficient information)",
+              "D. The two speakers' voices are partially similar, but it cannot be determined whether they are the same person."
             ],
             "answer": "A",
-            "answer_text": "No, they are not the same person.",
+            "answer_text": "Yes, it is the same person.",
             "rationale": [
               "ground_truth",
               "wrong_speaker",
               "unknown",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "In the audio, is the speaker who said ‘our only possible link to the syndicate’ from 56.67s to 62.15s the same person as the speaker who said ‘back at work Monday morning, no one is the wiser’ from 75.55s to 79.71s?",
-            "question_type": "complex_index",
+            "question": "Is the speaker who said ‘You do not want to know.’ the same as the speaker who said ‘The signs of evil are everywhere.’?",
+            "question_type": "transcript_index",
             "options": [
-              "A. No, they are not the same person.",
-              "B. Cannot be determined.",
-              "C. Yes, they are the same person.",
-              "D. Their emotional states are too different to compare."
+              "A. The two speakers' voices are partially similar, but it cannot be determined whether they are the same person.",
+              "B. Yes, it is the same person.",
+              "C. No, not the same person",
+              "D. Cannot determine (Insufficient information)"
             ],
             "answer": "C",
-            "answer_text": "Yes, they are the same person.",
+            "answer_text": "No, they are not the same person.",
+            "rationale": [
+              "hallucination",
+              "wrong_speaker",
+              "ground_truth",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
+            ]
+          },
+          {
+            "question": "Is the speaker in the audio who said ‘You do not want to know.’ the same person as the speaker who said ‘Flattery is fine, gold is finer.’?",
+            "question_type": "transcript_index",
+            "options": [
+              "A. No, they are not the same person.",
+              "B. Cannot be determined (insufficient information)",
+              "C. The two speakers' voices are partially similar, but it cannot be determined if they are the same person.",
+              "D. Yes, it's the same person."
+            ],
+            "answer": "D",
+            "answer_text": "Yes, it is the same person.",
             "rationale": [
               "wrong_speaker",
               "unknown",
+              "hallucination",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
+            ]
+          },
+          {
+            "question": "In the audio, is the speaker who said ‘You do not want to know.’ from 22.16 to 24.2 seconds the same speaker as the one who said ‘The signs of evil are everywhere.’ from 29.73 to 32.29 seconds?",
+            "question_type": "complex_index",
+            "options": [
+              "A. Yes, it is the same person.",
+              "B. No, they are not the same person.",
+              "C. Cannot be determined (insufficient information)",
+              "D. The two speakers' voices are partially similar, but it cannot be determined whether they are the same person."
+            ],
+            "answer": "B",
+            "answer_text": "No, they are not the same person.",
+            "rationale": [
+              "wrong_speaker",
               "ground_truth",
+              "unknown",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
+            ]
+          },
+          {
+            "question": "In the audio, are the speaker who said ‘You do not want to know.’ from 22.16 to 24.2 seconds and the speaker who said ‘Flattery is fine, gold is finer.’ from 43.62 to 46.26 seconds the same speaker?",
+            "question_type": "complex_index",
+            "options": [
+              "A. The two speakers' voices are partially similar, but it cannot be determined whether they are the same person.",
+              "B. Yes, they are the same person.",
+              "C. No, not the same person.",
+              "D. Cannot be determined (Insufficient information)"
+            ],
+            "answer": "B",
+            "answer_text": "Yes, it's the same person.",
+            "rationale": [
+              "hallucination",
+              "ground_truth",
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/en_ref_a.mp3",
+                "start": 22.16,
+                "end": 24.2,
+                "dur": 2.04,
+                "transcript": "You do not want to know.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/en_ref_b.mp3",
+                "start": 29.73,
+                "end": 32.29,
+                "dur": 2.56,
+                "transcript": "The signs of evil are everywhere.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_4"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Mr. Canton and Lady Rose (奇迹, 1989)",
+        "source": "an se tang",
+        "video_folder": "an_se_tang_part013",
+        "full_audio": {
+          "src": "bench_examples/audio/verification/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/verification/zh_spk_a.mp3",
-            "start": 17.5,
-            "end": 20.58,
-            "dur": 3.08
+            "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+            "start": 0.0,
+            "end": 5.08,
+            "dur": 5.08,
+            "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+            "spk_id": "spk_08",
+            "spk_index": "spk_1"
           },
           "b": {
-            "src": "bench_examples/audio/verification/zh_spk_b.mp3",
-            "start": 59.08,
-            "end": 61.32,
-            "dur": 2.24
+            "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+            "start": 12.58,
+            "end": 14.86,
+            "dur": 2.28,
+            "transcript": "但是我真的没有非礼她，我记得那晚...",
+            "spk_id": "spk_07",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "Hey, it's just short by a little over sixty thousand, no big deal.",
-        "spk_b_transcript": "Ah, no need, uh, just treat it as a deposit.",
+        "spk_a_transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+        "spk_b_transcript": "但是我真的没有非礼她，我记得那晚...",
         "qa": [
           {
-            "question": "Are the speakers in the two audio clips below the same person?",
+            "question": "下面两条音频中的说话人是同一个说话人吗？",
             "question_type": "no_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_b[0]"
-            },
             "options": [
-              "A. Yes, they are the same person, but one is intentionally changing their voice.",
-              "B. No, they are not the same person.",
-              "C. Yes, they are the same person.",
-              "D. Cannot be determined due to insufficient information."
-            ],
-            "answer": "B",
-            "answer_text": "No, they are not the same person.",
-            "rationale": [
-              "hallucination",
-              "ground_truth",
-              "wrong_speaker",
-              "unknown"
-            ]
-          },
-          {
-            "question": "Are the speakers in the two audio clips below the same person?",
-            "question_type": "no_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_a[1]"
-            },
-            "options": [
-              "A. No, they are not the same person.",
-              "B. Cannot be determined due to insufficient information.",
-              "C. Yes, they are the same person.",
-              "D. Yes, they are the same person, but one is intentionally changing their voice."
-            ],
-            "answer": "C",
-            "answer_text": "Yes, they are the same person.",
-            "rationale": [
-              "wrong_speaker",
-              "unknown",
-              "ground_truth",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "Is the person speaking from 17.5 to 20.58 seconds the same as the person speaking from 59.08 to 61.32 seconds?",
-            "question_type": "time_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_b[0]"
-            },
-            "options": [
-              "A. Yes, they are the same person.",
-              "B. No, they are not the same person.",
-              "C. Cannot be determined due to insufficient information.",
-              "D. Yes, they are the same person, but one is intentionally changing their voice."
-            ],
-            "answer": "B",
-            "answer_text": "No, they are not the same person.",
-            "rationale": [
-              "wrong_speaker",
-              "ground_truth",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "Is the person speaking from 17.5 to 20.58 seconds the same as the person speaking from 43.61 to 45.93 seconds?",
-            "question_type": "time_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_a[1]"
-            },
-            "options": [
-              "A. Yes, they are the same person.",
-              "B. Yes, they are the same person, but one is intentionally changing their voice.",
-              "C. No, they are not the same person.",
-              "D. Cannot be determined due to insufficient information."
+              "A. 否，不是同一个人",
+              "B. 是，同一个人",
+              "C. 两位说话人的音色部分相同",
+              "D. 无法判断（信息不足）"
             ],
             "answer": "A",
-            "answer_text": "Yes, they are the same person.",
+            "answer_text": "否，不是同一个人",
             "rationale": [
               "ground_truth",
-              "hallucination",
               "wrong_speaker",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "Is the speaker who said, 'It's just short by a little over sixty thousand, no big deal,' the same as the speaker who said, 'Just treat it as a deposit'?",
-            "question_type": "transcript_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_b[0]"
-            },
+            "question": "下面两条音频中的说话人是同一个说话人吗？",
+            "question_type": "no_index",
             "options": [
-              "A. Cannot be determined due to insufficient information.",
-              "B. Yes, they are the same person, but one is intentionally changing their voice.",
-              "C. Yes, they are the same person.",
-              "D. No, they are not the same person."
+              "A. 无法判断（信息不足）",
+              "B. 否，不是同一个人",
+              "C. 是，同一个人",
+              "D. 两位说话人的音色部分相同"
             ],
-            "answer": "D",
-            "answer_text": "No, they are not the same person.",
+            "answer": "C",
+            "answer_text": "是，同一个人",
             "rationale": [
               "unknown",
-              "hallucination",
               "wrong_speaker",
-              "ground_truth"
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "Is the speaker who said, 'It's just short by a little over sixty thousand, no big deal,' the same as the speaker who said, 'Dong Yuan will definitely take care of Bei'er'?",
-            "question_type": "transcript_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_a[1]"
-            },
+            "question": "音频中第 0.0 秒到第 5.08 秒的说话人与第 12.58 秒到第 14.86 秒的说话人，是同一个说话人吗？",
+            "question_type": "time_index",
             "options": [
-              "A. No, they are not the same person.",
-              "B. Yes, they are the same person.",
-              "C. Yes, they are the same person, but one is intentionally changing their voice.",
-              "D. Cannot be determined due to insufficient information."
+              "A. 是，同一个人",
+              "B. 两位说话人的音色部分相同",
+              "C. 否，不是同一个人",
+              "D. 无法判断（信息不足）"
+            ],
+            "answer": "C",
+            "answer_text": "否，不是同一个人",
+            "rationale": [
+              "wrong_speaker",
+              "hallucination",
+              "ground_truth",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "音频中第 0.0 秒到第 5.08 秒的说话人与第 15.06 秒到第 18.18 秒的说话人，是同一个说话人吗？",
+            "question_type": "time_index",
+            "options": [
+              "A. 两位说话人的音色部分相同",
+              "B. 是，同一个人",
+              "C. 无法判断（信息不足）",
+              "D. 否，不是同一个人"
             ],
             "answer": "B",
-            "answer_text": "Yes, they are the same person.",
+            "answer_text": "是，同一个人",
+            "rationale": [
+              "hallucination",
+              "ground_truth",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "音频中说过‘其实我们没有想那么多，我们所说所做的全都是有依据的’的说话人与说过‘但是我真的没有非礼她，我记得那晚...’的说话人，是同一个说话人吗？",
+            "question_type": "transcript_index",
+            "options": [
+              "A. 是，同一个人",
+              "B. 否，不是同一个人",
+              "C. 无法判断（信息不足）",
+              "D. 两位说话人的音色部分相同"
+            ],
+            "answer": "B",
+            "answer_text": "否，不是同一个人",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
-              "hallucination",
-              "unknown"
+              "unknown",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "In the audio, is the speaker who said, 'It's just short by a little over sixty thousand,' from 17.5 to 20.58 seconds the same as the speaker who said, 'Just treat it as a deposit,' from 59.08 to 61.32 seconds?",
-            "question_type": "complex_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_b[0]"
-            },
+            "question": "音频中说过‘其实我们没有想那么多，我们所说所做的全都是有依据的’的说话人与说过‘等等，你先听我说完，你仔细听好’的说话人，是同一个说话人吗？",
+            "question_type": "transcript_index",
             "options": [
-              "A. Yes, they are the same person.",
-              "B. Yes, they are the same person, but one is intentionally changing their voice.",
-              "C. Cannot be determined due to insufficient information.",
-              "D. No, they are not the same person."
+              "A. 否，不是同一个人",
+              "B. 无法判断（信息不足）",
+              "C. 是，同一个人",
+              "D. 两位说话人的音色部分相同"
             ],
-            "answer": "D",
-            "answer_text": "No, they are not the same person.",
+            "answer": "C",
+            "answer_text": "是，同一个人",
             "rationale": [
               "wrong_speaker",
-              "hallucination",
               "unknown",
-              "ground_truth"
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "In the audio, is the speaker who said, 'It's just short by a little over sixty thousand,' from 17.5 to 20.58 seconds the same as the speaker who said, 'Dong Yuan will definitely take care of Bei'er,' from 43.61 to 45.93 seconds?",
+            "question": "音频中第 0.0 秒到第 5.08 秒说过‘其实我们没有想那么多，我们所说所做的全都是有依据的’的说话人与第 12.58 秒到第 14.86 秒说过‘但是我真的没有非礼她，我记得那晚...’的说话人，是同一个说话人吗？",
             "question_type": "complex_index",
-            "pair": {
-              "left": "spk_a[0]",
-              "right": "spk_a[1]"
-            },
             "options": [
-              "A. No, they are not the same person.",
-              "B. Cannot be determined due to insufficient information.",
-              "C. Yes, they are the same person, but one is intentionally changing their voice.",
-              "D. Yes, they are the same person."
+              "A. 无法判断（信息不足）",
+              "B. 否，不是同一个人",
+              "C. 两位说话人的音色部分相同",
+              "D. 是，同一个人"
+            ],
+            "answer": "B",
+            "answer_text": "否，不是同一个人",
+            "rationale": [
+              "unknown",
+              "ground_truth",
+              "hallucination",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "音频中第 0.0 秒到第 5.08 秒说过‘其实我们没有想那么多，我们所说所做的全都是有依据的’的说话人与第 15.06 秒到第 18.18 秒说过‘等等，你先听我说完，你仔细听好’的说话人，是同一个说话人吗？",
+            "question_type": "complex_index",
+            "options": [
+              "A. 两位说话人的音色部分相同",
+              "B. 否，不是同一个人",
+              "C. 无法判断（信息不足）",
+              "D. 是，同一个人"
             ],
             "answer": "D",
-            "answer_text": "Yes, they are the same person.",
+            "answer_text": "是，同一个人",
             "rationale": [
+              "hallucination",
               "wrong_speaker",
               "unknown",
-              "hallucination",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/verification/zh_ref_a.mp3",
+                "start": 0.0,
+                "end": 5.08,
+                "dur": 5.08,
+                "transcript": "其实我们没有想那么多，我们所说所做的全都是有依据的。",
+                "spk_id": "spk_08",
+                "spk_index": "spk_1"
+              },
+              {
+                "src": "bench_examples/audio/verification/zh_ref_b.mp3",
+                "start": 12.58,
+                "end": 14.86,
+                "dur": 2.28,
+                "transcript": "但是我真的没有非礼她，我记得那晚...",
+                "spk_id": "spk_07",
+                "spk_index": "spk_2"
+              }
             ]
           }
         ]
@@ -711,397 +1197,519 @@ window.BENCH_EXAMPLES = {
   "opinion": {
     "task_id": "opinion",
     "level": "level1",
-    "dimension": "Speaker Identification",
-    "task_name": "Speaker Opinion Summary",
+    "dimension": "Speaker Identification (SID)",
+    "task_name": "Speaker-specific Viewpoint Summarization (SVS)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Mission: Impossible – Rogue Nation (2015)",
+        "source": "dolittle 2020",
+        "video_folder": "dolittle_2020_part004",
+        "full_audio": {
+          "src": "bench_examples/audio/opinion/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/opinion/en_spk_a.mp3",
-            "start": 236.54,
-            "end": 241.9,
-            "dur": 5.36
+            "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+            "start": 56.83,
+            "end": 60.91,
+            "dur": 4.08,
+            "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+            "spk_id": "spk_15",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "We have a responsibility to warn the British government, and not gamble with the Prime Minister's life, Ethan.",
-        "spk_b_transcript": "No, we're gonna find Lane, we're gonna get him.",
+        "spk_a_transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+        "spk_b_transcript": "I shall continue to leech, to circulate the vapors in the bloodstream.",
         "qa": [
           {
-            "question": "What is the speaker's overall stance throughout the entire conversation?",
+            "question": "What is the overall stance of the speaker in the following single-person audio throughout the entire dialogue?",
             "question_type": "no_index",
             "options": [
-              "A. He believes the mission is too risky and advocates for abandoning the operation entirely to ensure the team's safety.",
-              "B. He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-              "C. He insists on proactively pursuing their opponents, rather than adopting a conservative warning strategy.",
-              "D. Cannot be determined due to insufficient evidence."
+              "A. Believes that traditional therapies such as bloodletting with leeches should continue to be used to treat the queen.",
+              "B. Is highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+              "C. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+              "D. Cannot be determined (The evidence is insufficient to uniquely deduce the conclusion/change)."
             ],
             "answer": "B",
-            "answer_text": "He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
+            "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
             "rationale": [
-              "hallucination",
-              "ground_truth",
               "wrong_speaker",
+              "ground_truth",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the overall stance throughout the entire dialogue of the speaker who is speaking from 236.54s to 241.9s?",
+            "question": "What is the overall stance of the speaker from 56.83 to 60.91 seconds in the audio throughout the entire conversation?",
             "question_type": "time_index",
             "options": [
-              "A. He insists on actively pursuing their opponents, rather than adopting a conservative warning strategy.",
-              "B. He finally compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-              "C. Cannot be determined due to insufficient evidence.",
-              "D. He believes the mission is too high-risk and advocates for abandoning the operation entirely to ensure the team's safety."
-            ],
-            "answer": "B",
-            "answer_text": "He finally compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-            "rationale": [
-              "wrong_speaker",
-              "ground_truth",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "What is the overall stance throughout the dialogue of the speaker who says, 'We have a responsibility to warn the British government'?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Cannot be determined due to insufficient evidence.",
-              "B. He insists on actively pursuing their opponents, instead of adopting a conservative warning strategy.",
-              "C. He considers the mission's risk to be too high and advocates for abandoning the operation entirely to ensure the team's safety.",
-              "D. He finally compromised and agreed to a direct confrontation, but expressed doubt about its feasibility."
+              "A. Initially supported inviting Doctor Dolittle, but turned to opposition after seeing the animals he brought.",
+              "B. Believed that traditional therapies such as leech bloodletting should continue to be used to treat the queen.",
+              "C. Cannot be determined (The evidence is insufficient to uniquely determine the conclusion/change).",
+              "D. Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods."
             ],
             "answer": "D",
-            "answer_text": "He finally compromised and agreed to a direct confrontation, but expressed doubt about its feasibility.",
+            "answer_text": "Highly suspicious of and opposed to Doctor Dolittle's intervention and his methods.",
             "rationale": [
-              "unknown",
-              "wrong_speaker",
               "hallucination",
+              "wrong_speaker",
+              "unknown",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the overall stance throughout the conversation of the speaker who says, 'We have a responsibility to warn the British government,' between 236.54s and 241.9s?",
+            "question": "What is the overall stance in the entire conversation of the speaker in the audio who said ‘I demand their immediate removal!’?",
+            "question_type": "transcript_index",
+            "options": [
+              "A. Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+              "B. Cannot be determined (The evidence is insufficient to uniquely support the viewpoint/change).",
+              "C. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+              "D. Believed that traditional therapies, such as leech bloodletting, should continue to be used to treat the queen."
+            ],
+            "answer": "A",
+            "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+            "rationale": [
+              "ground_truth",
+              "unknown",
+              "hallucination",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "What is the overall stance, throughout the entire conversation, of the speaker who says ‘I demand their immediate removal!’ between 56.83 and 60.91 seconds in the audio?",
             "question_type": "complex_index",
             "options": [
-              "A. He ultimately compromised and agreed to a direct confrontation, but expressed doubt about its feasibility.",
-              "B. He considers the mission's risk to be too high and advocates for abandoning the operation entirely to ensure the team's safety.",
-              "C. Cannot be determined due to insufficient evidence.",
-              "D. He insists on actively pursuing their opponents, rather than adopting a conservative warning strategy."
-            ],
-            "answer": "A",
-            "answer_text": "He ultimately compromised and agreed to a direct confrontation, but expressed doubt about its feasibility.",
-            "rationale": [
-              "ground_truth",
-              "hallucination",
-              "unknown",
-              "wrong_speaker"
-            ]
-          },
-          {
-            "question": "What is the overall stance of Speaker 6 throughout the entire conversation?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. He considers the mission's risk to be too high and advocates for abandoning the operation entirely to ensure the team's safety.",
-              "B. Cannot be determined due to insufficient evidence.",
-              "C. He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-              "D. He insists on actively pursuing their opponent, rather than adopting a conservative warning strategy."
+              "A. Believes that traditional therapies such as bloodletting with leeches should continue to be used to treat the queen.",
+              "B. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+              "C. Highly suspicious of and opposed to Doctor Dolittle's intervention and his methods.",
+              "D. Cannot be determined (Insufficient evidence to uniquely determine the viewpoint/change)."
             ],
             "answer": "C",
-            "answer_text": "He ultimately compromised and agreed to a direct confrontation, but expressed doubts about its feasibility.",
-            "rationale": [
-              "hallucination",
-              "unknown",
-              "ground_truth",
-              "wrong_speaker"
-            ]
-          },
-          {
-            "question": "How does the speaker's stance change throughout the entire dialogue?",
-            "question_type": "no_index",
-            "options": [
-              "A. He changed from firmly insisting on reporting to superiors to avoid risk, to reluctantly accepting a risky plan for direct confrontation.",
-              "B. He always maintained a hard-line stance of actively pursuing the opponent and never wavered.",
-              "C. Cannot be determined due to insufficient evidence.",
-              "D. He shifted from initially supporting direct action to advocating a cautious warning strategy due to the high risks."
-            ],
-            "answer": "A",
-            "answer_text": "He changed from firmly insisting on reporting to superiors to avoid risk, to reluctantly accepting a risky plan for direct confrontation.",
-            "rationale": [
-              "ground_truth",
-              "wrong_speaker",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "How does the stance of the speaker who is speaking from 236.54s to 241.9s change throughout the entire conversation?",
-            "question_type": "time_index",
-            "options": [
-              "A. He always maintained a tough stance of actively pursuing the opponent and never wavered.",
-              "B. He shifted from initially supporting direct action to advocating a cautious warning strategy due to the high risks.",
-              "C. He changed from firmly insisting on reporting to superiors to avoid risk, to ultimately being forced to accept a risky plan for direct confrontation.",
-              "D. Cannot be determined due to insufficient evidence."
-            ],
-            "answer": "C",
-            "answer_text": "He changed from firmly insisting on reporting to superiors to avoid risk, to ultimately being forced to accept a risky plan for direct confrontation.",
+            "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
             "rationale": [
               "wrong_speaker",
               "hallucination",
               "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "How does the stance of the speaker who says, 'We have a responsibility to warn the British government,' change throughout the entire conversation?",
+            "question": "What is the overall stance of the first speaker throughout the entire conversation? Speaker indexing starts from the first speaker.",
+            "question_type": "speaker_index",
+            "options": [
+              "A. Cannot be determined (Insufficient evidence to uniquely determine the conclusion/change).",
+              "B. Initially supported inviting Doctor Dolittle, but became opposed after seeing the animals he brought.",
+              "C. Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+              "D. Believed that traditional therapies such as leech bloodletting should continue to be used to treat the queen."
+            ],
+            "answer": "C",
+            "answer_text": "Highly skeptical of and opposed to Doctor Dolittle's intervention and his methods.",
+            "rationale": [
+              "unknown",
+              "hallucination",
+              "ground_truth",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "How does the speaker in the following monologue audio change their stance throughout the entire dialogue?",
+            "question_type": "no_index",
+            "options": [
+              "A. From being full of confidence in one's medical skills → to becoming flustered and eager to apologize for a slip of the tongue in front of the powerful.",
+              "B. From having hope for the Queen's recovery → to falling into complete despair after seeing Doctor Dolittle.",
+              "C. From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition towards Dr. Dolittle's arrival and methods.",
+              "D. Cannot be determined (Insufficient evidence to uniquely deduce the conclusion/change)"
+            ],
+            "answer": "C",
+            "answer_text": "From pessimistic concerns about the Queen's health → to strong anger and opposition towards Doctor Dolittle's arrival and methods.",
+            "rationale": [
+              "wrong_speaker",
+              "hallucination",
+              "ground_truth",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "How does the stance of the speaker from 56.83s to 60.91s in the audio change throughout the entire conversation?",
+            "question_type": "time_index",
+            "options": [
+              "A. Cannot be determined (Insufficient evidence to uniquely conclude the viewpoint/change).",
+              "B. From pessimistic concerns about the Queen's health → to strong anger and opposition towards Doctor Dolittle's arrival and methods.",
+              "C. From being full of confidence in his own medical skills → to becoming flustered and rushing to apologize for misspeaking in front of the powerful and influential.",
+              "D. From being hopeful for the queen's recovery → to falling into complete despair after seeing Doctor Dolittle."
+            ],
+            "answer": "B",
+            "answer_text": "From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition towards Doctor Doolittle's arrival and methods.",
+            "rationale": [
+              "unknown",
+              "ground_truth",
+              "wrong_speaker",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "How does the stance of the speaker in the audio, who said ‘I demand their immediate removal!’, change throughout the conversation?",
             "question_type": "transcript_index",
             "options": [
-              "A. He shifted from initially supporting direct action to advocating a cautious warning strategy because the risks were too high.",
-              "B. Cannot be determined due to insufficient evidence.",
-              "C. He always maintained a hardline stance of actively pursuing their opponents and never wavered.",
-              "D. He changed from firmly insisting on reporting to superiors to avoid risk, to finally and reluctantly accepting a risky plan for direct confrontation."
+              "A. From being hopeful for the Queen's recovery → to completely despairing after seeing Doctor Dolittle.",
+              "B. Cannot be determined (Insufficient evidence to uniquely determine the viewpoint/change).",
+              "C. From being full of confidence in one's medical skills → to becoming flustered and hastily apologizing for misspeaking in front of the powerful and influential.",
+              "D. From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition towards Doctor Dolittle's arrival and methods."
             ],
             "answer": "D",
-            "answer_text": "He changed from firmly insisting on reporting to superiors to avoid risk, to finally and reluctantly accepting a risky plan for direct confrontation.",
+            "answer_text": "From pessimistic concerns about the queen's health → to strong anger and opposition towards Doctor Dolittle's arrival and methods.",
             "rationale": [
               "hallucination",
               "unknown",
               "wrong_speaker",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "How does the stance of the speaker who says, 'We have a responsibility to warn the British government,' between 236.54s and 241.9s change throughout the entire conversation?",
+            "question": "How does the stance of the speaker, who says ‘I demand their immediate removal!’ in the audio from 56.83 to 60.91 seconds, change throughout the entire conversation?",
             "question_type": "complex_index",
             "options": [
-              "A. He changed from strongly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
-              "B. Cannot be determined due to insufficient evidence.",
-              "C. He shifted from initially supporting direct action to advocating a cautious warning strategy because the risks were too high.",
-              "D. He always maintained a hard-line position of actively pursuing the opponent and never wavered."
+              "A. From pessimistic concern about the Queen's health → to strong anger and opposition to Doctor Dolittle's arrival and methods.",
+              "B. From being completely confident in one's medical skills → to becoming flustered and rushing to apologize after misspeaking in front of the powerful.",
+              "C. Cannot be determined (Insufficient evidence to lead to a unique conclusion/change).",
+              "D. From hoping for the queen's recovery → completely despairing after seeing Doctor Dolittle."
             ],
             "answer": "A",
-            "answer_text": "He changed from strongly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
+            "answer_text": "From expressing pessimistic concerns about the Queen's health → to strong anger and opposition towards the arrival and methods of Doctor Dolittle.",
             "rationale": [
               "ground_truth",
+              "wrong_speaker",
               "unknown",
-              "hallucination",
-              "wrong_speaker"
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_ref_a.mp3",
+                "start": 56.83,
+                "end": 60.91,
+                "dur": 4.08,
+                "transcript": "Animals! In the queen's chamber! I demand their immediate removal!",
+                "spk_id": "spk_15",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "How does the stance of Speaker 6 change throughout the entire conversation?",
+            "question": "Throughout the entire conversation, how does the stance of the first speaker change? Speaker indexing starts from the first speaker.",
             "question_type": "speaker_index",
             "options": [
-              "A. He always maintained a hardline stance of actively pursuing the opponent and never wavered.",
-              "B. He changed from firmly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
-              "C. Cannot be determined due to insufficient evidence.",
-              "D. He shifted from initially supporting direct action to advocating a cautious warning strategy due to the risks being too high."
+              "A. From being full of confidence in his own medical skills → to becoming flustered and eager to apologize for a slip of the tongue in front of the powerful and influential.",
+              "B. From being hopeful about the Queen's recovery → to falling into complete despair after seeing Doctor Dolittle.",
+              "C. Cannot be determined (Insufficient evidence to draw a unique conclusion/change).",
+              "D. From pessimistic concern for the Queen's health → strong anger and opposition to Doctor Dolittle's arrival and methods."
             ],
-            "answer": "B",
-            "answer_text": "He changed from firmly advocating reporting to superiors to avoid risk, to eventually and reluctantly accepting a risky plan for direct confrontation.",
+            "answer": "D",
+            "answer_text": "From expressing pessimistic concerns about the Queen's health → to expressing strong anger and opposition to Doctor Dolittle's arrival and methods.",
             "rationale": [
               "wrong_speaker",
-              "ground_truth",
+              "hallucination",
               "unknown",
-              "hallucination"
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "A Better Tomorrow-era Diary (大丈夫日记, 1988)",
+        "source": "a chinese odyssey 1995",
+        "video_folder": "a_chinese_odyssey_1995_part015",
+        "full_audio": {
+          "src": "bench_examples/audio/opinion/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/opinion/zh_spk_a.mp3",
-            "start": 18.01,
-            "end": 20.73,
-            "dur": 2.72
+            "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+            "start": 23.93,
+            "end": 26.81,
+            "dur": 2.88,
+            "transcript": "我骗他的，我在等我的男人回来接我。",
+            "spk_id": "spk_01",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "There are many people with the same name in this world. You should check carefully first.",
-        "spk_b_transcript": "I'm here to ask, do you have two wives?",
+        "spk_a_transcript": "我骗他的，我在等我的男人回来接我。",
+        "spk_b_transcript": "不过就算他回来，他有什么本事把你从牛魔王手上抢回去啊？",
         "qa": [
           {
-            "question": "What is the overall stance of the main speaker being questioned throughout the entire conversation?",
-            "question_type": "no_index",
-            "options": [
-              "A. Conducts an investigation with an objective and neutral attitude, aiming to find out the truth.",
-              "B. Admits to having an extramarital affair, but argues it is not bigamy, and attempts to seek help from the police.",
-              "C. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-              "D. Cannot be determined due to insufficient evidence."
-            ],
-            "answer": "C",
-            "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "rationale": [
-              "wrong_speaker",
-              "hallucination",
-              "ground_truth",
-              "unknown"
-            ]
-          },
-          {
-            "question": "What is the overall stance of the speaker who speaks from 18.01s to 20.73s throughout the entire conversation?",
-            "question_type": "time_index",
-            "options": [
-              "A. Cannot be determined due to insufficient evidence.",
-              "B. Conducts an investigation with an objective and neutral attitude to find out the truth.",
-              "C. Admits to having an extramarital affair, but argues it is not bigamy, and seeks help from the police.",
-              "D. Adamantly denies having two wives and tries to cover up the truth with various lies."
-            ],
-            "answer": "D",
-            "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "rationale": [
-              "unknown",
-              "wrong_speaker",
-              "hallucination",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "What is the overall stance of the speaker who said, \"There are many people with the same name in this world\"?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Admits to having an extramarital affair, but argues that it is not bigamy, and attempts to seek help from the police.",
-              "B. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-              "C. Cannot be determined due to insufficient evidence.",
-              "D. Conducts an investigation with an objective and neutral attitude, aiming to ascertain the truth."
-            ],
-            "answer": "B",
-            "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "rationale": [
-              "hallucination",
-              "ground_truth",
-              "unknown",
-              "wrong_speaker"
-            ]
-          },
-          {
-            "question": "What is the overall stance of the speaker who says, \"You should check carefully first,\" between 18.01s and 20.73s?",
-            "question_type": "complex_index",
-            "options": [
-              "A. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-              "B. Conducts an investigation with an objective and neutral attitude, aiming to ascertain the truth.",
-              "C. Cannot be determined due to insufficient evidence.",
-              "D. Admits to having an extramarital affair, but argues it is not bigamy and attempts to seek help from the police."
-            ],
-            "answer": "A",
-            "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
-            "rationale": [
-              "ground_truth",
-              "wrong_speaker",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "What is the overall stance of the first speaker (Speaker 1) throughout the entire conversation?",
+            "question": "在整段对话中，第二个说话人，在整段对话中的整体立场是什么？ 说话人序号从第一个说话人开始编号。",
             "question_type": "speaker_index",
             "options": [
-              "A. Admits to having an extramarital affair, but argues it is not bigamy, and attempts to seek help from the police.",
-              "B. Conducts an investigation with an objective and neutral attitude, aiming to ascertain the facts.",
-              "C. Adamantly denies having two wives and tries to cover up the truth with various lies.",
-              "D. Cannot be determined due to insufficient evidence."
+              "A. 认为她的意中人只是个不可靠的“小滑头”，对他能否救自己持怀疑态度。",
+              "B. 为了逃避不想要的婚事，计划在婚礼前自己偷偷逃跑。",
+              "C. 坚信自己的意中人是一位不凡的英雄，并且会以万众瞩目的方式来迎娶她。",
+              "D. 无法判断（证据不足以唯一推出观点/变化）。"
             ],
             "answer": "C",
-            "answer_text": "Adamantly denies having two wives and tries to cover up the truth with various lies.",
+            "answer_text": "坚信自己的意中人是一位不凡的英雄，并且会以万众瞩目的方式来迎娶她。",
             "rationale": [
-              "hallucination",
               "wrong_speaker",
+              "hallucination",
               "ground_truth",
               "unknown"
-            ]
-          },
-          {
-            "question": "How does the stance of the main speaker being questioned change throughout the conversation?",
-            "question_type": "no_index",
-            "options": [
-              "A. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-              "B. From a strong initial denial to a later emotional breakdown, finally confessing everything to his wife.",
-              "C. From initially suspecting the other party to believing their story and deciding to end the investigation.",
-              "D. Cannot be determined due to insufficient evidence."
             ],
-            "answer": "A",
-            "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "rationale": [
-              "ground_truth",
-              "hallucination",
-              "wrong_speaker",
-              "unknown"
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How does the stance of the speaker who speaks from 18.01s to 20.73s change throughout the entire conversation?",
-            "question_type": "time_index",
-            "options": [
-              "A. From a strong initial denial to an emotional breakdown, finally confessing everything to his wife.",
-              "B. Cannot be determined due to insufficient evidence.",
-              "C. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-              "D. From initially suspecting the other party to believing their account and deciding to end the investigation."
-            ],
-            "answer": "C",
-            "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "rationale": [
-              "hallucination",
-              "unknown",
-              "ground_truth",
-              "wrong_speaker"
-            ]
-          },
-          {
-            "question": "How does the stance of the speaker who said, \"There are many people with the same name in this world,\" change throughout the conversation?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. From initially suspecting the other party to believing their explanation and deciding to end the investigation.",
-              "B. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-              "C. From a strong initial denial to a later emotional breakdown, finally confessing everything to his wife.",
-              "D. Cannot be determined due to insufficient evidence."
-            ],
-            "answer": "B",
-            "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "rationale": [
-              "wrong_speaker",
-              "ground_truth",
-              "hallucination",
-              "unknown"
-            ]
-          },
-          {
-            "question": "How does the stance of the speaker who says, \"You should check it carefully first,\" between 18.01s and 20.73s change throughout the conversation?",
-            "question_type": "complex_index",
-            "options": [
-              "A. Cannot be determined due to insufficient evidence.",
-              "B. From a strong initial denial to a later emotional breakdown, ultimately confessing everything to his wife.",
-              "C. From initially suspecting the other party to believing their story and deciding to end the investigation.",
-              "D. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth."
-            ],
-            "answer": "D",
-            "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-            "rationale": [
-              "unknown",
-              "hallucination",
-              "wrong_speaker",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "How does the stance of the first speaker (Speaker 1) change throughout the conversation?",
+            "question": "在整段对话中，第二个说话人，在整段对话中立场如何变化？ 说话人序号从第一个说话人开始编号。",
             "question_type": "speaker_index",
             "options": [
-              "A. From a strong initial denial to an emotional breakdown, ultimately confessing everything to his wife.",
-              "B. Cannot be determined due to insufficient evidence.",
-              "C. From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
-              "D. From initially suspecting the other party to believing their story and deciding to end the investigation."
+              "A. 从表面同意一桩婚事 → 转变为揭示这只是谎言，并表达了对意中人到来的坚定信念。",
+              "B. 从最初的坚决反对 → 到最后在家人的压力下被迫同意婚事。",
+              "C. 从怀疑对方的决定 → 到最终认定对方精神不正常。",
+              "D. 无法判断（证据不足以唯一推出观点/变化）。"
             ],
-            "answer": "C",
-            "answer_text": "From initial shock and denial to fabricating complex lies and asking a friend to impersonate him to cover up the truth.",
+            "answer": "A",
+            "answer_text": "从表面同意一桩婚事 → 转变为揭示这只是谎言，并表达了对意中人到来的坚定信念。",
+            "rationale": [
+              "ground_truth",
+              "hallucination",
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "音频中说过‘我在等我的男人回来接我’的这位说话人，在整段对话中的整体立场是什么？",
+            "question_type": "transcript_index",
+            "options": [
+              "A. 对自己的意中人能否出现持怀疑态度。",
+              "B. 无法判断（证据不足以唯一推出观点/变化）。",
+              "C. 认为她的意中人没有能力把自己从牛魔王手中救走。",
+              "D. 坚定地相信自己的意中人是一个不平凡的人，并且一定会来娶她。"
+            ],
+            "answer": "D",
+            "answer_text": "坚定地相信自己的意中人是一个不平凡的人，并且一定会来娶她。",
             "rationale": [
               "hallucination",
               "unknown",
+              "wrong_speaker",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+                "start": 23.93,
+                "end": 26.81,
+                "dur": 2.88,
+                "transcript": "我骗他的，我在等我的男人回来接我。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "音频中说过‘我在等我的男人回来接我’的这位说话人，在整段对话中立场如何变化？",
+            "question_type": "transcript_index",
+            "options": [
+              "A. 从起初的犹豫不决 → 到后来坚定了等待意中人的决心。",
+              "B. 从假意答应与牛魔王成亲 → 转变为坦白真实想法并坚信意中人会来迎娶自己。",
+              "C. 无法判断（证据不足以唯一推出观点/变化）。",
+              "D. 从相信意中人会来 → 到后来被说服并认为这只是不切实际的幻想。"
+            ],
+            "answer": "B",
+            "answer_text": "从假意答应与牛魔王成亲 → 转变为坦白真实想法并坚信意中人会来迎娶自己。",
+            "rationale": [
+              "hallucination",
+              "ground_truth",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+                "start": 23.93,
+                "end": 26.81,
+                "dur": 2.88,
+                "transcript": "我骗他的，我在等我的男人回来接我。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "下面单人讲话音频中的这位说话人，在整段对话中的整体立场是什么？",
+            "question_type": "no_index",
+            "options": [
+              "A. 无法判断（证据不足以唯一推出观点/变化）。",
+              "B. 她认为等待意中人只是理想，现实中可能无法实现。",
+              "C. 她坚信自己的意中人是天选之人，一定会来拯救并迎娶她。",
+              "D. 她认为对方的所谓意中人只是个“小滑头”，根本不可能回来。"
+            ],
+            "answer": "C",
+            "answer_text": "她坚信自己的意中人是天选之人，一定会来拯救并迎娶她。",
+            "rationale": [
+              "unknown",
+              "hallucination",
               "ground_truth",
               "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+                "start": 23.93,
+                "end": 26.81,
+                "dur": 2.88,
+                "transcript": "我骗他的，我在等我的男人回来接我。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "下面单人讲话音频中的这位说话人，在整段对话中立场如何变化？",
+            "question_type": "no_index",
+            "options": [
+              "A. 无法判断（证据不足以唯一推出观点/变化）。",
+              "B. 从表面上屈服于一桩婚事 → 转变为吐露真言，表明自己其实在等待意中人。",
+              "C. 从对意中人的到来充满希望 → 转变为怀疑他是否有能力救自己。",
+              "D. 从最初认为对方是疯子 → 到最后用“神经病”来更准确地形容她。"
+            ],
+            "answer": "B",
+            "answer_text": "从表面上屈服于一桩婚事 → 转变为吐露真言，表明自己其实在等待意中人。",
+            "rationale": [
+              "unknown",
+              "ground_truth",
+              "hallucination",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion/zh_ref_a.mp3",
+                "start": 23.93,
+                "end": 26.81,
+                "dur": 2.88,
+                "transcript": "我骗他的，我在等我的男人回来接我。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_2"
+              }
             ]
           }
         ]
@@ -1111,289 +1719,463 @@ window.BENCH_EXAMPLES = {
   "gender": {
     "task_id": "gender",
     "level": "level1",
-    "dimension": "Speaker Attributes",
-    "task_name": "Gender Recognition",
+    "dimension": "Speaker Attribute Recognition (SAR)",
+    "task_name": "Gender Identification (GI)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Gua Sha (刮痧, 2001)",
+        "source": "robin hood origins",
+        "video_folder": "robin_hood_origins_part012",
+        "full_audio": {
+          "src": "bench_examples/audio/gender/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/gender/en_spk_a.mp3",
-            "start": 20.02,
-            "end": 25.54,
-            "dur": 5.52
+            "src": "bench_examples/audio/gender/en_ref_a.mp3",
+            "start": 12.95,
+            "end": 13.71,
+            "dur": 0.76,
+            "transcript": "He's all of us.",
+            "spk_id": "spk_05",
+            "spk_index": "spk_3"
           }
         },
-        "spk_a_transcript": "In order to supplement the medical report, you'll note that we provided additional evidence.",
-        "spk_b_transcript": "Your honor, we haven't received any copies of any evidence or reports related to this case.",
+        "spk_a_transcript": "He's all of us.",
+        "spk_b_transcript": "So you're an admirer.",
         "qa": [
           {
-            "question": "What is the gender of the speaker in this audio?",
+            "question": "What is the gender of the speaker in the following single-person audio?",
             "question_type": "no_index",
             "options": [
-              "A. Female",
-              "B. Male",
-              "C. Uncertain",
-              "D. Cannot be determined"
+              "A. Male",
+              "B. Undetermined gender",
+              "C. Female",
+              "D. Cannot be determined (Insufficient information to determine gender)"
             ],
-            "answer": "B",
-            "answer_text": "Male",
+            "answer": "C",
+            "answer_text": "Female",
             "rationale": [
               "wrong_speaker",
-              "ground_truth",
               "hallucination",
+              "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/en_ref_a.mp3",
+                "start": 12.95,
+                "end": 13.71,
+                "dur": 0.76,
+                "transcript": "He's all of us.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "What is the gender of the speaker from 20.02 to 25.54 seconds?",
+            "question": "What is the gender of the speaker in the audio from 12.95 to 13.71 seconds?",
             "question_type": "time_index",
             "options": [
               "A. Female",
-              "B. Uncertain",
+              "B. Uncertain gender",
               "C. Male",
-              "D. Cannot be determined"
+              "D. Cannot determine (Insufficient information to determine gender)"
             ],
-            "answer": "C",
-            "answer_text": "Male",
+            "answer": "A",
+            "answer_text": "Female",
             "rationale": [
-              "wrong_speaker",
-              "hallucination",
               "ground_truth",
+              "hallucination",
+              "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/en_ref_a.mp3",
+                "start": 12.95,
+                "end": 13.71,
+                "dur": 0.76,
+                "transcript": "He's all of us.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "What is the gender of the speaker who said, \"you'll note that we provided additional evidence\"?",
+            "question": "What is the gender of the speaker who said ‘He's all of us’ in the audio?",
             "question_type": "transcript_index",
             "options": [
-              "A. Male",
+              "A. Uncertain gender",
               "B. Female",
-              "C. Uncertain",
-              "D. Cannot be determined"
-            ],
-            "answer": "A",
-            "answer_text": "Male",
-            "rationale": [
-              "ground_truth",
-              "wrong_speaker",
-              "hallucination",
-              "unknown"
-            ]
-          },
-          {
-            "question": "What is the gender of Speaker 1, the first person to speak in the audio?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Cannot be determined",
-              "B. Uncertain",
-              "C. Female",
+              "C. Cannot be determined (Insufficient information to determine gender)",
               "D. Male"
             ],
-            "answer": "D",
-            "answer_text": "Male",
+            "answer": "B",
+            "answer_text": "Female",
             "rationale": [
-              "unknown",
               "hallucination",
-              "wrong_speaker",
-              "ground_truth"
+              "ground_truth",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/en_ref_a.mp3",
+                "start": 12.95,
+                "end": 13.71,
+                "dur": 0.76,
+                "transcript": "He's all of us.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "What is the gender of the speaker who said, \"In order to supplement the medical report,\" between 20.02 and 25.54 seconds?",
-            "question_type": "complex_index",
+            "question": "What is the gender of the third speaker in the entire conversation? Speaker indexing starts from the first speaker.",
+            "question_type": "speaker_index",
             "options": [
-              "A. Female",
-              "B. Cannot be determined",
-              "C. Male",
-              "D. Uncertain"
+              "A. Male",
+              "B. Unable to determine (insufficient information to determine gender)",
+              "C. Female",
+              "D. Gender Uncertain"
             ],
             "answer": "C",
-            "answer_text": "Male",
+            "answer_text": "Female",
             "rationale": [
               "wrong_speaker",
               "unknown",
               "ground_truth",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "Which of the following are the female speakers in the audio?",
+            "question": "What is the gender of the speaker who said ‘He's all of us’ between 12.95 and 13.71 seconds?",
+            "question_type": "complex_index",
+            "options": [
+              "A. Undetermined gender",
+              "B. Male",
+              "C. Cannot be determined (Insufficient information to determine gender)",
+              "D. Female"
+            ],
+            "answer": "D",
+            "answer_text": "Female",
+            "rationale": [
+              "hallucination",
+              "wrong_speaker",
+              "unknown",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/en_ref_a.mp3",
+                "start": 12.95,
+                "end": 13.71,
+                "dur": 0.76,
+                "transcript": "He's all of us.",
+                "spk_id": "spk_05",
+                "spk_index": "spk_3"
+              }
+            ]
+          },
+          {
+            "question": "In the entire audio, which speakers are female? (Answer in the order of speaker appearance) Please select the best-fitting option. Speaker indexing starts from the first speaker.",
             "question_type": "reverse_retrival",
             "options": [
-              "A. Speaker 4, Speaker 6",
-              "B. Speaker 4",
-              "C. Cannot be determined",
-              "D. Speaker 2, Speaker 4, Speaker 6"
+              "A. the first speaker",
+              "B. the third speaker",
+              "C. Cannot determine (Insufficient information to determine gender)",
+              "D. the third and fourth speakers"
             ],
-            "answer": "A",
-            "answer_text": "Speaker 4, Speaker 6",
+            "answer": "B",
+            "answer_text": "the third speaker",
             "rationale": [
-              "ground_truth",
               "wrong_speaker",
+              "ground_truth",
               "unknown",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How many male speakers are in the audio?",
+            "question": "How many male speakers are there in the entire audio? Please choose the most suitable option.",
             "question_type": "reverse_count",
             "options": [
-              "A. 6",
-              "B. 3",
+              "A. 3",
+              "B. 5",
               "C. 4",
-              "D. Cannot be determined"
+              "D. Cannot determine (Insufficient information to determine gender)"
             ],
             "answer": "C",
             "answer_text": "4",
             "rationale": [
-              "hallucination",
               "wrong_speaker",
+              "hallucination",
               "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Shaolin Temple (少林寺, 1982)",
+        "source": "cd1",
+        "video_folder": "cd1_part009",
+        "full_audio": {
+          "src": "bench_examples/audio/gender/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/gender/zh_spk_a.mp3",
-            "start": 38.21,
-            "end": 40.97,
-            "dur": 2.76
+            "src": "bench_examples/audio/gender/zh_ref_a.mp3",
+            "start": 2.08,
+            "end": 3.84,
+            "dur": 1.76,
+            "transcript": "你没听见大夫说活不长了吗？",
+            "spk_id": "spk_02",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "You really look like a little bride today.",
-        "spk_b_transcript": "What are you laughing at?",
+        "spk_a_transcript": "你没听见大夫说活不长了吗？",
+        "spk_b_transcript": "瞎折腾，你不知我知。",
         "qa": [
           {
-            "question": "In this single-speaker audio, what is the speaker's gender?",
+            "question": "下面单人讲话音频中，说话人的性别是什么？",
             "question_type": "no_index",
             "options": [
-              "A. Male",
-              "B. Cannot be determined",
-              "C. Female",
-              "D. Uncertain"
-            ],
-            "answer": "A",
-            "answer_text": "Male",
-            "rationale": [
-              "ground_truth",
-              "unknown",
-              "wrong_speaker",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "What is the gender of the speaker in the audio from 38.21 to 40.97 seconds?",
-            "question_type": "time_index",
-            "options": [
-              "A. Unspecified",
-              "B. Male",
-              "C. Cannot be determined",
-              "D. Female"
-            ],
-            "answer": "B",
-            "answer_text": "Male",
-            "rationale": [
-              "hallucination",
-              "ground_truth",
-              "unknown",
-              "wrong_speaker"
-            ]
-          },
-          {
-            "question": "What is the gender of the speaker who said, 'You really look like a little bride today'?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Cannot be determined",
-              "B. Female",
-              "C. Uncertain",
-              "D. Male"
-            ],
-            "answer": "D",
-            "answer_text": "Male",
-            "rationale": [
-              "unknown",
-              "wrong_speaker",
-              "hallucination",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "What is the gender of Speaker 1, the first speaker to appear in the dialogue?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Male",
-              "B. Cannot be determined",
-              "C. Uncertain",
-              "D. Female"
-            ],
-            "answer": "D",
-            "answer_text": "Female",
-            "rationale": [
-              "wrong_speaker",
-              "unknown",
-              "hallucination",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "What is the gender of the speaker who said, 'You really look like a little bride today,' between 38.21 and 40.97 seconds?",
-            "question_type": "complex_index",
-            "options": [
-              "A. Female",
-              "B. Undetermined",
-              "C. Cannot be determined",
-              "D. Male"
-            ],
-            "answer": "D",
-            "answer_text": "Male",
-            "rationale": [
-              "wrong_speaker",
-              "hallucination",
-              "unknown",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "Which speakers in the audio are female?",
-            "question_type": "reverse_retrival",
-            "options": [
-              "A. Cannot be determined",
-              "B. Speaker 2",
-              "C. Speaker 1",
-              "D. Speaker 1 and Speaker 10"
+              "A. 女性",
+              "B. 不确定性别",
+              "C. 男性",
+              "D. 无法判断（信息不足以确定性别）"
             ],
             "answer": "C",
-            "answer_text": "Speaker 1",
+            "answer_text": "男性",
             "rationale": [
-              "unknown",
               "wrong_speaker",
+              "hallucination",
               "ground_truth",
-              "hallucination"
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/zh_ref_a.mp3",
+                "start": 2.08,
+                "end": 3.84,
+                "dur": 1.76,
+                "transcript": "你没听见大夫说活不长了吗？",
+                "spk_id": "spk_02",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "How many male speakers are there in the entire audio?",
-            "question_type": "reverse_count",
+            "question": "音频中在第 2.08 秒到第 3.84 秒的说话人的性别是什么？",
+            "question_type": "time_index",
             "options": [
-              "A. 7",
-              "B. 8",
-              "C. 1",
-              "D. Cannot be determined"
+              "A. 男性",
+              "B. 女性",
+              "C. 不确定性别",
+              "D. 无法判断（信息不足以确定性别）"
+            ],
+            "answer": "A",
+            "answer_text": "男性",
+            "rationale": [
+              "ground_truth",
+              "wrong_speaker",
+              "hallucination",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/zh_ref_a.mp3",
+                "start": 2.08,
+                "end": 3.84,
+                "dur": 1.76,
+                "transcript": "你没听见大夫说活不长了吗？",
+                "spk_id": "spk_02",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "音频中说过‘你没听见大夫说活不长了吗’的说话人的性别是什么？",
+            "question_type": "transcript_index",
+            "options": [
+              "A. 无法判断（信息不足以确定性别）",
+              "B. 男性",
+              "C. 女性",
+              "D. 不确定性别"
             ],
             "answer": "B",
-            "answer_text": "8",
+            "answer_text": "男性",
+            "rationale": [
+              "unknown",
+              "ground_truth",
+              "wrong_speaker",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/zh_ref_a.mp3",
+                "start": 2.08,
+                "end": 3.84,
+                "dur": 1.76,
+                "transcript": "你没听见大夫说活不长了吗？",
+                "spk_id": "spk_02",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "在整段对话中，第二个说话人的性别是什么？ 说话人序号从第一个说话人开始编号。",
+            "question_type": "speaker_index",
+            "options": [
+              "A. 不确定性别",
+              "B. 无法判断（信息不足以确定性别）",
+              "C. 女性",
+              "D. 男性"
+            ],
+            "answer": "D",
+            "answer_text": "男性",
+            "rationale": [
+              "hallucination",
+              "unknown",
+              "wrong_speaker",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在第 2.08 秒到第 3.84 秒说过‘你没听见大夫说活不长了吗’的说话人，其性别是什么？",
+            "question_type": "complex_index",
+            "options": [
+              "A. 女性",
+              "B. 男性",
+              "C. 不确定性别",
+              "D. 无法判断（信息不足以确定性别）"
+            ],
+            "answer": "B",
+            "answer_text": "男性",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
               "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/zh_ref_a.mp3",
+                "start": 2.08,
+                "end": 3.84,
+                "dur": 1.76,
+                "transcript": "你没听见大夫说活不长了吗？",
+                "spk_id": "spk_02",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，性别为男性的说话人有哪些？（用 说话人出现顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
+            "question_type": "reverse_retrival",
+            "options": [
+              "A. 第二个说话人、第四个说话人",
+              "B. 第二个说话人、第四个说话人、第七个说话人",
+              "C. 无法判断（信息不足以确定性别）",
+              "D. 第一个说话人、第二个说话人、第四个说话人、第七个说话人"
+            ],
+            "answer": "B",
+            "answer_text": "第二个说话人、第四个说话人、第七个说话人",
+            "rationale": [
+              "wrong_speaker",
+              "ground_truth",
+              "unknown",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，性别为女性的说话人一共有几个？请选择最符合的一项。",
+            "question_type": "reverse_count",
+            "options": [
+              "A. 3 个",
+              "B. 无法判断（信息不足以确定性别）",
+              "C. 4 个",
+              "D. 6 个"
+            ],
+            "answer": "C",
+            "answer_text": "4 个",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/gender/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
@@ -1403,289 +2185,463 @@ window.BENCH_EXAMPLES = {
   "age": {
     "task_id": "age",
     "level": "level1",
-    "dimension": "Speaker Attributes",
-    "task_name": "Age Recognition",
+    "dimension": "Speaker Attribute Recognition (SAR)",
+    "task_name": "Age Recognition (AR)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Sicario (2015)",
+        "source": "Mission Impossible Rogue Nation 2015 PROPER 2160p BluRay REMUX HEVC DTS-HD MA TrueHD 7 1 Atmos-HDHIVE",
+        "video_folder": "Mission.Impossible.Rogue.Nation.2015.PROPER.2160p.BluRay.REMUX.HEVC.DTS-HD.MA.TrueHD.7.1.Atmos-HDHIVE_part005",
+        "full_audio": {
+          "src": "bench_examples/audio/age/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/age/en_spk_a.mp3",
-            "start": 31.8,
-            "end": 34.68,
-            "dur": 2.88
+            "src": "bench_examples/audio/age/en_ref_a.mp3",
+            "start": 14.73,
+            "end": 16.49,
+            "dur": 1.76,
+            "transcript": "Has Ethan Hunt contacted you?",
+            "spk_id": "spk_07",
+            "spk_index": "spk_3"
           }
         },
-        "spk_a_transcript": "Yeah, love how we're gonna pretend like I planned this.",
-        "spk_b_transcript": "Now you use yourself as bait.",
+        "spk_a_transcript": "Has Ethan Hunt contacted you?",
+        "spk_b_transcript": "I know, and I'm gonna answer truthfully, and then you're gonna ask me to lie intentionally.",
         "qa": [
           {
-            "question": "Which of the following age ranges is the speaker in the audio closest to?",
+            "question": "In the following solo audio, the age range of speaker <spk_a> is closest to which of the following?",
             "question_type": "no_index",
             "options": [
-              "A. Middle-aged (30-59 years old)",
-              "B. Senior (60 years or older)",
-              "C. Young adults (18-29 years old)",
-              "D. Cannot be determined (Insufficient information to determine the age group)"
+              "A. Elderly (60 years or older)",
+              "B. Middle-aged (30-59 years old)",
+              "C. Cannot be determined (Insufficient information to determine the age group)",
+              "D. Young people (18-29 years old)"
             ],
-            "answer": "C",
-            "answer_text": "Young adults (18-29 years old)",
+            "answer": "B",
+            "answer_text": "Middle-aged adults (30-59 years old)",
             "rationale": [
-              "wrong_speaker",
               "hallucination",
               "ground_truth",
-              "unknown"
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/en_ref_a.mp3",
+                "start": 14.73,
+                "end": 16.49,
+                "dur": 1.76,
+                "transcript": "Has Ethan Hunt contacted you?",
+                "spk_id": "spk_07",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "What is the approximate age group of the speaker in the audio between 31.8 and 34.68 seconds?",
+            "question": "Which of the following is closest to the age range of speaker <spk_a> in the audio from 14.73s to 16.49s?",
             "question_type": "time_index",
             "options": [
-              "A. Middle-aged (30-59 years old)",
+              "A. Middle-aged adults (30-59 years old)",
               "B. Young adults (18-29 years old)",
-              "C. Cannot be determined (Insufficient information to determine the age group)",
-              "D. Senior (60 years or older)"
-            ],
-            "answer": "B",
-            "answer_text": "Young adults (18-29 years old)",
-            "rationale": [
-              "wrong_speaker",
-              "ground_truth",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "What is the approximate age range of the speaker who said, “love how we're gonna pretend”?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Cannot be determined (Insufficient information to determine the age group)",
-              "B. Middle-aged (30-59 years old)",
-              "C. Young adults (18-29 years old)",
-              "D. Child (under 12 years old)"
-            ],
-            "answer": "C",
-            "answer_text": "Young adults (18-29 years old)",
-            "rationale": [
-              "unknown",
-              "wrong_speaker",
-              "ground_truth",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "In the entire audio, what is the approximate age group of Speaker 11?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Child (under 12 years old)",
-              "B. Young adults (18-29 years old)",
-              "C. Middle-aged (30-59 years old)",
-              "D. Cannot be determined (Insufficient information to determine the age group)"
+              "C. Elderly (60 years and over)",
+              "D. Unable to determine (Insufficient information to determine the age group)"
             ],
             "answer": "A",
-            "answer_text": "Child (under 12 years old)",
+            "answer_text": "Middle-aged adults (30-59 years old)",
             "rationale": [
-              "ground_truth",
-              "hallucination",
-              "hallucination",
-              "unknown"
-            ]
-          },
-          {
-            "question": "What is the approximate age range of the female speaker who said, “love how we're gonna pretend like I planned this,” between 31.8 and 34.68 seconds?",
-            "question_type": "complex_index",
-            "options": [
-              "A. Senior (60 years or older)",
-              "B. Young adults (18-29 years old)",
-              "C. Middle-aged (30-59 years old)",
-              "D. Cannot be determined (Insufficient information to determine the age group)"
-            ],
-            "answer": "B",
-            "answer_text": "Young adults (18-29 years old)",
-            "rationale": [
-              "hallucination",
               "ground_truth",
               "wrong_speaker",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/en_ref_a.mp3",
+                "start": 14.73,
+                "end": 16.49,
+                "dur": 1.76,
+                "transcript": "Has Ethan Hunt contacted you?",
+                "spk_id": "spk_07",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "In the entire audio, which speaker belongs to the Child (under 12 years old) age group? Please select the most appropriate option.",
-            "question_type": "reverse_retrival",
+            "question": "The age range of the speaker <spk_a> in the audio who said ‘Has Ethan Hunt contacted you?’ is closest to which of the following?",
+            "question_type": "transcript_index",
+            "options": [
+              "A. Young adults (18-29 years old)",
+              "B. Middle-aged (30-59 years old)",
+              "C. Cannot determine (Insufficient information to determine the age group)",
+              "D. Seniors (age 60 and over)"
+            ],
+            "answer": "B",
+            "answer_text": "Middle-aged adults (30-59 years old)",
+            "rationale": [
+              "wrong_speaker",
+              "ground_truth",
+              "unknown",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/en_ref_a.mp3",
+                "start": 14.73,
+                "end": 16.49,
+                "dur": 1.76,
+                "transcript": "Has Ethan Hunt contacted you?",
+                "spk_id": "spk_07",
+                "spk_index": "spk_3"
+              }
+            ]
+          },
+          {
+            "question": "In the entire dialogue, the age group of the third speaker is closest to which of the following? Speaker indexing starts from the first speaker.",
+            "question_type": "speaker_index",
+            "options": [
+              "A. Young adults (18-29 years old)",
+              "B. Cannot be determined (Insufficient information to determine the age group)",
+              "C. Middle-aged (30-59 years old)",
+              "D. Adolescent (13-17 years old)"
+            ],
+            "answer": "C",
+            "answer_text": "Middle-aged (30-59 years old)",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "The age range of the male speaker <spk_a> who said ‘Has Ethan Hunt contacted you?’ from 14.73s to 16.49s is closest to which of the following?",
+            "question_type": "complex_index",
             "options": [
               "A. Cannot be determined (Insufficient information to determine the age group)",
-              "B. Speaker 1",
-              "C. Speaker 1, Speaker 11",
-              "D. Speaker 11"
+              "B. Young people (18-29 years old)",
+              "C. Seniors (60 years and over)",
+              "D. Middle-aged (30-59 years old)"
             ],
             "answer": "D",
-            "answer_text": "Speaker 11",
+            "answer_text": "Middle-aged people (30-59 years old)",
             "rationale": [
               "unknown",
               "wrong_speaker",
               "hallucination",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/en_ref_a.mp3",
+                "start": 14.73,
+                "end": 16.49,
+                "dur": 1.76,
+                "transcript": "Has Ethan Hunt contacted you?",
+                "spk_id": "spk_07",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "In the entire audio, how many speakers are in the Child (under 12 years old) age group? Please select the most suitable option.",
+            "question": "In the entire audio, which speakers are Young Adults (18-29 years old)? (Answer using the global speaker order) Please select the best-fitting option. Speaker indexing starts from the first speaker.",
+            "question_type": "reverse_retrival",
+            "options": [
+              "A. the first and second speakers",
+              "B. Cannot be determined (Insufficient information to determine the age group)",
+              "C. the second speaker",
+              "D. the first and third speakers"
+            ],
+            "answer": "A",
+            "answer_text": "the first and second speakers",
+            "rationale": [
+              "ground_truth",
+              "unknown",
+              "wrong_speaker",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "How many speakers are there in the young adult (18-29 years old) age group in the entire audio? Please select the most appropriate option.",
             "question_type": "reverse_count",
             "options": [
               "A. 1",
               "B. 3",
-              "C. Cannot be determined (Insufficient information to determine the age group)",
+              "C. Unable to determine (Insufficient information to determine the age group)",
               "D. 2"
             ],
-            "answer": "A",
-            "answer_text": "1",
+            "answer": "D",
+            "answer_text": "2",
             "rationale": [
-              "ground_truth",
-              "hallucination",
+              "wrong_speaker",
+              "wrong_speaker",
               "unknown",
-              "wrong_speaker"
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Mr. Canton and Lady Rose (奇迹, 1989)",
+        "source": "teahouse 2010 s1e09",
+        "video_folder": "teahouse_2010_s1e09_part005",
+        "full_audio": {
+          "src": "bench_examples/audio/age/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/age/zh_spk_a.mp3",
-            "start": 46.45,
-            "end": 49.01,
-            "dur": 2.56
+            "src": "bench_examples/audio/age/zh_ref_a.mp3",
+            "start": 36.92,
+            "end": 43.12,
+            "dur": 6.2,
+            "transcript": "得了得了得了，我问你，你是不是拿人唐铁嘴一翠扳指？",
+            "spk_id": "spk_06",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "It's rare for you to like Belle this much. How could I not agree?",
-        "spk_b_transcript": "There's no use in sighing. You should be happier.",
+        "spk_a_transcript": "得了得了得了，我问你，你是不是拿人唐铁嘴一翠扳指？",
+        "spk_b_transcript": "哎哎，干嘛打人呢？",
         "qa": [
           {
-            "question": "Which of the following best describes the speaker's age group?",
+            "question": "下面单人讲话音频中，说话人的年龄段最接近以下哪一项？",
             "question_type": "no_index",
             "options": [
-              "A. Middle-aged (30-59)",
-              "B. Elderly (60+)",
-              "C. Young adult (18-29)",
-              "D. Cannot be determined"
+              "A. 中年人 (30-59岁)",
+              "B. 青年人 (18-29岁)",
+              "C. 老年人 (60岁以上)",
+              "D. 无法判断（信息不足以确定年龄段）"
+            ],
+            "answer": "A",
+            "answer_text": "中年人 (30-59岁)",
+            "rationale": [
+              "ground_truth",
+              "wrong_speaker",
+              "hallucination",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/zh_ref_a.mp3",
+                "start": 36.92,
+                "end": 43.12,
+                "dur": 6.2,
+                "transcript": "得了得了得了，我问你，你是不是拿人唐铁嘴一翠扳指？",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "音频中在第 36.92 秒到第 43.12 秒的说话人 的年龄段最接近以下哪一项？",
+            "question_type": "time_index",
+            "options": [
+              "A. 青年人 (18-29岁)",
+              "B. 中年人 (30-59岁)",
+              "C. 老年人 (60岁以上)",
+              "D. 无法判断（信息不足以确定年龄段）"
             ],
             "answer": "B",
-            "answer_text": "Elderly (60+)",
+            "answer_text": "中年人 (30-59岁)",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
               "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/zh_ref_a.mp3",
+                "start": 36.92,
+                "end": 43.12,
+                "dur": 6.2,
+                "transcript": "得了得了得了，我问你，你是不是拿人唐铁嘴一翠扳指？",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the approximate age group of the speaker in the segment from 46.45s to 49.01s?",
-            "question_type": "time_index",
+            "question": "音频中说过‘你是不是拿人唐铁嘴一翠扳指’的说话人 的年龄段最接近以下哪一项？",
+            "question_type": "transcript_index",
             "options": [
-              "A. Cannot be determined",
-              "B. Middle-aged (30-59)",
-              "C. Young adult (18-29)",
-              "D. Elderly (60+)"
+              "A. 青年人 (18-29岁)",
+              "B. 老年人 (60岁以上)",
+              "C. 中年人 (30-59岁)",
+              "D. 无法判断（信息不足以确定年龄段）"
+            ],
+            "answer": "C",
+            "answer_text": "中年人 (30-59岁)",
+            "rationale": [
+              "wrong_speaker",
+              "hallucination",
+              "ground_truth",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/zh_ref_a.mp3",
+                "start": 36.92,
+                "end": 43.12,
+                "dur": 6.2,
+                "transcript": "得了得了得了，我问你，你是不是拿人唐铁嘴一翠扳指？",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "在整段对话中，第一个说话人的年龄段最接近以下哪一项？ 说话人序号从第一个说话人开始编号。",
+            "question_type": "speaker_index",
+            "options": [
+              "A. 中年人 (30-59岁)",
+              "B. 青年人 (18-29岁)",
+              "C. 青少年 (13-17岁)",
+              "D. 无法判断（信息不足以确定年龄段）"
+            ],
+            "answer": "A",
+            "answer_text": "中年人 (30-59岁)",
+            "rationale": [
+              "ground_truth",
+              "wrong_speaker",
+              "hallucination",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在第 36.92 秒到第 43.12 秒说过‘你是不是拿人唐铁嘴一翠扳指’的男性说话人，其年龄段最接近以下哪一项？",
+            "question_type": "complex_index",
+            "options": [
+              "A. 无法判断（信息不足以确定年龄段）",
+              "B. 青年人 (18-29岁)",
+              "C. 老年人 (60岁以上)",
+              "D. 中年人 (30-59岁)"
             ],
             "answer": "D",
-            "answer_text": "Elderly (60+)",
+            "answer_text": "中年人 (30-59岁)",
             "rationale": [
               "unknown",
               "wrong_speaker",
               "hallucination",
               "ground_truth"
-            ]
-          },
-          {
-            "question": "What is the approximate age group of the speaker who said, 'How could I not agree?'",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Young adult (18-29)",
-              "B. Elderly (60+)",
-              "C. Middle-aged (30-59)",
-              "D. Cannot be determined"
             ],
-            "answer": "B",
-            "answer_text": "Elderly (60+)",
-            "rationale": [
-              "hallucination",
-              "ground_truth",
-              "wrong_speaker",
-              "unknown"
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/zh_ref_a.mp3",
+                "start": 36.92,
+                "end": 43.12,
+                "dur": 6.2,
+                "transcript": "得了得了得了，我问你，你是不是拿人唐铁嘴一翠扳指？",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the approximate age group of Speaker 3?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Elderly (60+)",
-              "B. Middle-aged (30-59)",
-              "C. Cannot be determined",
-              "D. Young adult (18-29)"
-            ],
-            "answer": "A",
-            "answer_text": "Elderly (60+)",
-            "rationale": [
-              "ground_truth",
-              "wrong_speaker",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "What is the approximate age group of the female speaker who said, 'It's rare for you to like Belle this much' in the segment from 46.45s to 49.01s?",
-            "question_type": "complex_index",
-            "options": [
-              "A. Cannot be determined",
-              "B. Middle-aged (30-59)",
-              "C. Elderly (60+)",
-              "D. Young adult (18-29)"
-            ],
-            "answer": "C",
-            "answer_text": "Elderly (60+)",
-            "rationale": [
-              "unknown",
-              "wrong_speaker",
-              "ground_truth",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "Which of the following speakers are in the elderly (60+) age group?",
+            "question": "在整段音频中，年龄段为 青年人 (18-29岁) 的说话人有哪些？（用 全局说话人顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
             "question_type": "reverse_retrival",
             "options": [
-              "A. Speaker 3, Speaker 8",
-              "B. Speaker 3, Speaker 4, Speaker 11",
-              "C. Speaker 3, Speaker 8, Speaker 11",
-              "D. Cannot be determined"
+              "A. 第一个说话人",
+              "B. 第三个说话人",
+              "C. 第一个说话人、第三个说话人",
+              "D. 无法判断（信息不足以确定年龄段）"
             ],
-            "answer": "C",
-            "answer_text": "Speaker 3, Speaker 8, Speaker 11",
+            "answer": "B",
+            "answer_text": "第三个说话人",
             "rationale": [
               "wrong_speaker",
-              "hallucination",
               "ground_truth",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How many speakers in the audio are in the elderly (60+) age group?",
+            "question": "在整段音频中，年龄段为 中年人 (30-59岁) 的说话人一共有几个？请选择最符合的一项。",
             "question_type": "reverse_count",
             "options": [
-              "A. 2",
-              "B. 3",
-              "C. 5",
-              "D. Cannot be determined"
+              "A. 1 个",
+              "B. 4 个",
+              "C. 3 个",
+              "D. 无法判断（信息不足以确定年龄段）"
             ],
-            "answer": "B",
-            "answer_text": "3",
+            "answer": "C",
+            "answer_text": "3 个",
             "rationale": [
+              "hallucination",
               "wrong_speaker",
               "ground_truth",
-              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/age/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
@@ -1695,253 +2651,403 @@ window.BENCH_EXAMPLES = {
   "emotion": {
     "task_id": "emotion",
     "level": "level1",
-    "dimension": "Speaker Attributes",
-    "task_name": "Emotion Recognition",
+    "dimension": "Speaker Attribute Recognition (SAR)",
+    "task_name": "Emotion Recognition (ER)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "The Cubicle (斗室)",
+        "source": "dune 2021",
+        "video_folder": "dune_2021_part005",
+        "full_audio": {
+          "src": "bench_examples/audio/emotion/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/emotion/en_spk_a.mp3",
-            "start": 129.51,
-            "end": 130.91,
-            "dur": 1.4
+            "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+            "start": 11.43,
+            "end": 12.87,
+            "dur": 1.44,
+            "transcript": "You dismiss my mother in her own house.",
+            "spk_id": "spk_01",
+            "spk_index": "spk_3"
           }
         },
-        "spk_a_transcript": "Get off me, you bastards!",
-        "spk_b_transcript": "Young men with money have no discipline and very bad manners.",
+        "spk_a_transcript": "You dismiss my mother in her own house.",
+        "spk_b_transcript": "You must do everything that your mother tells you.",
         "qa": [
           {
-            "question": "Which of the following emotions is closest to the speaker's in this solo speech audio?",
+            "question": "In the single-person audio below, the speaker's emotion is closest to which of the following?",
             "question_type": "no_index",
             "options": [
+              "A. Fear",
+              "B. Cannot determine (insufficient evidence to determine the emotion)",
+              "C. Angry",
+              "D. Happy"
+            ],
+            "answer": "C",
+            "answer_text": "Angry",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+                "start": 11.43,
+                "end": 12.87,
+                "dur": 1.44,
+                "transcript": "You dismiss my mother in her own house.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_3"
+              }
+            ]
+          },
+          {
+            "question": "Which of the following is closest to the emotion of the speaker in the audio from 11.43 to 12.87 seconds?",
+            "question_type": "time_index",
+            "options": [
               "A. Angry",
-              "B. Disgust",
-              "C. Calm",
-              "D. Cannot be determined (insufficient evidence)"
+              "B. Fear",
+              "C. Cannot determine (insufficient evidence to determine sentiment)",
+              "D. Happy"
             ],
             "answer": "A",
             "answer_text": "Angry",
             "rationale": [
               "ground_truth",
               "wrong_speaker",
-              "hallucination",
-              "unknown"
-            ]
-          },
-          {
-            "question": "Which of the following emotions is closest to that of the speaker talking from 129.51 to 130.91 seconds?",
-            "question_type": "time_index",
-            "options": [
-              "A. Disgust",
-              "B. Calm",
-              "C. Angry",
-              "D. Cannot be determined (insufficient evidence)"
-            ],
-            "answer": "C",
-            "answer_text": "Angry",
-            "rationale": [
-              "wrong_speaker",
-              "hallucination",
-              "ground_truth",
-              "unknown"
-            ]
-          },
-          {
-            "question": "Which of the following emotions is closest to that of the speaker who said, 'Get off me, you bastards!'?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Disgust",
-              "B. Angry",
-              "C. Cannot be determined (insufficient evidence)",
-              "D. Calm"
-            ],
-            "answer": "B",
-            "answer_text": "Angry",
-            "rationale": [
-              "wrong_speaker",
-              "ground_truth",
               "unknown",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+                "start": 11.43,
+                "end": 12.87,
+                "dur": 1.44,
+                "transcript": "You dismiss my mother in her own house.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "Which of the following emotions is closest to that of the speaker who said, 'Get off me, you bastards!' between 129.51 and 130.91 seconds?",
-            "question_type": "complex_index",
+            "question": "In the audio, the emotion of the speaker who said ‘You dismiss my mother in her own house’ is closest to which of the following?",
+            "question_type": "transcript_index",
             "options": [
-              "A. Calm",
-              "B. Cannot be determined (insufficient evidence)",
-              "C. Disgust",
+              "A. Cannot determine (Insufficient evidence to determine emotion)",
+              "B. Fear",
+              "C. Happy",
               "D. Angry"
             ],
             "answer": "D",
             "answer_text": "Angry",
             "rationale": [
-              "hallucination",
               "unknown",
               "wrong_speaker",
+              "hallucination",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+                "start": 11.43,
+                "end": 12.87,
+                "dur": 1.44,
+                "transcript": "You dismiss my mother in her own house.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_3"
+              }
             ]
           },
           {
-            "question": "Throughout the entire audio, which speakers expressed the emotion of disgust? Please select the best option.",
+            "question": "The emotion of the speaker who said ‘You dismiss my mother’ between 11.43 and 12.87 seconds is closest to which of the following?",
+            "question_type": "complex_index",
+            "options": [
+              "A. Angry",
+              "B. Happy",
+              "C. Fear",
+              "D. Cannot determine (Insufficient evidence to determine emotion)"
+            ],
+            "answer": "A",
+            "answer_text": "Angry",
+            "rationale": [
+              "ground_truth",
+              "hallucination",
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/en_ref_a.mp3",
+                "start": 11.43,
+                "end": 12.87,
+                "dur": 1.44,
+                "transcript": "You dismiss my mother in her own house.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_3"
+              }
+            ]
+          },
+          {
+            "question": "Throughout the entire audio, which speakers have expressed the emotion Fear? (Answer in global speaker order) Please select the most suitable option. Speaker indexing starts from the first speaker.",
             "question_type": "reverse_retrival",
             "options": [
-              "A. Speaker 3",
-              "B. Speaker 1, Speaker 2",
-              "C. Speaker 3, Speaker 7",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. the third speaker",
+              "B. the second and third speakers",
+              "C. Cannot determine (insufficient evidence to determine emotion)",
+              "D. the first and second speakers"
             ],
-            "answer": "C",
-            "answer_text": "Speaker 3, Speaker 7",
+            "answer": "B",
+            "answer_text": "the second and third speakers",
             "rationale": [
               "wrong_speaker",
-              "hallucination",
               "ground_truth",
-              "unknown"
+              "unknown",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "In the entire audio, how many speakers in total expressed the emotion of 'disgust'? Please select the most appropriate option.",
+            "question": "In the entire audio, how many speakers expressed the emotion of fear? Please select the most suitable option.",
             "question_type": "reverse_count",
             "options": [
-              "A. 4",
-              "B. 1",
-              "C. Cannot be determined (insufficient evidence)",
+              "A. 1",
+              "B. Cannot determine (Insufficient evidence to determine emotion)",
+              "C. 3",
               "D. 2"
             ],
             "answer": "D",
-            "answer_text": "2",
+            "answer_text": "2 items",
             "rationale": [
-              "hallucination",
               "wrong_speaker",
               "unknown",
+              "hallucination",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Overheard (窃听风云, 2009)",
+        "source": "small alley 1981",
+        "video_folder": "small_alley_1981_part016",
+        "full_audio": {
+          "src": "bench_examples/audio/emotion/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/emotion/zh_spk_a.mp3",
-            "start": 213.49,
-            "end": 215.33,
-            "dur": 1.84
+            "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+            "start": 3.52,
+            "end": 4.52,
+            "dur": 1.0,
+            "transcript": "啊，是你呀。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "You think I'm a natural-born killer?",
-        "spk_b_transcript": "Our Renxiao Tang Charity Foundation has raised 51.86 million in donations.",
+        "spk_a_transcript": "啊，是你呀。",
+        "spk_b_transcript": "哥哥。",
         "qa": [
           {
-            "question": "The speaker's emotion in the audio is closest to which of the following?",
+            "question": "下面单人讲话音频中，说话人的情感最接近以下哪一项？",
             "question_type": "no_index",
             "options": [
-              "A. Happy",
-              "B. Angry",
-              "C. Calm",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. 愤怒",
+              "B. 悲伤",
+              "C. 快乐",
+              "D. 无法判断（证据不足以确定情感）"
             ],
-            "answer": "B",
-            "answer_text": "Angry",
+            "answer": "C",
+            "answer_text": "快乐",
             "rationale": [
+              "hallucination",
               "wrong_speaker",
               "ground_truth",
-              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+                "start": 3.52,
+                "end": 4.52,
+                "dur": 1.0,
+                "transcript": "啊，是你呀。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "The emotion of the speaker in the audio from 213.49s to 215.33s is closest to which of the following?",
+            "question": "音频中在第 3.52 秒到第 4.52 秒讲话的说话人情感最接近以下哪一项？",
             "question_type": "time_index",
             "options": [
-              "A. Calm",
-              "B. Happy",
-              "C. Angry",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. 悲伤",
+              "B. 无法判断（证据不足以确定情感）",
+              "C. 快乐",
+              "D. 愤怒"
             ],
             "answer": "C",
-            "answer_text": "Angry",
+            "answer_text": "快乐",
             "rationale": [
-              "hallucination",
               "wrong_speaker",
+              "unknown",
               "ground_truth",
-              "unknown"
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+                "start": 3.52,
+                "end": 4.52,
+                "dur": 1.0,
+                "transcript": "啊，是你呀。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "The emotion of the speaker who said “You think I'm a natural-born killer?” in the audio is closest to which of the following?",
+            "question": "音频中说过‘啊，是你呀’的说话人在该句话的情感最接近以下哪一项？",
             "question_type": "transcript_index",
             "options": [
-              "A. Angry",
-              "B. Cannot be determined (insufficient evidence)",
-              "C. Happy",
-              "D. Calm"
+              "A. 快乐",
+              "B. 愤怒",
+              "C. 悲伤",
+              "D. 无法判断（证据不足以确定情感）"
             ],
             "answer": "A",
-            "answer_text": "Angry",
+            "answer_text": "快乐",
             "rationale": [
               "ground_truth",
-              "unknown",
+              "hallucination",
               "wrong_speaker",
-              "hallucination"
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+                "start": 3.52,
+                "end": 4.52,
+                "dur": 1.0,
+                "transcript": "啊，是你呀。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "The emotion of the speaker who said “You think I'm a natural-born killer?” from 213.49 to 215.33 seconds is closest to which of the following?",
+            "question": "在第 3.52 秒到第 4.52 秒说过‘啊，是你呀’的说话人，其情感最接近以下哪一项？",
             "question_type": "complex_index",
             "options": [
-              "A. Happy",
-              "B. Calm",
-              "C. Cannot be determined (insufficient evidence)",
-              "D. Angry"
-            ],
-            "answer": "D",
-            "answer_text": "Angry",
-            "rationale": [
-              "wrong_speaker",
-              "hallucination",
-              "unknown",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "Which speaker expressed the emotion of fear in the audio?",
-            "question_type": "reverse_retrieval",
-            "options": [
-              "A. Speaker 2",
-              "B. Speaker 3",
-              "C. Speaker 3 and Speaker 4",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. 无法判断（证据不足以确定情感）",
+              "B. 快乐",
+              "C. 愤怒",
+              "D. 悲伤"
             ],
             "answer": "B",
-            "answer_text": "Speaker 3",
+            "answer_text": "快乐",
             "rationale": [
-              "wrong_speaker",
+              "unknown",
               "ground_truth",
               "hallucination",
-              "unknown"
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/zh_ref_a.mp3",
+                "start": 3.52,
+                "end": 4.52,
+                "dur": 1.0,
+                "transcript": "啊，是你呀。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "How many speakers expressed the emotion of fear in the audio?",
-            "question_type": "reverse_count",
+            "question": "在整段音频中，出现过情感 惊讶 的说话人有哪些？（用 全局说话人顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
+            "question_type": "reverse_retrival",
             "options": [
-              "A. 2",
-              "B. 3",
-              "C. 1",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. 第一个说话人",
+              "B. 无法判断（证据不足以确定情感）",
+              "C. 第一个说话人、第二个说话人",
+              "D. 第二个说话人"
             ],
             "answer": "C",
-            "answer_text": "1",
+            "answer_text": "第一个说话人、第二个说话人",
             "rationale": [
               "wrong_speaker",
-              "hallucination",
+              "unknown",
               "ground_truth",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，出现过情感 悲伤 的说话人一共有几个？请选择最符合的一项。",
+            "question_type": "reverse_count",
+            "options": [
+              "A. 1 个",
+              "B. 2 个",
+              "C. 3 个",
+              "D. 无法判断（证据不足以确定情感）"
+            ],
+            "answer": "B",
+            "answer_text": "2 个",
+            "rationale": [
+              "wrong_speaker",
+              "ground_truth",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
@@ -1951,289 +3057,463 @@ window.BENCH_EXAMPLES = {
   "accent": {
     "task_id": "accent",
     "level": "level1",
-    "dimension": "Speaker Attributes",
-    "task_name": "Accent Recognition",
+    "dimension": "Speaker Attribute Recognition (SAR)",
+    "task_name": "Accent Identification (AI)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Bumblebee (2018)",
+        "source": "big shots funeral 2001",
+        "video_folder": "big_shots_funeral_2001_part003",
+        "full_audio": {
+          "src": "bench_examples/audio/accent/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/accent/en_spk_a.mp3",
-            "start": 320.41,
-            "end": 322.45,
-            "dur": 2.04
+            "src": "bench_examples/audio/accent/en_ref_a.mp3",
+            "start": 91.97,
+            "end": 97.37,
+            "dur": 5.4,
+            "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+            "spk_id": "spk_04",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Yeah, you're unsuccessful at everything.",
-        "spk_b_transcript": "You sound like a little bumblebee. I'm gonna call you that from now on. Bumblebee.",
+        "spk_a_transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+        "spk_b_transcript": "You believe me, when I tell you I got nothing but respect for you.",
         "qa": [
           {
-            "question": "What is the speaker's accent in the audio?",
+            "question": "What accent does the speaker have in the following single-speaker audio?",
             "question_type": "no_index",
             "options": [
-              "A. General American English",
-              "B. British English accent",
-              "C. Southern American accent",
-              "D. The accent is not obvious and cannot be determined."
+              "A. British English accent",
+              "B. New York accent",
+              "C. General American English accent",
+              "D. Indistinct accent, cannot be determined."
             ],
             "answer": "C",
-            "answer_text": "Southern American accent",
+            "answer_text": "General American English Accent",
             "rationale": [
-              "wrong_speaker",
               "hallucination",
+              "wrong_speaker",
               "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/en_ref_a.mp3",
+                "start": 91.97,
+                "end": 97.37,
+                "dur": 5.4,
+                "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Which of the following is closest to the speaker's accent in the audio from 320.41 to 322.45 seconds?",
+            "question": "Which of the following does the speaker's accent in the audio from 91.971 seconds to 97.371 seconds most closely resemble?",
             "question_type": "time_index",
             "options": [
-              "A. British accent",
-              "B. Southern American accent",
-              "C. General American English",
-              "D. The accent is not obvious and cannot be determined."
+              "A. New York area English accent",
+              "B. General American English Accent",
+              "C. British English accent",
+              "D. Accent not obvious, cannot determine."
             ],
             "answer": "B",
-            "answer_text": "Southern American accent",
+            "answer_text": "General American accent",
             "rationale": [
-              "hallucination",
-              "ground_truth",
               "wrong_speaker",
+              "ground_truth",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/en_ref_a.mp3",
+                "start": 91.97,
+                "end": 97.37,
+                "dur": 5.4,
+                "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Which of the following best describes the accent of the speaker who says, “you're unsuccessful at everything”?",
+            "question": "The accent of the speaker who says “that's the whole point of me scrapping it” in the audio is closest to which of the following?",
             "question_type": "transcript_index",
             "options": [
-              "A. General American English",
-              "B. The accent is not obvious and cannot be determined.",
-              "C. Southern American accent",
-              "D. British English accent"
+              "A. General American English accent",
+              "B. British English accent",
+              "C. New York area English accent",
+              "D. The accent is not obvious, cannot be determined."
             ],
-            "answer": "C",
-            "answer_text": "Southern American accent",
+            "answer": "A",
+            "answer_text": "General American accent",
             "rationale": [
-              "wrong_speaker",
-              "unknown",
               "ground_truth",
-              "hallucination"
+              "hallucination",
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/en_ref_a.mp3",
+                "start": 91.97,
+                "end": 97.37,
+                "dur": 5.4,
+                "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the accent of the third speaker in the conversation?",
+            "question": "What accent is used by the second speaker in the conversation throughout the entire audio? Speaker indexing starts from the first speaker.",
             "question_type": "speaker_index",
             "options": [
-              "A. General American English",
+              "A. General American English accent",
               "B. Australian English accent",
-              "C. The accent is not obvious and cannot be determined.",
-              "D. Southern American accent"
+              "C. The accent isn't distinct, so it's impossible to tell.",
+              "D. New York regional English accent"
             ],
             "answer": "D",
-            "answer_text": "Southern American accent",
+            "answer_text": "New York English accent",
             "rationale": [
               "wrong_speaker",
               "hallucination",
               "unknown",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "What is the accent of the female speaker who says “you're unsuccessful at everything” between 320.41 and 322.45 seconds?",
+            "question": "Which of the following accents is closest to that of the male speaker who said “that's the whole point of me scrapping it” between 91.971 and 97.371 seconds?",
             "question_type": "complex_index",
             "options": [
               "A. The accent is not obvious and cannot be determined.",
-              "B. General American English",
-              "C. Southern American accent",
-              "D. British accent"
+              "B. British English accent",
+              "C. New York area English accent",
+              "D. General American English Accent"
             ],
-            "answer": "C",
-            "answer_text": "Southern American accent",
+            "answer": "D",
+            "answer_text": "General American English accent",
             "rationale": [
               "unknown",
+              "hallucination",
               "wrong_speaker",
-              "ground_truth",
-              "hallucination"
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/en_ref_a.mp3",
+                "start": 91.97,
+                "end": 97.37,
+                "dur": 5.4,
+                "transcript": "I don't care about bringing in the new guy, but but that you can't leave my name on the picture, that's the whole point of me scrapping it.",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Which speakers in the audio have a Southern American accent? (Please answer in order of appearance)",
+            "question": "In the entire audio, which speakers use a General American English accent? (Answer in order of speaker appearance) Please select the one that best fits. Speaker indexing starts from the first speaker.",
             "question_type": "reverse_retrival",
             "options": [
-              "A. The third speaker",
-              "B. The second speaker, the third speaker",
-              "C. The third speaker, the fourth speaker",
-              "D. The accent is not obvious and cannot be determined."
+              "A. The first speaker",
+              "B. The first speaker and the second speaker",
+              "C. The first speaker, the third speaker",
+              "D. Accent not obvious, unable to determine."
             ],
             "answer": "C",
-            "answer_text": "The third speaker, the fourth speaker",
+            "answer_text": "The first speaker, the third speaker",
             "rationale": [
               "wrong_speaker",
               "hallucination",
               "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How many speakers in the audio have a Southern American accent?",
+            "question": "How many speakers with a General American accent are there in the entire audio clip? Please select the most suitable option.",
             "question_type": "reverse_count",
             "options": [
-              "A. 1",
-              "B. 4",
-              "C. 2",
-              "D. The accent is not obvious and cannot be determined."
+              "A. 3",
+              "B. 2",
+              "C. 1",
+              "D. Accent not distinct, unable to determine."
             ],
-            "answer": "C",
+            "answer": "B",
             "answer_text": "2",
             "rationale": [
-              "wrong_speaker",
               "hallucination",
               "ground_truth",
+              "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "He Bi (何必)",
+        "source": "detective zhugeli",
+        "video_folder": "detective_zhugeli_part018",
+        "full_audio": {
+          "src": "bench_examples/audio/accent/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/accent/zh_spk_a.mp3",
-            "start": 29.72,
-            "end": 31.52,
-            "dur": 1.8
+            "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+            "start": 18.89,
+            "end": 22.61,
+            "dur": 3.72,
+            "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+            "spk_id": "spk_06",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "I've been massaged a lot, so I know a little bit too.",
-        "spk_b_transcript": "I never rely on those things.",
+        "spk_a_transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+        "spk_b_transcript": "听我说听我说，那旋转餐厅我没有去嘛，你生气我知道，所以我特地买了巧克力来给你的嘛。",
         "qa": [
           {
-            "question": "In this audio of a single speaker, what is the speaker's accent?",
+            "question": "下面单人讲话音频中，说话人使用了什么口音？",
             "question_type": "no_index",
             "options": [
-              "A. Mandarin with a Minnan accent",
-              "B. Mandarin with a Cantonese accent",
-              "C. Mandarin with a Northeastern accent",
-              "D. The accent is not obvious and cannot be determined."
+              "A. 台湾口音普通话",
+              "B. 粤语口音普通话",
+              "C. 东北口音普通话",
+              "D. 口音不明显，无法判断"
             ],
             "answer": "B",
-            "answer_text": "Cantonese-accented Mandarin",
+            "answer_text": "粤语口音普通话",
             "rationale": [
               "hallucination",
               "ground_truth",
               "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+                "start": 18.89,
+                "end": 22.61,
+                "dur": 3.72,
+                "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+                "spk_id": "spk_06",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "The speaker's accent between 29.72 and 31.52 seconds is closest to which of the following?",
+            "question": "音频中在第 18.89 秒到第 22.61 秒的说话人口音最接近以下哪一种？",
             "question_type": "time_index",
             "options": [
-              "A. Mandarin with a Sichuan accent",
-              "B. Mandarin with a Taiwanese accent",
-              "C. Mandarin with a Cantonese accent",
-              "D. The accent is not distinct and cannot be determined."
+              "A. 东北口音普通话",
+              "B. 口音不明显，无法判断",
+              "C. 粤语口音普通话",
+              "D. 四川口音普通话"
             ],
             "answer": "C",
-            "answer_text": "Cantonese-accented Mandarin",
+            "answer_text": "粤语口音普通话",
             "rationale": [
               "hallucination",
-              "hallucination",
-              "ground_truth",
-              "unknown"
-            ]
-          },
-          {
-            "question": "The accent of the speaker who said 'I've been massaged a lot' is closest to which of the following?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Mandarin with a Wu accent",
-              "B. Mandarin with a Shandong accent",
-              "C. The accent is not distinct enough to tell.",
-              "D. Mandarin with a Cantonese accent"
-            ],
-            "answer": "D",
-            "answer_text": "Cantonese-accented Mandarin",
-            "rationale": [
-              "hallucination",
-              "hallucination",
-              "unknown",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "What is the accent of Speaker 2 in the audio?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Mandarin with a Hunan accent",
-              "B. Mandarin with a Cantonese accent",
-              "C. Mandarin with a Beijing accent",
-              "D. The accent is not obvious and cannot be determined."
-            ],
-            "answer": "B",
-            "answer_text": "Cantonese-accented Mandarin",
-            "rationale": [
-              "hallucination",
-              "ground_truth",
-              "hallucination",
-              "unknown"
-            ]
-          },
-          {
-            "question": "The accent of the male speaker who said 'I know a little bit too' between 29.72 and 31.52 seconds is closest to which of the following?",
-            "question_type": "complex_index",
-            "options": [
-              "A. Singaporean-accented Mandarin",
-              "B. The accent is not distinct and cannot be determined.",
-              "C. Mandarin with a Henan accent",
-              "D. Mandarin with a Cantonese accent"
-            ],
-            "answer": "D",
-            "answer_text": "Cantonese-accented Mandarin",
-            "rationale": [
-              "hallucination",
-              "unknown",
-              "hallucination",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "Which speakers in the audio speak Mandarin with a Cantonese accent? (Please select the option that lists them in order of appearance.)",
-            "question_type": "reverse_retrival",
-            "options": [
-              "A. Speaker 1, Speaker 2, Speaker 3",
-              "B. There is no obvious accent; it is impossible to determine.",
-              "C. Speaker 1, Speaker 2, Speaker 3, Speaker 4",
-              "D. Speaker 1, Speaker 5"
-            ],
-            "answer": "C",
-            "answer_text": "Speaker 1, Speaker 2, Speaker 3, Speaker 4",
-            "rationale": [
-              "wrong_speaker",
               "unknown",
               "ground_truth",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+                "start": 18.89,
+                "end": 22.61,
+                "dur": 3.72,
+                "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+                "spk_id": "spk_06",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "How many speakers in the audio speak Mandarin with a Cantonese accent?",
-            "question_type": "reverse_count",
+            "question": "音频中说过“你们要说第几名才行”的说话人口音最接近以下哪一种？",
+            "question_type": "transcript_index",
             "options": [
-              "A. 1",
-              "B. 3",
-              "C. 4",
-              "D. The accent is not obvious; cannot be determined."
+              "A. 粤语口音普通话",
+              "B. 口音不明显，无法判断",
+              "C. 台湾口音普通话",
+              "D. 东北口音普通话"
             ],
-            "answer": "C",
-            "answer_text": "4",
+            "answer": "A",
+            "answer_text": "粤语口音普通话",
+            "rationale": [
+              "ground_truth",
+              "unknown",
+              "hallucination",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+                "start": 18.89,
+                "end": 22.61,
+                "dur": 3.72,
+                "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+                "spk_id": "spk_06",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，对话里第 2 个出现的说话人使用了什么口音？",
+            "question_type": "speaker_index",
+            "options": [
+              "A. 口音不明显，无法判断",
+              "B. 东北口音普通话",
+              "C. 台湾口音普通话",
+              "D. 粤语口音普通话"
+            ],
+            "answer": "D",
+            "answer_text": "粤语口音普通话",
+            "rationale": [
+              "unknown",
+              "hallucination",
+              "hallucination",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在第 18.89 秒到第 22.61 秒说过“你们要说第几名才行”的女性说话人，其口音最接近以下哪一种？",
+            "question_type": "complex_index",
+            "options": [
+              "A. 口音不明显，无法判断",
+              "B. 粤语口音普通话",
+              "C. 四川口音普通话",
+              "D. 东北口音普通话"
+            ],
+            "answer": "B",
+            "answer_text": "粤语口音普通话",
+            "rationale": [
+              "unknown",
+              "ground_truth",
+              "hallucination",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/zh_ref_a.mp3",
+                "start": 18.89,
+                "end": 22.61,
+                "dur": 3.72,
+                "transcript": "哎呀，不行不行，这样说不行，你们要说第几名才行，第几才行啊。",
+                "spk_id": "spk_06",
+                "spk_index": "spk_2"
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，使用粤语口音普通话的说话人有哪些？（用 说话人出现顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
+            "question_type": "reverse_retrival",
+            "options": [
+              "A. 第一个说话人、第二个说话人、第三个说话人、第四个说话人",
+              "B. 第二个说话人、第三个说话人",
+              "C. 口音不明显，无法判断",
+              "D. 第一个说话人、第二个说话人"
+            ],
+            "answer": "B",
+            "answer_text": "第二个说话人、第三个说话人",
             "rationale": [
               "hallucination",
+              "ground_truth",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，使用粤语口音普通话的说话人一共有几个？请选择最符合的一项。",
+            "question_type": "reverse_count",
+            "options": [
+              "A. 1 个",
+              "B. 4 个",
+              "C. 2 个",
+              "D. 口音不明显，无法判断"
+            ],
+            "answer": "C",
+            "answer_text": "2 个",
+            "rationale": [
               "wrong_speaker",
+              "hallucination",
               "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/accent/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
@@ -2243,289 +3523,463 @@ window.BENCH_EXAMPLES = {
   "profile": {
     "task_id": "profile",
     "level": "level1",
-    "dimension": "Speaker Attributes",
-    "task_name": "Speaker Profile",
+    "dimension": "Speaker Attribute Recognition (SAR)",
+    "task_name": "Speaker Profiling (SP)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Green Book (2018)",
+        "source": "Green Book 2018 1080p BluRay x264 AC3 • CHAOSPACE",
+        "video_folder": "Green_Book_2018_1080p_BluRay_x264_AC3_•_CHAOSPACE_part010",
+        "full_audio": {
+          "src": "bench_examples/audio/profile/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/profile/en_spk_a.mp3",
-            "start": 46.05,
-            "end": 47.05,
-            "dur": 1.0
+            "src": "bench_examples/audio/profile/en_ref_a.mp3",
+            "start": 1.92,
+            "end": 5.32,
+            "dur": 3.4,
+            "transcript": "You people love the fried chicken, the grits and the collard greens.",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Go home to your family.",
-        "spk_b_transcript": "Holidays, I'm sorry.",
+        "spk_a_transcript": "You people love the fried chicken, the grits and the collard greens.",
+        "spk_b_transcript": "You have a very narrow assessment of me, Tony.",
         "qa": [
           {
-            "question": "Which of the following best describes the speaker's profile in the audio clip?",
+            "question": "In the single-speaker audio below, which of the following is the most accurate profile of the speaker?",
             "question_type": "no_index",
             "options": [
-              "A. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York accent",
-              "B. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
+              "A. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English accent",
+              "B. Gender: Female; Age: Young Adult; Emotion: Happy; Accent: British English",
+              "C. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
+              "D. Cannot be determined (Insufficient information to determine)"
+            ],
+            "answer": "C",
+            "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English accent with New York regional characteristics",
+            "rationale": [
+              "wrong_speaker",
+              "hallucination",
+              "ground_truth",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/en_ref_a.mp3",
+                "start": 1.92,
+                "end": 5.32,
+                "dur": 3.4,
+                "transcript": "You people love the fried chicken, the grits and the collard greens.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "Which of the following is closest to the speaker's profile for the person speaking in the audio from 1.92 to 5.32 seconds?",
+            "question_type": "time_index",
+            "options": [
+              "A. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent.",
+              "B. Cannot be determined (insufficient information to determine)",
+              "C. Gender: Female voice; Age: Young Adult; Emotion: Happy; Accent: British English",
+              "D. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English Accent"
+            ],
+            "answer": "A",
+            "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
+            "rationale": [
+              "ground_truth",
+              "unknown",
+              "hallucination",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/en_ref_a.mp3",
+                "start": 1.92,
+                "end": 5.32,
+                "dur": 3.4,
+                "transcript": "You people love the fried chicken, the grits and the collard greens.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "The speaker profile of the person in the audio who said ‘You people love the fried chicken, the grits and the collard greens.’ is closest to which of the following?",
+            "question_type": "transcript_index",
+            "options": [
+              "A. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English accent",
+              "B. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
               "C. Cannot be determined (insufficient information)",
-              "D. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: New York accent with Italian-American characteristics"
+              "D. Gender: Female; Age: Young Adult; Emotion: Happy; Accent: British English"
             ],
             "answer": "B",
-            "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
+            "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York accent",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
               "unknown",
               "hallucination"
-            ]
-          },
-          {
-            "question": "Which of the following is closest to the speaker profile of the speaker in the audio from 46.05 seconds to 47.05 seconds?",
-            "question_type": "time_index",
-            "options": [
-              "A. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-              "B. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: Italian-American New York accent",
-              "C. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York regional accent",
-              "D. Cannot be determined (insufficient information)"
             ],
-            "answer": "A",
-            "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-            "rationale": [
-              "ground_truth",
-              "hallucination",
-              "wrong_speaker",
-              "unknown"
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/en_ref_a.mp3",
+                "start": 1.92,
+                "end": 5.32,
+                "dur": 3.4,
+                "transcript": "You people love the fried chicken, the grits and the collard greens.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Which of the following is closest to the speaker profile of the person who said 'Go home to your family' in the audio?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: New York accent with Italian-American characteristics",
-              "B. Cannot be determined (insufficient information)",
-              "C. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York regional accent",
-              "D. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent"
-            ],
-            "answer": "D",
-            "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-            "rationale": [
-              "hallucination",
-              "unknown",
-              "wrong_speaker",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "In the entire audio, what is the gender of the sixth speaker?",
+            "question": "In the entire conversation, what is the gender of the first speaker? Speaker indexing starts from the first speaker.",
             "question_type": "speaker_index",
             "options": [
               "A. Female voice",
-              "B. Child's voice",
-              "C. Male voice",
-              "D. Cannot be determined (insufficient information)"
+              "B. Male voice",
+              "C. Children",
+              "D. Cannot determine (Insufficient information to determine)"
             ],
-            "answer": "C",
-            "answer_text": "Male voice",
+            "answer": "B",
+            "answer_text": "Male",
             "rationale": [
-              "wrong_speaker",
               "hallucination",
               "ground_truth",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "Which of the following speaker profiles is the closest match for the speaker who said 'Go home to your family' between 46.05 and 47.05 seconds?",
+            "question": "For the speaker who said ‘You people love the fried chicken, the grits and the collard greens.’ between 1.92 and 5.32 seconds, which of the following speaker profiles is the closest match?",
             "question_type": "complex_index",
             "options": [
-              "A. Gender: Female voice; Age: Middle-aged; Emotion: Happy; Accent: American English with a New York accent",
-              "B. Cannot be determined (insufficient information)",
-              "C. Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
-              "D. Gender: Male voice; Age: Young adult; Emotion: Surprised; Accent: New York accent with Italian-American features"
+              "A. Cannot be determined (Insufficient information to determine)",
+              "B. Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York accent",
+              "C. Gender: Male voice; Age: Middle-aged; Emotion: Disgust; Accent: Standard American English accent",
+              "D. Gender: Female Voice; Age: Young Adult; Emotion: Happy; Accent: British English Accent"
             ],
-            "answer": "C",
-            "answer_text": "Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent",
+            "answer": "B",
+            "answer_text": "Gender: Male; Age: Middle-aged; Emotion: Neutral; Accent: American English with a New York regional accent",
             "rationale": [
-              "wrong_speaker",
               "unknown",
               "ground_truth",
+              "wrong_speaker",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/en_ref_a.mp3",
+                "start": 1.92,
+                "end": 5.32,
+                "dur": 3.4,
+                "transcript": "You people love the fried chicken, the grits and the collard greens.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Which speaker(s) in the audio match the following profile: 'Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent'?",
+            "question": "In the entire audio, who are the speakers with the profile \"Gender: Male voice; Age: Middle-aged\"? (Answer with spk_index) Please select the most appropriate option. Speaker indexing starts from the first speaker.",
             "question_type": "reverse_retrival",
             "options": [
-              "A. Speaker 2 and Speaker 6",
-              "B. Cannot be determined (insufficient information)",
-              "C. Speaker 6 and Speaker 99",
-              "D. Speaker 6"
+              "A. the first speaker",
+              "B. the first, second and third speakers",
+              "C. Cannot determine (Insufficient information)",
+              "D. the first and second speakers"
             ],
             "answer": "D",
-            "answer_text": "Speaker 6",
+            "answer_text": "the first and second speakers",
             "rationale": [
               "wrong_speaker",
-              "unknown",
               "hallucination",
+              "unknown",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How many speakers in the audio clip match the following profile: 'Gender: Male voice; Age: Middle-aged; Emotion: Neutral; Accent: Standard General American English, a well-educated accent'?",
+            "question": "In the entire audio clip, how many speakers are there with the profile “Gender: Male voice; Age: Middle-aged”? Please select the most appropriate option.",
             "question_type": "reverse_count",
             "options": [
               "A. 1",
-              "B. 5",
+              "B. 3",
               "C. 2",
-              "D. Cannot be determined (insufficient information)"
+              "D. Cannot be determined (Insufficient information to determine)"
             ],
-            "answer": "A",
-            "answer_text": "1",
+            "answer": "C",
+            "answer_text": "2",
             "rationale": [
-              "ground_truth",
-              "hallucination",
               "wrong_speaker",
+              "hallucination",
+              "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Forbidden City Cop (大内密探零零发, 1996)",
+        "source": "to live 1994",
+        "video_folder": "to_live_1994_part009",
+        "full_audio": {
+          "src": "bench_examples/audio/profile/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/profile/zh_spk_a.mp3",
-            "start": 13.71,
-            "end": 15.07,
-            "dur": 1.36
+            "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+            "start": 76.53,
+            "end": 80.37,
+            "dur": 3.84,
+            "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "It's inconvenient that you've come again.",
-        "spk_b_transcript": "Young lady, why must you debase yourself like this?",
+        "spk_a_transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+        "spk_b_transcript": "哎，还不因为你家那院房啊，给龙二定了个地主。",
         "qa": [
           {
-            "question": "In this single-speaker audio, which of the following best describes the speaker's profile?",
+            "question": "下面单人讲话音频中，说话人的说话人画像最接近以下哪一项？",
             "question_type": "no_index",
             "options": [
-              "A. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-              "B. Gender: Female voice; Age: Elderly; Emotion: Fear; Accent: Standard Mandarin",
-              "C. Cannot be determined (insufficient information)",
-              "D. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin"
+              "A. 性别：女声；年龄：中年；情感：中性；口音：标准普通话",
+              "B. 无法判断（信息不足以确定）",
+              "C. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+              "D. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话"
             ],
-            "answer": "D",
-            "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
+            "answer": "C",
+            "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
             "rationale": [
               "wrong_speaker",
-              "hallucination",
               "unknown",
-              "ground_truth"
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+                "start": 76.53,
+                "end": 80.37,
+                "dur": 3.84,
+                "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Which of the following best describes the profile of the speaker from 13.71s to 15.07s?",
+            "question": "音频中在第 76.53 秒到第 80.37 秒的说话人的说话人画像最接近以下哪一项？",
             "question_type": "time_index",
             "options": [
-              "A. Cannot be determined (insufficient information)",
-              "B. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-              "C. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-              "D. Gender: Female voice; Age: Elderly; Emotion: Fear; Accent: Standard Mandarin"
-            ],
-            "answer": "C",
-            "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-            "rationale": [
-              "unknown",
-              "wrong_speaker",
-              "ground_truth",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "Which of the following best describes the speaker profile for the person who said, “It's inconvenient that you've come again”?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-              "B. Gender: Female voice; Age: Elderly; Emotion: Fear; Accent: Standard Mandarin",
-              "C. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-              "D. Cannot be determined (insufficient information)"
-            ],
-            "answer": "A",
-            "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-            "rationale": [
-              "ground_truth",
-              "hallucination",
-              "wrong_speaker",
-              "unknown"
-            ]
-          },
-          {
-            "question": "What is the gender of the second speaker in the conversation?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Cannot be determined (insufficient information)",
-              "B. Female voice",
-              "C. Neutral",
-              "D. Male voice"
+              "A. 无法判断（信息不足以确定）",
+              "B. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话",
+              "C. 性别：女声；年龄：中年；情感：中性；口音：标准普通话",
+              "D. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音"
             ],
             "answer": "D",
-            "answer_text": "Male voice",
+            "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
             "rationale": [
               "unknown",
-              "wrong_speaker",
               "hallucination",
+              "wrong_speaker",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+                "start": 76.53,
+                "end": 80.37,
+                "dur": 3.84,
+                "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Which of the following best describes the profile of the speaker who said, “It's inconvenient that you've come again” between 13.71s and 15.07s?",
+            "question": "音频中说过‘不是我们家的木头啊，那是反革命的木头’的说话人的说话人画像最接近以下哪一项？",
+            "question_type": "transcript_index",
+            "options": [
+              "A. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+              "B. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话",
+              "C. 无法判断（信息不足以确定）",
+              "D. 性别：女声；年龄：中年；情感：中性；口音：标准普通话"
+            ],
+            "answer": "A",
+            "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+            "rationale": [
+              "ground_truth",
+              "hallucination",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+                "start": 76.53,
+                "end": 80.37,
+                "dur": 3.84,
+                "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "在整段对话中，第 1 个出现的说话人的性别是什么？",
+            "question_type": "speaker_index",
+            "options": [
+              "A. 儿童声",
+              "B. 男声",
+              "C. 无法判断（信息不足以确定）",
+              "D. 女声"
+            ],
+            "answer": "B",
+            "answer_text": "男声",
+            "rationale": [
+              "hallucination",
+              "ground_truth",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在第 76.53 秒到第 80.37 秒说过‘啊，不对不对，不是我们家的木头啊’的说话人，其说话人画像最接近以下哪一项？",
             "question_type": "complex_index",
             "options": [
-              "A. Gender: Male voice; Age: Middle-aged; Emotion: Surprised; Accent: Standard Mandarin",
-              "B. Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-              "C. Cannot be determined (insufficient information)",
-              "D. Gender: Female voice; Age: Elderly; Emotion: Fearful; Accent: Standard Mandarin"
-            ],
-            "answer": "B",
-            "answer_text": "Gender: Female voice; Age: Young Adult; Emotion: Neutral; Accent: Standard Mandarin",
-            "rationale": [
-              "wrong_speaker",
-              "ground_truth",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "In the audio, which speakers have the profile: \"Gender: Female voice; Age: Young adult; Accent: Standard Mandarin\"? (Answer with speaker index)",
-            "question_type": "reverse_retrival",
-            "options": [
-              "A. Cannot be determined (insufficient information)",
-              "B. Speaker 1, Speaker 6",
-              "C. Speaker 1",
-              "D. Speaker 1, Speaker 6, Speaker 8"
-            ],
-            "answer": "B",
-            "answer_text": "Speaker 1, Speaker 6",
-            "rationale": [
-              "unknown",
-              "ground_truth",
-              "wrong_speaker",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "In the audio, how many speakers have the profile: \"Gender: Female voice; Age: Young adult; Accent: Standard Mandarin\"?",
-            "question_type": "reverse_count",
-            "options": [
-              "A. 1 speaker",
-              "B. 5 speakers",
-              "C. 2 speakers",
-              "D. Cannot be determined (insufficient information)"
+              "A. 性别：女声；年龄：中年；情感：快乐；口音：标准普通话",
+              "B. 无法判断（信息不足以确定）",
+              "C. 性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+              "D. 性别：女声；年龄：中年；情感：中性；口音：标准普通话"
             ],
             "answer": "C",
-            "answer_text": "2 speakers",
+            "answer_text": "性别：男声；年龄：中年；情感：恐惧；口音：标准普通话，略带北方口音",
+            "rationale": [
+              "hallucination",
+              "unknown",
+              "ground_truth",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/zh_ref_a.mp3",
+                "start": 76.53,
+                "end": 80.37,
+                "dur": 3.84,
+                "transcript": "啊，不对不对，不是我们家的木头啊，那是反革命的木头。",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，说话人画像为“性别：男声；年龄：中年”的说话人有哪些？（用 说话人出现顺序 作答）请选择最符合的一项。 说话人序号从第一个说话人开始编号。",
+            "question_type": "reverse_retrival",
+            "options": [
+              "A. 第一个说话人、第二个说话人、第四个说话人",
+              "B. 无法判断（信息不足以确定）",
+              "C. 第一个说话人、第二个说话人、第四个说话人、第五个说话人",
+              "D. 第一个说话人、第二个说话人、第三个说话人、第四个说话人、第五个说话人"
+            ],
+            "answer": "C",
+            "answer_text": "第一个说话人、第二个说话人、第四个说话人、第五个说话人",
             "rationale": [
               "wrong_speaker",
-              "hallucination",
+              "unknown",
               "ground_truth",
-              "unknown"
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "在整段音频中，说话人画像为“性别：男声；年龄：中年”的说话人一共有几个？请选择最符合的一项。",
+            "question_type": "reverse_count",
+            "options": [
+              "A. 无法判断（信息不足以确定）",
+              "B. 4 个",
+              "C. 3 个",
+              "D. 10 个"
+            ],
+            "answer": "B",
+            "answer_text": "4 个",
+            "rationale": [
+              "unknown",
+              "ground_truth",
+              "wrong_speaker",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/profile/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
@@ -2535,199 +3989,343 @@ window.BENCH_EXAMPLES = {
   "emotion_interaction": {
     "task_id": "emotion_interaction",
     "level": "level2",
-    "dimension": "Context Reasoning",
-    "task_name": "Emotion Interaction",
+    "dimension": "Dialogue Contextual Reasoning (DCR)",
+    "task_name": "Emotion Interaction Reasoning (EIR)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Gua Sha (刮痧, 2001)",
+        "source": "dou shi",
+        "video_folder": "dou_shi_part002",
+        "full_audio": {
+          "src": "bench_examples/audio/emotion_interaction/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/emotion_interaction/en_spk_a.mp3",
-            "start": 138.46,
-            "end": 141.14,
-            "dur": 2.68
+            "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+            "start": 82.47,
+            "end": 87.03,
+            "dur": 4.56,
+            "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+            "spk_id": "spk_03",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Did you think no one would notice your son's back looks like a piece of roast beef?",
-        "spk_b_transcript": "That is gua sha, a traditional Chinese medical treatment.",
+        "spk_a_transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+        "spk_b_transcript": "Outright executions.",
         "qa": [
           {
-            "question": "In the audio, what is the speaker's emotion, and how did it affect the other people in the conversation?",
+            "question": "In the audio below, what is the speaker's emotion? What effect did this emotion have on the other people in the entire conversation? Speaker indexing starts from the first speaker.",
             "question_type": "no_index",
             "options": [
-              "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-              "B. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-              "C. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut agitatedly.",
-              "D. Cannot be determined (insufficient evidence)."
+              "A. Emotion: Calm/Neutral; Impact: Successfully persuaded the second speaker to accept their course of action.",
+              "B. Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to feel shocked and question the proposal.",
+              "C. Cannot be determined (Insufficient evidence to uniquely determine).",
+              "D. Emotion: Anger/Dissatisfaction; Effect: Causes the third speaker to be shocked by and question the proposal."
             ],
             "answer": "B",
-            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked by and question the proposal.",
             "rationale": [
-              "wrong_speaker",
-              "ground_truth",
               "hallucination",
-              "unknown"
+              "ground_truth",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+                "start": 82.47,
+                "end": 87.03,
+                "dur": 4.56,
+                "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What emotion did Speaker 2 express from 138.46 to 141.14 seconds, and what effect did it have on the other speakers?",
+            "question": "What is the emotion of the speaker (the first speaker) in the audio from 82.47s to 87.03s? What effect did this emotion have on others in the conversation? Speaker indexing starts from the first speaker.",
             "question_type": "time_index",
             "options": [
-              "A. Cannot be determined (insufficient evidence).",
-              "B. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally.",
-              "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-              "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking."
+              "A. Cannot be determined (Insufficient evidence to uniquely determine).",
+              "B. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to feel shocked and question the proposal.",
+              "C. Emotion: Anger/Dissatisfaction; Impact: Led to the second speaker feeling shocked and questioning the proposal.",
+              "D. Emotion: Calm/Neutral; Impact: Successfully persuaded the second speaker to accept their course of action."
             ],
             "answer": "C",
-            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to feel shocked and question their proposal.",
             "rationale": [
               "unknown",
-              "hallucination",
+              "wrong_speaker",
               "ground_truth",
-              "wrong_speaker"
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+                "start": 82.47,
+                "end": 87.03,
+                "dur": 4.56,
+                "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "In the audio, what emotion did Speaker 2 express when saying, “Did you think no one would notice your son's back looks like a piece of roast beef?” and what effect did this have on the other speakers?",
+            "question": "What is the emotion of the speaker (the first speaker) who says ‘You need to push back hard on these bastards’ in the audio? What impact did this emotion have on others in the conversation? Speaker indexing starts from the first speaker.",
             "question_type": "transcript_index",
             "options": [
-              "A. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut heatedly.",
-              "B. Cannot be determined (insufficient evidence).",
-              "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-              "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding."
-            ],
-            "answer": "D",
-            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-            "rationale": [
-              "hallucination",
-              "unknown",
-              "wrong_speaker",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "Throughout the conversation, what emotion did Speaker 2's intense questioning express, and what impact did it have on the other speakers?",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-              "B. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-              "C. Cannot be determined (insufficient evidence).",
-              "D. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally."
+              "A. Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked by and question the proposal.",
+              "B. Emotion: Calm/Neutral; Influence: Successfully persuaded the second speaker to accept their course of action.",
+              "C. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to be shocked by and question the proposal.",
+              "D. Cannot be determined (insufficient evidence to uniquely determine)."
             ],
             "answer": "A",
-            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked by and question the proposal.",
             "rationale": [
               "ground_truth",
+              "hallucination",
               "wrong_speaker",
-              "unknown",
-              "hallucination"
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+                "start": 82.47,
+                "end": 87.03,
+                "dur": 4.56,
+                "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "From 138.46s to 141.14s, what emotion did Speaker 2 express when saying, “Did you think no one would notice your son's back looks like a piece of roast beef?” and what effect did this have on the other speakers?",
-            "question_type": "complex_index",
+            "question": "In the audio, what is a strong emotion expressed by the first speaker during the latter half of the conversation? What impact did this emotion have on others? Speaker indexing starts from the first speaker.",
+            "question_type": "speaker_index",
             "options": [
-              "A. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 3 to stop talking.",
-              "B. Cannot be determined (insufficient evidence).",
-              "C. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
-              "D. Emotion: Anxiety/Nervousness; Impact: It caused Speaker 5 to rebut emotionally."
+              "A. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to feel shocked and doubtful about the proposal.",
+              "B. Cannot be determined (insufficient evidence to uniquely determine).",
+              "C. Emotion: Calm/Neutral; Influence: Successfully persuaded the second speaker to accept their course of action.",
+              "D. Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to feel shocked and question their proposal."
             ],
-            "answer": "C",
-            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 5 to start explaining calmly, trying to clarify the misunderstanding.",
+            "answer": "D",
+            "answer_text": "Emotion: Anger/Displeasure; Impact: Causes the second speaker to be shocked by and question the proposal.",
             "rationale": [
               "wrong_speaker",
               "unknown",
+              "hallucination",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "What is the emotion of the speaker (the first speaker) who says ‘shoot them in the alleys if you have to’ from 82.47s to 87.03s in the audio? What impact did this emotion have on others? Speaker indexing starts from the first speaker.",
+            "question_type": "complex_index",
+            "options": [
+              "A. Emotion: Calm/Neutral; Impact: Successfully persuaded the second speaker to accept their course of action.",
+              "B. Emotion: Anger/Dissatisfaction; Impact: Caused the second speaker to be shocked and question the proposal.",
+              "C. Cannot be determined (insufficient evidence to uniquely determine).",
+              "D. Emotion: Anger/Dissatisfaction; Impact: Causes the third speaker to feel shocked and question their proposal."
+            ],
+            "answer": "B",
+            "answer_text": "Emotion: Anger/Dissatisfaction; Impact: Causes the second speaker to be shocked and skeptical about the proposal.",
+            "rationale": [
+              "hallucination",
               "ground_truth",
-              "hallucination"
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/en_ref_a.mp3",
+                "start": 82.47,
+                "end": 87.03,
+                "dur": 4.56,
+                "transcript": "You need to push back hard on these bastards, shoot them in the alleys if you have to.",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "He Bi (何必)",
+        "source": "detective zhugeli",
+        "video_folder": "detective_zhugeli_part014",
+        "full_audio": {
+          "src": "bench_examples/audio/emotion_interaction/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/emotion_interaction/zh_spk_a.mp3",
-            "start": 129.93,
-            "end": 134.73,
-            "dur": 4.8
+            "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+            "start": 35.16,
+            "end": 35.72,
+            "dur": 0.56,
+            "transcript": "放屁。",
+            "spk_id": "spk_03",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Didn't you get enough of your striptease last time in Qingdao? Even if you still want to dance, I'm not interested and don't want to watch anymore.",
-        "spk_b_transcript": "I want to see you dance, my dear nemesis.",
+        "spk_a_transcript": "放屁。",
+        "spk_b_transcript": "我放你个屁呀，放屁。",
         "qa": [
           {
-            "question": "In the audio, what is the emotion of the first speaker (Speaker 1)? How did this emotion affect others throughout the entire conversation?",
-            "question_type": "speaker_index",
+            "question": "下面音频中，说话人的情感是什么？这种情绪在整段对话中对其他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
+            "question_type": "no_index",
             "options": [
-              "A. Emotion: Anger/Displeasure; Impact: It caused Speaker 2 to feel very awkward and try to ease the tension.",
-              "B. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to become angry and have a fierce argument with Speaker 1.",
-              "C. Cannot be determined (insufficient evidence).",
-              "D. Emotion: Disgust/Dissatisfaction; Impact: It leads to Speaker 5 not being provoked, but instead counterattacking and provoking with a playful tone."
-            ],
-            "answer": "D",
-            "answer_text": "Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke in a playful tone.",
-            "rationale": [
-              "wrong_speaker",
-              "hallucination",
-              "unknown",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "What emotion is Speaker 1 expressing in the audio from 129.93 to 134.73 seconds? What impact did this have on others in the conversation?",
-            "question_type": "time_index",
-            "options": [
-              "A. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to become angry and have a fierce argument with Speaker 1.",
-              "B. Emotion: Disgust/Displeasure; Impact: It causes Speaker 5 not to be provoked, but instead to counter-attack and taunt in a playful tone.",
-              "C. Emotion: Anger/Dissatisfaction; Impact: Speaker 2 felt very awkward and attempted to ease the tension.",
-              "D. Cannot be determined (insufficient evidence)."
+              "A. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+              "B. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+              "C. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+              "D. 无法判断（证据不足以唯一确定）"
             ],
             "answer": "B",
-            "answer_text": "Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke with a playful tone.",
+            "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
             "rationale": [
               "hallucination",
               "ground_truth",
               "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+                "start": 35.16,
+                "end": 35.72,
+                "dur": 0.56,
+                "transcript": "放屁。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What emotion is Speaker 1 expressing when they say, \"Even if you still want to dance, I'm not interested and don't want to watch anymore\"? What impact did this have on others in the conversation?",
+            "question": "音频中第 35.16 秒到第 35.72 秒这位说话人（第一个说话人）的情感是什么？这种情绪在对话中对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
+            "question_type": "time_index",
+            "options": [
+              "A. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+              "B. 无法判断（证据不足以唯一确定）",
+              "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+              "D. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。"
+            ],
+            "answer": "D",
+            "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "hallucination",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+                "start": 35.16,
+                "end": 35.72,
+                "dur": 0.56,
+                "transcript": "放屁。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "音频中说‘放屁’的这位说话人（第一个说话人）在表述该内容的情感是什么？这种情绪在对话中对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
             "question_type": "transcript_index",
             "options": [
-              "A. Emotion: Disgust/Dissatisfaction; Impact: It causes Speaker 5 not to be angered, but instead to counterattack and provoke with a playful tone.",
-              "B. Cannot be determined (insufficient evidence).",
-              "C. Emotion: Disgust/Dissatisfaction; Impact: It caused Speaker 5 to be provoked and have a heated argument with Speaker 1.",
-              "D. Emotion: Anger/Dissatisfaction; Impact: It caused Speaker 2 to feel very awkward and attempt to ease the atmosphere."
+              "A. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+              "B. 无法判断（证据不足以唯一确定）",
+              "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+              "D. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。"
             ],
             "answer": "A",
-            "answer_text": "Emotion: Anger/Discontent; Impact: Instead of being angered, Speaker 5 counter-attacks and provokes with a playful tone.",
+            "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
             "rationale": [
               "ground_truth",
               "unknown",
               "hallucination",
               "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+                "start": 35.16,
+                "end": 35.72,
+                "dur": 0.56,
+                "transcript": "放屁。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "From 129.93 to 134.73 seconds, what emotion was Speaker 1 expressing when they said, \"Even if you still want to dance, I'm not interested and don't want to watch\"? What effect did this have on others?",
+            "question": "音频中第一个说话人在某段发言中表达的主要情感是什么？这种情绪在对话中对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
+            "question_type": "speaker_index",
+            "options": [
+              "A. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+              "B. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+              "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+              "D. 无法判断（证据不足以唯一确定）"
+            ],
+            "answer": "B",
+            "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
+            "rationale": [
+              "wrong_speaker",
+              "ground_truth",
+              "hallucination",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "音频中第 35.16 秒到第 35.72 秒说过‘放屁’的这位说话人（第一个说话人）在表述该内容时的情感是什么？这种情绪对他人产生了什么影响？ 说话人序号从第一个说话人开始编号。",
             "question_type": "complex_index",
             "options": [
-              "A. Cannot be determined (insufficient evidence).",
-              "B. Emotion: Anger/Displeasure; Impact: It caused Speaker 2 to feel very awkward and attempt to ease the tension.",
-              "C. Emotion: Disgust/Dissatisfaction; Impact: It leads to Speaker 5 not being provoked, but instead counterattacking and taunting with a playful tone.",
-              "D. Emotion: Disgust/Displeasure; Impact: It caused Speaker 5 to become angry and get into a heated argument with Speaker 1."
+              "A. 无法判断（证据不足以唯一确定）",
+              "B. 情感：厌烦/不耐烦；影响：导致 第三个说话人 介入并制止争吵。",
+              "C. 情感：开心/兴奋；影响：导致 第二个说话人 也觉得这个玩笑很有趣。",
+              "D. 情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。"
             ],
-            "answer": "C",
-            "answer_text": "Emotion: Anger/Discontent; Impact: Speaker 5 is not provoked; instead, they counter-attack and provoke with a playful tone.",
+            "answer": "D",
+            "answer_text": "情感：厌烦/不耐烦；影响：导致 第二个说话人 变得愤怒并激烈反驳。",
             "rationale": [
               "unknown",
               "wrong_speaker",
-              "ground_truth",
-              "hallucination"
+              "hallucination",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/emotion_interaction/zh_ref_a.mp3",
+                "start": 35.16,
+                "end": 35.72,
+                "dur": 0.56,
+                "transcript": "放屁。",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
@@ -2737,397 +4335,635 @@ window.BENCH_EXAMPLES = {
   "opinion_summary": {
     "task_id": "opinion_summary",
     "level": "level2",
-    "dimension": "Context Reasoning",
-    "task_name": "Multi-Speaker Opinion Summary",
+    "dimension": "Dialogue Contextual Reasoning (DCR)",
+    "task_name": "Multi-speaker Viewpoint Summarization (MSVS)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Mission: Impossible – Rogue Nation (2015)",
+        "source": "hao shi cheng shuang 1995",
+        "video_folder": "hao_shi_cheng_shuang_1995_part007",
+        "full_audio": {
+          "src": "bench_examples/audio/opinion_summary/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/opinion_summary/en_spk_a.mp3",
-            "start": 89.32,
-            "end": 94.36,
-            "dur": 5.04
+            "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+            "start": 7.64,
+            "end": 10.8,
+            "dur": 3.16,
+            "transcript": "Yeah, and it'd be nice to have a father too.",
+            "spk_id": "spk_01",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Killing to keep things as they were, and now I'm killing to bring about change.",
-        "spk_b_transcript": "We only think we're fighting for the right side, because that's what we choose to believe.",
+        "spk_a_transcript": "Yeah, and it'd be nice to have a father too.",
+        "spk_b_transcript": "Well, I I haven't been much of a father lately.",
         "qa": [
           {
-            "question": "What are the stances of the two speakers throughout the conversation? Please choose the best-fitting option.",
+            "question": "What are the stances of the two speakers throughout the entire conversation in the audio below? Please choose the most suitable option.",
             "question_type": "no_index",
             "options": [
-              "A. Speaker A: On their violent actions: Admits their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-              "B. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Views them as a necessary and precise means to achieve change and justifies them on this basis.",
-              "C. Speaker A: On their violent actions: Defends them as a necessary and precise means to achieve change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-              "D. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is indecisive."
+              "A. Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but the core is a desire to spend time with the father.; Speaker B: Regarding the relationship with the daughter: Acknowledges their own failings and actively seeks to repair the relationship by increasing companionship.",
+              "B. Speaker A: On his relationship with his daughter: Admits his failings and actively seeks to repair the relationship by spending more time with her.; Speaker B: On her father's companionship: Shows resistance due to feeling neglected, but at heart, longs to spend time with her father.",
+              "C. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the family's integrity.; Speaker B: View on the new mother: Tries to persuade her daughter to accept the new member, but ultimately gives up her own plans for her daughter's sake.",
+              "D. Speaker A: Regarding family issues: has big mood swings and feels uncertain about the future.; Speaker B: Regarding family issues: is trying to resolve the immediate conflict, but has complex inner thoughts."
             ],
-            "answer": "C",
-            "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+            "answer": "A",
+            "answer_text": "Speaker A: Regarding companionship with his father: He shows resistance due to feeling neglected, but his core desire is to spend time with his father.; Speaker B: Regarding his relationship with his daughter: He acknowledges his own failings and actively seeks to repair the relationship by spending more time with her.",
             "rationale": [
-              "hallucination",
-              "wrong_speaker",
               "ground_truth",
+              "wrong_speaker",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Throughout the conversation, what are the stances of the speaker from 89.32s-94.36s (Speaker A) and the speaker from 282.84s-285.92s (Speaker B)? Please select the most appropriate option.",
+            "question": "What is the stance in the entire conversation of the speaker who talks from 7.64s to 10.8s and the speaker who talks from 20.52s to 24.12s in the audio? Please choose the most suitable option.",
             "question_type": "time_index",
             "options": [
-              "A. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multiple considerations and is indecisive.",
-              "B. Speaker A: On their violent actions: Views them as a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-              "C. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they are a necessary and precise means to achieve change and defends them on that basis.",
-              "D. Speaker A: On their violent actions: Acknowledges their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender."
+              "A. Speaker A: On his relationship with his daughter: acknowledges his neglect and actively seeks to mend the relationship by spending more time with her.; Speaker B: On her father's companionship: shows resistance due to feeling neglected, but her core desire is to spend time with her father.",
+              "B. Speaker A: Regarding family issues: is emotionally volatile and feels uncertain about the future.; Speaker B: Regarding family issues: is trying to resolve the immediate conflicts, but has complex inner thoughts.",
+              "C. Speaker A: Regarding companionship with their father: Acts resistant due to feeling neglected, but at heart, longs to spend time with their father.; Speaker B: Regarding his relationship with his daughter: Acknowledges his own failings and proactively seeks to repair the relationship by spending more time with her.",
+              "D. Speaker A: View on the stepmother: Strongly opposes the father's remarriage, believing it would destroy the family's integrity.; Speaker B: View on the stepmother: Tries to persuade the daughter to accept the new member, but ultimately gives up their own plans for the daughter's sake."
+            ],
+            "answer": "C",
+            "answer_text": "Speaker A: Regarding companionship with her father: She shows resistance because she feels neglected, but at her core, she longs to spend time with her father.\nSpeaker B: Regarding his relationship with his daughter: He acknowledges his failings and proactively seeks to mend the relationship by spending more time with her.",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "What is the stance in the entire conversation of the speaker who said ‘and it'd be nice to have a father too’ and the speaker who said ‘I haven't been much of a father lately’? Please choose the most suitable option.",
+            "question_type": "transcript_index",
+            "options": [
+              "A. Speaker A: Regarding companionship with his father: Shows resistance due to feeling neglected, but at his core, desires to spend time with his father.; Speaker B: Regarding his relationship with his daughter: Acknowledges his own shortcomings and proactively seeks to mend the relationship by spending more time with her.",
+              "B. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the integrity of the family.; Speaker B: View on the new mother: Tries to persuade the daughter to accept the new member, but ultimately gives up their own plans for the daughter's sake.",
+              "C. Speaker A: Regarding his relationship with his daughter: Admits his negligence and proactively seeks to repair the relationship by spending more time with her.; Speaker B: Regarding her father's companionship: Acts resistant due to feeling neglected, but what she really wants is to spend time with her father.",
+              "D. Speaker A: On family issues: Emotionally volatile and uncertain about the future.; Speaker B: On family issues: Trying to resolve the immediate conflict, but has complex inner thoughts."
+            ],
+            "answer": "A",
+            "answer_text": "Speaker A: Regarding companionship with his father: Shows resistance due to feeling neglected, but at the core is a longing to spend time with his father.; Speaker B: Regarding the relationship with his daughter: Acknowledges his own failings and proactively seeks to repair the relationship by spending more time with her.",
+            "rationale": [
+              "ground_truth",
+              "hallucination",
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "What are the respective stances of the first speaker and the second speaker throughout the conversation? Please select the most suitable option. Speaker indexing starts from the first speaker.",
+            "question_type": "speaker_index",
+            "options": [
+              "A. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the family's integrity.; Speaker B: View on the new mother: Tries to persuade his daughter to accept the new member, but ultimately gives up his own plan for his daughter's sake.",
+              "B. Speaker A: Regarding companionship with his father: Shows resistance from feeling neglected, but at the core is a desire to spend time with his father.; Speaker B: Regarding his relationship with his daughter: Acknowledges his own shortcomings and actively seeks to repair the relationship by spending more time with her.",
+              "C. Speaker A: Regarding the family issue: is very emotional and uncertain about the future.; Speaker B: Regarding the family issue: tries to resolve the immediate conflict, but has complex inner thoughts.",
+              "D. Speaker A: Regarding his relationship with his daughter: Admits his own shortcomings and proactively seeks to repair the relationship by spending more time with her.; Speaker B: Regarding her father's companionship: Shows resistance due to feeling neglected, but her core desire is to spend time with her father."
             ],
             "answer": "B",
-            "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+            "answer_text": "Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but at the core, desires to spend time with the father.; Speaker B: Regarding the relationship with his daughter: Acknowledges his own failings and proactively seeks to repair the relationship by increasing companionship.",
+            "rationale": [
+              "hallucination",
+              "ground_truth",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "What is the stance in the entire conversation of the speaker who said ‘it'd be nice to have a father too’ from 7.64s to 10.8s in the audio, and the speaker who said ‘I haven't been much of a father lately’ from 20.52s to 24.12s? Please choose the most fitting option.",
+            "question_type": "complex_index",
+            "options": [
+              "A. Speaker A: On the family issue: is very emotional and uncertain about the future.; Speaker B: On the family issue: is trying to resolve the immediate conflict, but has complex inner thoughts.",
+              "B. Speaker A: Regarding his relationship with his daughter: Acknowledges his shortcomings and proactively seeks to mend the relationship by spending more time with her.; Speaker B: Regarding her father's companionship: Shows resistance due to feeling neglected, but at her core, she longs to spend time with her father.",
+              "C. Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but at the core is a desire to spend time with him.; Speaker B: Regarding the relationship with his daughter: Acknowledges his own shortcomings and proactively seeks to repair the relationship by spending more time with her.",
+              "D. Speaker A: View on the new mother: Firmly opposes the father's remarriage and believes it will destroy the family's integrity.; Speaker B: View on the new mother: Tries to persuade his daughter to accept the new member, but ultimately gives up his own plan for his daughter's sake."
+            ],
+            "answer": "C",
+            "answer_text": "Speaker A: Regarding companionship with the father: Shows resistance due to feeling neglected, but the core is a longing to spend time with the father.; Speaker B: Regarding the relationship with the daughter: Acknowledges their own failings and proactively seeks to mend the relationship by increasing companionship.",
+            "rationale": [
+              "unknown",
+              "wrong_speaker",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "What is the change in the positions of the two speakers in the audio below throughout the entire conversation? Please select the most suitable option.",
+            "question_type": "no_index",
+            "options": [
+              "A. Speaker A: Attitude towards the conversation: From [Emotionally agitated] → [Gradually calming down]; Speaker B: Attitude towards the conversation: From [Trying to persuade] → [Shifting to comforting and explaining].",
+              "B. Speaker A: Attitude towards the father-daughter relationship: From [full of resentment and defiance from feeling neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → [shifting to admitting his own fault and promising to make up for it with companionship].",
+              "C. Speaker A: Approach to resolving the father-daughter conflict: From 【Trying to solve the problem by introducing a new member】 → 【Shifting to admitting his own fault and promising to make up for it with companionship】.; Speaker B: Attitude towards the father-daughter relationship: From 【Full of resentment and resistance due to feeling neglected】 → 【Shifting to reconciliation and closeness after receiving her father's understanding and promise】.",
+              "D. Speaker A: Attitude towards the father-daughter relationship: has always been 【hoping her father would care more about her】; Speaker B: Plans for his future family: from 【planning to start a family with a new partner】→【shifting to temporarily setting aside personal plans to prioritize his daughter】."
+            ],
+            "answer": "B",
+            "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [full of resentment and resistance due to feeling neglected] → to [reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → to [admitting his own fault and promising to make up for it with companionship].",
             "rationale": [
               "unknown",
               "ground_truth",
               "wrong_speaker",
               "hallucination"
-            ]
-          },
-          {
-            "question": "Throughout the conversation, what are the stances of the speaker who says, “now I'm killing to bring about change” (Speaker A) and the speaker who says, “that's what we choose to believe” (Speaker B)? Please choose the most suitable option.",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Speaker A: On their violent actions: Justifies them as a necessary and precise means for bringing about change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-              "B. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering.",
-              "C. Speaker A: On their violent actions: Acknowledges their wrongdoing and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-              "D. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis."
             ],
-            "answer": "A",
-            "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from it.",
-            "rationale": [
-              "ground_truth",
-              "unknown",
-              "hallucination",
-              "wrong_speaker"
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "Throughout the conversation, what are the respective stances of the first speaker (Speaker A) and the second speaker (Speaker B)? Please select the best-fitting option.",
-            "question_type": "speaker_index",
+            "question": "What is the change in viewpoint of the speaker who speaks from 7.64s to 10.8s and the speaker who speaks from 20.52s to 24.12s in the audio during their dialogue about their stances? Please select the most fitting option.",
+            "question_type": "time_index",
             "options": [
-              "A. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Believes they were a necessary and precise means to bring about change and justifies them on this basis.",
-              "B. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering.",
-              "C. Speaker A: On their violent actions: Admits their mistake and hopes to reconcile. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-              "D. Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them as such. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the conflict."
+              "A. Speaker A: Approach to resolving the father-daughter conflict: From 【trying to solve the problem by introducing a new member】→【to admitting his own fault and promising to make up for it with companionship】.; Speaker B: Attitude towards the father-daughter relationship: From 【being full of resentment and resistance due to feeling neglected】→【to reconciliation and closeness after receiving her father's understanding and promise】.",
+              "B. Speaker A: Attitude towards the conversation: From 【Agitated】→【Gradually calming down】.; Speaker B: Attitude towards the conversation: From 【Trying to persuade】→【Shifting to comforting and explaining】.",
+              "C. Speaker A: Attitude towards the father-daughter relationship: Consistently [wishing her father would care more about her].; Speaker B: Plans for a future family: From [planning to start a family with a new partner] → [temporarily putting aside personal plans and prioritizing his daughter].",
+              "D. Speaker A: Attitude towards the father-daughter relationship: from [full of resentment and resistance due to feeling neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: from [trying to solve the problem by introducing a new member] → [shifting to admitting his own faults and promising to make up for it with companionship]."
             ],
             "answer": "D",
-            "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means for achieving change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
+            "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [resentment and resistance due to feeling neglected] → to [reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → to [admitting his own faults and promising to make up for it with companionship].",
             "rationale": [
               "wrong_speaker",
               "unknown",
               "hallucination",
               "ground_truth"
-            ]
-          },
-          {
-            "question": "Throughout the conversation, what is the stance of the speaker who says, “now I'm killing to bring about change” (from 89.32s to 94.36s, Speaker A) and the speaker who says, “that's what we choose to believe” (from 282.84s to 285.92s, Speaker B)? Please select the best-fitting option.",
-            "question_type": "complex_index",
-            "options": [
-              "A. Speaker A: On their violent actions: Justifies them as a necessary and precise means to achieve change. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw.",
-              "B. Speaker A: On their violent actions: Admits their mistake and hopes for reconciliation. Speaker B: On the struggle: Firmly believes in their organization and hopes to persuade the other side to surrender.",
-              "C. Speaker A: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw. Speaker B: On their violent actions: Considers them a necessary and precise means for achieving change and defends them on this basis.",
-              "D. Speaker A: Explains their actions and has a complex attitude. Speaker B: On the struggle: Expresses multifaceted considerations and is wavering."
             ],
-            "answer": "A",
-            "answer_text": "Speaker A: On their violent actions: Believes they are a necessary and precise means to achieve change and justifies them on this basis. Speaker B: On the struggle: Ultimately becomes disillusioned with the systems of both sides and is inclined to withdraw from the struggle.",
-            "rationale": [
-              "ground_truth",
-              "hallucination",
-              "wrong_speaker",
-              "unknown"
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What change, if any, occurs in the speakers' stances during the conversation? Please select the best-fitting option.",
-            "question_type": "no_index",
-            "options": [
-              "A. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-              "B. Speaker A (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-              "C. Speaker A (View on actions): Attitude remains largely consistent. Speaker B (View on the struggle): Shows an evolution of thought during the dialogue.",
-              "D. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization."
-            ],
-            "answer": "A",
-            "answer_text": "Speaker A's defense of their actions remains consistent: they insist their violent behavior is a necessary means for achieving change. Speaker B's view of the struggle evolves from clearly defining the opponent as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-            "rationale": [
-              "ground_truth",
-              "wrong_speaker",
-              "unknown",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "What change in stance occurs for the speaker from 89.32s-94.36s (Speaker A) and the speaker from 282.84s-285.92s (Speaker B)? Please select the most appropriate option.",
-            "question_type": "time_index",
-            "options": [
-              "A. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought during the dialogue.",
-              "B. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (On the struggle): Shifts from hesitation to firmly supporting their organization.",
-              "C. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-              "D. Speaker A (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change."
-            ],
-            "answer": "C",
-            "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-            "rationale": [
-              "unknown",
-              "hallucination",
-              "ground_truth",
-              "wrong_speaker"
-            ]
-          },
-          {
-            "question": "What change in stance occurs for the speaker who says, “now I'm killing to bring about change” (Speaker A) and the one who says, “that's what we choose to believe” (Speaker B)? Please choose the most fitting option.",
+            "question": "What is the change in the stances of the speaker who said ‘and it'd be nice to have a father too’ and the speaker who said ‘I haven't been much of a father lately’ throughout the entire conversation? Please select the best option.",
             "question_type": "transcript_index",
             "options": [
-              "A. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-              "B. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-              "C. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization.",
-              "D. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought during the dialogue."
+              "A. Speaker A: Attitude towards the father-daughter relationship: From 【filled with resentment and resistance due to feeling neglected】→【changes to reconciliation and closeness after receiving her father's understanding and promise】.; Speaker B: Approach to resolving the father-daughter conflict: From 【attempting to solve the problem by introducing a new member】→【changes to admitting his own fault and promising to make up for it with companionship】.",
+              "B. Speaker A: Approach to resolving the father-daughter conflict: from [attempting to solve the problem by introducing a new member] → [admitting his own fault and promising to make up for it with companionship].; Speaker B: Attitude towards the father-daughter relationship: from [resentment and resistance due to feeling neglected] → [reconciliation and closeness after receiving her father's understanding and promise].",
+              "C. Speaker A: Attitude towards the father-daughter relationship: Attitude has consistently been [hoping her father would care more about her].; Speaker B: Plans for his future family: from [planning to start a family with a new partner] → [shifting to temporarily putting personal plans on hold to prioritize his daughter].",
+              "D. Speaker A: Attitude towards the conversation: From 【Emotionally agitated】→【Gradually calming down】; Speaker B: Attitude towards the conversation: From 【Trying to persuade】→【Shifting to comforting and explaining】."
             ],
-            "answer": "B",
-            "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+            "answer": "A",
+            "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [being full of resentment and resistance due to feeling neglected] → [to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [trying to introduce a new member to solve the problem] → [to admitting his own fault and promising to make up for it with companionship].",
             "rationale": [
-              "wrong_speaker",
               "ground_truth",
+              "wrong_speaker",
               "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What are the changes in the stances of the first speaker (Speaker A) and the second speaker (Speaker B) during the conversation? Please select the best-fitting option.",
+            "question": "Throughout the entire conversation, what are the respective changes in stance for the first speaker and the second speaker? Please select the best-fitting option. Speaker indexing starts from the first speaker.",
             "question_type": "speaker_index",
             "options": [
-              "A. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought throughout the dialogue.",
-              "B. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-              "C. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
-              "D. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from indecision to firmly supporting their organization."
+              "A. Speaker A: Approach to resolving the father-daughter conflict: From [trying to introduce a new member to solve the problem] → To [admitting his own fault and promising to make up for it with companionship].; Speaker B: Attitude towards the father-daughter relationship: From [being full of resentment and resistance due to feeling neglected] → To [reconciliation and closeness after receiving her father's understanding and promise].",
+              "B. Speaker A: Attitude towards the father-daughter relationship: Has always been [hoping her father would care more about her].; Speaker B: Plans for his future family: From [planning to start a family with a new partner] → [temporarily setting aside personal plans to prioritize his daughter].",
+              "C. Speaker A: Attitude towards the father-daughter relationship: From [resentment and resistance due to feeling neglected] → [reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Approach to resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → [admitting his own fault and promising to make up for it with companionship].",
+              "D. Speaker A: Attitude towards the conversation: From 【Emotional】 → 【Gradually calming down】.; Speaker B: Attitude towards the conversation: From 【Trying to persuade】 → 【Shifting to comforting and explaining】."
             ],
             "answer": "C",
-            "answer_text": "Speaker A's defense of their actions remains consistent, insisting their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from clearly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+            "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [being filled with resentment and resistance due to feeling neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Method for resolving the father-daughter conflict: From [trying to solve the problem by introducing a new member] → [shifting to admitting his own fault and promising to make up for it with companionship].",
             "rationale": [
-              "unknown",
               "wrong_speaker",
+              "hallucination",
               "ground_truth",
-              "hallucination"
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "What change in stance occurs for the speaker who says, “now I'm killing to bring about change” (89.32s-94.36s, Speaker A) and the one who says, “that's what we choose to believe” (282.84s-285.92s, Speaker B)? Please choose the most fitting option.",
+            "question": "What is the change in stance throughout the entire conversation between the speaker who said ‘it'd be nice to have a father too’ from 7.64 seconds to 10.8 seconds in the audio, and the speaker who said ‘I haven't been much of a father lately’ from 20.52 seconds to 24.12 seconds? Please choose the most suitable option.",
             "question_type": "complex_index",
             "options": [
-              "A. Speaker A (Defense of actions): Shifts from unwavering belief to self-doubt. Speaker B (View of the struggle): Shifts from hesitation to firmly supporting their organization.",
-              "B. Speaker A (On their actions): Attitude remains largely consistent. Speaker B (On the struggle): Shows an evolution of thought in the dialogue.",
-              "C. Speaker A (View of the struggle): Shifts from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement. Speaker B (Defense of actions): Remains consistent, insisting their violence is a necessary means for change.",
-              "D. Speaker A (Defense of actions): Remains consistent, insisting their violence is a necessary means for change. Speaker B (View of the struggle): Shifts from clearly defining the opposition as an enemy to becoming disillusioned with the entire system and advocating for disengagement."
+              "A. Speaker A: Attitude towards the conversation: From [Emotionally agitated] → [Gradually calming down].; Speaker B: Attitude towards the conversation: From [Attempting to persuade] → [Shifting to comforting and explaining].",
+              "B. Speaker A: Attitude towards the father-daughter relationship: Has always been [hoping her father would care more about her].; Speaker B: Plans for his future family: From [planning to start a family with a new partner] → [shifting to temporarily putting personal plans on hold to prioritize his daughter].",
+              "C. Speaker A: Approach to resolving the father-daughter conflict: from [attempting to solve the problem by introducing a new member] → [shifting to admitting his own fault and promising to make up for it with companionship].; Speaker B: Attitude towards the father-daughter relationship: from [feeling resentful and resistant due to being neglected] → [shifting to reconciliation and closeness after receiving her father's understanding and promise].",
+              "D. Speaker A: Attitude towards the father-daughter relationship: from [full of resentment and resistance due to feeling neglected] → [changes to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Method of resolving the father-daughter conflict: from [trying to solve the problem by introducing a new member] → [changes to admitting his own faults and promising to make up for it with companionship]."
             ],
             "answer": "D",
-            "answer_text": "Speaker A's defense of their actions remains consistent: they insist their violent actions are a necessary means to achieve change. Speaker B's view of the struggle evolves from explicitly viewing the other side as an enemy to becoming disillusioned with the entire system and advocating for disengagement.",
+            "answer_text": "Speaker A: Attitude towards the father-daughter relationship: From [being filled with resentment and resistance due to feeling neglected] → [to reconciliation and closeness after receiving her father's understanding and promise].; Speaker B: Method for resolving the father-daughter conflict: From [attempting to solve the problem by introducing a new member] → [to admitting his own mistakes and promising to make up for it with companionship].",
             "rationale": [
-              "hallucination",
               "unknown",
+              "hallucination",
               "wrong_speaker",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/en_ref_a.mp3",
+                "start": 7.64,
+                "end": 10.8,
+                "dur": 3.16,
+                "transcript": "Yeah, and it'd be nice to have a father too.",
+                "spk_id": "spk_01",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "TV Series (S03E07)",
+        "source": "great hero zheng chenggong ep03",
+        "video_folder": "great_hero_zheng_chenggong_ep03_part008",
+        "full_audio": {
+          "src": "bench_examples/audio/opinion_summary/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/opinion_summary/zh_spk_a.mp3",
-            "start": 47.16,
-            "end": 49.72,
-            "dur": 2.56
+            "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+            "start": 25.79,
+            "end": 31.19,
+            "dur": 5.4,
+            "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+            "spk_id": "spk_04",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "She's already been through enough with what happened. Do you really have to fire her?",
-        "spk_b_transcript": "How can we let one dead branch ruin a perfectly good pot of flowers?",
+        "spk_a_transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+        "spk_b_transcript": "我绝对没有参与盗窃西周宝印呐，那是镇台之宝，是郑太师的东西。",
         "qa": [
           {
-            "question": "What are the respective stances of the two speakers throughout the entire conversation? Please select the best option.",
+            "question": "下面音频中的两个说话人在整段对话中的立场是什么？请选择最符合的一项。",
             "question_type": "no_index",
             "options": [
-              "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
-              "B. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's in the store's best interest.",
-              "C. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-              "D. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements."
+              "A. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+              "B. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+              "C. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+              "D. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。"
             ],
             "answer": "B",
-            "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's in the store's best interest.",
+            "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
               "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What are the respective stances of the speaker who talks from 47.16s to 49.72s and the speaker who talks from 56.18s to 60.82s? Please choose the most suitable option.",
+            "question": "音频中第 25.79 秒到第 31.19 秒讲话的说话人以及在第 12.249 秒到第 17.409 秒讲话的说话人在整段对话中的立场是什么？请选择最符合的一项。",
             "question_type": "time_index",
             "options": [
-              "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
-              "B. Speaker A: Has their own views on store management; Speaker B: Has a different opinion on staffing arrangements.",
-              "C. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-              "D. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit."
+              "A. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+              "B. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。",
+              "C. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+              "D. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。"
             ],
             "answer": "D",
-            "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
+            "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
             "rationale": [
-              "wrong_speaker",
-              "unknown",
               "hallucination",
+              "unknown",
+              "wrong_speaker",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What are the respective stances of the speaker who said, 'It's sad enough that something like that happened to her,' and the speaker who said, 'How can we let it be ruined by a dead branch?' Please choose the most fitting option.",
+            "question": "音频中说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人以及说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场是什么？请选择最符合的一项。",
             "question_type": "transcript_index",
             "options": [
-              "A. Speaker A: On firing Hana: firmly against it, believing the employee should be protected; Speaker B: On firing Hana: strongly in favor, believing it's in the store's best interest.",
-              "B. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-              "C. Speaker A: On firing Hana: in strong support, believing it's for the store's benefit; Speaker B: On firing Hana: in strong opposition, believing the employee should be protected.",
-              "D. Speaker A: Has a personal opinion on store management; Speaker B: Has a different opinion on personnel arrangements."
+              "A. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+              "B. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。",
+              "C. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+              "D. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。"
             ],
             "answer": "A",
-            "answer_text": "Speaker A: On firing Hana: firmly against it, believing the employee should be protected; Speaker B: On firing Hana: strongly in favor, believing it's in the store's best interest.",
+            "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
             "rationale": [
               "ground_truth",
-              "hallucination",
+              "unknown",
               "wrong_speaker",
-              "unknown"
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What are the respective stances of the 1st speaker and the 2nd speaker in the entire dialogue? Please choose the most suitable option.",
+            "question": "整段对话中第 1 个发言的说话人和第 2 个发言的说话人，在对话中的立场分别是什么？请选择最符合的一项。",
             "question_type": "speaker_index",
             "options": [
-              "A. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing the employee should be protected.",
-              "B. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements.",
-              "C. Speaker A: Strongly opposes firing Hana, believing the employee should be protected; Speaker B: Strongly supports firing Hana, believing it's for the store's benefit.",
-              "D. Speaker A: On firing Hana: understands the decision, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees."
+              "A. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+              "B. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+              "C. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+              "D. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。"
             ],
             "answer": "C",
-            "answer_text": "Speaker A: Strongly opposes firing Hana, believing the employee should be protected; Speaker B: Strongly supports firing Hana, believing it's for the store's benefit.",
-            "rationale": [
-              "wrong_speaker",
-              "unknown",
-              "ground_truth",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "What are the respective stances of the speaker who said, 'It's already sad enough for her that something like that happened,' between 47.16s and 49.72s, and the speaker who said, 'How can we let a dead branch ruin it?' between 56.18s and 60.82s? Please choose the most fitting option.",
-            "question_type": "complex_index",
-            "options": [
-              "A. Speaker A: On firing Hana: expresses understanding, but hopes for financial compensation; Speaker B: On firing Hana: believes it should be decided by a vote of all employees.",
-              "B. Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
-              "C. Speaker A: Has a personal view on store management; Speaker B: Has a different opinion on personnel arrangements.",
-              "D. Speaker A: On firing Hana: strongly supports it, believing it's for the store's benefit; Speaker B: On firing Hana: strongly opposes it, believing employees should be protected."
-            ],
-            "answer": "B",
-            "answer_text": "Speaker A: On firing Hana: strongly opposes it, believing the employee should be protected; Speaker B: On firing Hana: strongly supports it, believing it's for the store's benefit.",
+            "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
             "rationale": [
               "hallucination",
+              "wrong_speaker",
               "ground_truth",
-              "unknown",
-              "wrong_speaker"
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           },
           {
-            "question": "How do the stances of the two speakers evolve throughout the conversation? Please select the most fitting option.",
+            "question": "音频中第 25.79 秒到第 31.19 秒说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人与第 12.249 秒到第 17.409 秒说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场是什么？请选择最符合的一项。",
+            "question_type": "complex_index",
+            "options": [
+              "A. 说话人A: 对嫌疑人的态度：在对话中表现出不确定和犹豫；说话人B: 对案件的看法：表示自己需要时间回忆具体情况。",
+              "B. 说话人A: 对案件真相的看法：认为嫌疑人知情但并非主谋，试图策反他；说话人B: 对自己的处境：承认自己有过错，但希望获得宽大处理。",
+              "C. 说话人A: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜；说话人B: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限。",
+              "D. 说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。"
+            ],
+            "answer": "D",
+            "answer_text": "说话人A: 对嫌疑人是否参与盗窃案：认为其有罪，并要求他与同伙划清界限；说话人B: 对自身是否参与盗窃案：坚决否认，并声称自己完全无辜。",
+            "rationale": [
+              "unknown",
+              "hallucination",
+              "wrong_speaker",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "下面音频中的两个说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
             "question_type": "no_index",
             "options": [
-              "A. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-              "B. Speaker A: Regarding firing Hana: shifts from 【hesitant】 to 【strongly opposed】; Speaker B: Regarding firing Hana: shifts from 【strongly supportive】 to 【wavering】.",
-              "C. Speaker A: Regarding firing Hana: wavers between emotion and reason; Speaker B: Regarding firing Hana: the two sides had an in-depth discussion on the matter.",
-              "D. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests."
+              "A. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+              "B. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+              "C. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+              "D. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。"
             ],
-            "answer": "D",
-            "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+            "answer": "A",
+            "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
             "rationale": [
+              "ground_truth",
               "wrong_speaker",
-              "hallucination",
               "unknown",
-              "ground_truth"
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "How do the stances of the speaker from 47.16s to 49.72s and the speaker from 56.18s to 60.82s evolve throughout the conversation? Please select the best-fitting option.",
+            "question": "音频中第 25.79 秒到第 31.19 秒讲话的说话人以及在第 12.249 秒到第 17.409 秒讲话的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
             "question_type": "time_index",
             "options": [
-              "A. Speaker A: On firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: On firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-              "B. Speaker A: On firing Hana: shifts from 【Hesitation】 to 【Firm opposition】; Speaker B: On firing Hana: shifts from 【Firm support】 to 【Wavering】.",
-              "C. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-              "D. Speaker A: On firing Hana: wavers between emotion and reason; Speaker B: On firing Hana: the two sides had an in-depth discussion on the matter."
-            ],
-            "answer": "A",
-            "answer_text": "Speaker A: On firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: On firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-            "rationale": [
-              "ground_truth",
-              "hallucination",
-              "wrong_speaker",
-              "unknown"
-            ]
-          },
-          {
-            "question": "How do the stances of the speaker who said, 'She’s already sad enough about what happened to her,' and the speaker who said, 'How can we let it be ruined by a dead branch?' evolve throughout the conversation? Please choose the most fitting option.",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Speaker A: Regarding firing Hana: their stance wavers between emotion and reason; Speaker B: Regarding firing Hana: the two sides had an in-depth discussion on the matter.",
-              "B. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-              "C. Speaker A: Consistently 【Opposed】 to firing Hana, advocating for the employee's protection; Speaker B: Consistently 【Supportive】 of firing Hana, prioritizing the store's interests.",
-              "D. Speaker A: Regarding firing Hana: shifts from 【hesitation】 to 【firm opposition】; Speaker B: Regarding firing Hana: shifts from 【firm support】 to 【wavering】."
-            ],
-            "answer": "C",
-            "answer_text": "Speaker A: Consistently 【Opposed】 to firing Hana, advocating for the employee's protection; Speaker B: Consistently 【Supportive】 of firing Hana, prioritizing the store's interests.",
-            "rationale": [
-              "unknown",
-              "wrong_speaker",
-              "ground_truth",
-              "hallucination"
-            ]
-          },
-          {
-            "question": "How do the respective stances of the first speaker and the second speaker evolve throughout the conversation? Please select the option that fits best.",
-            "question_type": "speaker_index",
-            "options": [
-              "A. Speaker A: Regarding firing Hana: shifts from 【hesitant】 to 【firmly opposed】; Speaker B: Regarding firing Hana: shifts from 【firmly supportive】 to 【wavering】.",
-              "B. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-              "C. Speaker A: On firing Hana: their stance wavers between emotion and reason; Speaker B: On firing Hana: the two parties had an in-depth discussion on the matter.",
-              "D. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection."
+              "A. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。",
+              "B. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+              "C. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+              "D. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。"
             ],
             "answer": "B",
-            "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+            "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
             "rationale": [
               "hallucination",
               "ground_truth",
-              "unknown",
-              "wrong_speaker"
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "How do the stances of the speaker who said, 'It's already sad enough for her that something like that happened,' between 47.16s and 49.72s, and the speaker who said, 'How can we let a dead branch ruin it?' between 56.18s and 60.82s, evolve throughout the conversation? Please choose the most fitting option.",
-            "question_type": "complex_index",
+            "question": "音频中说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人以及说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
+            "question_type": "transcript_index",
             "options": [
-              "A. Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
-              "B. Speaker A: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests; Speaker B: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection.",
-              "C. Speaker A: On firing Hana: their stance wavers between emotion and reason; Speaker B: On firing Hana: the two parties held an in-depth discussion on this matter.",
-              "D. Speaker A: Regarding firing Hana: shifts from 【Hesitant】 to 【firmly opposed】; Speaker B: Regarding firing Hana: shifts from 【Firmly supportive】 to 【wavering】."
+              "A. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+              "B. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。",
+              "C. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+              "D. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。"
+            ],
+            "answer": "D",
+            "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+            "rationale": [
+              "unknown",
+              "hallucination",
+              "wrong_speaker",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "整段对话中第 1 个发言的说话人和第 2 个发言的说话人，在对话中的立场变化分别是什么？请选择最符合的一项。",
+            "question_type": "speaker_index",
+            "options": [
+              "A. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+              "B. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。",
+              "C. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+              "D. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。"
             ],
             "answer": "A",
-            "answer_text": "Speaker A: Regarding firing Hana: consistently 【Opposed】, advocating for the employee's protection; Speaker B: Regarding firing Hana: consistently 【Supportive】, prioritizing the store's interests.",
+            "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
             "rationale": [
               "ground_truth",
+              "hallucination",
+              "unknown",
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "音频中第 25.79 秒到第 31.19 秒说过‘要证明你的清白，就必须和郭怀一一刀一断’的说话人与第 12.249 秒到第 17.409 秒说过‘我绝对没有参与盗窃西周宝印呐’的说话人在整段对话中的立场变化是什么？请选择最符合的一项。",
+            "question_type": "complex_index",
+            "options": [
+              "A. 说话人A: 对自身是否清白的立场：态度一直为【坚决否认所有指控】；说话人B: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】。",
+              "B. 说话人A: 对嫌疑人的信任度：从【完全不信】→【有所动摇】；说话人B: 对审问的态度：经历了从抗拒到合作的复杂转变。",
+              "C. 说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+              "D. 说话人A: 对案件的处理方式：从【严厉审问】→【转为真心相信对方并提供帮助】；说话人B: 对是否与同伙划清界限：从【维护同伙】→【转为同意指证同伙】。"
+            ],
+            "answer": "C",
+            "answer_text": "说话人A: 对嫌疑人是否有罪的立场：始终【坚信其有罪并持续施压】；说话人B: 对自身是否清白的立场：态度一直为【坚决否认所有指控】。",
+            "rationale": [
               "wrong_speaker",
               "unknown",
+              "ground_truth",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/opinion_summary/zh_ref_a.mp3",
+                "start": 25.79,
+                "end": 31.19,
+                "dur": 5.4,
+                "transcript": "要证明你的清白，就必须和郭怀一一刀一断。",
+                "spk_id": "spk_04",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
@@ -3137,59 +4973,91 @@ window.BENCH_EXAMPLES = {
   "background": {
     "task_id": "background",
     "level": "level2",
-    "dimension": "Scene Reasoning",
-    "task_name": "Dialogue Background Reasoning",
+    "dimension": "Dialogue Scene Reasoning (DSR)",
+    "task_name": "Background Inference (BI)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Robin Hood (2018)",
+        "source": "aces go places 4 1986",
+        "video_folder": "aces_go_places_4_1986_part001",
+        "full_audio": {
+          "src": "bench_examples/audio/background/en_full.mp3"
+        },
         "audio": {},
         "spk_a_transcript": "",
         "spk_b_transcript": "",
         "qa": [
           {
-            "question": "In which of the following scenarios is this conversation most likely taking place?",
+            "question": "In which of the following scenarios did this conversation most likely take place?",
             "question_type": "type_text",
             "options": [
-              "A. A local official (Speaker 3) discusses a tax bill with a small group of aides in his private office.",
-              "B. A judge and jury are trying a suspect in a courtroom.",
-              "C. A local magistrate (Speaker 3) delivers a speech in the town's public assembly hall and deliberates on a tax bill.",
-              "D. Cannot determine (Insufficient evidence)"
+              "A. A police officer is conducting a formal, official interrogation of a suspect in a police station interrogation room.",
+              "B. The protagonist is inside a private residence or hideout, informally interrogating a suspect.",
+              "C. Family members had a fierce argument over property in the living room and physically struck a visiting guest.",
+              "D. Cannot be determined (insufficient evidence)"
             ],
-            "answer": "C",
-            "answer_text": "A local magistrate (Speaker 3) is delivering a speech in the town's public assembly hall, deliberating on a tax bill.",
+            "answer": "B",
+            "answer_text": "The protagonist is conducting an informal interrogation of a suspect inside a private residence or hideout.",
             "rationale": [
               "wrong_speaker",
-              "hallucination",
               "ground_truth",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/background/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Detective Dee (神探狄仁杰, 2004)",
+        "source": "back to back face to face 1994",
+        "video_folder": "back_to_back_face_to_face_1994_part023",
+        "full_audio": {
+          "src": "bench_examples/audio/background/zh_full.mp3"
+        },
         "audio": {},
         "spk_a_transcript": "",
         "spk_b_transcript": "",
         "qa": [
           {
-            "question": "In which of the following scenarios does this conversation most likely take place?",
+            "question": "这段对话最可能发生在以下哪种场景？",
             "question_type": "type_text",
             "options": [
-              "A. Merchants are at a bank discussing a large silver loan.",
-              "B. Officials are reporting on a case and inspecting the treasury in a government office (yamen).",
-              "C. Officials are at the private residences of individuals involved in a case, conducting searches and questioning.",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. 会计上门到当事人家中解释工资扣款明细，并与对方发生激烈争执。",
+              "B. 在派出所调解室内，民警正在就一起财务纠纷对双方进行调解。",
+              "C. 在单位的财务办公室内，几位当事人因工资扣款问题与会计发生激烈争执。",
+              "D. 无法判断（证据不足）"
             ],
-            "answer": "B",
-            "answer_text": "The officials are reporting on a case and inspecting the treasury within a government office (yamen).",
+            "answer": "C",
+            "answer_text": "在单位的财务办公室内，几位当事人因工资扣款问题与会计发生激烈争执。",
             "rationale": [
+              "wrong_speaker",
               "hallucination",
               "ground_truth",
-              "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/background/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
             ]
           }
         ]
@@ -3199,181 +5067,313 @@ window.BENCH_EXAMPLES = {
   "identity": {
     "task_id": "identity",
     "level": "level2",
-    "dimension": "Scene Reasoning",
-    "task_name": "Dialogue Role Identification",
+    "dimension": "Dialogue Scene Reasoning (DSR)",
+    "task_name": "Role/Identity Identification (RII)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "The Constant Gardener (2005)",
+        "source": "Green Book 2018 1080p BluRay x264 AC3 • CHAOSPACE",
+        "video_folder": "Green_Book_2018_1080p_BluRay_x264_AC3_•_CHAOSPACE_part005",
+        "full_audio": {
+          "src": "bench_examples/audio/identity/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/identity/en_spk_a.mp3",
-            "start": 236.96,
-            "end": 238.8,
-            "dur": 1.84
+            "src": "bench_examples/audio/identity/en_ref_a.mp3",
+            "start": 26.31,
+            "end": 27.43,
+            "dur": 1.12,
+            "transcript": "How you gonna press your pants?",
+            "spk_id": "spk_06",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Well, I... I wouldn't be alone for long.",
-        "spk_b_transcript": "Let me take you back to Loki.",
+        "spk_a_transcript": "How you gonna press your pants?",
+        "spk_b_transcript": "I'll put 'em under the mattress.",
         "qa": [
           {
-            "question": "Based on the entire conversation, what is the relationship between the two speakers?",
+            "question": "Based on the entire conversation, what is the relationship between the two speakers in the following audio? Please choose the most suitable option.",
             "question_type": "no_index",
             "options": [
-              "A. Aid worker—government official",
-              "B. Guide—tourist",
-              "C. Passenger—pilot",
-              "D. Cannot determine (insufficient evidence)"
+              "A. brother and sister",
+              "B. Colleague",
+              "C. Husband and wife",
+              "D. Cannot be determined (Insufficient evidence)"
             ],
             "answer": "C",
-            "answer_text": "Passenger—pilot",
+            "answer_text": "Husband and wife",
             "rationale": [
-              "wrong_speaker",
               "hallucination",
+              "wrong_speaker",
               "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/en_ref_a.mp3",
+                "start": 26.31,
+                "end": 27.43,
+                "dur": 1.12,
+                "transcript": "How you gonna press your pants?",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the relationship between the speaker who speaks from 236.96s to 238.8s and the one who speaks from 235.6s to 236.8s?",
+            "question": "What is the relationship in the entire conversation between the speaker who talks from 26.31s to 27.43s and the speaker who talks from 27.51s to 28.87s in the audio? Please select the most appropriate option.",
             "question_type": "time_index",
             "options": [
-              "A. Guide—tourist",
-              "B. Passenger—pilot",
-              "C. Cannot determine (insufficient evidence)",
-              "D. Aid worker—government official"
-            ],
-            "answer": "B",
-            "answer_text": "Passenger—pilot",
-            "rationale": [
-              "hallucination",
-              "ground_truth",
-              "unknown",
-              "wrong_speaker"
-            ]
-          },
-          {
-            "question": "What is the relationship between the speaker who says, \"I wouldn't be alone for long,\" and the one who says, \"Let me take you back to Loki\"?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Aid worker—government official",
-              "B. Guide—tourist",
-              "C. Passenger—pilot",
-              "D. Cannot determine (insufficient evidence)"
-            ],
-            "answer": "C",
-            "answer_text": "Passenger—pilot",
-            "rationale": [
-              "wrong_speaker",
-              "hallucination",
-              "ground_truth",
-              "unknown"
-            ]
-          },
-          {
-            "question": "What is the relationship between the speaker who says, \"I wouldn't be alone for long\" (236.96s-238.8s), and the one who says, \"Let me take you back to Loki\" (235.6s-236.8s)?",
-            "question_type": "complex_index",
-            "options": [
-              "A. Passenger—pilot",
-              "B. Cannot determine (insufficient evidence)",
-              "C. Aid worker—government official",
-              "D. Guide—tourist"
+              "A. Husband and wife",
+              "B. Brother and sister",
+              "C. Colleague",
+              "D. Cannot be determined (Insufficient evidence)"
             ],
             "answer": "A",
-            "answer_text": "Passenger—pilot",
+            "answer_text": "Husband and wife",
             "rationale": [
               "ground_truth",
-              "unknown",
+              "hallucination",
               "wrong_speaker",
-              "hallucination"
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/en_ref_a.mp3",
+                "start": 26.31,
+                "end": 27.43,
+                "dur": 1.12,
+                "transcript": "How you gonna press your pants?",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "What is the relationship in the entire conversation between the speaker who said ‘How you gonna press your pants?’ and the speaker who said ‘I'll put 'em under the mattress.’? Please choose the best option.",
+            "question_type": "transcript_index",
+            "options": [
+              "A. Colleague",
+              "B. Cannot determine (insufficient evidence)",
+              "C. Brother and sister",
+              "D. Husband and wife"
+            ],
+            "answer": "D",
+            "answer_text": "husband and wife",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "hallucination",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/en_ref_a.mp3",
+                "start": 26.31,
+                "end": 27.43,
+                "dur": 1.12,
+                "transcript": "How you gonna press your pants?",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "What is the relationship between the first speaker and the second speaker in the entire conversation? Please choose the option that best fits. Speaker indexing starts from the first speaker.",
+            "question_type": "speaker_index",
+            "options": [
+              "A. Brother and sister",
+              "B. Husband and wife",
+              "C. Colleague",
+              "D. Cannot be determined (Insufficient evidence)"
+            ],
+            "answer": "B",
+            "answer_text": "Husband and wife",
+            "rationale": [
+              "hallucination",
+              "ground_truth",
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/en_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "In the audio, what is the relationship in the entire conversation between the speaker who said ‘How you gonna press your pants?’ from 26.31 to 27.43 seconds and the speaker who said ‘I'll put 'em under the mattress.’ from 27.51 to 28.87 seconds? Please choose the most suitable option.",
+            "question_type": "complex_index",
+            "options": [
+              "A. Husband and wife",
+              "B. Brother and sister",
+              "C. Colleague",
+              "D. Cannot determine (insufficient evidence)"
+            ],
+            "answer": "A",
+            "answer_text": "Husband and wife",
+            "rationale": [
+              "ground_truth",
+              "hallucination",
+              "wrong_speaker",
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/en_ref_a.mp3",
+                "start": 26.31,
+                "end": 27.43,
+                "dur": 1.12,
+                "transcript": "How you gonna press your pants?",
+                "spk_id": "spk_06",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Light the Night (华灯初上, 2021)",
+        "source": "beginning of great revival 2011",
+        "video_folder": "beginning_of_great_revival_2011_part011",
+        "full_audio": {
+          "src": "bench_examples/audio/identity/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/identity/zh_spk_a.mp3",
-            "start": 153.35,
-            "end": 154.67,
-            "dur": 1.32
+            "src": "bench_examples/audio/identity/zh_ref_a.mp3",
+            "start": 53.47,
+            "end": 57.47,
+            "dur": 4.0,
+            "transcript": "图书馆缺个助理员，很辛苦的，干得了吗？",
+            "spk_id": "spk_04",
+            "spk_index": "spk_4"
           }
         },
-        "spk_a_transcript": "How long has it been since you've been in contact?",
-        "spk_b_transcript": "Ever since she left home,",
+        "spk_a_transcript": "图书馆缺个助理员，很辛苦的，干得了吗？",
+        "spk_b_transcript": "行行，白天黑夜我都可以做事情的。",
         "qa": [
           {
-            "question": "What is the relationship between the two speakers, based on the entire conversation? Please choose the most suitable option.",
+            "question": "下面音频中的两个说话人，从整段对话来看，他们之间的关系是什么？请选择最符合的一项。",
             "question_type": "no_index",
             "options": [
-              "A. Colleagues",
-              "B. Police officer—Suspect",
-              "C. Police officer—Person related to the case",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. 同事",
+              "B. 招聘者—应聘者",
+              "C. 师生",
+              "D. 无法判断（证据不足）"
             ],
-            "answer": "C",
-            "answer_text": "Police officer—Person related to the case",
+            "answer": "B",
+            "answer_text": "招聘者—应聘者",
             "rationale": [
-              "wrong_speaker",
               "hallucination",
               "ground_truth",
+              "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/zh_ref_a.mp3",
+                "start": 53.47,
+                "end": 57.47,
+                "dur": 4.0,
+                "transcript": "图书馆缺个助理员，很辛苦的，干得了吗？",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "What is the relationship between the speaker who talks from 153.35 to 154.67 seconds and the speaker who talks from 155.19 to 156.83 seconds, based on the entire conversation? Please choose the most suitable option.",
+            "question": "音频中第 53.47 秒到第 57.47 秒讲话的说话人以及在第 57.63 秒到第 60.83 秒讲话的说话人在整段对话中的关系是什么？请选择最符合的一项。",
             "question_type": "time_index",
             "options": [
-              "A. Police officer—Suspect",
-              "B. Police officer—Person related to the case",
-              "C. Colleagues",
-              "D. Cannot be determined (insufficient evidence)"
+              "A. 招聘者—应聘者",
+              "B. 师生",
+              "C. 同事",
+              "D. 无法判断（证据不足）"
             ],
-            "answer": "B",
-            "answer_text": "Police officer—Person related to the case",
+            "answer": "A",
+            "answer_text": "招聘者—应聘者",
             "rationale": [
-              "hallucination",
               "ground_truth",
               "wrong_speaker",
+              "hallucination",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/zh_ref_a.mp3",
+                "start": 53.47,
+                "end": 57.47,
+                "dur": 4.0,
+                "transcript": "图书馆缺个助理员，很辛苦的，干得了吗？",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "What is the relationship between the speaker who said, 'How long has it been since you've been in contact?' and the speaker who said, 'Ever since she left home,' based on the entire conversation? Please choose the most suitable option.",
+            "question": "音频中说过‘图书馆缺个助理员’的说话人以及说过‘白天黑夜我都可以做事情的’的说话人在整段对话中的关系是什么？请选择最符合的一项。",
             "question_type": "transcript_index",
             "options": [
-              "A. Colleagues",
-              "B. Police officer—Person related to the case",
-              "C. Cannot be determined (insufficient evidence)",
-              "D. Police officer—Suspect"
+              "A. 师生",
+              "B. 招聘者—应聘者",
+              "C. 无法判断（证据不足）",
+              "D. 同事"
             ],
             "answer": "B",
-            "answer_text": "Police officer—Person related to the case",
+            "answer_text": "招聘者—应聘者",
             "rationale": [
               "wrong_speaker",
               "ground_truth",
               "unknown",
               "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/zh_ref_a.mp3",
+                "start": 53.47,
+                "end": 57.47,
+                "dur": 4.0,
+                "transcript": "图书馆缺个助理员，很辛苦的，干得了吗？",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "In the audio, what is the relationship between the speaker who said, 'How long has it been since you've been in contact?' from 153.35 to 154.67 seconds, and the speaker who said, 'Ever since she left home,' from 155.19 to 156.83 seconds? Please choose the most suitable option.",
+            "question": "音频中第 53.47 秒到第 57.47 秒说过‘很辛苦的，干得了吗？’的说话人与第 57.63 秒到第 60.83 秒说过‘行行，白天黑夜我都可以做事情的’的说话人在整段对话中的关系是什么？请选择最符合的一项。",
             "question_type": "complex_index",
             "options": [
-              "A. Police officer—Suspect",
-              "B. Cannot be determined (insufficient evidence)",
-              "C. Colleagues",
-              "D. Police officer—Person related to the case"
+              "A. 无法判断（证据不足）",
+              "B. 师生",
+              "C. 同事",
+              "D. 招聘者—应聘者"
             ],
             "answer": "D",
-            "answer_text": "Police officer—Person related to the case",
+            "answer_text": "招聘者—应聘者",
             "rationale": [
-              "hallucination",
               "unknown",
               "wrong_speaker",
+              "hallucination",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/identity/zh_ref_a.mp3",
+                "start": 53.47,
+                "end": 57.47,
+                "dur": 4.0,
+                "transcript": "图书馆缺个助理员，很辛苦的，干得了吗？",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           }
         ]
@@ -3383,181 +5383,313 @@ window.BENCH_EXAMPLES = {
   "dialogue_act": {
     "task_id": "dialogue_act",
     "level": "level2",
-    "dimension": "Structure Analysis",
-    "task_name": "Dialogue Act Recognition",
+    "dimension": "Dialogue Structure Analysis (DSA)",
+    "task_name": "Dialogue Act Recognition (DAR)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Gua Sha (刮痧, 2001)",
+        "source": "the forbidden kingdom 2008",
+        "video_folder": "the_forbidden_kingdom_2008_part013",
+        "full_audio": {
+          "src": "bench_examples/audio/dialogue_act/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/dialogue_act/en_spk_a.mp3",
-            "start": 144.53,
-            "end": 158.8,
-            "dur": 14.27
+            "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+            "start": 60.38,
+            "end": 60.94,
+            "dur": 0.56,
+            "transcript": "He's gonna die!",
+            "spk_id": "spk_02",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "So far, Mr. Davis, all your so-called testimony has been circumstantial at best, not to mention prejudicial. Nothing said thus far would ever stand up in an actual court. Why you would try these stunts in this hearing is beyond me.",
-        "spk_b_transcript": "Y- Your honor.",
+        "spk_a_transcript": "He's gonna die!",
+        "spk_b_transcript": "We go now, we all die.",
         "qa": [
           {
-            "question": "What is the interaction between the two speakers in the audio? Please select the most suitable option.",
+            "question": "What is the interactive behavior between the two speakers in the corresponding segment of the audio below? Please choose the most suitable option.",
             "question_type": "no_index",
             "options": [
-              "A. Speaker A sternly orders Speaker B to remain calm, and Speaker B reluctantly obeys.",
-              "B. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-              "C. Cannot be determined (insufficient evidence)",
-              "D. Speaker A raises a question, and Speaker B makes a strong defense and rebuttal."
+              "A. Speaker A requests to retreat out of cowardice, while Speaker B sternly reprimands them for their cowardly behavior.",
+              "B. Speaker A warns emotionally, while Speaker B calmly refutes and emphasizes the consequences.",
+              "C. Cannot be determined (Insufficient evidence)",
+              "D. Speaker A affectionately asks Speaker B to stay, whereas Speaker B resolutely says goodbye."
             ],
             "answer": "B",
-            "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+            "answer_text": "Speaker A gives an agitated warning, while Speaker B calmly refutes it and emphasizes the consequences.",
             "rationale": [
-              "wrong_speaker",
+              "hallucination",
               "ground_truth",
               "unknown",
-              "hallucination"
+              "wrong_speaker"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+                "start": 60.38,
+                "end": 60.94,
+                "dur": 0.56,
+                "transcript": "He's gonna die!",
+                "spk_id": "spk_02",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the interaction between the speaker from 144.53s to 158.8s and the speaker from 158.88s to 159.68s? Please select the most suitable option.",
+            "question": "What is the interactive behavior between the speaker who speaks from 60.38s to 60.94s and the speaker who speaks from 63.16s to 64.56s, as demonstrated in their respective segments in the audio? Please select the most suitable option.",
             "question_type": "time_index",
             "options": [
-              "A. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-              "B. Speaker A sternly orders Speaker B to remain calm, and Speaker B reluctantly obeys.",
-              "C. Speaker A raises a question, and Speaker B makes a forceful defense and rebuttal.",
-              "D. Cannot be determined (insufficient evidence)"
-            ],
-            "answer": "A",
-            "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-            "rationale": [
-              "ground_truth",
-              "wrong_speaker",
-              "hallucination",
-              "unknown"
-            ]
-          },
-          {
-            "question": "What is the interaction between the speaker who said, 'all your so-called testimony has been circumstantial at best,' and the one who said, 'Y- Your honor'? Please choose the most appropriate option.",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Speaker A raises a doubt, and Speaker B offers a forceful defense and rebuttal.",
-              "B. Cannot be determined (insufficient evidence)",
-              "C. Speaker A sternly orders Speaker B to stay calm, and Speaker B reluctantly complies.",
-              "D. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive."
+              "A. Cannot be determined (insufficient evidence)",
+              "B. Speaker A affectionately urges Speaker B to stay, while Speaker B resolutely says goodbye.",
+              "C. Speaker A asks to retreat out of cowardice, while Speaker B severely reprimands his cowardly behavior.",
+              "D. Speaker A gives an agitated warning, while Speaker B calmly rebuts and emphasizes the consequences."
             ],
             "answer": "D",
-            "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+            "answer_text": "Speaker A emotionally warns, while Speaker B calmly refutes and emphasizes the consequences.",
             "rationale": [
-              "hallucination",
               "unknown",
               "wrong_speaker",
+              "hallucination",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+                "start": 60.38,
+                "end": 60.94,
+                "dur": 0.56,
+                "transcript": "He's gonna die!",
+                "spk_id": "spk_02",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the interaction between the speaker who said, 'Nothing said thus far would ever stand up in an actual court' (from 144.53s to 158.8s), and the speaker who said, 'Y- Your honor' (from 158.88s to 159.68s)? Please choose the most suitable option.",
-            "question_type": "complex_index",
+            "question": "What is the interaction shown in the corresponding segments between the speaker who said ‘He's gonna die!’ and the speaker who said ‘We go now, we all die.’? Please select the most fitting option.",
+            "question_type": "transcript_index",
             "options": [
-              "A. Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
-              "B. Speaker A raises a question, and Speaker B makes a powerful defense and rebuttal.",
-              "C. Speaker A sternly commands Speaker B to remain calm, and Speaker B reluctantly complies.",
+              "A. Speaker A gives an agitated warning, while Speaker B calmly refutes it and emphasizes the consequences.",
+              "B. Speaker A requests to retreat out of cowardice, while Speaker B sternly reprimands their cowardly behavior.",
+              "C. Speaker A affectionately urges Speaker B to stay, while Speaker B resolutely says goodbye.",
               "D. Cannot be determined (insufficient evidence)"
             ],
             "answer": "A",
-            "answer_text": "Speaker A is authoritative and scolding, while Speaker B is nervous and submissive.",
+            "answer_text": "Speaker A gives an agitated warning, while Speaker B calmly refutes it and emphasizes the consequences.",
             "rationale": [
               "ground_truth",
               "hallucination",
               "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+                "start": 60.38,
+                "end": 60.94,
+                "dur": 0.56,
+                "transcript": "He's gonna die!",
+                "spk_id": "spk_02",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "What is the interactive behavior demonstrated in the corresponding segments between the speaker who said ‘He's gonna die!’ from 60.38 to 60.94 seconds in the audio, and the speaker who said ‘We go now, we all die.’ from 63.16 to 64.56 seconds? Please choose the most suitable option.",
+            "question_type": "complex_index",
+            "options": [
+              "A. Speaker A affectionately asks Speaker B to stay, while Speaker B resolutely says goodbye.",
+              "B. Cannot be determined (insufficient evidence)",
+              "C. Speaker A gives an emotional warning, while Speaker B calmly refutes it and emphasizes the consequences.",
+              "D. Speaker A asks to retreat out of cowardice, while Speaker B severely reprimands their cowardly behavior."
+            ],
+            "answer": "C",
+            "answer_text": "Speaker A agitatedly gives a warning, while Speaker B calmly refutes it and emphasizes the consequences.",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/en_ref_a.mp3",
+                "start": 60.38,
+                "end": 60.94,
+                "dur": 0.56,
+                "transcript": "He's gonna die!",
+                "spk_id": "spk_02",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Copycat Killer (模仿犯, 2023)",
+        "source": "e nv 2023",
+        "video_folder": "e_nv_2023_part008",
+        "full_audio": {
+          "src": "bench_examples/audio/dialogue_act/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/dialogue_act/zh_spk_a.mp3",
-            "start": 101.63,
-            "end": 106.99,
-            "dur": 5.36
+            "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+            "start": 6.08,
+            "end": 15.44,
+            "dur": 9.36,
+            "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+            "spk_id": "spk_03",
+            "spk_index": "spk_1"
           }
         },
-        "spk_a_transcript": "Why he was in Shen Jiawen's car, what happened in between, is not important at all. Nobody cares.",
-        "spk_b_transcript": "I care.",
+        "spk_a_transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+        "spk_b_transcript": "我当然会保护我爱的人呐。",
         "qa": [
           {
-            "question": "What is the interactive behavior between the two speakers in this segment?",
+            "question": "下面音频中的两个说话人，在对应片段中体现的互动行为是什么？请选择最符合的一项。",
             "question_type": "no_index",
             "options": [
-              "A. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
-              "B. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-              "C. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-              "D. Cannot be determined (Insufficient evidence)"
+              "A. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+              "B. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+              "C. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+              "D. 无法判断（证据不足）"
             ],
             "answer": "B",
-            "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+            "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
             "rationale": [
-              "wrong_speaker",
-              "ground_truth",
               "hallucination",
+              "ground_truth",
+              "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+                "start": 6.08,
+                "end": 15.44,
+                "dur": 9.36,
+                "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the interaction between the speaker from 101.63s to 106.99s and the speaker from 107.11s to 107.59s?",
+            "question": "音频中第 6.08 秒到第 15.44 秒讲话的说话人以及在第 17.03 秒到第 18.99 秒讲话的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
             "question_type": "time_index",
             "options": [
-              "A. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-              "B. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
-              "C. Cannot be determined (insufficient evidence)",
-              "D. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them."
-            ],
-            "answer": "D",
-            "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-            "rationale": [
-              "hallucination",
-              "wrong_speaker",
-              "unknown",
-              "ground_truth"
-            ]
-          },
-          {
-            "question": "What is the interaction between the speaker who says, 'What happened in between isn't important at all, nobody cares,' and the speaker who says, 'I care'?",
-            "question_type": "transcript_index",
-            "options": [
-              "A. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions.",
-              "B. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-              "C. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-              "D. Cannot be determined (Insufficient evidence)"
+              "A. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+              "B. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+              "C. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+              "D. 无法判断（证据不足）"
             ],
             "answer": "C",
-            "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+            "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
             "rationale": [
-              "wrong_speaker",
               "hallucination",
+              "wrong_speaker",
               "ground_truth",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+                "start": 6.08,
+                "end": 15.44,
+                "dur": 9.36,
+                "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           },
           {
-            "question": "What is the interaction between the speaker who says 'No one cares' (from 101.63s to 106.99s) and the speaker who says 'I care' (from 107.11s to 107.59s)?",
-            "question_type": "complex_index",
+            "question": "音频中说过‘请你不要告诉媒体你们结婚登记的事情’的说话人以及说过‘我当然会保护我爱的人呐’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+            "question_type": "transcript_index",
             "options": [
-              "A. Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
-              "B. Cannot be determined (insufficient evidence)",
-              "C. Speaker A asks a question, and Speaker B sternly criticizes and cuts them off.",
-              "D. Speaker A reports investigation progress to a superior, and Speaker B listens before giving instructions."
+              "A. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+              "B. 无法判断（证据不足）",
+              "C. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+              "D. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。"
+            ],
+            "answer": "C",
+            "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+            "rationale": [
+              "wrong_speaker",
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+                "start": 6.08,
+                "end": 15.44,
+                "dur": 9.36,
+                "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
+            ]
+          },
+          {
+            "question": "整段对话第一个发言的说话人以及第二个发言的说话人在对话中体现的互动行为是什么？请选择最符合的一项。",
+            "question_type": "speaker_index",
+            "options": [
+              "A. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+              "B. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+              "C. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+              "D. 无法判断（证据不足）"
             ],
             "answer": "A",
-            "answer_text": "Speaker A has an emotional breakdown and vents their despair, and Speaker B firmly interrupts to console them.",
+            "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
             "rationale": [
               "ground_truth",
-              "unknown",
+              "wrong_speaker",
               "hallucination",
-              "wrong_speaker"
+              "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/zh_full.mp3",
+                "start": null,
+                "end": null,
+                "dur": null,
+                "transcript": "",
+                "spk_id": null,
+                "spk_index": null,
+                "is_full": true
+              }
+            ]
+          },
+          {
+            "question": "音频中第 6.08 秒到第 15.44 秒说过‘请你不要告诉媒体你们结婚登记的事情’的说话人与第 17.03 秒到第 18.99 秒说过‘我当然会保护我爱的人呐’的说话人在对应片段中体现的互动行为是什么？请选择最符合的一项。",
+            "question_type": "complex_index",
+            "options": [
+              "A. 说话人A对说话人B发出命令式的威胁，说话人B表现出顺从和妥协。",
+              "B. 无法判断（证据不足）",
+              "C. 说话人A对说话人B进行尖锐的质问，说话人B对此进行了坦然的承认。",
+              "D. 说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。"
+            ],
+            "answer": "D",
+            "answer_text": "说话人A提出带有条件的严肃请求，说话人B对此给予了温柔而坚定的承诺。",
+            "rationale": [
+              "hallucination",
+              "unknown",
+              "wrong_speaker",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/dialogue_act/zh_ref_a.mp3",
+                "start": 6.08,
+                "end": 15.44,
+                "dur": 9.36,
+                "transcript": "但是你必须答应我一件事情，为了保护我的爸爸，请你不要告诉媒体你们结婚登记的事情，这样你做得到吧？",
+                "spk_id": "spk_03",
+                "spk_index": "spk_1"
+              }
             ]
           }
         ]
@@ -3567,181 +5699,283 @@ window.BENCH_EXAMPLES = {
   "qa_structure": {
     "task_id": "qa_structure",
     "level": "level2",
-    "dimension": "Structure Analysis",
-    "task_name": "QA Structure Recognition",
+    "dimension": "Dialogue Structure Analysis (DSA)",
+    "task_name": "Q&A Structure ID (QASI)",
     "variants": {
       "en": {
         "language": "English",
-        "source": "Pacific Rim: Uprising (2018)",
+        "source": "robin hood origins",
+        "video_folder": "robin_hood_origins_part003",
+        "full_audio": {
+          "src": "bench_examples/audio/qa_structure/en_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/qa_structure/en_spk_a.mp3",
-            "start": 257.54,
-            "end": 258.86,
-            "dur": 1.32
+            "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+            "start": 28.98,
+            "end": 29.42,
+            "dur": 0.44,
+            "transcript": "What are you doing?",
+            "spk_id": "spk_04",
+            "spk_index": "spk_4"
           }
         },
-        "spk_a_transcript": "Yeah, what's her problem?",
-        "spk_b_transcript": "Took her three shots to pass the entrance test.",
+        "spk_a_transcript": "What are you doing?",
+        "spk_b_transcript": "My duty, Loxley.",
         "qa": [
           {
-            "question": "The following is a line of dialogue from one speaker. In the full conversation, what is the most likely response to this line?",
+            "question": "The following is a monologue from a speaker. The most likely response to it in a complete dialogue is:",
             "question_type": "no_index",
             "options": [
-              "A. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-              "B. Speaker B: Moyulan is for pilots.",
-              "C. Speaker B: Took her three shots to pass the entrance test.",
-              "D. Cannot be determined (Insufficient information to pinpoint the response)"
+              "A. Speaker B: I've been killing crusaders all my life.",
+              "B. Speaker B: I'm just following the king's decree.",
+              "C. Cannot determine (Insufficient information to provide a specific response)",
+              "D. Speaker B: My duty, Loxley."
             ],
-            "answer": "C",
-            "answer_text": "Took her three shots to pass the entrance test.",
+            "answer": "D",
+            "answer_text": "My duty, Loxley.",
             "rationale": [
-              "hallucination",
               "wrong_speaker",
-              "ground_truth",
-              "unknown"
+              "hallucination",
+              "unknown",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+                "start": 28.98,
+                "end": 29.42,
+                "dur": 0.44,
+                "transcript": "What are you doing?",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "According to the conversation, what is the response to the line spoken between 257.54 and 258.86 seconds?",
+            "question": "According to the conversation, the reply from other people to what a speaker said from 28.98 to 29.42 seconds is:",
             "question_type": "time_index",
             "options": [
-              "A. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-              "B. Speaker B: Moyulan is for pilots.",
-              "C. Speaker B: Took her three shots to pass the entrance test.",
-              "D. Cannot determine (Insufficient information to identify the response)"
+              "A. Speaker B: I've been killing crusaders all my life.",
+              "B. Speaker B: I'm just following the king's decree.",
+              "C. Unable to judge (insufficient information to provide a targeted response)",
+              "D. Speaker B: My duty, Loxley."
             ],
-            "answer": "C",
-            "answer_text": "Took her three shots to pass the entrance test.",
+            "answer": "D",
+            "answer_text": "My duty, Loxley.",
             "rationale": [
-              "hallucination",
               "wrong_speaker",
-              "ground_truth",
-              "unknown"
+              "hallucination",
+              "unknown",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+                "start": 28.98,
+                "end": 29.42,
+                "dur": 0.44,
+                "transcript": "What are you doing?",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "According to the dialogue, what is the other speaker's reply to the statement, 'what's her problem?'",
+            "question": "Based on the dialogue, the reply from others to a speaker's question 'What are you doing?' is:",
             "question_type": "transcript_index",
             "options": [
-              "A. Speaker B: Moyulan is for pilots.",
-              "B. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-              "C. Cannot be determined (insufficient information to locate the response)",
-              "D. Speaker B: Took her three shots to pass the entrance test."
+              "A. Speaker B: I've been killing crusaders all my life.",
+              "B. Speaker B: I'm just following the king's decree.",
+              "C. Cannot determine (Insufficient information to identify the response)",
+              "D. Speaker B: My duty, Loxley."
             ],
             "answer": "D",
-            "answer_text": "Took her three shots to pass the entrance test.",
+            "answer_text": "My duty, Loxley.",
             "rationale": [
               "wrong_speaker",
               "hallucination",
               "unknown",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+                "start": 28.98,
+                "end": 29.42,
+                "dur": 0.44,
+                "transcript": "What are you doing?",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           },
           {
-            "question": "Based on the conversation, what is the response to the statement 'what's her problem?', spoken between 257.54 and 258.86 seconds?",
+            "question": "According to the dialogue, the other people's response to the speaker's utterance of 'What are you doing?' between 28.98 and 29.42 seconds is:",
             "question_type": "complex_index",
             "options": [
-              "A. Speaker B: Moyulan is for pilots.",
-              "B. Speaker B: She's just very competitive and doesn't trust newcomers easily.",
-              "C. Cannot determine (insufficient information to locate the response)",
-              "D. Speaker B: Took her three shots to pass the entrance test."
+              "A. Speaker B: I've been killing crusaders all my life.",
+              "B. Speaker B: I'm just following the king's decree.",
+              "C. Cannot determine (Insufficient information to provide a response)",
+              "D. Speaker B: My duty, Loxley."
             ],
             "answer": "D",
-            "answer_text": "Took her three shots to pass the entrance test.",
+            "answer_text": "My duty, Loxley.",
             "rationale": [
               "wrong_speaker",
               "hallucination",
               "unknown",
               "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/en_ref_a.mp3",
+                "start": 28.98,
+                "end": 29.42,
+                "dur": 0.44,
+                "transcript": "What are you doing?",
+                "spk_id": "spk_04",
+                "spk_index": "spk_4"
+              }
             ]
           }
         ]
       },
       "zh": {
         "language": "Chinese",
-        "source": "Dwelling Narrowness (蜗居, 2009)",
+        "source": "yang guifei ep08",
+        "video_folder": "yang_guifei_ep08_part001",
+        "full_audio": {
+          "src": "bench_examples/audio/qa_structure/zh_full.mp3"
+        },
         "audio": {
           "a": {
-            "src": "bench_examples/audio/qa_structure/zh_spk_a.mp3",
-            "start": 255.94,
-            "end": 262.86,
-            "dur": 6.92
+            "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+            "start": 13.05,
+            "end": 14.73,
+            "dur": 1.68,
+            "transcript": "陛下，请息怒。",
+            "spk_id": "spk_14",
+            "spk_index": "spk_2"
           }
         },
-        "spk_a_transcript": "But the old rule still applies: no matter how late you work or what methods you use, it must be finished by tomorrow morning.",
-        "spk_b_transcript": "Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+        "spk_a_transcript": "陛下，请息怒。",
+        "spk_b_transcript": "点样息怒？",
         "qa": [
           {
-            "question": "The following is a monologue from a speaker. What is the most likely response to this utterance in a complete dialogue?",
+            "question": "下面是某个说话人的单讲片段，在完整对话中最可能对该语音回应的一项是：",
             "question_type": "no_index",
             "options": [
-              "A. Speaker B: Okay, Manager. We guarantee we'll complete the task and won't fall behind schedule.",
-              "B. Speaker B: Manager, please don't ask me to work overtime on Mondays, Wednesdays, and Fridays anymore. I've signed up for a professional development course, because if I don't keep learning, I'll soon be left behind by society, right?",
-              "C. Speaker B: Exactly, Manager. Why does it seem like our generation is always the one being left behind by society?",
-              "D. Cannot determine (Insufficient information to locate the response)"
+              "A. 说话人B：点样息怒？",
+              "B. 说话人B：你叫朕点样息怒？国事家事一团糟。",
+              "C. 说话人B：都要恁办法 㗎 嘛。",
+              "D. 无法判断（信息不足以定位回复）"
             ],
-            "answer": "B",
-            "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+            "answer": "A",
+            "answer_text": "说话人B：点样息怒？",
             "rationale": [
-              "hallucination",
               "ground_truth",
+              "hallucination",
               "wrong_speaker",
               "unknown"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+                "start": 13.05,
+                "end": 14.73,
+                "dur": 1.68,
+                "transcript": "陛下，请息怒。",
+                "spk_id": "spk_14",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "Based on the conversation, what is the response to the speaker's utterance from 255.94s to 262.86s?",
+            "question": "根据对话内容，其他人对某个说话人在第 13.05 秒到第 14.73 秒的讲话内容回复的语句是：",
             "question_type": "time_index",
             "options": [
-              "A. Speaker B: Okay, Manager. We promise to complete the task and won't fall behind schedule.",
-              "B. Cannot determine (Insufficient information to locate the response)",
-              "C. Speaker B: Exactly, Manager. Why is it that our generation is always the one being left behind by society?",
-              "D. Speaker B: Manager, please don't ask me to work overtime on Mondays, Wednesdays, and Fridays anymore. I've enrolled in a professional development course because if I don't keep improving, I'll soon be left behind by society, right?"
+              "A. 说话人B：都要恁办法 㗎 嘛。",
+              "B. 无法判断（信息不足以定位回复）",
+              "C. 说话人B：点样息怒？",
+              "D. 说话人B：你叫朕点样息怒？国事家事一团糟。"
             ],
-            "answer": "D",
-            "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+            "answer": "C",
+            "answer_text": "说话人B：点样息怒？",
             "rationale": [
-              "hallucination",
-              "unknown",
               "wrong_speaker",
-              "ground_truth"
+              "unknown",
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+                "start": 13.05,
+                "end": 14.73,
+                "dur": 1.68,
+                "transcript": "陛下，请息怒。",
+                "spk_id": "spk_14",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "According to the dialogue, what is the response to the statement, '...it must be finished by tomorrow morning'?",
+            "question": "根据对话内容，其他人对某个说话人关于‘陛下，请息怒’的表述的回复语句是：",
             "question_type": "transcript_index",
             "options": [
-              "A. Speaker B: Exactly, Manager. It's like our generation is always the one being left behind by society.",
-              "B. Speaker B: Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a training course, because if I don't keep learning, I'll be left behind by society soon, right?",
-              "C. Speaker B: Okay, Manager. We guarantee we'll complete the task and won't delay our progress.",
-              "D. Cannot be determined (Insufficient information to locate the response)"
+              "A. 说话人B：你叫朕点样息怒？国事家事一团糟。",
+              "B. 说话人B：都要恁办法 㗎 嘛。",
+              "C. 无法判断（信息不足以定位回复）",
+              "D. 说话人B：点样息怒？"
             ],
-            "answer": "B",
-            "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+            "answer": "D",
+            "answer_text": "说话人B：点样息怒？",
             "rationale": [
-              "wrong_speaker",
-              "ground_truth",
               "hallucination",
-              "unknown"
+              "wrong_speaker",
+              "unknown",
+              "ground_truth"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+                "start": 13.05,
+                "end": 14.73,
+                "dur": 1.68,
+                "transcript": "陛下，请息怒。",
+                "spk_id": "spk_14",
+                "spk_index": "spk_2"
+              }
             ]
           },
           {
-            "question": "According to the dialogue, what is the response to the speaker's statement between 255.94s and 262.86s, which includes the phrase '...must be finished by tomorrow morning'?",
+            "question": "根据对话内容，其他人对某个说话人在第 13.05 秒到第 14.73 秒说话人关于‘请息怒’的表述的回复是：",
             "question_type": "complex_index",
             "options": [
-              "A. Cannot determine (Insufficient information to locate the response)",
-              "B. Speaker B: Exactly, Manager. It seems our generation is always the one that gets left behind by society.",
-              "C. Speaker B: Okay, Manager. We promise to complete the task and won't delay the schedule.",
-              "D. Speaker B: Manager, please don't call me in for overtime on Mondays, Wednesdays, and Fridays anymore. I've signed up for a professional development course, because if I don't keep upgrading my skills, I'll be left behind by society soon, right?"
+              "A. 无法判断（信息不足以定位回复）",
+              "B. 说话人B：都要恁办法 㗎 嘛。",
+              "C. 说话人B：点样息怒？",
+              "D. 说话人B：你叫朕点样息怒？国事家事一团糟。"
             ],
-            "answer": "D",
-            "answer_text": "Speaker B: Hey Manager, from now on, don't ask me to work overtime on Mondays, Wednesdays, and Fridays. I've signed up for a professional development course, because if I don't keep improving myself, I'll soon be left behind by society, right?",
+            "answer": "C",
+            "answer_text": "说话人B：点样息怒？",
             "rationale": [
               "unknown",
               "wrong_speaker",
-              "hallucination",
-              "ground_truth"
+              "ground_truth",
+              "hallucination"
+            ],
+            "clips": [
+              {
+                "src": "bench_examples/audio/qa_structure/zh_ref_a.mp3",
+                "start": 13.05,
+                "end": 14.73,
+                "dur": 1.68,
+                "transcript": "陛下，请息怒。",
+                "spk_id": "spk_14",
+                "spk_index": "spk_2"
+              }
             ]
           }
         ]

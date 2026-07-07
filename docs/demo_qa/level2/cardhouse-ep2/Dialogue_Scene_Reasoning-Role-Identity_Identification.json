@@ -1,0 +1,135 @@
+{
+  "video": "cardhouse-ep2",
+  "level": "level2",
+  "task": "Dialogue_Scene_Reasoning-Role-Identity_Identification",
+  "qa_result": [
+    {
+      "speaker_meta": {
+        "spk_a": [
+          {
+            "seg_id": "seg_014",
+            "start_time": 55.5,
+            "end_time": 58.7,
+            "transcript": "It doesn't matter how it happened. We can't make it unhappen. So now we have to adapt.",
+            "spk_id": "spk_3",
+            "spk_index": "spk_3",
+            "age": "Middle-aged",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ],
+        "spk_b": [
+          {
+            "seg_id": "seg_015",
+            "start_time": 58.7,
+            "end_time": 102.8,
+            "transcript": "Hopefully they realize that this is a first draft. All we have here really is a perception problem.",
+            "spk_id": "spk_5",
+            "spk_index": "spk_5",
+            "age": "Elder",
+            "gender": "Male",
+            "emotion": "Neutral",
+            "accent": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "question": "What is the relationship between the speaker talking from 55.5s to 58.7s in the audio and the speaker talking from 58.7s to 102.8s in the whole conversation? Please select the most appropriate option.",
+      "question_type": "time_index",
+      "options": [
+        "A. Colleagues cooperating in the political circle",
+        "B. Superior-subordinate",
+        "C. Interviewer - interviewed member of the public",
+        "D. Cannot be determined"
+      ],
+      "answer": "A",
+      "answer_text": "Colleagues cooperating in the political circle",
+      "rationale": [
+        "A. ground truth, the two jointly promoted the education bill and handled the leak crisis, and they are political colleagues who work together",
+        "B. wrong speaker, in the conversation, Frank and his subordinate Doug have this type of relationship, which does not apply to these two speakers",
+        "C. hallucination, there is no content related to interview scenarios throughout the conversation, and no clues supporting this relationship can be found",
+        "D. unknown, the relationship cannot be judged due to insufficient evidence"
+      ]
+    },
+    {
+      "question": "For the two speakers in the following audio, what is their relationship based on the whole conversation? Please select the most appropriate option.",
+      "question_type": "no_index",
+      "options": [
+        "A. Government colleagues (legislative project collaborators)",
+        "B. Superior - government affairs assistant",
+        "C. Reporter - interviewee",
+        "D. Cannot be determined (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Government colleagues (legislative project collaborators)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the relationship between the first speaker and the second speaker in the entire conversation? Please select the most appropriate option.",
+      "question_type": "speaker_index",
+      "options": [
+        "A. Young colleagues in the same department",
+        "B. Public administration colleagues (legislative collaborators)",
+        "C. Teacher - current student",
+        "D. Cannot be determined (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Young colleagues in the same department",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the relationship between the speaker who said 'It doesn't matter how it happened. We can't make it unhappen. So now we have to adapt.' and the speaker who said 'Hopefully they realize that this is a first draft. All we have here really is a perception problem.' in the whole conversation in the audio? Please select the most appropriate option.",
+      "question_type": "transcript_index",
+      "options": [
+        "A. Government colleagues (legislative project collaborators)",
+        "B. Regular colleagues in a grassroots department",
+        "C. Enterprise boss and job applicant",
+        "D. Cannot be determined (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Government colleagues (legislative project collaborators)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    },
+    {
+      "question": "What is the relationship between the speaker who said 'It doesn't matter how it happened. We can't make it unhappen. So now we have to adapt.' from 55.5s to 58.7s in the audio and the speaker who said 'Hopefully they realize that this is a first draft. All we have here really is a perception problem.' from 58.7s to 102.8s in the whole conversation? Please choose the most appropriate option.",
+      "question_type": "complex_index",
+      "options": [
+        "A. Government colleagues (legislative project collaborators)",
+        "B. Superior-subordinate (supervisor and government affairs assistant)",
+        "C. Doctor and visiting patient",
+        "D. Cannot judge (insufficient evidence)"
+      ],
+      "answer": "A",
+      "answer_text": "Government colleagues (legislative project collaborators)",
+      "rationale": [
+        "A. ground truth",
+        "B. wrong speaker",
+        "C. hallucination",
+        "D. unknown"
+      ]
+    }
+  ],
+  "qa_audio": {
+    "spk_a_audio": "demo_qa_audio/level2/cardhouse-ep2/Dialogue_Scene_Reasoning-Role-Identity_Identification_spk_a.mp3",
+    "start_time": 55.5,
+    "end_time": 58.7,
+    "duration": 3.2
+  }
+}

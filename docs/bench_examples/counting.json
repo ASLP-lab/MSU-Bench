@@ -1,109 +1,169 @@
 {
   "task_id": "counting",
   "level": "level1",
-  "dimension": "Speaker Identification",
-  "task_name": "Speaker Counting",
+  "dimension": "Speaker Identification (SID)",
+  "task_name": "Speaker Counting (SC)",
   "variants": {
     "en": {
       "language": "English",
-      "source": "The Karate Kid (功夫梦, 2010)",
+      "source": "dou shi",
+      "video_folder": "dou_shi_part014",
+      "full_audio": {
+        "src": "bench_examples/audio/counting/en_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/counting/en_spk_a.mp3",
-          "start": 5.84,
-          "end": 6.92,
-          "dur": 1.08
+          "src": "bench_examples/audio/counting/en_ref_a.mp3",
+          "start": 0.0,
+          "end": 2.6,
+          "dur": 2.6,
+          "transcript": "You tell me. That is your handwriting, isn't it?",
+          "spk_id": "spk_01",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "The journey is complete.",
-      "spk_b_transcript": "Is this the Dragon Well?",
+      "spk_a_transcript": "You tell me. That is your handwriting, isn't it?",
+      "spk_b_transcript": "Yes, that's my note.",
       "qa": [
         {
           "question": "How many different speakers are there in this audio?",
           "question_type": "speech_index",
           "options": [
-            "A. 2 speakers",
-            "B. 3 speakers",
-            "C. 6 speakers",
-            "D. Cannot be determined (insufficient information)"
+            "A. 3 digits",
+            "B. 5 digits",
+            "C. 2 digits",
+            "D. Cannot determine (Insufficient information)"
           ],
-          "answer": "B",
-          "answer_text": "3 speakers",
+          "answer": "C",
+          "answer_text": "2-bit",
           "rationale": [
             "wrong_speaker",
-            "ground_truth",
             "hallucination",
+            "ground_truth",
             "unknown"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/counting/en_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "How many different speakers are there in the audio from 175 seconds to 181 seconds?",
+          "question": "How many different speakers are there in the audio between the 30th and 40th second?",
           "question_type": "time_index",
           "options": [
-            "A. 6 speakers",
-            "B. Cannot be determined (insufficient information)",
-            "C. 3 speakers",
-            "D. 2 speakers"
+            "A. 4-bit",
+            "B. 2 bits",
+            "C. Cannot determine (Insufficient information)",
+            "D. 3 people"
           ],
-          "answer": "D",
-          "answer_text": "2 speakers",
+          "answer": "B",
+          "answer_text": "2 digits",
           "rationale": [
             "hallucination",
+            "ground_truth",
             "unknown",
-            "wrong_speaker",
-            "ground_truth"
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/counting/en_ref_a.mp3",
+              "start": 0.0,
+              "end": 2.6,
+              "dur": 2.6,
+              "transcript": "You tell me. That is your handwriting, isn't it?",
+              "spk_id": "spk_01",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]
     },
     "zh": {
       "language": "Chinese",
-      "source": "Detective Dee (神探狄仁杰, 2004)",
+      "source": "black mask 1996",
+      "video_folder": "black_mask_1996_part005",
+      "full_audio": {
+        "src": "bench_examples/audio/counting/zh_full.mp3"
+      },
       "audio": {
         "a": {
-          "src": "bench_examples/audio/counting/zh_spk_a.mp3",
-          "start": 20.92,
-          "end": 22.96,
-          "dur": 2.04
+          "src": "bench_examples/audio/counting/zh_ref_a.mp3",
+          "start": 0.0,
+          "end": 1.84,
+          "dur": 1.84,
+          "transcript": "这腿是我女儿的。",
+          "spk_id": "spk_10",
+          "spk_index": "spk_1"
         }
       },
-      "spk_a_transcript": "Got it, I'll go right away.",
-      "spk_b_transcript": "How could something like this happen?",
+      "spk_a_transcript": "这腿是我女儿的。",
+      "spk_b_transcript": "小心一点。",
       "qa": [
         {
-          "question": "How many different speakers are there in this audio?",
+          "question": "这段音频中一共出现了多少个不同的说话人？",
           "question_type": "speech_index",
           "options": [
-            "A. 5 speakers",
-            "B. 6 speakers",
-            "C. Cannot be determined",
-            "D. 2 speakers"
+            "A. 4位",
+            "B. 无法判断（信息不足）",
+            "C. 5位",
+            "D. 10位"
           ],
-          "answer": "B",
-          "answer_text": "6 speakers",
+          "answer": "C",
+          "answer_text": "5位",
           "rationale": [
             "wrong_speaker",
-            "ground_truth",
             "unknown",
+            "ground_truth",
             "hallucination"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/counting/zh_full.mp3",
+              "start": null,
+              "end": null,
+              "dur": null,
+              "transcript": "",
+              "spk_id": null,
+              "spk_index": null,
+              "is_full": true
+            }
           ]
         },
         {
-          "question": "How many different speakers appeared in the audio between 31 and 38 seconds?",
+          "question": "音频中在第 8 秒到第 19 秒这段时间内，一共出现了多少个不同的说话人？",
           "question_type": "time_index",
           "options": [
-            "A. 6 speakers",
-            "B. 2 speakers",
-            "C. 3 speakers",
-            "D. Cannot be determined"
+            "A. 7位",
+            "B. 3位",
+            "C. 无法判断（信息不足）",
+            "D. 4位"
           ],
-          "answer": "C",
-          "answer_text": "3 speakers",
+          "answer": "B",
+          "answer_text": "3位",
           "rationale": [
             "hallucination",
-            "wrong_speaker",
             "ground_truth",
-            "unknown"
+            "unknown",
+            "wrong_speaker"
+          ],
+          "clips": [
+            {
+              "src": "bench_examples/audio/counting/zh_ref_a.mp3",
+              "start": 0.0,
+              "end": 1.84,
+              "dur": 1.84,
+              "transcript": "这腿是我女儿的。",
+              "spk_id": "spk_10",
+              "spk_index": "spk_1"
+            }
           ]
         }
       ]
